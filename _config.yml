@@ -1,13 +1,13 @@
 # Setup
-title:        Project or Site name
-tagline:      A responsive theme for your project on GitHub Pages
+title:        david barber
+tagline:      machine learning
 baseurl:      ""
 paginate:     1
 
 # About/contact
 author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+  name:       David Barber
+  url:        http://www0.cs.ucl.ac.uk/people/D.Barber.html
 
 # Gems
 gems:

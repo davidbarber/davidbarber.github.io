@@ -11,13 +11,3 @@ title: {{ site.name }}
     {% endfor %}
   </ul>
 </div>
-
-
-<div id="home">
-  <h1>Pages</h1>
-  <ul class="pages">
-    {% for page in site.pages %}
-      <li>{{ post.title }}</li>
-    {% endfor %}
-  </ul>
-</div>
