@@ -31,9 +31,9 @@ summaryfeed: false
 ## for twitter card with large image:
 # imagefeature: "http://img.youtube.com/vi/VEIrQUXm_hY/0.jpg"
 ## for twitter video card: (active for this page)
-videofeature: "https://www.youtube.com/embed/iG9CE55wbtY"
-imagefeature: "http://img.youtube.com/vi/iG9CE55wbtY/0.jpg"
-videocredit: tedtalks
+#videofeature: "https://www.youtube.com/embed/iG9CE55wbtY"
+#imagefeature: "http://img.youtube.com/vi/iG9CE55wbtY/0.jpg"
+#videocredit: tedtalks
 ---
 
 In machine learning we often face the issue of a very large number of classes in a classification problem. This causes a bottleneck in the computation. There's though a simple and effective way to deal with this. 
@@ -53,7 +53,7 @@ $$
 p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}
 $$
 
-here $u_\theta(c,x)$ is some defined function with parameters $\theta$. For example, $u_\theta(c,x)=\exp(w_c'x)$, where $w_c$ is a parameter vector for class $c$ and $x$ is the vector input.  The normalising term is
+where $u_\theta(c,x)$ is some defined function with parameters $\theta$. For example, $u_\theta(c,x)=\exp(w_c'x)$, where $w_c$ is a parameter vector for class $c$ and $x$ is the vector input.  The normalising term is
 
 $$
 Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)
