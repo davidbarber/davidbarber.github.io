@@ -2,7 +2,7 @@
 ---
 
 /* TEAM */
-Primary Contact: foo
+Primary Contact: David Barber
 Site: {{ site.url }}/about/
 Twitter: https://twitter.com/{{ site.owner.twitter }}
 

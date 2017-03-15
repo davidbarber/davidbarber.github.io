@@ -81,7 +81,7 @@ $$
 The problem with this approach is that it results in a potentially catastrophic under-estimate of $Z_\theta(x)$.  If the classifier is working well, we want that $u_\theta(c,x)$ is much higher than $u_\theta(d,x)$ for any incorrect class $d$.  Hence, unless the importance sample set ${\cal{S}}$ includes class $c$, then the normalisation approximation will miss this significant mass and the probability approximation
 
 $$
-\frac{u_\theta(x)}{\tilde{Z}_\theta(x)}
+\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}
 $$
 
 will be wildly inaccurate.  This is the source of the historically well-documented instabilities in training large-scale classifiers. 
@@ -90,8 +90,22 @@ will be wildly inaccurate.  This is the source of the historically well-document
 ## Making Importance Sampling work
 {:.no_toc}
 
-However, there is an easy fix for this -- simply ensure that ${\cal{S}}$ includes the correct class $c$.   This forms the basis for our paper [Complementary Sum Sampling for Likelihood Approximation in Large Scale Classification](http://web4.cs.ucl.ac.uk/staff/D.Barber/publications/AISTATS2017.pdf) which will appear in [AISTATS 2017](http://www.aistats.org/).
+However, there is an easy fix for this -- simply ensure that ${\cal{S}}$ includes the correct class $c$.   
 
-As we show, this simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
+{:.text-center img}
+![fixing IS]({{ site.urlimg }}/aistats17.png "fixing IS")
 
-We apply the method to learning word embeddings for a deep recurrent network, showing that learning is fast and stable. This is so simple and works so well that we use this in all our NLP deep learning training experiments.  
+On the left above we show for $C=10,000$ classes the ratio $u_\theta(c,x)/Z_\theta(x)$ on the $x$-axis against its approximation  $u_\theta(c,x)/\tilde{Z}_\theta(x)$ on the $y$-axis. Each dor represents a different randomly drawn set of $u$ values. Red, green and blue represent 10,20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line $y=x$.  Note the vertical scale -- these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability. 
+
+On the right above we show the same probability estimate but now simply also include the correct class in the set ${\cal{S}}$. The vertical scale is now sensible and the estimateed probabiliy is close to the true value. 
+
+
+We applyied this method to learning word embeddings for a deep recurrent network. Below we plot the log likelihood ($y$-axis) against the optimisation gradient ascent iteration ($x$-axis). As we see, standard Importance Sampling becomes unstable as learning progresses. However our simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
+
+{:.text-center img}
+![fixing IS]({{ site.urlimg }}/aistats17_2.png "fixing IS")
+
+ This is so simple and works so well that we use this in all our NLP deep learning training experiments.  
+
+This forms the basis for our paper [Complementary Sum Sampling for Likelihood Approximation in Large Scale Classification](http://web4.cs.ucl.ac.uk/staff/D.Barber/publications/AISTATS2017.pdf) which will appear in [AISTATS 2017](http://www.aistats.org/).
+
