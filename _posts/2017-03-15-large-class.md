@@ -72,19 +72,19 @@ $$
 Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}
 $$
 
-where $q$ is an importance distribution over all $C$ classes.  We can then form an approximation by sampling a small number $S$ of classes to form a sample set ${\cal{S}}$ from $q$ and using
+where $q$ is an importance distribution over all $C$ classes.  We can then form an approximation by sampling from $q$ a small number $S$ of classes to form a sample set ${\cal{S}}$ and using
 
 $$
 Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}
 $$
 
-The problem with this approach is that it results in a potentially catastrophic under-estimate of $Z_\theta(x)$.  If the classifier is working well, we want that $u_\theta(c,x)$ is much higher than $u_\theta(d,x)$ for any incorrect class $d$.  Hence, unless the importance sample sett ${\cal{S}}$ includse class $c$, then the normalisation approximation will miss this significant mass and the ratio in the probability approximation
+The problem with this approach is that it results in a potentially catastrophic under-estimate of $Z_\theta(x)$.  If the classifier is working well, we want that $u_\theta(c,x)$ is much higher than $u_\theta(d,x)$ for any incorrect class $d$.  Hence, unless the importance sample set ${\cal{S}}$ includes class $c$, then the normalisation approximation will miss this significant mass and the probability approximation
 
 $$
 \frac{u_\theta(x)}{\tilde{Z}_\theta(x)}
 $$
 
-will be wildly inaccurate.  This is the source of the well-obsevered instabilities in training large-scale classifiers. 
+will be wildly inaccurate.  This is the source of the historically well-documented instabilities in training large-scale classifiers. 
 
 
 ## Making Importance Sampling work
@@ -94,5 +94,4 @@ However, there is an easy fix for this -- simply ensure that ${\cal{S}}$ include
 
 As we show, this simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
 
-We apply the method to learning word embeddings for a deep recurrent network, showing that learning is fast and stable.
-
+We apply the method to learning word embeddings for a deep recurrent network, showing that learning is fast and stable. This is so simple and works so well that we use this in all our NLP deep learning training experiments.  
