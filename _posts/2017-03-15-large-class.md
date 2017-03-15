@@ -100,7 +100,9 @@ On the left above we show for $C=10,000$ classes the ratio $u_\theta(c,x)/Z_\the
 On the right above we show the same probability estimate but now simply also include the correct class in the set ${\cal{S}}$. The vertical scale is now sensible and the estimateed probabiliy is close to the true value. 
 
 
-We applyied this method to learning word embeddings for a deep recurrent network. Below we plot the log likelihood ($y$-axis) against the optimisation gradient ascent iteration ($x$-axis). As we see, standard Importance Sampling becomes unstable as learning progresses. However our simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
+## Deep Learning Recurrent NLP models
+
+We applied this method to learning word embeddings for a deep recurrent network. Below we plot the log likelihood ($y$-axis) against the optimisation gradient ascent iteration ($x$-axis). As we see, standard Importance Sampling becomes unstable as learning progresses. However our simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
 
 {:.text-center img}
 ![fixing IS]({{ site.urlimg }}/aistats17_2.png "fixing IS")
