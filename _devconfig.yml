@@ -6,14 +6,12 @@ permalink: /blog/:year/:month/:day/:title/
 relative_permalinks: false
 
 # Setup
-title:               David Barber
+title:               foo
 #tagline:             'foo's website
 description:         Foo's blog...
-url: https://dyndna.github.io/lanyon-plus
-#baseurl: "/lanyon-plus"
-baseurl: ""
-#urlimg: https://dyndna.github.io/lanyon-plus/images/
-urlimg: /images/
+url:                 http://localhost:4000
+baseurl:  ""
+urlimg: http://localhost:4000/images/
 markdown: kramdown
 paginate: 5
 paginate_path: "/blog/page:num"
@@ -35,17 +33,15 @@ exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "l
 
 # About/contact
 author:
-  name:              David Barber
+  name:              Foo Boo
   url:               https://twitter.com/abcd
-#  avatar:         foo.png
-  avatar:         DavidHeadshot.jpg
+  avatar:         foo.png
   #email:           
 
 # Owner/author information
 owner:
-  name:           David Barber
-#  avatar:         foo.png
-  avatar:         DavidHeadshot.jpg	
+  name:           Foo Boo
+  avatar:         foo.png
   #email:          
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:

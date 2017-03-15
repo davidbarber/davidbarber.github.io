@@ -1,17 +1,24 @@
-PATH
-  remote: .
-  specs:
-    jekyll-cayman-theme (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.2.8)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
     ffi (1.9.18)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     forwardable-extended (2.6.0)
-    jekyll (3.4.1)
+    gemoji (3.0.0)
+    html-pipeline (2.5.0)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
+    i18n (0.8.1)
+    jekyll (3.4.2)
       addressable (~> 2.4)
       colorator (~> 1.0)
       jekyll-sass-converter (~> 1.0)
@@ -22,42 +29,58 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-compose (0.5.0)
+      jekyll (>= 3.0.0)
     jekyll-paginate (1.1.0)
+    jekyll-redirect-from (0.12.1)
+      jekyll (~> 3.3)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
+    jekyll-sitemap (1.0.0)
+      jekyll (~> 3.3)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
+    jemoji (0.8.0)
+      activesupport (~> 4.0)
+      gemoji (~> 3.0)
+      html-pipeline (~> 2.2)
+      jekyll (>= 3.0)
     kramdown (1.13.2)
     liquid (3.0.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
-    multi_json (1.12.1)
+    mini_portile2 (2.1.0)
+    minitest (5.10.1)
+    nokogiri (1.7.0.1)
+      mini_portile2 (~> 2.1.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
-    pygments.rb (1.1.1)
-      multi_json (>= 1.0.0)
-    rake (10.5.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
+    thread_safe (0.3.6)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.12)
+  font-awesome-sass
   jekyll
-  jekyll-cayman-theme!
+  jekyll-compose
   jekyll-paginate
+  jekyll-redirect-from
+  jekyll-sitemap
+  jemoji
   kramdown
-  pygments.rb
-  rake (~> 10.0)
+  rouge
 
 BUNDLED WITH
    1.14.6
