@@ -7,6 +7,8 @@ description: "Machine Learning"
 
 ## Machine Learning 
 
+test1
+
 I'm fascinated about Artificial Intelligence and how to make computers smarter. We live in exciting times with rapid increases in data and compute resources. How can we use them to solve grand challenges in AI like
 
 * Understanding text, images and video
