@@ -19,7 +19,7 @@ I hope to post on this site some thoughts about machine learning.
 
 * At UCL I lead a team of around 10 PhD students on machine learning with an emphasis on methodological developments. 
 
-* I'm also Chief Scientific Officer at [reinfer.io](https://reinfer.io/) a startup that uses cutting edge natural language processing that powers next generation customer interaction and analytics.
+* I'm also Chief Scientific Officer at [reinfer.io](https://reinfer.io/) who develop next generation customer interaction and analytics engines.
 
 Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you might also be looking for [my BRML textbook]( http://www.cs.ucl.ac.uk/staff/d.barber/brml). 
 
