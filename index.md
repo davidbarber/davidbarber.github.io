@@ -7,16 +7,21 @@ description: "Machine Learning"
 
 ## Machine Learning 
 
-test1
 
 I'm fascinated about Artificial Intelligence and how to make computers smarter. We live in exciting times with rapid increases in data and compute resources. How can we use them to solve grand challenges in AI like
 
 * Understanding text, images and video
 * Trying to help us to reason about the world around us, like in digital assistants
 
-I hope to post here some thoughts about machine learning.
+I hope to post on this site some thoughts about machine learning.
 
-Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you might also be looking for [my BRML textbook]( http://www.cs.ucl.ac.uk/staff/d.barber/brml).
+---
+
+* At UCL I lead a team of around 10 PhD students at UCL on machine learning with an emphasis on methodological developments. 
+
+* I'm also Chief Scientific Officer at [reinfer.io](https://reinfer.io/) a startup that uses cutting edge natural language processing that powers next generation customer interaction and analytics.
+
+Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you might also be looking for [my BRML textbook]( http://www.cs.ucl.ac.uk/staff/d.barber/brml). 
 
 
 <a class="twitter-timeline" href="https://twitter.com/davidobarber">Tweets by davidobarber</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
