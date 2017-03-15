@@ -9,7 +9,8 @@ relative_permalinks: false
 title:               David Barber
 #tagline:             'foo's website
 description:         David's blog...
-url: https://dyndna.github.io/lanyon-plus
+#url: https://dyndna.github.io/lanyon-plus
+url: https://davidbarber.github.io
 #baseurl: "/lanyon-plus"
 baseurl: ""
 #urlimg: https://dyndna.github.io/lanyon-plus/images/
