@@ -13,7 +13,7 @@ url: https://dyndna.github.io/lanyon-plus
 #baseurl: "/lanyon-plus"
 baseurl: ""
 #urlimg: https://dyndna.github.io/lanyon-plus/images/
-urlimg: /images/
+urlimg: http://web4.cs.ucl.ac.uk/staff/D.Barber/images/
 markdown: kramdown
 paginate: 5
 paginate_path: "/blog/page:num"
@@ -38,6 +38,7 @@ author:
   name:              David Barber
   url:               https://twitter.com/davidobarber
 #  avatar:         foo.png
+#  avatar:         http://web4.cs.ucl.ac.uk/staff/D.Barber/images/DavidHeadshot.jpg
   avatar:         DavidHeadshot.jpg
   #email:           
 

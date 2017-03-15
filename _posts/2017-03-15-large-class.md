@@ -3,7 +3,7 @@ layout: post
 title: "Training with a large number of classes"
 date: "2017-03-15"
 slug: "large number of classes"
-description: "summary."
+description: "dealing with a large number of classes"
 category: 
   - views
   - featured
