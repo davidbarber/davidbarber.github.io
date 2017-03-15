@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Example content"
-date: "2013-01-01"
+date: "2017-01-01"
 slug: "example_content"
-description: "Example content from lanyon. If page description is more than 140 words, it will be shown as post summary on home page and blog index else post excerpt will be shown. Same rule is for html meta description: >140 words in description or first 50 words of posts will be shown as summary. Page excerpt supports markdown formatted summary."
+description: "summary."
 category: 
   - views
   - featured
