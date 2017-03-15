@@ -101,6 +101,7 @@ On the right above we show the same probability estimate but now simply also inc
 
 
 ## Deep Learning Recurrent NLP models
+{:.no_toc}
 
 We applied this method to learning word embeddings for a deep recurrent network. Below we plot the log likelihood ($y$-axis) against the optimisation gradient ascent iteration ($x$-axis). As we see, standard Importance Sampling becomes unstable as learning progresses. However our simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
 
