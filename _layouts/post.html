@@ -18,6 +18,8 @@ layout: default
       {% include meta_info.html %}
     {% endunless %}
   {{ content }}
+  {% include meta_info.html %}
+<!--{% include _share-page.html %}-->
   <hr>
   {% if page.tags contains 'R' %}
    {% include rblogger.html %}
@@ -26,7 +28,6 @@ layout: default
 <span class="post-date metafoot" itemprop="dateModified" content="{{ page.modified | date: "%Y-%m-%d" }}"><i class="fa fa-edit" title="Last updated"> {{ page.modified | date_to_string }}</i></span>{% endunless %}{% endif %}
   <span class="post-tags" itemprop="keywords" content="{{ page.tags | array_to_sentence_string }}">{% for tag in page.tags %}{% if forloop.first %}<i class="fa fa-tags" title="page tags"></i>{% endif %} <a href="{{site.url}}/tags/#{{ tag | cgi_escape }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</span>
     {% unless page.show_meta == false %}
-      {% include meta_info.html %}
     {% endunless %}
 </div>
 

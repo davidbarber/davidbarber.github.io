@@ -111,4 +111,3 @@ We applied this method to learning word embeddings for a deep recurrent network.
  This is so simple and works so well that we use this in all our NLP deep learning training experiments.  
 
 This forms the basis for our paper [Complementary Sum Sampling for Likelihood Approximation in Large Scale Classification](http://web4.cs.ucl.ac.uk/staff/D.Barber/publications/AISTATS2017.pdf) which will appear in [AISTATS 2017](http://www.aistats.org/).
-
