@@ -84,7 +84,7 @@ $$
 \frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}
 $$
 
-will be wildly inaccurat, see figure (a) below.  This is the source of the historically well-documented instabilities in training large-scale classifiers. 
+will be wildly inaccurate, see figure (a) below.  This is the source of the historically well-documented instabilities in training large-scale classifiers. 
 
 
 ## Making Importance Sampling work
