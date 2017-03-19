@@ -97,13 +97,23 @@ However, there is an easy fix for this -- simply ensure that ${\cal{S}}$ include
 
 On the left above we show for $C=10,000$ classes the ratio $u_\theta(c,x)/Z_\theta(x)$ on the $x$-axis against its approximation  $u_\theta(c,x)/\tilde{Z}_\theta(x)$ on the $y$-axis. Each dot represents a different randomly drawn set of $u$ values. Red, green and blue represent 10,20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line $y=x$.  Note the vertical scale -- these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability. 
 
-On the right above we show the same probability estimate but now simply also include the correct class in the set ${\cal{S}}$. The vertical scale is now sensible and the estimateed probabiliy is close to the true value. 
+On the right above we show the same probability estimate but now simply also include the correct class in the set ${\cal{S}}$. The vertical scale is now sensible and the estimated probabiliy is close to the true value. 
 
 
 ## Deep Learning Recurrent NLP models
 {:.no_toc}
 
-We applied this method to learning word embeddings for a deep recurrent network. Below we plot the log likelihood ($y$-axis) against the optimisation gradient ascent iteration ($x$-axis). As we see, standard Importance Sampling becomes unstable as learning progresses. However our simple modification stabilizes learning and is competitive against a range of alternatives including Noise Contrastive Estimation, Ranking approaches, Negative Sampling and BlackOut. 
+We applied this method to learning word embeddings for a deep
+recurrent network.  The training objective was standard maximum
+likelihood, but with the normalisation approximation above. Below we
+plot the exact log likelihood ($y$-axis) against the optimisation
+gradient ascent iteration ($x$-axis). We also plot the exact log
+likelihood for some alternative training training approaches. As we
+see, standard Importance Sampling becomes unstable as learning
+progresses. However our simple modification stabilizes learning and is
+competitive against a range of alternatives including Noise
+Contrastive Estimation, Ranking approaches, Negative Sampling and
+BlackOut.
 
 {:.text-center img}
 ![fixing IS]({{ site.urlimg }}/aistats17_2.png "fixing IS")
