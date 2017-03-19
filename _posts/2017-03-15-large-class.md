@@ -108,7 +108,7 @@ recurrent network.  The training objective was standard maximum
 likelihood, but with the normalisation approximation above. Below we
 plot the exact log likelihood ($y$-axis) against the optimisation
 gradient ascent iteration ($x$-axis). We also plot the exact log
-likelihood for some alternative training training approaches. As we
+likelihood for some alternative training approaches. As we
 see, standard Importance Sampling becomes unstable as learning
 progresses. However our simple modification stabilizes learning and is
 competitive against a range of alternatives including Noise
