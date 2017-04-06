@@ -47,7 +47,7 @@ In machine learning we often face the issue of a very large number of classes in
 
 ## Probabilistic Classification
 {:.no_toc}
-In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphon or in learning word embeddings).  For input $x$ and class label $c$, the probability of predicting class $c$ is
+In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input $x$ and class label $c$, the probability of predicting class $c$ is
 
 $$
 p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}
@@ -95,7 +95,7 @@ However, there is an easy fix for this -- simply ensure that ${\cal{S}}$ include
 {:.text-center img}
 ![fixing IS]({{ site.urlimg }}/aistats17.png "fixing IS")
 
-On the left above we show for $C=10,000$ classes the ratio $u_\theta(c,x)/Z_\theta(x)$ on the $x$-axis against its approximation  $u_\theta(c,x)/\tilde{Z}_\theta(x)$ on the $y$-axis. Each dot represents a different randomly drawn set of $u$ values. Red, green and blue represent 10,20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line $y=x$.  Note the vertical scale -- these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability. 
+On the left above we show for $C=10,000$ classes the ratio $u_\theta(c,x)/Z_\theta(x)$ on the $x$-axis against its approximation  $u_\theta(c,x)/\tilde{Z}_\theta(x)$ on the $y$-axis. Each dot represents a different randomly drawn set of $u$ values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line $y=x$.  Note the vertical scale -- these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability. 
 
 On the right above we show the same probability estimate but now simply also include the correct class in the set ${\cal{S}}$. The vertical scale is now sensible and the estimated probabiliy is close to the true value. 
 
