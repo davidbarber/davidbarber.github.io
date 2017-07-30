@@ -175,7 +175,7 @@ Note that, according to \ref{eq:recursion}, for transfer functions that contain 
 ### Convexity within a layer
 {:.no_toc}
 
-For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \ref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, except for a chosen layer $$\lambda$$, then the objective $E$ is convex with respect to the parameters $$W_\lambda$$ (as usual, away from nodes). Hence there can be no local maxima or saddle points within a layer.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
+For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \ref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, except for a chosen layer $$\lambda$$, then the objective $$E$$ is convex with respect to the parameters $$W_\lambda$$ (as usual, away from nodes). Hence there can be no local maxima or saddle points within a layer.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
 
 
 ### No differentiable local maxima 
