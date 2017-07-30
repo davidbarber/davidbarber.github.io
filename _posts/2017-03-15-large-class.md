@@ -53,7 +53,7 @@ $$
 p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}
 $$
 
-where $$u_\theta(c,x)$$ is some defined function with parameters $$\theta$$. For example, $$u_\theta(c,x)=\exp(w_c'x)$$, where $$w_c$$ is a parameter vector for class $c$ and $x$ is the vector input.  The normalising term is
+where $$u_\theta(c,x)$$ is some defined function with parameters $$\theta$$. For example, $$u_\theta(c,x)=\exp(w_c'x)$$, where $$w_c$$ is a parameter vector for class $$c$$ and $$x$$ is the vector input.  The normalising term is
 
 $$
 Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)
