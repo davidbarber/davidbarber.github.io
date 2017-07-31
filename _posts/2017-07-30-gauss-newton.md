@@ -197,7 +197,7 @@ whereas the image below depicts the kind of smooth local maxima that cannot happ
 ### Visualisation for a simple two layer net
 {:.no_toc}
 
-We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices $$W^1$$ and $$W^2$$.  Below we choose two fixed matrices $$U$$ and $$V$$ and parameterise the weight matrix $$W^1$$ as a function of two scalars $$u$$ and $$v$$, so that $$W^1(u,v)=uU + vV$$.  As we vary $$u$$ and $$v$$ we then plot the objective function $$E(u,v)$$, keeping all other parameters of the network fixed. Please see [Practical Gauss-Newton Optimisation for Deep Learning](http://proceedings.mlr.press/v70/botev17a.html) for higher resolution images. 
+We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices $$W^1$$ and $$W^2$$.  Below we choose two fixed matrices $$U$$ and $$V$$ and parameterise the weight matrix $$W^1$$ as a function of two scalars $$u$$ and $$v$$, so that $$W^1(u,v)=uU + vV$$.  As we vary $$u$$ and $$v$$ we then plot the objective function $$E(u,v)$$, keeping all other parameters of the network fixed. 
 
 As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.
 
