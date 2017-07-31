@@ -37,7 +37,7 @@ summaryfeed: false
 
 Did you know that feedforward Neural Nets (with piecewise linear transfer functions) have no smooth local maxima? 
 
-In our recent ICML paper [Practical Gauss-Newton Optimisation for Deep Learning](http://proceedings.mlr.press/v70/botev17a.html)) we discuss a second order method that can be applied successfully to acclerate training of Neural Networks. However, here I want to discuss some of the fairly straightforward, but perhaps interesting, insights into the geometry of the error surface that that work gives.
+In our recent ICML paper [Practical Gauss-Newton Optimisation for Deep Learning](http://proceedings.mlr.press/v70/botev17a.html)) we discuss a second order method that can be applied successfully to accelerate training of Neural Networks. However, here I want to discuss some of the fairly straightforward, but perhaps interesting, insights into the geometry of the error surface that that work gives.
 
 
 <!--more-->
@@ -45,6 +45,7 @@ In our recent ICML paper [Practical Gauss-Newton Optimisation for Deep Learning]
 * TOC
 {:toc}
 
+$$\newcommand{\br}[1]{\left(#1\right)}$$
 $$\newcommand{\sq}[1]{\left[#1\right]}$$
 $$\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}$$
 
@@ -52,7 +53,7 @@ $$\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}$$
 ## Feedforward Neural Networks
 {:.no_toc}
 
-In our description, a feedforward NN takes an input vector $$x$$ and produces a vector $$h_L$$ on the final $$L^{th}$$ layer. We write $$h_\lambda$$ to be the vector of pre-activation values for layer $$\lambda$$ and $$a_\lambda$$ to denote the vector of activation values after taking passing through the transfer function $$f_\lambda$$.
+In our description, a feedforward NN takes an input vector $$x$$ and produces a vector $$h_L$$ on the final $$L^{th}$$ layer. We write $$h_\lambda$$ to be the vector of pre-activation values for layer $$\lambda$$ and $$a_\lambda$$ to denote the vector of activation values after passing through the transfer function $$f_\lambda$$.
 
 
 Starting with setting $$a_0$$  to the input $$x$$, a feedforward NN is defined by the recursion
@@ -61,7 +62,7 @@ $$
 h_\lambda = W_\lambda a_{\lambda-1}
 $$
 
-where $$W_\lambda$$ is the weight matrix of layer $$\lambda$$ and the activation vector is given by 
+where $$W_\lambda$$ is the weight matrix of layer $$\lambda$$ (we use a sub or superscript $$\lambda$$ wherever most convenient) and the activation vector is given by 
 
 $$
 a_\lambda = f_\lambda(h_\lambda)
@@ -152,12 +153,12 @@ $$
 and
 
 $$
-D_\lambda = \text{diag}(f''_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda})
+D_\lambda = \text{diag}\br{f''_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda}}
 $$
 
 Here $$f'$$ is the first derivative of the transfer function and $$f''$$ is the second derivative. 
 
-The recursion is initialised with $${\cal{H}}_L$$ which depends on the objective $$E(h_L,y)$$ and is easily calculated for the usual loss functions. For example, for the square loss $$(y-h_L)^2/2$$ we have $${\cal{H}}_L=I$$, namely the identity matrix.
+The recursion is initialised with $${\cal{H}}_L$$ which depends on the objective $$E(h_L,y)$$ and is easily calculated for the usual loss functions. For example, for the square loss $$(y-h_L)^2/2$$ we have $${\cal{H}}_L=I$$, namely the identity matrix. We use this recursion in our [paper](http://proceedings.mlr.press/v70/botev17a.html) to build an approximate Gauss-Newton optimisation method.
 
 
 ## Consequences 
@@ -169,19 +170,28 @@ For a piecewise linear transfer function, apart from the `nodes' where the linea
 
 For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian $${\cal{H}}_L$$ is Positive Semi-Definite (PSD). 
 
-Note that, according to \ref{eq:recursion}, for transfer functions that contain zero gradient points $$f'(x)=0$$ then the Hessian $$H_\lambda$$ can have lower rank than $$H_{\lambda+1}$$, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic.
+Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points $$f'(x)=0$$ then the Hessian $$H_\lambda$$ can have lower rank than $$H_{\lambda+1}$$, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero $f'\neq 0$, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.
 
 
 ### Convexity within a layer
 {:.no_toc}
 
-For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \ref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, except for a chosen layer $$\lambda$$, then the objective $$E$$ is convex with respect to the parameters $$W_\lambda$$ (as usual, away from nodes). Hence there can be no local maxima or saddle points within a layer.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
+For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, except for a chosen layer $$\lambda$$, then the objective $$E$$ is convex with respect to the parameters $$W_\lambda$$ (as usual, away from nodes). Hence there can be no local maxima or saddle points within a layer.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
 
 
 ### No differentiable local maxima 
 {:.no_toc}
 
-The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues for the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. 
+The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima:
+
+
+{:.text-center img}
+![blogpost_canhappen]({{ site.urlimg }}/blogpost_canhappen.png "can happen")
+
+whereas the image below depicts the kind of smooth local maxima that cannot happen:
+
+{:.text-center img}
+![blogpost_canthappen]({{ site.urlimg }}/blogpost_canthappen.png "cannot happen")
 
 
 ### Visualisation for a simple two layer net
@@ -216,21 +226,6 @@ These results are part of a more detailed study of second order methods for opti
 
 
 <!--
-which is the same as equation $(\ref{eq:grad})$ above on interchanging $x$ with $\theta$.  A simple optimisation strategy is then gradient descent
-
-$$
-\theta^{new} = \theta - \eta U'(\theta)
-$$
-
-where $U'(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
-
-
-This shows that the "evolutionary approach" is in fact a special case of VO (using an isotropic Gaussian). A potential benefit of this insight is that the upper bound gives a principled way to adjust parameters, such as not just the mean $\theta$ but also the variance $\sigma^2$. 
-
-
-
-
-## Approximating the Gradient by Sampling
 {:.no_toc}
 -->
 
