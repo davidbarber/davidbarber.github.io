@@ -170,7 +170,7 @@ For a piecewise linear transfer function, apart from the `nodes' where the linea
 
 For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian $${\cal{H}}_L$$ is Positive Semi-Definite (PSD). 
 
-Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points $$f'(x)=0$$ then the Hessian $$H_\lambda$$ can have lower rank than $$H_{\lambda+1}$$, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero $f'\neq 0$, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.
+Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points $$f'(x)=0$$ then the Hessian $$H_\lambda$$ can have lower rank than $$H_{\lambda+1}$$, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is neverzero $$f'\neq 0$$, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.
 
 
 ### Convexity within a layer
