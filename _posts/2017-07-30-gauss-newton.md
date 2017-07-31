@@ -173,10 +173,10 @@ For many common loss functions, such as squared loss (for regression) and cross 
 Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points $$f'(x)=0$$ then the Hessian $$H_\lambda$$ can have lower rank than $$H_{\lambda+1}$$, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero $$f'\neq 0$$, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.
 
 
-### Convexity within a layer
+### Structure within a layer
 {:.no_toc}
 
-For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, except for a chosen layer $$\lambda$$, then the objective $$E$$ is convex with respect to the parameters $$W_\lambda$$ (as usual, away from nodes). Hence there can be no local maxima or saddle points within a layer.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
+For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_\lambda$$ for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian $$H_\lambda$$ for each layer $$\lambda$$ is PSD.  This means that, if we fix all the parameters of the network, and vary only  the parameters in a layer $$W^\lambda$$, then the objective $$E$$ can exhibit no local maxima or saddle points.  Note that this does not imply that the objective is convex everywhere with respect to $$W_\lambda$$ as the surface will contain ridges corresponding to the non-differentiable nodes. 
 
 
 ### No differentiable local maxima 
