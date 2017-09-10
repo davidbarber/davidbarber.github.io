@@ -140,7 +140,7 @@ $$
 We show in [Practical Gauss-Newton Optimisation for Deep Learning](http://proceedings.mlr.press/v70/botev17a.html) that one can derive a simple backwards recursion for this pre-activation Hessian (the recursion is for a single datapoint -- the total Hessian $$\bar{H}$$ is a sum over the individual datapoint Hessians):
 
 $$
-{\cal{H}}_\lambda = B_\lambda W_\lambda^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
+{\cal{H}}_\lambda = B_\lambda W_{\lambda+1}^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
 \tag{2}\label{eq:recursion}
 $$
 
