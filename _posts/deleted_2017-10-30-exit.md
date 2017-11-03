@@ -135,13 +135,16 @@ This formula is closely related to one found in Gelly and Silver[^OnlineOffline]
 The additional term denotes apprentice  helping guide the search to more promising moves, with $$\hat{\pi}$$ being the suggestion of the apprentice, and $$n(s,a)$$ the number of visits currently made by the search algorithm through state $$s$$ and taking action $$a$$; $$w$$ is an empirically chosen weighting factor that balances the slow thinking of the expert with the fast intuition of the apprentice. 
 
 
-To generate the data for traiing the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. In the online version we consider instead a buffer of the most recent moves generted and we also consider an exponentially weighted version that favours more recent moves generated (since the more recent moves will be be from a stronger player).  A comparison of these different approaches is given below in which we compare the strength of the learned algorithm against a measure of training time.  We also show a more classical approach, known as REINFORCE (see [NIPSexitpaper]() for details)
+To generate the data for traiing the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. In the online version we consider instead a buffer of the most recent moves generted and we also consider an exponentially weighted version that favours more recent moves generated (since the more recent moves will be be from a stronger player).  A comparison of these different approaches is given below in which we compare the strength (the [Elo Rating](https://en.wikipedia.org/wiki/Elo_rating_system) of the learned algorithm against a measure of training time.  We also show a more classical approach, known as REINFORCE (see [NIPSexitpaper]() for details)
 
 {:.text-center img}
 ![results]({{ site.urlimg }}/BatchOnline.png "results")
 
 
 What the figure shows is that the ExIt approach is considerably more effective than classical approaches.  Indeed, after training, our apprentice-aided MCTS player outperforms the best known machine Hex player, namely MOHEX, beating it in 71% of games played on a $$9\times 9$$ board. 
+
+
+Need some plots of game play
 
 
 ### Relation to AlphaGo Zero
