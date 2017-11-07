@@ -6,15 +6,12 @@ permalink: /blog/:year/:month/:day/:title/
 relative_permalinks: false
 
 # Setup
-title:               David Barber
+title:               foo
 #tagline:             'foo's website
-description:         David's blog...
-#url: https://dyndna.github.io/lanyon-plus
-url: https://davidbarber.github.io
-#baseurl: "/lanyon-plus"
-baseurl: ""
-#urlimg: https://dyndna.github.io/lanyon-plus/images/
-urlimg: http://web4.cs.ucl.ac.uk/staff/D.Barber/images/
+description:         Foo's blog...
+url: https://dyndna.github.io/lanyon-plus
+baseurl: "/lanyon-plus"
+urlimg: https://dyndna.github.io/lanyon-plus/images/
 markdown: kramdown
 paginate: 5
 paginate_path: "/blog/page:num"
@@ -36,34 +33,31 @@ exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "l
 
 # About/contact
 author:
-  name:              David Barber
-  url:               https://twitter.com/davidobarber
-#  avatar:         foo.png
-#  avatar:         http://web4.cs.ucl.ac.uk/staff/D.Barber/images/DavidHeadshot.jpg
-  avatar:         DavidHeadshot.jpg
+  name:              Foo Boo
+  url:               https://twitter.com/abcd
+  avatar:         foo.png
   #email:           
 
 # Owner/author information
 owner:
-  name:           David Barber
-#  avatar:         foo.png
-  avatar:         DavidHeadshot.jpg	
+  name:           Foo Boo
+  avatar:         foo.png
   #email:          
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        davidobarber
+  twitter:        abcd
   facebook:       
-  github:         davidbarber
+  github:         xyz123abc
   stackexchange:  
-  linkedin:       https://www.linkedin.com/in/david-barber-301a789a/
+  linkedin:       https://www.linkedin.com/in/foo
   instagram:      
   flickr:
   tumblr:  
-  #google_plus:    https://plus.google.com/+davidobarber
+  google_plus:    https://plus.google.com/+foo
   # orcid and google scholar IDs are different than standard username.
-  #orcid: xyz123abc
-  #gscholar: xyz123abc
+  orcid: xyz123abc
+  gscholar: xyz123abc
 
 ## sidebar links:
 # For external links add external: true
@@ -78,16 +72,19 @@ links:
     url: /tags/
   - title: <i class="fa fa-archive"></i> Archive
     url: /archive/
+  - title: <i class="iconside iconm-wordpress"></i> Old Blog
+    url: https://foo.wordpress.com
+    external: true
   - title: <i class="iconside iconm-envelop"></i> Contact
     url: /contact/
   - title: <i class="iconside iconm-twitter"></i> Twitter
-    url: https://twitter.com/davidobarber
+    url: https://twitter.com/abcd
     external: true
   - title: <i class="iconside iconm-feed2"></i> Feed
     url: /feed.xml
 
 # Google Custom Search:
-#google_search:
+#google_search: xyz123abc
 
 # Twitter stream widget:
 # Replace xyz123abc with your twitter widget id from https://twitter.com/settings/widgets
@@ -100,6 +97,6 @@ disqus_shortname: foo
 #google_analytics:   xyz123abc
 
 #### For dummy website only - remove if you wish ####
-#github_repo: https://github.com/dyndna/lanyon-plus
-#version: 1.1.0
+github_repo: https://github.com/dyndna/lanyon-plus
+version: 1.1.0
 ## END ##
