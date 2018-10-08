@@ -18,8 +18,9 @@ layout: default
 
 {% assign authorCount = page.authors | size %}
 {% if authorCount == 0 %}
+    No author
 {% elsif authorCount == 1 %}
-Written by
+
     {{ page.authors | first }}
 {% else %}
 Written by
