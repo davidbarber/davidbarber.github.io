@@ -1,0 +1,28 @@
+callback([
+
+  {
+    "text": "Training with a large number of classes",
+    "href": "http://localhost:4000/blog/2017/03/15/large-number-of-classes/"
+  } ,
+
+  {
+    "text": "Evolutionary Optimization as a Variational Method",
+    "href": "http://localhost:4000/blog/2017/04/03/variational-optimisation/"
+  } ,
+
+  {
+    "text": "Some modest insights into the error surface of Neural Nets",
+    "href": "http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/"
+  } ,
+
+  {
+    "text": "Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search",
+    "href": "http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"
+  } ,
+
+  {
+    "text": "Generative Neural Machine Translation",
+    "href": "http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/"
+  } 
+
+])

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!--  
+====================================================
+Homepage: http://localhost:4000
+Credits: http://localhost:4000/disclosure
+====================================================
+-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<!-- link href="http://gmpg.org/xfn/11" rel="profile" -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+  
+    Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search &middot; David Barber
+  
+</title>
+
+<!-- Search Engine Optimization -->
+<meta name="description" content="Reinforcement Learning">
+<meta name="keywords" content="deep learning, Monte Carlo Tree Search, Hex, reinforcement learning, AlphaGo, Dual Process Theory">
+
+
+
+
+<!-- Twitter Cards -->
+  
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@davidobarber">
+<meta name="twitter:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+
+<meta name="twitter:title" content="Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search">
+<meta name="twitter:description" content="Reinforcement Learning">
+<meta name="twitter:creator" content="@davidobarber">
+<!-- End Twitter Cards -->
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search">
+<meta property="og:description" content="Reinforcement Learning">
+<meta property="og:url" content="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/">
+<meta property="og:site_name" content="David Barber">
+
+<meta property="og:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+<meta property="fb:app_id" content="1003108156422006">
+<meta property="fb:admins" content="817465054">
+
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400|Tangerine|Inconsolata">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/public/css/iconmoon.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/public/css/style.min.css">
+
+<!-- Add-on CSS to override system-wide defaults -->
+<link rel="stylesheet" href="/public/css/addon.css">
+
+<!-- CSS override per page -->
+
+
+<!-- Java scripts -->
+<!-- <script src="/public/js/jquery.min.js"></script> -->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/icons/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/icons/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/icons/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/icons/apple-touch-icon-144x144-precomposed.png">
+<!-- 180x180 (precomposed) for iPhone 6 -->
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000/images/icons/apple-touch-icon-180x180.png">
+<!-- 192x192 (precomposed) for Android -->
+<link rel="icon" type="image/png" sizes="192x192"  href="http://localhost:4000/images/icons/android-icon-192x192.png">
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/">
+
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/feed.xml">
+
+
+  <!--Load Mathjax-->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+
+
+
+</head>
+
+
+<!--<body class="theme-base-08">-->
+<body>
+
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">-->
+<!--e<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" >
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+<!--   <div class="sidebar-item">
+    <p>David's blog...</p>
+  </div> -->
+
+  <nav class="sidebar-nav">
+    <!-- a class="sidebar-nav-item" href="/">Home</a-->
+
+    
+
+    
+
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/"><i class="iconside iconm-home"></i> Home</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/about/"><i class="iconside iconm-user"></i> About</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/blog/"><i class="iconside iconm-quill"></i> Blog</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/tags/"><i class="fa fa-tags"></i> Tags</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/archive/"><i class="fa fa-archive"></i> Archive</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/contact/"><i class="iconside iconm-envelop"></i> Contact</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="https://twitter.com/davidobarber" target="_blank"><i class="iconside iconm-twitter"></i> Twitter</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/feed.xml"><i class="iconside iconm-feed2"></i> Feed</a>
+                
+         
+
+    <a class="sidebar-nav-item" href=" http://www.cs.ucl.ac.uk/staff/d.barber/">UCL page</a>
+
+  </nav>
+
+<hr class="gh">
+
+
+
+
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">David Barber</a>
+            <!-- <small></small> -->
+            <div class="headicons">
+              <small><a href="http://localhost:4000/about" rel="me" title="About"><i class="iconm iconm-user"></i></a></small>
+              <small><a href="http://localhost:4000/blog" rel="me" title="Blog"><i class="iconm iconm-quill"></i></a></small>
+              <small><a href="http://localhost:4000/contact" rel="me" title="Contact"><i class="iconm iconm-envelop"></i></a></small> 
+            </div>           
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <!-- Look the author details up from the site config.
+
+-->
+
+<!-- Output author details if some exist.
+
+
+<p>
+  -->
+
+
+
+
+</p>    
+
+<div class="post">
+  <h1 itemprop="name" class="post-title">Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search</h1>
+  <span class="post-date" itemprop="datePublished" content="2017-11-07"><i class="fa fa-calendar"
+  title="Date published"> <a class="permalink"
+  href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/" itemprop="url" title="Permanent link to this post">07 Nov 2017</a> </i></span>
+  
+  <span class="post-tags" itemprop="keywords" content="deep learning, Monte Carlo Tree Search, Hex, reinforcement learning, AlphaGo, and Dual Process Theory"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#Monte+Carlo+Tree+Search" title="Pages tagged Monte Carlo Tree Search" rel="tag">Monte Carlo Tree Search</a> &bull;  <a href="http://localhost:4000/tags/#Hex" title="Pages tagged Hex" rel="tag">Hex</a> &bull;  <a href="http://localhost:4000/tags/#reinforcement+learning" title="Pages tagged reinforcement learning" rel="tag">reinforcement learning</a> &bull;  <a href="http://localhost:4000/tags/#AlphaGo" title="Pages tagged AlphaGo" rel="tag">AlphaGo</a> &bull;  <a href="http://localhost:4000/tags/#Dual+Process+Theory" title="Pages tagged Dual Process Theory" rel="tag">Dual Process Theory</a></span>
+    
+      <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search&amp;url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+    
+  <p>Training powerful reinforcement learning agents from scratch by Thinking Fast and Slow.</p>
+
+<!--more-->
+
+
+<h2 class="no_toc" id="dual-process-theory">Dual Process Theory</h2>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Dual_process_theory">dual process theory</a> human reasoning consists of two different kinds of thinking.
+System 1 is a fast, unconscious and automatic mode of thought, also known as intuition. System 2 is a slow, conscious, explicit and rule-based mode of reasoning that is believed to be an evolutionarily recent process.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//behaviour-design-predicting-irrational-decisions-12-638.jpg" alt="dual process" title="dual process theory" />
+<a href="https://www.slideshare.net/AshDonaldson/behaviour-design-predicting-irrational-decisions">image credit</a></p>
+
+<p>When learning to complete a challenging planning task, such as playing a board game, humans exploit both processes: strong intuitions allow for more effective analytic reasoning by rapidly selecting interesting lines of play for consideration. Repeated deep study gradually improves intuitions. Stronger intuitions feedback to stronger analysis, creating a closed learning loop. In other words, humans learn by thinking fast and slow<sup id="fnref:TFAS"><a href="#fn:TFAS" class="footnote">1</a></sup>.</p>
+
+<h3 class="no_toc" id="whats-wrong-with-current-deep-rl">What’s wrong with current Deep RL?</h3>
+
+<p>In current Deep Reinforcement Learning (RL) algorithms such as Policy Gradients<sup id="fnref:Williams"><a href="#fn:Williams" class="footnote">2</a></sup> and DQN<sup id="fnref:DQN"><a href="#fn:DQN" class="footnote">3</a></sup>, neural networks make action selections with no lookahead; this is analogous to System 1. Unlike human intuition, their training does not benefit from a ‘System 2’ to suggest strong policies.</p>
+
+<p>A criticism of some AI algorithms such as AlphaGo<sup id="fnref:AlphaGo"><a href="#fn:AlphaGo" class="footnote">4</a></sup> is that they use a database of human expert play<sup id="fnref:AlphaGo:1"><a href="#fn:AlphaGo" class="footnote">4</a></sup>.   In the initial phase of training the RL agent mimics the moves of a human expert – only after this initial phase does it begin to learn potentially more powerful super-human play. This is somewhat unsatisfactory since the resulting algorithm may be heavily biased toward a human style of playing, blind to potentially more powerful lines of play. Whilst, in areas such as game playing, it may be natural to assume that there will be a database of human expert play available, in other settings in which we wish to train an AI machine, no such database may be available. Therefore, showing how to train a state-of-the-art board game player <em>ex nihilo</em> is a major challenge for AI.</p>
+
+<h2 class="no_toc" id="expert-iteration-exit">Expert Iteration (ExIt)</h2>
+
+<p>Expert Iteration<sup id="fnref:NIPSpaper"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> (ExIt) is a general framework for learning that we introduced in May 2017 and can result in powerful AI machines, without needing to mimic human strategies.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//ExIt.png" alt="ExIt" title="Expert Iteration" /></p>
+
+<p>ExIt can be viewed as an extension of Imitation Learning (IL) methods to domains where the best known experts are unable to achieve satisfactory performance. In standard IL an apprentice is trained to imitate the behaviour of an expert.  In ExIt, we extend this to an iterative learning process.  Between each iteration, we perform an Expert Improvement step, where we bootstrap the (fast) apprentice policy to increase the performance of the (comparatively slow) expert.</p>
+
+<p>To give some intuition around this idea, consider playing a board game such as chess. Here the expert is analogous to chess player playing on slow time controls (having lots of time to decide on her move), and the apprentice is playing on blitz time controls (having little time to decide which move to make).</p>
+
+<p>During independent study, the player considers multiple possible moves from a position, thinking deeply (and slowly) about each possible move. She discovers which moves are successful and which are not in this position. When she encounters a similar board state in the future, her study will have given her an intuitive understanding of what moves are likely to be good, allowing her to play well, even under blitz time controls. Her intuition is imitating the strong play she calculated via deep thinking. Humans do not become become excellent chess players by only playing blitz matches, deeper study is an essential part of the learning process.</p>
+
+<p>For an AI game playing machine, this imitation could be achieved, for example, by fitting a neural network to the move made by another `machine expert’ from a game position.  The apprentice learns a fast policy that is able to quickly imitate the play of the expert on the moves seen so far.  A key point here is that, assuming that there is structure underlying the game,  Machine Learning enables the apprentice to generalise their intuition to take quick decisions on positions not previously seen. That is, the apprentice isn’t just a creating a look-up-table of moves made by the human from a fixed database of positions. The neural network thus plays the role of both generalising and imitating the play of the expert.</p>
+
+<p>Now that the apprentice has learned a fast imitation of the expert (on the moves seen so far), it can try to be of use to the expert. When the expert now wishes to make a move, a small set of candidate moves are suggested very quickly by the apprentice which the expert can then consider in depth, possibly also guided during this slow thought process by other quick insights from the apprentice.</p>
+
+<p>At the end of this phase, the expert will have made a set of apprentice-aided moves, with each move being typically  much stronger than either the apprentice or expert could have made alone.</p>
+
+<p>The above process now repeats, with the apprentice retraining on the moves suggested by the expert. This completes one full iteration of the learning phase and we iterate this process until the apprentice converges.</p>
+
+<p>From a Dual Process perspective, the Imitation Learning step is analogous to a human improving their intuition for the task by studying example problems, while the Expert Improvement step is analogous to a human using their improved intuition to guide future analysis.</p>
+
+<h3 class="no_toc" id="tree-search-and-deep-learning">Tree Search and Deep Learning</h3>
+
+<p>Exit is a general strategy for learning and the apprentice and expert can be specified in a variety of ways. In board games Monte Carlo Tree Search (MCTS) is a strong playing strategy<sup id="fnref:MCTS"><a href="#fn:MCTS" class="footnote">6</a></sup> and is a natural candidate to play the role of the expert.  Deep Learning has been shown to be a successful method to imitate the play of strong players<sup id="fnref:AlphaGo:2"><a href="#fn:AlphaGo" class="footnote">4</a></sup> which we therefore use as the apprentice.</p>
+
+<p>At the Expert Improvement phase we use the apprentice to direct the MCTS algorithm toward promising moves, effectively reducing the game tree search breadth and depth. In this way, we bootstrap the knowledge acquired by Imitation Learning back into the planning algorithm.</p>
+
+<h3 class="no_toc" id="the-board-game-hex">The board game Hex</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Hex_(board_game)">Hex</a> is a classic two-player board game played on a <script type="math/tex">n\times n</script> hexagonal grid. The players, denoted by colours black and white, alternate placing stones of their colour in empty cells. The black player wins if there is a sequence of adjacent black stones connecting the North edge of the board to the South edge. White wins if he achieves a sequence of adjacent white stones running from the West edge to the East edge.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//hexBW.png" alt="hex" title="Hex" />
+<em>An example game on a <script type="math/tex">5\times 5</script> Hex board.</em></p>
+
+<p>The above represents play on a <script type="math/tex">5\times 5</script> board, with white winning (reproduced from <sup id="fnref:MOHEX"><a href="#fn:MOHEX" class="footnote">7</a></sup>).   Hex has deep strategy, making it challenging for machines to play and its large action set and connection-based rules means it shares similar challenges for AI to Go. Compared to Go, however, the rules are simpler and there can be no draws.</p>
+
+<p>Because the rules of Hex are so simple, the game is relatively amenable to mathematical analysis (compared for example to Go) and the current best machine player MoHex<sup id="fnref:MOHEX:1"><a href="#fn:MOHEX" class="footnote">7</a></sup> uses a combination of MCTS and smart mathematical insights.  MoHex has won every Computer Games Olympiad Hex tournament since 2009. It is noteworthy, that MoHex uses a rollout policy trained on datasets of human expert play.</p>
+
+<p>We wanted to see if we can use our ExIt training strategy to learn an AI player than can outperform MoHex, without using any game-specific knowledge or human example play (beside the rules of the game). To do this, our expert is a MCTS player that is guided by the apprentice neural network.  Our neural network is a form of deep convolutional network with two output policies – ones for black play and one for white (see <sup id="fnref:NIPSpaper:1"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> for details).</p>
+
+<p>Expert Improvement is achieved by using the modified MCTS formula<sup id="fnref:OnlineOffline"><a href="#fn:OnlineOffline" class="footnote">8</a></sup></p>
+
+<script type="math/tex; mode=display">UCT(s,a) + w \frac{\hat{\pi}(a|s)}{n(s,a)+1}
+\tag{1}\label{eq:uct}</script>
+
+<p>Here <script type="math/tex">s</script> is the state of the Hex board, <script type="math/tex">a</script> is a possible action (i.e. move) from <script type="math/tex">s</script>. The term <script type="math/tex">UCT(s,a)</script> represents the classical Upper Confidence Bound for Trees<sup id="fnref:MCTS:1"><a href="#fn:MCTS" class="footnote">6</a></sup> used in MCTS. The additional term helps the neural network apprentice  guide the search to more promising moves. In this term <script type="math/tex">\hat{\pi}</script> is the policy (suggested relative strength of each possible action <script type="math/tex">a</script> from the board state <script type="math/tex">s</script>) of the apprentice and <script type="math/tex">n(s,a)</script> the number of visits currently made by the search algorithm through state <script type="math/tex">s</script> and taking action <script type="math/tex">a</script>; <script type="math/tex">w</script> is an empirically chosen weighting factor that balances the slow thinking of the expert with the fast intuition of the apprentice. Through the additional term, the neural network apprentice guides the search to more promising moves, and rejects weak moves more quickly.</p>
+
+<p>To generate the data for training the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. We also consider a online version in which we instead keep a running buffer of the most recent moves generated; we further consider an online version that retains all data, but with exponentially more data from more recent experts (which correspond to the strongest play).  A comparison of these different approaches is given below in which we compare the strength (measured in terms of the <a href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO</a> score) of each learned policy network against a measure of training time.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//BatchOnline.png" alt="results" title="results" /></p>
+
+<p>We also show the result of using a more traditional Reinforcement Learning approach in which a policy <script type="math/tex">\hat{\pi}(a\vert s)</script> is learned only through self play (i.e. no MCTS). This is essentially the method used within AlphaGo<sup id="fnref:AlphaGo:3"><a href="#fn:AlphaGo" class="footnote">4</a></sup> to train their policy network. The figure shows that the ExIt training approach is considerably more effective than more classical approaches. It is worth noting that in this example training has not yet fully converged and the apprentice would be expected to improve in ability further given additional training time.</p>
+
+<p>In our paper<sup id="fnref:NIPSpaper:2"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> we include an additional mechanism to improve play, namely a value network <script type="math/tex">V^{\hat{\pi}}(s)</script> that approximates the probability that the apprentice (alone) would win the game from position <script type="math/tex">s</script>. Both the policy and value network are then used in combination to help guide the final apprentice-aided MCTS player. The policy network and value networks guide the final MCTS player using an equation similar  \eqref{eq:uct}, but modified to include the apprentice’s value of the state <script type="math/tex">s</script> (see <sup id="fnref:NIPSpaper:3"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> for details).</p>
+
+<p>Our final MCTS player outperforms the best known machine Hex player, MoHex, beating it in 75% of games played on a <script type="math/tex">9\times 9</script> board. These results are even more remarkable considering that training has not fully converged. A couple of examples of game-play of our ExIt trained player versus the state-of-the-art MoHex player are shown below<sup id="fnref:RyanHayward"><a href="#fn:RyanHayward" class="footnote">9</a></sup>. We contrast the play of each algorithm when started at the same position. See the paper<sup id="fnref:NIPSpaper:4"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> for more examples.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game1.png" alt="results" title="game1" />
+<em>ExIt (black) versus MoHex (white)</em></p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game2.png" alt="results" title="game2" />
+<em>MoHex (black) versus ExIt (white)</em></p>
+
+<h3 class="no_toc" id="why-does-exit-work-so-well">Why does ExIt work so well?</h3>
+
+<p>Imitation Learning is generally appreciated to be easier than Reinforcement Learning, and this partly explains why ExIt is more successful than model-free methods like REINFORCE.</p>
+
+<p>Furthermore, for MCTS to recommend a move, it must be unable to find any weakness with its search. Effectively, therefore, a move played by MCTS is good against a large selection of possible opponents. In contrast, in regular self play (in which the opponent move is made by the network playing as the opposite colour), moves are recommended if they beat only this single opponent under consideration. This is, we believe, a key insight into why ExIt works well (when using MCTS as the expert) — the apprentice effectively learns to play well against many opponents.</p>
+
+<h3 class="no_toc" id="relation-to-alphago-zero">Relation to AlphaGo Zero</h3>
+
+<p>AlphaGo Zero<sup id="fnref:AlphaGoZero"><a href="#fn:AlphaGoZero" class="footnote">10</a></sup> (developed independently of our work<sup id="fnref:AXpaper"><a href="#fn:AXpaper" class="footnote">11</a></sup>) also implements an ExIt style algorithm and shows that it is possible to achieve state-of-the-art performance in Go without the use of human expert play. A detailed comparison of the approaches is given in our paper<sup id="fnref:NIPSpaper:5"><a href="#fn:NIPSpaper" class="footnote">5</a></sup>.</p>
+
+<h2 class="no_toc" id="summary">Summary</h2>
+
+<p>Expert Iteration is a new Reinforcement Learning algorithm, motivated by the dual process theory of human thought. ExIt decomposes the Reinforcement Learning into the separate subproblems of generalisation and planning. Planning is performed on a case-by-case basis, and only once a strong plan is found is the resultant policy generalised. This allows for long-term planning and results in faster learning and state-of-the-art final performance, particularly for challenging problems. This training strategy is powerful enough to learn state-of-the-art board game AI players without requiring any examples of expert human play.</p>
+
+<h3 class="no_toc" id="references">References</h3>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:TFAS">
+      <p>D. Kahneman. Thinking, Fast and Slow. Macmillan, 2011. <a href="#fnref:TFAS" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:Williams">
+      <p>R. J. Williams. Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning. Machine Learning, 8(3-4):229–256, 1992. <a href="#fnref:Williams" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:DQN">
+      <p>V. Mnih et al. Human-Level Control through Deep Reinforcement Learning. Nature, 518(7540):529–533, 2015. <a href="#fnref:DQN" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:AlphaGo">
+      <p>D. Silver et al. Mastering the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489, 2016. <a href="#fnref:AlphaGo" class="reversefootnote">&#8617;</a> <a href="#fnref:AlphaGo:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:AlphaGo:2" class="reversefootnote">&#8617;<sup>3</sup></a> <a href="#fnref:AlphaGo:3" class="reversefootnote">&#8617;<sup>4</sup></a></p>
+    </li>
+    <li id="fn:NIPSpaper">
+      <p>T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search, Neural Information Processing Systems (NIPS 2017). In Press. <a href="#fnref:NIPSpaper" class="reversefootnote">&#8617;</a> <a href="#fnref:NIPSpaper:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:NIPSpaper:2" class="reversefootnote">&#8617;<sup>3</sup></a> <a href="#fnref:NIPSpaper:3" class="reversefootnote">&#8617;<sup>4</sup></a> <a href="#fnref:NIPSpaper:4" class="reversefootnote">&#8617;<sup>5</sup></a> <a href="#fnref:NIPSpaper:5" class="reversefootnote">&#8617;<sup>6</sup></a></p>
+    </li>
+    <li id="fn:MCTS">
+      <p>L. Kocsis and C. Szepesvári. Bandit Based Monte-Carlo Planning. In European Conference on Machine Learning, pages 282–293. Springer, 2006. <a href="#fnref:MCTS" class="reversefootnote">&#8617;</a> <a href="#fnref:MCTS:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:MOHEX">
+      <p>S.-C. Huang, B. Arneson, R. Hayward, M. Müller, and J. Pawlewicz. MoHex 2.0: A Pattern-Based MCTS Hex Player. In International Conference on Computers and Games, pages 60–71. Springer, 2013. <a href="#fnref:MOHEX" class="reversefootnote">&#8617;</a> <a href="#fnref:MOHEX:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:OnlineOffline">
+      <p>S. Gelly and D. Silver. Combining Online and Offline Knowledge in UCT. In Proceedings of the 24th International Conference on Machine learning, pages 273–280. ACM, 2007. <a href="#fnref:OnlineOffline" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:RyanHayward">
+      <p>Thanks to Ryan Hayward for providing a tool to draw Hex positions. <a href="#fnref:RyanHayward" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:AlphaGoZero">
+      <p>D. Silver,  et al.  Mastering the game of Go without human knowledge. Nature 550:354–359, October 2017. <a href="#fnref:AlphaGoZero" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:AXpaper">
+      <p>T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search. <a href="http://arxiv.org/abs/1705.08439">arXiv CoRR:abs/1705.08439</a>, May 2017. <a href="#fnref:AXpaper" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search&amp;url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+<!--
+
+<div class="share-page">
+    Share this on &rarr;
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+</div>
+-->
+  <hr>
+  
+  <span class="post-date metafoot" itemprop="datePublished" content="2017-11-07"><i class="fa fa-calendar" title="Date published"> <a class="permalink" href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/" itemprop="url" title="Permanent link to this post">07 Nov 2017</a> </i></span>
+  <span class="post-tags" itemprop="keywords" content="deep learning, Monte Carlo Tree Search, Hex, reinforcement learning, AlphaGo, and Dual Process Theory"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#Monte+Carlo+Tree+Search" title="Pages tagged Monte Carlo Tree Search" rel="tag">Monte Carlo Tree Search</a> &bull;  <a href="http://localhost:4000/tags/#Hex" title="Pages tagged Hex" rel="tag">Hex</a> &bull;  <a href="http://localhost:4000/tags/#reinforcement+learning" title="Pages tagged reinforcement learning" rel="tag">reinforcement learning</a> &bull;  <a href="http://localhost:4000/tags/#AlphaGo" title="Pages tagged AlphaGo" rel="tag">AlphaGo</a> &bull;  <a href="http://localhost:4000/tags/#Dual+Process+Theory" title="Pages tagged Dual Process Theory" rel="tag">Dual Process Theory</a></span>
+    
+</div>
+
+
+  <div class="printMsg">
+<table>
+  <thead>
+    <tr>
+      <th><i class="fa fa-twitter">@davidobarber</i></th>
+      <th>QR code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i class="fa fa-anchor"> http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/</i><br /><i class="fa fa-calendar"> 07-Nov-17</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
+      <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/&choe=UTF-8" alt="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/" /></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="page-break"></div>
+<div class="related">
+  <h2>Related Posts</h2>
+<ul>
+  
+     
+       
+        
+          <li><a href="http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/">Generative Neural Machine Translation</a><br /></li>
+          
+    
+  
+    
+  
+     
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/">Some modest insights into the error surface of Neural Nets</a><br /></li>
+          
+    
+  
+     
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/04/03/variational-optimisation/">Evolutionary Optimization as a Variational Method</a><br /></li>
+          
+    
+  
+     
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/">Training with a large number of classes</a><br /></li>
+          
+    
+  
+</ul>
+</div>
+
+<div class="prevnext">
+  
+    <a class="prevnext-item older" href="http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/" title="Some modest insights into the error surface of Neural Nets">Older</a>
+  
+  
+    <a class="prevnext-item older" href="http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/" title="Generative Neural Machine Translation">Newer</a>
+  
+</div>
+
+<div class="page-break"></div>
+
+<div id="disqus_thread"></div><!-- /#disqus_thread -->
+
+
+
+                    <div class="custom-footer" style="display: block;">
+            <div class="footer-social-icons">
+            <ul class="social-icons">
+                      
+            </ul>
+            </div>
+            </div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    
+
+<!-- gist embed -->
+
+  <!--Gist embed -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+
+
+
+<!-- disqus comments -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidbarber'; 
+    var disqus_identifier = 'http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</body>
+</html>

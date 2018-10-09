@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!--  
+====================================================
+Homepage: http://localhost:4000
+Credits: http://localhost:4000/disclosure
+====================================================
+-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<!-- link href="http://gmpg.org/xfn/11" rel="profile" -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+  
+    Evolutionary Optimization as a Variational Method &middot; David Barber
+  
+</title>
+
+<!-- Search Engine Optimization -->
+<meta name="description" content="Evolutionary Optimisation">
+<meta name="keywords" content="variational optimization, deep learning, optimisation, evolutionary computing, reinforcement learning">
+
+
+
+
+<!-- Twitter Cards -->
+  
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@davidobarber">
+<meta name="twitter:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+
+<meta name="twitter:title" content="Evolutionary Optimization as a Variational Method">
+<meta name="twitter:description" content="Evolutionary Optimisation">
+<meta name="twitter:creator" content="@davidobarber">
+<!-- End Twitter Cards -->
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Evolutionary Optimization as a Variational Method">
+<meta property="og:description" content="Evolutionary Optimisation">
+<meta property="og:url" content="http://localhost:4000/blog/2017/04/03/variational-optimisation/">
+<meta property="og:site_name" content="David Barber">
+
+<meta property="og:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+<meta property="fb:app_id" content="1003108156422006">
+<meta property="fb:admins" content="817465054">
+
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400|Tangerine|Inconsolata">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/public/css/iconmoon.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/public/css/style.min.css">
+
+<!-- Add-on CSS to override system-wide defaults -->
+<link rel="stylesheet" href="/public/css/addon.css">
+
+<!-- CSS override per page -->
+
+
+<!-- Java scripts -->
+<!-- <script src="/public/js/jquery.min.js"></script> -->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/icons/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/icons/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/icons/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/icons/apple-touch-icon-144x144-precomposed.png">
+<!-- 180x180 (precomposed) for iPhone 6 -->
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000/images/icons/apple-touch-icon-180x180.png">
+<!-- 192x192 (precomposed) for Android -->
+<link rel="icon" type="image/png" sizes="192x192"  href="http://localhost:4000/images/icons/android-icon-192x192.png">
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2017/04/03/variational-optimisation/">
+
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/feed.xml">
+
+
+  <!--Load Mathjax-->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+
+
+
+</head>
+
+
+<!--<body class="theme-base-08">-->
+<body>
+
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">-->
+<!--e<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" >
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+<!--   <div class="sidebar-item">
+    <p>David's blog...</p>
+  </div> -->
+
+  <nav class="sidebar-nav">
+    <!-- a class="sidebar-nav-item" href="/">Home</a-->
+
+    
+
+    
+
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/"><i class="iconside iconm-home"></i> Home</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/about/"><i class="iconside iconm-user"></i> About</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/blog/"><i class="iconside iconm-quill"></i> Blog</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/tags/"><i class="fa fa-tags"></i> Tags</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/archive/"><i class="fa fa-archive"></i> Archive</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/contact/"><i class="iconside iconm-envelop"></i> Contact</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="https://twitter.com/davidobarber" target="_blank"><i class="iconside iconm-twitter"></i> Twitter</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/feed.xml"><i class="iconside iconm-feed2"></i> Feed</a>
+                
+         
+
+    <a class="sidebar-nav-item" href=" http://www.cs.ucl.ac.uk/staff/d.barber/">UCL page</a>
+
+  </nav>
+
+<hr class="gh">
+
+
+
+
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">David Barber</a>
+            <!-- <small></small> -->
+            <div class="headicons">
+              <small><a href="http://localhost:4000/about" rel="me" title="About"><i class="iconm iconm-user"></i></a></small>
+              <small><a href="http://localhost:4000/blog" rel="me" title="Blog"><i class="iconm iconm-quill"></i></a></small>
+              <small><a href="http://localhost:4000/contact" rel="me" title="Contact"><i class="iconm iconm-envelop"></i></a></small> 
+            </div>           
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <!-- Look the author details up from the site config.
+
+-->
+
+<!-- Output author details if some exist.
+
+
+<p>
+  -->
+
+
+
+
+</p>    
+
+<div class="post">
+  <h1 itemprop="name" class="post-title">Evolutionary Optimization as a Variational Method</h1>
+  <span class="post-date" itemprop="datePublished" content="2017-04-03"><i class="fa fa-calendar"
+  title="Date published"> <a class="permalink"
+  href="http://localhost:4000/blog/2017/04/03/variational-optimisation/" itemprop="url" title="Permanent link to this post">03 Apr 2017</a> </i></span>
+  
+  <span class="post-tags" itemprop="keywords" content="variational optimization, deep learning, optimisation, evolutionary computing, and reinforcement learning"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#variational+optimization" title="Pages tagged variational optimization" rel="tag">variational optimization</a> &bull;  <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#optimisation" title="Pages tagged optimisation" rel="tag">optimisation</a> &bull;  <a href="http://localhost:4000/tags/#evolutionary+computing" title="Pages tagged evolutionary computing" rel="tag">evolutionary computing</a> &bull;  <a href="http://localhost:4000/tags/#reinforcement+learning" title="Pages tagged reinforcement learning" rel="tag">reinforcement learning</a></span>
+    
+      <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Evolutionary Optimization as a Variational Method&amp;url=http://localhost:4000/blog/2017/04/03/variational-optimisation/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/04/03/variational-optimisation/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+    
+  <p>A simple connection between evolutionary optimisation and variational methods.</p>
+
+<!--more-->
+
+
+<p><script type="math/tex">\newcommand{\sq}[1]{\left[#1\right]}</script>
+<script type="math/tex">\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}</script></p>
+
+<h2 class="no_toc" id="variational-optimization">Variational Optimization</h2>
+
+<p><a href="https://arxiv.org/abs/1212.4507">Variational Optimization</a> is based on the bound</p>
+
+<script type="math/tex; mode=display">min_x f(x) \leq \ave{f(x)}_{p(x|\theta)}</script>
+
+<p>That is, the minimum of a collection of values is always less than their average.  By defining</p>
+
+<script type="math/tex; mode=display">U(\theta) = \ave{f(x)}_{p(x|\theta)}</script>
+
+<p>instead of minimising <script type="math/tex">f</script> with respect to <script type="math/tex">x</script>, we can minimise the upper bound <script type="math/tex">U</script> with respect to <script type="math/tex">\theta</script>. Provided the distribution <script type="math/tex">p(x\vert \theta)</script> is rich enough, this will be equivalent to minimising <script type="math/tex">f(x)</script>.</p>
+
+<p>The gradient of the upper bound is then given by</p>
+
+<script type="math/tex; mode=display">\frac{\partial U}{\partial \theta} = \ave{f(x)\frac{\partial}{\partial \theta}\log p(x|\theta)}_{p(x|\theta)}</script>
+
+<p>which is reminiscent of the REINFORCE (Williams 1992) policy gradient approach in Reinforcement Learning.</p>
+
+<p>In  the original VO <a href="https://arxiv.org/abs/1212.4507">report</a>  and <a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2013-65.pdf">paper</a> this idea was used to form a differentiable upper bound for non-differentiable <script type="math/tex">f</script> and also discrete <script type="math/tex">x</script>.</p>
+
+<h3 class="no_toc" id="sampling-approximation">Sampling Approximation</h3>
+
+<p>There is an interesting connection to evolutionary computation (more precisely <a href="https://arxiv.org/abs/1212.4507">Estimation of Distribution Algorithms</a>) if the expectation with respect to <script type="math/tex">p(x\vert \theta)</script> is performed using sampling. In this case one can draw samples <script type="math/tex">x^1,\ldots,x^S</script> from <script type="math/tex">p(x\vert\theta)</script> and form an unbiased approximation to the upper bound gradient</p>
+
+<script type="math/tex; mode=display">\frac{\partial U}{\partial \theta} \approx \frac{1}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)</script>
+
+<p>The “evolutionary” connection is that the samples <script type="math/tex">x^s</script> can be thought of as “particles” or “swarm members” that are used to estimate the gradient. Based on the approximate gradient, simple Stochastic Gradient Descent (SGD) would then perform the parameter update (for learning rate <script type="math/tex">\eta</script>)</p>
+
+<script type="math/tex; mode=display">\theta^{new} = \theta-\frac{\eta}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)</script>
+
+<p>The “swarm” then disperses and draws a new set of members from <script type="math/tex">p(x\vert \theta^{new})</script> and the process repeats.</p>
+
+<p>A special case of VO is to use a Gaussian so that (for the scalar case – the multivariate setting follows similarly)</p>
+
+<script type="math/tex; mode=display">U(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx</script>
+
+<p>Then the gradient of this upper bound is given by</p>
+
+<script type="math/tex; mode=display">U'(\theta) = \frac{1}{\sigma^2}\ave{(x-\theta)f(x)}_{x\sim N(\theta,\sigma^2)}</script>
+
+<p>By changing variable <script type="math/tex">\epsilon=x-\theta</script> this is equivalent to</p>
+
+<script type="math/tex; mode=display">U'(\theta) = \frac{1}{\sigma^2}\ave{\epsilon f(\theta+\epsilon)}_{\epsilon \sim N(0,\sigma^2)}
+\label{eq:grad}\tag{1}</script>
+
+<p>Fixing <script type="math/tex">\sigma=5</script> and using <script type="math/tex">S=10</script> samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate <script type="math/tex">\eta=0.1</script>) of <script type="math/tex">\theta</script> based on Stochastic VO and compare this to the underlying function <script type="math/tex">f(x)</script> (which in this case is a simple quadratic).  Note that we only plot below the parameter <script type="math/tex">\theta</script> trajectory (each red dot represents a parameter <script type="math/tex">\theta</script>, with the initial parameter in the bottom right) and not the samples from <script type="math/tex">p(x\vert \theta)</script>.  As we see, despite the noisy gradient estimate, the parameter values <script type="math/tex">\theta</script> move toward the minimum of the objective <script type="math/tex">f(x)</script>.  The matlab code is <a href="https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284">available</a> if you’d like to play with this.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dss5.png" alt="fixing sigma5" title="fixed sigma 5" /></p>
+
+<p>One can also consider the bound as a function of both the mean <script type="math/tex">\theta</script> and variance <script type="math/tex">\sigma^2</script>:</p>
+
+<script type="math/tex; mode=display">U(\theta,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx</script>
+
+<p>and minimise the bound with respect to both <script type="math/tex">\theta</script> and <script type="math/tex">\sigma^2</script> (which we will parameterise using <script type="math/tex">\sigma^2=e^\beta</script> to ensure a positive variance). More generally, one can consider parameterising the Gaussian covariance matrix for example using factor analysis and minimsing the bound with respect to the factor loadings.</p>
+
+<p>Using a Gaussian with covariance <script type="math/tex">e^\beta I</script> and performing gradient descent on both <script type="math/tex">\beta</script> and <script type="math/tex">\theta</script>, for the same objective function, learning rate <script type="math/tex">\eta=0.1</script>  and initial <script type="math/tex">\sigma=5</script>, we obtain the trajectory below for <script type="math/tex">\theta</script></p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//Vo2Dssgrad.png" alt="learning sigma5" title="learned sigma 5" /></p>
+
+<p>As we can see, by learning <script type="math/tex">\sigma</script>, the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation <script type="math/tex">\sigma</script> is given below, showing how the variance reduces as we home in on the optimum.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dsdtraj.png" alt="learning sigma traj 5" title="learned sigma traj 5" /></p>
+
+<p>In the context of more general optimisation problems (such as in deep learning and reinforcement learning), VO is potentially interesting since the sampling process can be distributed across different machines.</p>
+
+<h2 class="no_toc" id="gradient-approximation-by-gaussian-perturbation">Gradient Approximation by Gaussian Perturbation</h2>
+
+<!--
+which is the same as equation $(\ref{eq:grad})$ above on interchanging $x$ with $\theta$.  A simple optimisation strategy is then gradient descent
+
+$$
+\theta^{new} = \theta - \eta U'(\theta)
+$$
+
+where $U'(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
+
+
+This shows that the "evolutionary approach" is in fact a special case of VO (using an isotropic Gaussian). A potential benefit of this insight is that the upper bound gives a principled way to adjust parameters, such as not just the mean $\theta$ but also the variance $\sigma^2$. 
+
+
+
+
+## Approximating the Gradient by Sampling
+{:.no_toc}
+-->
+
+<p>Ferenc Huszar‏ has a nice post <a href="http://www.inference.vc/evolutionary-strategies-embarrassingly-parallelizable-optimization/">Evolution Strategies: Almost Embarrassingly Parallel Optimization</a> summarising recent work by Salimans etal on <a href="https://arxiv.org/abs/1703.03864">Evolution Strategies as a Scalable Alternative to Reinforcement Learning</a>.</p>
+
+<p>The aim is to minimise a function <script type="math/tex">f(x)</script> by using gradient based approaches, without explicitly calculating the gradient. The first observation is that the gradient can be approximated by considering the Taylor expansion</p>
+
+<script type="math/tex; mode=display">f(x+\epsilon) = f(x)+\epsilon f'(x) + \frac{\epsilon^2}{2} f''(x) + O(\epsilon^3)</script>
+
+<p>Multiplying both sides by <script type="math/tex">\epsilon</script></p>
+
+<script type="math/tex; mode=display">\epsilon f(x+\epsilon) = \epsilon f(x)+\epsilon^2 f'(x) +\frac{\epsilon^3}{2}f''(x)+ O(\epsilon^4)</script>
+
+<p>Finally, taking the expectation with respect to <script type="math/tex">\epsilon</script> drawn from a Gaussian distribution with zero mean and variance <script type="math/tex">\sigma^2</script> we have</p>
+
+<script type="math/tex; mode=display">\ave{\epsilon f(x+\epsilon)} = \sigma^2 f'(x) + O(\epsilon^4)</script>
+
+<p>Hence, we have the approximation</p>
+
+<script type="math/tex; mode=display">f'(x) \approx \frac{1}{\sigma^2}\ave{\epsilon f(x+\epsilon)}
+\label{eq:grad2}\tag{2}</script>
+
+<p>Based on the above discussion of VO, and comparing equations (1) and (2) we see that this Gaussian perturbation approach is related to VO in which we use a Gaussian <script type="math/tex">p(x\vert \theta)</script>, with the understanding that in the VO case the optimisation is over <script type="math/tex">\theta</script> rather than <script type="math/tex">x</script>.  An advantage of the VO approach, however, is that it provides a principled way to adjust parameters such as the variance <script type="math/tex">\sigma^2</script> (based on minimising the upper bound).</p>
+
+<p>Whilst this was derived for the scalar setting, the vector derivative is obtained by applying the same method, where the <script type="math/tex">\epsilon</script> vector is drawn from the zero mean multivariate Gaussian with covariance <script type="math/tex">\sigma^2 I</script> for identity matrix <script type="math/tex">I</script>.</p>
+
+<h2 class="no_toc" id="efficient-communication">Efficient Communication</h2>
+
+<p>A key insight in <a href="https://arxiv.org/abs/1703.03864">Evolution Strategies as a Scalable Alternative to Reinforcement Learning</a> is that the sampling process can be distributed across multiple machines, <script type="math/tex">i\in\{1,\ldots,S\}</script> so that</p>
+
+<script type="math/tex; mode=display">f'(x) \approx \frac{1}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}</script>
+
+<p>where <script type="math/tex">\epsilon^i</script> is a vector sample and <script type="math/tex">i</script> is the sample index. Each machine <script type="math/tex">i</script> can then calculate <script type="math/tex">f(x+\epsilon^i)</script>. The Stochastic Gradient parameter update with learning rate <script type="math/tex">\eta</script> is</p>
+
+<script type="math/tex; mode=display">x^{new} = x - \frac{\eta}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}</script>
+
+<p>Provided each machine <script type="math/tex">i</script> also knows the random seed used to generate the <script type="math/tex">\epsilon^j</script> of each other machine, it therefore knows what all the <script type="math/tex">\epsilon^j</script> are (by sampling according to the known seeds) and can thus calculate <script type="math/tex">x^{new}</script> based on only the <script type="math/tex">S</script> scalar values calculated by each machine. The basic point here is that, thanks to seed sharing, there is no requirement to send the vectors <script type="math/tex">\epsilon^i</script> between the machines (only the scalar values <script type="math/tex">f(x+\epsilon^i)</script> need be sent), keeping the transmission costs very low.</p>
+
+<p>Based on the insight that the <a href="https://arxiv.org/abs/1703.03864">Parallel Gaussian Perturbation</a> approach is a special case of VO, it would be natural to apply VO using seed sharing to efficiently parallelise the sampling. This has the benefit that other parameters such as the variance can also be efficiently communicated, potentially significantly speeding up convergence.</p>
+
+<!--
+One can view this as an "evolutionary" optimisation approach in which a collection of particles $\epsilon^1,\ldots,\epsilon^S$ is created at each iteration of Stochastic Gradient Descent.
+
+
+where $U'(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
+
+
+This shows that the "evolutionary approach" is in fact a special case of VO (using an isotropic Gaussian). A potential benefit of this insight is that the upper bound gives a principled way to adjust parameters, such as not just the mean $\theta$ but also the variance $\sigma^2$. 
+-->
+
+
+  <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Evolutionary Optimization as a Variational Method&amp;url=http://localhost:4000/blog/2017/04/03/variational-optimisation/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/04/03/variational-optimisation/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/04/03/variational-optimisation/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+<!--
+
+<div class="share-page">
+    Share this on &rarr;
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/blog/2017/04/03/variational-optimisation/" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+</div>
+-->
+  <hr>
+  
+  <span class="post-date metafoot" itemprop="datePublished" content="2017-04-03"><i class="fa fa-calendar" title="Date published"> <a class="permalink" href="http://localhost:4000/blog/2017/04/03/variational-optimisation/" itemprop="url" title="Permanent link to this post">03 Apr 2017</a> </i></span>
+  <span class="post-tags" itemprop="keywords" content="variational optimization, deep learning, optimisation, evolutionary computing, and reinforcement learning"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#variational+optimization" title="Pages tagged variational optimization" rel="tag">variational optimization</a> &bull;  <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#optimisation" title="Pages tagged optimisation" rel="tag">optimisation</a> &bull;  <a href="http://localhost:4000/tags/#evolutionary+computing" title="Pages tagged evolutionary computing" rel="tag">evolutionary computing</a> &bull;  <a href="http://localhost:4000/tags/#reinforcement+learning" title="Pages tagged reinforcement learning" rel="tag">reinforcement learning</a></span>
+    
+</div>
+
+
+  <div class="printMsg">
+<table>
+  <thead>
+    <tr>
+      <th><i class="fa fa-twitter">@davidobarber</i></th>
+      <th>QR code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i class="fa fa-anchor"> http://localhost:4000/blog/2017/04/03/variational-optimisation/</i><br /><i class="fa fa-calendar"> 03-Apr-17</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
+      <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost:4000/blog/2017/04/03/variational-optimisation/&choe=UTF-8" alt="http://localhost:4000/blog/2017/04/03/variational-optimisation/" /></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="page-break"></div>
+<div class="related">
+  <h2>Related Posts</h2>
+<ul>
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/">Generative Neural Machine Translation</a><br /></li>
+          
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/">Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search</a><br /></li>
+          
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/">Some modest insights into the error surface of Neural Nets</a><br /></li>
+          
+    
+  
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/">Training with a large number of classes</a><br /></li>
+          
+    
+  
+</ul>
+</div>
+
+<div class="prevnext">
+  
+    <a class="prevnext-item older" href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/" title="Training with a large number of classes">Older</a>
+  
+  
+    <a class="prevnext-item older" href="http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/" title="Some modest insights into the error surface of Neural Nets">Newer</a>
+  
+</div>
+
+<div class="page-break"></div>
+
+<div id="disqus_thread"></div><!-- /#disqus_thread -->
+
+
+
+                    <div class="custom-footer" style="display: block;">
+            <div class="footer-social-icons">
+            <ul class="social-icons">
+                      
+            </ul>
+            </div>
+            </div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    
+
+<!-- gist embed -->
+
+  <!--Gist embed -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+
+
+
+<!-- disqus comments -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidbarber'; 
+    var disqus_identifier = 'http://localhost:4000/blog/2017/04/03/variational-optimisation/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</body>
+</html>

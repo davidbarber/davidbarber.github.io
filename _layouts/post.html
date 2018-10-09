@@ -2,6 +2,39 @@
 layout: default
 ---
 
+<!-- Look the author details up from the site config.
+{% assign authors = site.data.authors[page.author] %}
+-->
+
+<!-- Output author details if some exist.
+{% if author %}
+    <span>
+        Written by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a>
+    </span>
+    {% endif %}
+
+<p>
+  -->
+
+{% assign authorCount = page.authors | size %}
+{% if authorCount == 0 %}
+{% elsif authorCount == 1 %}
+Written by
+    {{ page.authors | first }}
+{% else %}
+Written by
+    {% for author in page.authors %}
+        {% if forloop.first %}
+{{ author }}
+        {% elsif forloop.last %}
+            and {{ author }}
+        {% else %}
+            , {{ author }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</p>    
+
 <div class="post">
   <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
   <span class="post-date" itemprop="datePublished" content="{{

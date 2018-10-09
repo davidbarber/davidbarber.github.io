@@ -1,0 +1,12 @@
+/* TEAM */
+Primary Contact: David Barber
+Site: http://localhost:4000/about/
+Twitter: https://twitter.com/davidobarber
+
+/* THANKS */
+Design Contributors: http://localhost:4000/disclosure/
+
+/* SITE */
+Last Updated: 2018/10/09
+Standards: HTML5, CSS3
+Software: Sublime Text, Chrome, Jekyll, Git, Sass

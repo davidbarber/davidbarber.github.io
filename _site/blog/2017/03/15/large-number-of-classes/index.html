@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<!--  
+====================================================
+Homepage: http://localhost:4000
+Credits: http://localhost:4000/disclosure
+====================================================
+-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<!-- link href="http://gmpg.org/xfn/11" rel="profile" -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<!-- Enable responsiveness on mobile devices-->
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>
+  
+    Training with a large number of classes &middot; David Barber
+  
+</title>
+
+<!-- Search Engine Optimization -->
+<meta name="description" content="dealing with a large number of classes">
+<meta name="keywords" content="large scale classification, deep learning, natural language modelling, word embeddings, importance sampling">
+
+
+
+
+<!-- Twitter Cards -->
+  
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@davidobarber">
+<meta name="twitter:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+
+<meta name="twitter:title" content="Training with a large number of classes">
+<meta name="twitter:description" content="dealing with a large number of classes">
+<meta name="twitter:creator" content="@davidobarber">
+<!-- End Twitter Cards -->
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Training with a large number of classes">
+<meta property="og:description" content="dealing with a large number of classes">
+<meta property="og:url" content="http://localhost:4000/blog/2017/03/15/large-number-of-classes/">
+<meta property="og:site_name" content="David Barber">
+
+<meta property="og:image" content="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/sitelogo.png">
+
+<meta property="fb:app_id" content="1003108156422006">
+<meta property="fb:admins" content="817465054">
+
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400|Tangerine|Inconsolata">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/public/css/iconmoon.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/public/css/style.min.css">
+
+<!-- Add-on CSS to override system-wide defaults -->
+<link rel="stylesheet" href="/public/css/addon.css">
+
+<!-- CSS override per page -->
+
+
+<!-- Java scripts -->
+<!-- <script src="/public/js/jquery.min.js"></script> -->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/icons/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/icons/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/icons/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/icons/apple-touch-icon-144x144-precomposed.png">
+<!-- 180x180 (precomposed) for iPhone 6 -->
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="http://localhost:4000/images/icons/apple-touch-icon-180x180.png">
+<!-- 192x192 (precomposed) for Android -->
+<link rel="icon" type="image/png" sizes="192x192"  href="http://localhost:4000/images/icons/android-icon-192x192.png">
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/">
+
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/feed.xml">
+
+
+  <!--Load Mathjax-->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+        MathJax.Hub.Config({
+            config: ["MMLorHTML.js"],
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX"],
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: false
+            },
+            TeX: {
+                TagSide: "right",
+                TagIndent: ".8em",
+                MultLineWidth: "85%",
+                equationNumbers: {
+                   autoNumber: "AMS",
+                },
+                unicode: {
+                   fonts: "STIXGeneral,'Arial Unicode MS'" 
+                }
+            },
+            showProcessingMessages: false
+        });
+    </script>
+
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+
+
+
+</head>
+
+
+<!--<body class="theme-base-08">-->
+<body>
+
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">-->
+<!--e<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" >
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+<!--   <div class="sidebar-item">
+    <p>David's blog...</p>
+  </div> -->
+
+  <nav class="sidebar-nav">
+    <!-- a class="sidebar-nav-item" href="/">Home</a-->
+
+    
+
+    
+
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/"><i class="iconside iconm-home"></i> Home</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/about/"><i class="iconside iconm-user"></i> About</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/blog/"><i class="iconside iconm-quill"></i> Blog</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/tags/"><i class="fa fa-tags"></i> Tags</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/archive/"><i class="fa fa-archive"></i> Archive</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/contact/"><i class="iconside iconm-envelop"></i> Contact</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="https://twitter.com/davidobarber" target="_blank"><i class="iconside iconm-twitter"></i> Twitter</a>
+                
+    
+            
+                    <a class="sidebar-nav-item" href="http://localhost:4000/feed.xml"><i class="iconside iconm-feed2"></i> Feed</a>
+                
+         
+
+    <a class="sidebar-nav-item" href=" http://www.cs.ucl.ac.uk/staff/d.barber/">UCL page</a>
+
+  </nav>
+
+<hr class="gh">
+
+
+
+
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">David Barber</a>
+            <!-- <small></small> -->
+            <div class="headicons">
+              <small><a href="http://localhost:4000/about" rel="me" title="About"><i class="iconm iconm-user"></i></a></small>
+              <small><a href="http://localhost:4000/blog" rel="me" title="Blog"><i class="iconm iconm-quill"></i></a></small>
+              <small><a href="http://localhost:4000/contact" rel="me" title="Contact"><i class="iconm iconm-envelop"></i></a></small> 
+            </div>           
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <!-- Look the author details up from the site config.
+
+-->
+
+<!-- Output author details if some exist.
+
+
+<p>
+  -->
+
+
+
+
+</p>    
+
+<div class="post">
+  <h1 itemprop="name" class="post-title">Training with a large number of classes</h1>
+  <span class="post-date" itemprop="datePublished" content="2017-03-15"><i class="fa fa-calendar"
+  title="Date published"> <a class="permalink"
+  href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/" itemprop="url" title="Permanent link to this post">15 Mar 2017</a> </i></span>
+  
+  <span class="post-tags" itemprop="keywords" content="large scale classification, deep learning, natural language modelling, word embeddings, and importance sampling"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#large+scale+classification" title="Pages tagged large scale classification" rel="tag">large scale classification</a> &bull;  <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#natural+language+modelling" title="Pages tagged natural language modelling" rel="tag">natural language modelling</a> &bull;  <a href="http://localhost:4000/tags/#word+embeddings" title="Pages tagged word embeddings" rel="tag">word embeddings</a> &bull;  <a href="http://localhost:4000/tags/#importance+sampling" title="Pages tagged importance sampling" rel="tag">importance sampling</a></span>
+    
+      <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Training with a large number of classes&amp;url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+    
+  <p>In machine learning we often face the issue of a very large number of classes in a classification problem. This causes a bottleneck in the computation. There’s though a simple and effective way to deal with this.</p>
+
+<!--more-->
+
+
+<h2 class="no_toc" id="probabilistic-classification">Probabilistic Classification</h2>
+<p>In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input <script type="math/tex">x</script> and class label <script type="math/tex">c</script>, the probability of predicting class <script type="math/tex">c</script> is</p>
+
+<script type="math/tex; mode=display">p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}</script>
+
+<p>where <script type="math/tex">u_\theta(c,x)</script> is some defined function with parameters <script type="math/tex">\theta</script>. For example, <script type="math/tex">u_\theta(c,x)=\exp(w_c'x)</script>, where <script type="math/tex">w_c</script> is a parameter vector for class <script type="math/tex">c</script> and <script type="math/tex">x</script> is the vector input.  The normalising term is</p>
+
+<script type="math/tex; mode=display">Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)</script>
+
+<p>The task is then to adjust the parameters <script type="math/tex">\theta</script> to maximise the probability of the correct class for each of the training points.</p>
+
+<p>However, if there are <script type="math/tex">C=100,000</script> words in the dictionary, this means calculating the normalisation <script type="math/tex">Z</script> for each datapoint is going to be expensive.  There have been a variety of approaches suggested over the years to make computationally efficient approximations, many based on importance sampling.</p>
+
+<h2 class="no_toc" id="why-plain-importance-sampling-doesnt-work">Why plain Importance Sampling doesn’t work</h2>
+
+<p>A standard approach to approximating <script type="math/tex">Z_\theta(x)</script> is to use</p>
+
+<script type="math/tex; mode=display">Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}</script>
+
+<p>where <script type="math/tex">q</script> is an importance distribution over all <script type="math/tex">C</script> classes.  We can then form an approximation by sampling from <script type="math/tex">q</script> a small number <script type="math/tex">S</script> of classes to form a sample bag <script type="math/tex">{\cal{S}}</script> and using</p>
+
+<script type="math/tex; mode=display">Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}</script>
+
+<p>The problem with this approach is that it results in a potentially catastrophic under-estimate of <script type="math/tex">Z_\theta(x)</script>.  If the classifier is working well, we want that <script type="math/tex">u_\theta(c,x)</script> is much higher than <script type="math/tex">u_\theta(d,x)</script> for any incorrect class <script type="math/tex">d</script>.  Hence, unless the importance sample bag <script type="math/tex">{\cal{S}}</script> includes class <script type="math/tex">c</script>, then the normalisation approximation will miss this significant mass and the probability approximation</p>
+
+<script type="math/tex; mode=display">\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}</script>
+
+<p>will be wildly inaccurate, see figure (a) below.  This is the source of the historically well-documented instabilities in training large-scale classifiers.</p>
+
+<h2 class="no_toc" id="making-importance-sampling-work">Making Importance Sampling work</h2>
+
+<p>However, there is an easy fix for this – simply ensure that <script type="math/tex">{\cal{S}}</script> includes the correct class <script type="math/tex">c</script>.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//aistats17.png" alt="fixing IS" title="fixing IS" /></p>
+
+<p>On the left above we show for <script type="math/tex">C=10,000</script> classes the ratio <script type="math/tex">u_\theta(c,x)/Z_\theta(x)</script> on the <script type="math/tex">x</script>-axis against its approximation  <script type="math/tex">u_\theta(c,x)/\tilde{Z}_\theta(x)</script> on the <script type="math/tex">y</script>-axis. Each dot represents a different randomly drawn set of <script type="math/tex">u</script> values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line <script type="math/tex">y=x</script>.  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.</p>
+
+<p>On the right above we show the same probability estimate but now simply also include the correct class in the set <script type="math/tex">{\cal{S}}</script>. The vertical scale is now sensible and the estimated probabiliy is close to the true value.</p>
+
+<h2 class="no_toc" id="deep-learning-recurrent-nlp-models">Deep Learning Recurrent NLP models</h2>
+
+<p>We applied this method to learning word embeddings for a deep
+recurrent network.  The training objective was standard maximum
+likelihood, but with the normalisation approximation above. Below we
+plot the exact log likelihood (<script type="math/tex">y</script>-axis) against the optimisation
+gradient ascent iteration (<script type="math/tex">x</script>-axis). We also plot the exact log
+likelihood for some alternative training approaches. As we
+see, standard Importance Sampling becomes unstable as learning
+progresses. However our simple modification stabilizes learning and is
+competitive against a range of alternatives including Noise
+Contrastive Estimation, Ranking approaches, Negative Sampling and
+BlackOut.</p>
+
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//aistats17_2.png" alt="fixing IS" title="fixing IS" /></p>
+
+<p>This is so simple and works so well that we use this in all our NLP deep learning training experiments.</p>
+
+<p>This forms the basis for our paper <a href="http://web4.cs.ucl.ac.uk/staff/D.Barber/publications/AISTATS2017.pdf">Complementary Sum Sampling for Likelihood Approximation in Large Scale Classification</a> which will appear in <a href="http://www.aistats.org/">AISTATS 2017</a>.</p>
+
+  <span class="social-icons"><a href="https://www.facebook.com/sharer.php?u=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on facebook"> <i class="fa fa-facebook meta"></i></a> 
+<a href="https://twitter.com/share?text=Training with a large number of classes&amp;url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/&amp;via=davidobarber"  class="social-icons" target="_blank" title="Share on twitter"> <i class="fa fa-twitter meta"></i></a>
+<a href="https://plus.google.com/share?url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on Google+"> <i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/blog/2017/03/15/large-number-of-classes/"  class="social-icons" target="_blank" title="Share on LinkedIn"> <i class="fa fa-linkedin"></i></a>
+<a href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/#disqus_thread" class="social-icons" title="Comments"><i class="fa fa-comments"></i></a>
+<!--<a href="http://localhost:4000/featured" title="Featured posts"><i class="fa fa-paperclip" title="Featured" class="social-icons" style="vertical-align: top;"></i></a>-->
+<a href="javascript:window.print()" class="social-icons" title="Printer friendly format"><i class="fa fa-print"></i></a>
+</span>
+
+<!--
+
+<div class="share-page">
+    Share this on &rarr;
+    <a href="https://facebook.com/sharer.php?u=http://localhost:4000/blog/2017/03/15/large-number-of-classes/" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+</div>
+-->
+  <hr>
+  
+  <span class="post-date metafoot" itemprop="datePublished" content="2017-03-15"><i class="fa fa-calendar" title="Date published"> <a class="permalink" href="http://localhost:4000/blog/2017/03/15/large-number-of-classes/" itemprop="url" title="Permanent link to this post">15 Mar 2017</a> </i></span>
+  <span class="post-tags" itemprop="keywords" content="large scale classification, deep learning, natural language modelling, word embeddings, and importance sampling"><i class="fa fa-tags" title="page tags"></i> <a href="http://localhost:4000/tags/#large+scale+classification" title="Pages tagged large scale classification" rel="tag">large scale classification</a> &bull;  <a href="http://localhost:4000/tags/#deep+learning" title="Pages tagged deep learning" rel="tag">deep learning</a> &bull;  <a href="http://localhost:4000/tags/#natural+language+modelling" title="Pages tagged natural language modelling" rel="tag">natural language modelling</a> &bull;  <a href="http://localhost:4000/tags/#word+embeddings" title="Pages tagged word embeddings" rel="tag">word embeddings</a> &bull;  <a href="http://localhost:4000/tags/#importance+sampling" title="Pages tagged importance sampling" rel="tag">importance sampling</a></span>
+    
+</div>
+
+
+  <div class="printMsg">
+<table>
+  <thead>
+    <tr>
+      <th><i class="fa fa-twitter">@davidobarber</i></th>
+      <th>QR code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><i class="fa fa-anchor"> http://localhost:4000/blog/2017/03/15/large-number-of-classes/</i><br /><i class="fa fa-calendar"> 15-Mar-17</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
+      <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost:4000/blog/2017/03/15/large-number-of-classes/&choe=UTF-8" alt="http://localhost:4000/blog/2017/03/15/large-number-of-classes/" /></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="page-break"></div>
+<div class="related">
+  <h2>Related Posts</h2>
+<ul>
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/">Generative Neural Machine Translation</a><br /></li>
+          
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/">Learning From Scratch by Thinking Fast and Slow with Deep Learning and Tree Search</a><br /></li>
+          
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/07/30/Optima-in-Feedforward-Neural-Nets/">Some modest insights into the error surface of Neural Nets</a><br /></li>
+          
+    
+  
+     
+       
+        
+       
+        
+          <li><a href="http://localhost:4000/blog/2017/04/03/variational-optimisation/">Evolutionary Optimization as a Variational Method</a><br /></li>
+          
+    
+  
+    
+  
+</ul>
+</div>
+
+<div class="prevnext">
+  
+    <span class="prevnext-item older">Older</span>
+  
+  
+    <a class="prevnext-item older" href="http://localhost:4000/blog/2017/04/03/variational-optimisation/" title="Evolutionary Optimization as a Variational Method">Newer</a>
+  
+</div>
+
+<div class="page-break"></div>
+
+<div id="disqus_thread"></div><!-- /#disqus_thread -->
+
+
+
+                    <div class="custom-footer" style="display: block;">
+            <div class="footer-social-icons">
+            <ul class="social-icons">
+                      
+            </ul>
+            </div>
+            </div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    
+
+<!-- gist embed -->
+
+  <!--Gist embed -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+
+
+
+<!-- disqus comments -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davidbarber'; 
+    var disqus_identifier = 'http://localhost:4000/blog/2017/03/15/large-number-of-classes/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</body>
+</html>
