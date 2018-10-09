@@ -23,12 +23,11 @@ I hope to post on this site some thoughts about machine learning.
 
 Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you might also be looking for [my BRML textbook]( http://www.cs.ucl.ac.uk/staff/d.barber/brml). 
 
-
+<!--
 <a class="twitter-timeline" href="https://twitter.com/davidobarber">Tweets by davidobarber</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+-->
 
 ---
-
 
 {% if site.twitter_widget_id %}
 <div class="text-tweets">
@@ -49,6 +48,7 @@ Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you
 </div>
 {% else %}
 {% endif %}
+
 
 <div class="posts">
   {% for post in site.categories.featured limit:2 %}
