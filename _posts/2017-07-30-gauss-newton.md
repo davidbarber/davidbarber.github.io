@@ -182,7 +182,7 @@ For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_
 ### No differentiable local maxima 
 {:.no_toc}
 
-The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima:
+The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):
 
 
 {:.text-center img}
