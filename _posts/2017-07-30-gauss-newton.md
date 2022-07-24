@@ -202,7 +202,7 @@ We consider a simple network with two layers, ReLU transfer functions and square
 As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.
 
 {:.text-center img}
-![rectlinE1]({{ site.urlimg }}/rectlinE1.png "rectlin E1")
+![rectlinE1]({{ site.urlimg }}rectlinE1.png "rectlin E1")
 
 Below we show an analogous plot for varying the parameters of the second layer weights $$W^2(u,v)$$, which has the same predicted property that there are no differentiable local maxima.
 
