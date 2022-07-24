@@ -186,7 +186,7 @@ The trace of the full Hessian $$H$$ is the sum of the traces of each of the laye
 
 
 {:.text-center img}
-![blogpost_canhappen]({{ site.urlimg }}/blogpost_canhappen.png "can happen")
+![blogpost_canhappen]({{ site.urlimg }}/blogpost_canhappen.png)
 
 whereas the image below depicts the kind of smooth local maxima that cannot happen:
 
