@@ -367,9 +367,9 @@ Credits: http://localhost:4000/disclosure
 
 <h3 class="no_toc" id="no-differentiable-local-maxima">No differentiable local maxima</h3>
 
-<p>The trace of the full Hessian <script type="math/tex">H</script> is the sum of the traces of each of the layerwise blocks <script type="math/tex">H_\lambda</script>. Since (as usual away from nodes) by the above argument each matrix <script type="math/tex">H_\lambda</script> is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima:</p>
+<p>The trace of the full Hessian <script type="math/tex">H</script> is the sum of the traces of each of the layerwise blocks <script type="math/tex">H_\lambda</script>. Since (as usual away from nodes) by the above argument each matrix <script type="math/tex">H_\lambda</script> is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canhappen.png" alt="blogpost_canhappen" title="can happen" /></p>
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canhappen.png" alt="blogpost_canhappen" /></p>
 
 <p>whereas the image below depicts the kind of smooth local maxima that cannot happen:</p>
 
@@ -381,7 +381,7 @@ Credits: http://localhost:4000/disclosure
 
 <p>As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//rectlinE1.png" alt="rectlinE1" title="rectlin E1" /></p>
+<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images/rectlinE1.png" alt="rectlinE1" title="rectlin E1" /></p>
 
 <p>Below we show an analogous plot for varying the parameters of the second layer weights <script type="math/tex">W^2(u,v)</script>, which has the same predicted property that there are no differentiable local maxima.</p>
 
@@ -451,6 +451,13 @@ Credits: http://localhost:4000/disclosure
 <div class="related">
   <h2>Related Posts</h2>
 <ul>
+  
+     
+       
+        
+          <li><a href="http://localhost:4000/blog/2018/09/12/AI-as-a-coworker/">AI Coworking</a><br /></li>
+          
+    
   
      
        

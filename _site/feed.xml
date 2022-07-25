@@ -5,27 +5,22 @@
     <description>David's blog...</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2018-10-09T14:09:41+01:00</updated>
+    <updated>2022-07-24T13:16:51+01:00</updated>
     <id>http://localhost:4000</id>
     <author>
       <name>David Barber</name>
     </author>
     
       <item>
-        <title>Generative Neural Machine Translation</title>
+        <title>AI Coworking</title>
         
-          <description>&lt;!--Generative Neural Machine Translation--&gt;
-
-&lt;h2 id=&quot;whats-wrong-with-current-machine-translation-models&quot;&gt;What’s wrong with current Machine Translation models?&lt;/h2&gt;
+          <description>&lt;p&gt;What’s wrong with current machine learning approaches in practice?&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;!--
-* TOC
-{:toc}
---&gt;
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/watch?v=1A-Nf3QIJjM&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Machine Learning models are still largely superficial – the models don’t really ‘understand’ the meaning of the sentences they are translating. If we want increasingly ‘intelligent’ machines, it’s important that models begin to incorporate more knowledge of the world.  One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018&lt;sup id=&quot;fnref:SB2018&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018&lt;sup id=&quot;fnref:SB2018&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (&lt;a href=&quot;https://arxiv.org/abs/1806.05138&quot;&gt;arxiv version&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;learning-meaningful-representations-of-data&quot;&gt;Learning meaningful representations of data&lt;/h2&gt;
 
@@ -37,12 +32,6 @@
   &lt;li&gt;The ‘hidden’ or ‘latent’ representation of the sentence’s meaning is randomly generated according to a prior distribution.&lt;/li&gt;
   &lt;li&gt;The sentence itself is then generated conditioned on this latent representation.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;Given a latent variable model and a sentence, the posterior distribution of the latent representation (i.e. the values of the representation that are likely to have generated that sentence) can be inferred. This posterior distribution can then be used for downstream tasks, e.g. the inferred representation could be used for answering questions about that sentence. Intuitively, the more information about the meaning of the sentence that the representation contains, the better it should be at performing at downstream tasks. Therefore, we would like to design a model which can use its latent representation to better represent the semantics of the text.&lt;/p&gt;
-
-&lt;p&gt;Most latent variable models use one latent representation per sentence in the data set. The problem with this approach is that there are no guarantees that the representations will learn semantically meaningful information about the text. For example, consider the two sentences: “she walked across the road” and “the woman crossed the street” - a basic latent variable model does not know a priori that walking across a road and crossing a street are similar actions. Therefore, the typical model would not be able to guarantee that the latent representations of these two sentences are similar.&lt;/p&gt;
-
-&lt;p&gt;Instead, if we were able to encode into the model that two sentences are semantically similar, we may be able to learn representations which better understand the meaning of the text. Unfortunately, large corpora of sentences with similar meanings in a single language are rare. However in the machine translation context, the same sentence expressed in different languages offers the potential to learn a latent variable model which better represents the sentence’s meaning. For example, a model which knows that the English sentence “the woman crossed the street” and the French sentence “la femme a traversé la rue” have the same meaning should be able to learn a representation with better semantic understanding.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;generative-neural-machine-translation-gnmt&quot;&gt;Generative Neural Machine Translation (GNMT)&lt;/h2&gt;
 
@@ -93,7 +82,7 @@
 
 &lt;p&gt;Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in &lt;sup id=&quot;fnref:B2012&quot;&gt;&lt;a href=&quot;#fn:B2012&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, discussing a fictitious protein sequence in bananas.&lt;/p&gt;
 
-&lt;p&gt;Below, we show an example of a long sentence translated from English to French by GNMT. The long range coherence of the translation is a good indicator of the model’s ability to capture semantic information about the sentence within the latent representation.&lt;/p&gt;
+&lt;p&gt;Below, we show an example of a long sentence translated from French to English by GNMT. The long range coherence of the translation is a good indicator of the model’s ability to capture semantic information about the sentence within the latent representation.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: Dans ce décret, il met en lumière les principales réalisations de la République d’Ouzbékistan dans le domaine de la protection et de la promotion des droits de l’homme et approuve le programme d’activités marquant le soixantième anniversaire de la déclaration universelle des droits de l’homme.&lt;/p&gt;
 
@@ -162,16 +151,180 @@
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:SB2018&quot;&gt;
-      &lt;p&gt;H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018. &lt;a href=&quot;#fnref:SB2018&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:SB2018:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:SB2018:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018.&amp;nbsp;&lt;a href=&quot;#fnref:SB2018&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:KW2014&quot;&gt;
-      &lt;p&gt;D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014. &lt;a href=&quot;#fnref:KW2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:KW2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:R2014&quot;&gt;
-      &lt;p&gt;D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014. &lt;a href=&quot;#fnref:R2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:R2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:B2012&quot;&gt;
-      &lt;p&gt;D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2016. &lt;a href=&quot;#fnref:B2012&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012.&amp;nbsp;&lt;a href=&quot;#fnref:B2012&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        
+        <pubDate>Wed, 12 Sep 2018 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/blog/2018/09/12/AI-as-a-coworker/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2018/09/12/AI-as-a-coworker/</guid>
+      </item>
+    
+      <item>
+        <title>Generative Neural Machine Translation</title>
+        
+          <description>&lt;p&gt;Machine Learning models are still largely superficial – the models don’t really ‘understand’ the meaning of the sentences they are translating. If we want increasingly ‘intelligent’ machines, it’s important that models begin to incorporate more knowledge of the world.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018&lt;sup id=&quot;fnref:SB2018&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (&lt;a href=&quot;https://arxiv.org/abs/1806.05138&quot;&gt;arxiv version&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;learning-meaningful-representations-of-data&quot;&gt;Learning meaningful representations of data&lt;/h2&gt;
+
+&lt;p&gt;One possible method to learn meaningful representations of sentences is to use a latent variable model. Latent variable models are based on the hypothesis that for each sentence, there is a ‘hidden’ (or ‘latent’) vector which represents the sentence’s meaning, and that the sentence itself is a textual manifestation of that meaning.&lt;/p&gt;
+
+&lt;p&gt;Latent variable models in natural language processing typically posit the following generative process for sentences:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The ‘hidden’ or ‘latent’ representation of the sentence’s meaning is randomly generated according to a prior distribution.&lt;/li&gt;
+  &lt;li&gt;The sentence itself is then generated conditioned on this latent representation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given a latent variable model and a sentence, the posterior distribution of the latent representation (i.e. the values of the representation that are likely to have generated that sentence) can be inferred. This posterior distribution can then be used for downstream tasks, e.g. the inferred representation could be used for answering questions about that sentence. Intuitively, the more information about the meaning of the sentence that the representation contains, the better it should be at performing at downstream tasks. Therefore, we would like to design a model which can use its latent representation to better represent the semantics of the text.&lt;/p&gt;
+
+&lt;p&gt;Most latent variable models use one latent representation per sentence in the data set. The problem with this approach is that there are no guarantees that the representations will learn semantically meaningful information about the text. For example, consider the two sentences: “she walked across the road” and “the woman crossed the street” - a basic latent variable model does not know a priori that walking across a road and crossing a street are similar actions. Therefore, the typical model would not be able to guarantee that the latent representations of these two sentences are similar.&lt;/p&gt;
+
+&lt;p&gt;Instead, if we were able to encode into the model that two sentences are semantically similar, we may be able to learn representations which better understand the meaning of the text. Unfortunately, large corpora of sentences with similar meanings in a single language are rare. However in the machine translation context, the same sentence expressed in different languages offers the potential to learn a latent variable model which better represents the sentence’s meaning. For example, a model which knows that the English sentence “the woman crossed the street” and the French sentence “la femme a traversé la rue” have the same meaning should be able to learn a representation with better semantic understanding.&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;generative-neural-machine-translation-gnmt&quot;&gt;Generative Neural Machine Translation (GNMT)&lt;/h2&gt;
+
+&lt;p&gt;With Generative Neural Machine Translation (GNMT)&lt;sup id=&quot;fnref:SB2018:1&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, we use a single shared latent representation to model the same sentence in multiple languages. The latent variable is a language agnostic representation of the sentence; by giving it the responsiblity for modelling the same sentence in multiple languages, it is encouraged to learn the semantic meaning.&lt;/p&gt;
+
+&lt;p&gt;For each data point &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; in a data set, typical latent variable architectures model the joint distribution of the latent representation &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}^{(n)}&lt;/script&gt; and the observed sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(n)}&lt;/script&gt; as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)})&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; are trainable parameters of the model.&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_1.png&quot; alt=&quot;SGVB&quot; title=&quot;SGVB&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(n)}&lt;/script&gt; and target sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}^{(n)}&lt;/script&gt; as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})&lt;/script&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_2.png&quot; alt=&quot;GNMT&quot; title=&quot;GNMT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This set up means that &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}^{(n)}&lt;/script&gt; models the commonality between the source and target sentences, which is the semantic meaning.&lt;/p&gt;
+
+&lt;p&gt;For full details on the neural networks used to model the distributions of the source &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{x}^{(n)}\vert\mathbf{z}^{(n)})&lt;/script&gt; and target &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})&lt;/script&gt;, see &lt;sup id=&quot;fnref:SB2018:2&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;One may argue that it would be better if the target sentence were dependent only on the latent representation and not directly on the source sentence, giving the model &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{x}\vert \mathbf{z})p(\mathbf{y}\vert \mathbf{z})p(\mathbf{z})&lt;/script&gt; – forcing the latent representation to be fully responsible for generating both the source and target sentence. However, we found that the generated translations weren’t sufficiently syntactically coherent.&lt;/p&gt;
+
+&lt;h2 id=&quot;training-the-model&quot;&gt;Training the model&lt;/h2&gt;
+
+&lt;p&gt;We use the Stochastic Gradient Variational Bayes (SGVB)&lt;sup id=&quot;fnref:KW2014&quot;&gt;&lt;a href=&quot;#fn:KW2014&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:R2014&quot;&gt;&lt;a href=&quot;#fn:R2014&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; algorithm to train the model described above. SGVB introduces a ‘recognition’ model &lt;script type=&quot;math/tex&quot;&gt;q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})&lt;/script&gt; which acts as an approximation to the true but intractable posterior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})&lt;/script&gt;, thus forming the following lower bound on the log likelihood of the observed data:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(\mathbf{x}^{(n)}) = \mathbb{E}_{q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})} [\log p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) - \log q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})]&lt;/script&gt;
+
+&lt;p&gt;The model parameters &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and recognition parameters &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; are then jointly learned by performing gradient ascent on this lower bound.&lt;/p&gt;
+
+&lt;h2 id=&quot;generating-translations---the-banana-trick&quot;&gt;Generating translations - the ‘banana trick’&lt;/h2&gt;
+
+&lt;p&gt;Suppose the model has been trained, and then we are given a sentence in the source language (&lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt;) and asked to find a translation of that sentence. In this scenario, we want to find the most likely target sentence conditioned on the given source sentence. The natural objective is therefore:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{y}^{*} = \arg \max_{y} p(\mathbf{y}\vert \mathbf{x}) = \arg \max_{y} \int p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x}) p(\mathbf{z}\vert \mathbf{x}) d\mathbf{z}&lt;/script&gt;
+
+&lt;p&gt;However this integral is intractable, and so we cannot perform this maximisation exactly. Instead, we perform approximate maximisation by iteratively refining a ‘guess’ for the target sentence. We first make a random guess for the target sentence, and then iterate between the following two steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Draw samples of the latent representation from the approximate posterior, using the source sentence and the latest guess for the target sentence.&lt;/li&gt;
+  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})&lt;/script&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Intuitively, this procedure computes the values of the latent representation that are likely to have generated both the source sentence and the latest guess for the target sentence. It then improves the guess based on those values of the latent variable. Mathematically, this iteratively increases a lower bound on &lt;script type=&quot;math/tex&quot;&gt;\log p(\mathbf{y}\vert \mathbf{x})&lt;/script&gt; until convergence and is an application of the Expectation Maximisation algorithm, here &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; playing the role of parameters.&lt;/p&gt;
+
+&lt;p&gt;Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in &lt;sup id=&quot;fnref:B2012&quot;&gt;&lt;a href=&quot;#fn:B2012&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, discussing a fictitious protein sequence in bananas.&lt;/p&gt;
+
+&lt;p&gt;Below, we show an example of a long sentence translated from French to English by GNMT. The long range coherence of the translation is a good indicator of the model’s ability to capture semantic information about the sentence within the latent representation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: Dans ce décret, il met en lumière les principales réalisations de la République d’Ouzbékistan dans le domaine de la protection et de la promotion des droits de l’homme et approuve le programme d’activités marquant le soixantième anniversaire de la déclaration universelle des droits de l’homme.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Target&lt;/strong&gt;: The decree highlights major achievements by the Republic of Uzbekistan in the field of protection and promotion of human rights and approves the programme of activities devoted to the sixtieth anniversary of the universal declaration of human rights.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GNMT&lt;/strong&gt;: In this decree, it highlights the main achievements of the Republic of Uzbekistan on the protection and promotion of human rights and approves the activities of the sixtieth anniversary of the universal declaration of human rights.&lt;/p&gt;
+
+&lt;h2 id=&quot;dealing-with-missing-words&quot;&gt;Dealing with missing words&lt;/h2&gt;
+
+&lt;p&gt;Because GNMT’s latent representation captures information about the meaning of the sentence rather than just the syntax, it is able to produce good translations even when there are missing words in the source sentence. The procedure for generating translations is similar to that described above –  however in this scenario we also have to refine a guess for the missing words in the source sentence.&lt;/p&gt;
+
+&lt;p&gt;We first make random guesses for the missing words in the source sentence and for the target sentence, and then iterate between the following three steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Draw samples of the latent representation from the approximate posterior, using the latest guesses for the source and target sentences.&lt;/li&gt;
+  &lt;li&gt;Update the guess for the source sentence based on the latent representation samples from step 1. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{x}\vert \mathbf{z})&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1 and on the updated guess for the source sentence from step 2. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})&lt;/script&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Below is an example of a sentence translated from Spanish to English, where the struck through words in the source sentence are considered missing. Using its latent representation, the model does remarkably well at imputing what the missing words may be and translating them accordingly.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: Expresando su &lt;del&gt;satisfacción&lt;/del&gt; por &lt;del&gt;la&lt;/del&gt; asistencia que han &lt;del&gt;prestado&lt;/del&gt; a los territorios no autónomos algunos &lt;del&gt;organismos&lt;/del&gt; especializados y &lt;del&gt;otras&lt;/del&gt; organizaciones del sistema de las naciones &lt;del&gt;unidas&lt;/del&gt;, especialmente el &lt;del&gt;programa&lt;/del&gt; de las naciones unidas &lt;del&gt;para&lt;/del&gt; el desarrollo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Target&lt;/strong&gt;: Welcoming the assistance extended to non-self-governing territories by certain specialized agencies and other organizations of the United Nations system, in particular the United Nations development programme.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GNMT&lt;/strong&gt;: Expressing its gratitude for the assistance given to non-self-governing territories by some specialized agencies and other organizations of the United Nations system, in particular from the development programmes of the United Nations.&lt;/p&gt;
+
+&lt;h2 id=&quot;cross-language-parameter-sharing&quot;&gt;Cross-language parameter sharing&lt;/h2&gt;
+
+&lt;p&gt;With the architecture described above, if we wanted to translate between, say, English (EN), Spanish (ES) and French (FR), we would have to train 6 separate models for EN → ES, ES → EN, EN → FR, etc. However because all three of these languages share somewhat similar structures, we may not lose much performance by sharing parameters. We therefore add two indicator variables to the model, one for the input language (&lt;script type=&quot;math/tex&quot;&gt;l_{x}&lt;/script&gt;) and another for the output language (&lt;script type=&quot;math/tex&quot;&gt;l_{y}&lt;/script&gt;). By doing this, we only have to train a single model to translate between three languages, instead of having 6 separate models.&lt;/p&gt;
+
+&lt;p&gt;The joint distribution of the latent representation, source sentence and target sentence becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})&lt;/script&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_3.png&quot; alt=&quot;GNMT-Multi&quot; title=&quot;GNMT-Multi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We refer to this version of the model as GNMT-Multi.&lt;/p&gt;
+
+&lt;p&gt;Overfitting is a phenomenon whereby a model is too closely fit to a particular set of data points. In machine translation, this often occurs when there aren’t enough paired sentences for the model to learn from. However, the cross language parameter sharing used for GNMT-Multi helps to mitigate this issue. This is because 6 separate models are essentially condensed into a single model, meaning that there aren’t enough parameters to allow the model to memorise the training data.&lt;/p&gt;
+
+&lt;p&gt;Below, we plot the BLEU scores comparing GNMT-Multi against 6 separate GNMT models, trained with only 400,000 pairs of translated sentences. BLEU is a measure of how well the generated translations match the true target sentences; higher is better. Clearly GNMT-Multi with a limited amount of available training data performs significantly better than each of the 6 separate GNMT models.&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When there is a large amount of training data available, we find that there is very little difference in the performance of GNMT and GNMT-Multi. Below, we plot the BLEU scores for the models trained with 4,000,000 sentence pairs; we find that there is no degradation in performance due to sharing parameters across languages!&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;semi-supervised-learning&quot;&gt;Semi-supervised learning&lt;/h2&gt;
+
+&lt;p&gt;Suppose, as in the previous section, that we only have access to a limited number of paired sentences, but that we now have available lots of untranslated sentences in each language. To learn from untranslated sentences, we can set the input language &lt;script type=&quot;math/tex&quot;&gt;l_{x}&lt;/script&gt; and output language &lt;script type=&quot;math/tex&quot;&gt;l_{y}&lt;/script&gt; to the same value, so that the model learns to reconstruct the sentence instead of translating it. Intuitively, this should further help the model to learn the structure and style of each language and thus produce more coherent translations at test time. We refer to this version of the model as GNMT-Multi-SSL.&lt;/p&gt;
+
+&lt;p&gt;Below we plot the BLEU scores of GNMT-Multi-SSL, GNMT-Multi and the 6 separate GNMT models. They are trained first with 400,000 then with 4,000,000 pairs of translated sentences. In both cases, they are also trained with approximately 20,900,000 untranslated English sentences, 2,700,000 untranslated Spanish sentences and 4,500,000 untranslated French sentences. GNMT-Multi-SSL clearly helps to mitigate overfitting when there are limited paired sentences available. In fact, GNMT-Multi-SSL trained with only 400,000 paired sentences performs about as well as each of the 6 separate GNMT models trained with 4,000,000 sentences! GNMT-Multi-SSL also produces higher BLEU scores even when there is lots of paired data; this verifies our intuition that adding monolingual data helps the model to develop a better understanding of each language individually, and output more coherent sentences accordingly.&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;We introduce Generative Neural Machine Translation (GNMT), which is a latent variable model that uses sentences with the same meaning in multiple languages to learn representations which better understand the semantics of the text. It can be used to translate a source sentence by iteratively refining a guess for the target sentence and updating the latent representation accordingly. Because it captures the meaning of the sentence, GNMT is particularly effective at producing translations when there are missing words in the source sentence. We also introduce GNMT-Multi, which is a single unified model (instead of one per language pair) to mitigate overfitting when there is limited paired data available. Finally, we leverage large amounts of untranslated sentences to help the model to further learn the structure and style of each language and produce more coherent translations.&lt;/p&gt;
+
+&lt;h3 class=&quot;no_toc&quot; id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:SB2018&quot;&gt;
+      &lt;p&gt;H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018.&amp;nbsp;&lt;a href=&quot;#fnref:SB2018&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:KW2014&quot;&gt;
+      &lt;p&gt;D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:KW2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:R2014&quot;&gt;
+      &lt;p&gt;D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:R2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:B2012&quot;&gt;
+      &lt;p&gt;D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012.&amp;nbsp;&lt;a href=&quot;#fnref:B2012&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -289,37 +442,37 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:TFAS&quot;&gt;
-      &lt;p&gt;D. Kahneman. Thinking, Fast and Slow. Macmillan, 2011. &lt;a href=&quot;#fnref:TFAS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Kahneman. Thinking, Fast and Slow. Macmillan, 2011.&amp;nbsp;&lt;a href=&quot;#fnref:TFAS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:Williams&quot;&gt;
-      &lt;p&gt;R. J. Williams. Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning. Machine Learning, 8(3-4):229–256, 1992. &lt;a href=&quot;#fnref:Williams&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;R. J. Williams. Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning. Machine Learning, 8(3-4):229–256, 1992.&amp;nbsp;&lt;a href=&quot;#fnref:Williams&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:DQN&quot;&gt;
-      &lt;p&gt;V. Mnih et al. Human-Level Control through Deep Reinforcement Learning. Nature, 518(7540):529–533, 2015. &lt;a href=&quot;#fnref:DQN&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;V. Mnih et al. Human-Level Control through Deep Reinforcement Learning. Nature, 518(7540):529–533, 2015.&amp;nbsp;&lt;a href=&quot;#fnref:DQN&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:AlphaGo&quot;&gt;
-      &lt;p&gt;D. Silver et al. Mastering the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489, 2016. &lt;a href=&quot;#fnref:AlphaGo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Silver et al. Mastering the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489, 2016.&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:NIPSpaper&quot;&gt;
-      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search, Neural Information Processing Systems (NIPS 2017). In Press. &lt;a href=&quot;#fnref:NIPSpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search, Neural Information Processing Systems (NIPS 2017). In Press.&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:MCTS&quot;&gt;
-      &lt;p&gt;L. Kocsis and C. Szepesvári. Bandit Based Monte-Carlo Planning. In European Conference on Machine Learning, pages 282–293. Springer, 2006. &lt;a href=&quot;#fnref:MCTS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:MCTS:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;L. Kocsis and C. Szepesvári. Bandit Based Monte-Carlo Planning. In European Conference on Machine Learning, pages 282–293. Springer, 2006.&amp;nbsp;&lt;a href=&quot;#fnref:MCTS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:MCTS:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:MOHEX&quot;&gt;
-      &lt;p&gt;S.-C. Huang, B. Arneson, R. Hayward, M. Müller, and J. Pawlewicz. MoHex 2.0: A Pattern-Based MCTS Hex Player. In International Conference on Computers and Games, pages 60–71. Springer, 2013. &lt;a href=&quot;#fnref:MOHEX&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:MOHEX:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;S.-C. Huang, B. Arneson, R. Hayward, M. Müller, and J. Pawlewicz. MoHex 2.0: A Pattern-Based MCTS Hex Player. In International Conference on Computers and Games, pages 60–71. Springer, 2013.&amp;nbsp;&lt;a href=&quot;#fnref:MOHEX&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:MOHEX:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:OnlineOffline&quot;&gt;
-      &lt;p&gt;S. Gelly and D. Silver. Combining Online and Offline Knowledge in UCT. In Proceedings of the 24th International Conference on Machine learning, pages 273–280. ACM, 2007. &lt;a href=&quot;#fnref:OnlineOffline&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;S. Gelly and D. Silver. Combining Online and Offline Knowledge in UCT. In Proceedings of the 24th International Conference on Machine learning, pages 273–280. ACM, 2007.&amp;nbsp;&lt;a href=&quot;#fnref:OnlineOffline&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:RyanHayward&quot;&gt;
-      &lt;p&gt;Thanks to Ryan Hayward for providing a tool to draw Hex positions. &lt;a href=&quot;#fnref:RyanHayward&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Thanks to Ryan Hayward for providing a tool to draw Hex positions.&amp;nbsp;&lt;a href=&quot;#fnref:RyanHayward&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:AlphaGoZero&quot;&gt;
-      &lt;p&gt;D. Silver,  et al.  Mastering the game of Go without human knowledge. Nature 550:354–359, October 2017. &lt;a href=&quot;#fnref:AlphaGoZero&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;D. Silver,  et al.  Mastering the game of Go without human knowledge. Nature 550:354–359, October 2017.&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGoZero&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:AXpaper&quot;&gt;
-      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search. &lt;a href=&quot;http://arxiv.org/abs/1705.08439&quot;&gt;arXiv CoRR:abs/1705.08439&lt;/a&gt;, May 2017. &lt;a href=&quot;#fnref:AXpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search. &lt;a href=&quot;http://arxiv.org/abs/1705.08439&quot;&gt;arXiv CoRR:abs/1705.08439&lt;/a&gt;, May 2017.&amp;nbsp;&lt;a href=&quot;#fnref:AXpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -434,9 +587,9 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;no-differentiable-local-maxima&quot;&gt;No differentiable local maxima&lt;/h3&gt;
 
-&lt;p&gt;The trace of the full Hessian &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; is the sum of the traces of each of the layerwise blocks &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt;. Since (as usual away from nodes) by the above argument each matrix &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima:&lt;/p&gt;
+&lt;p&gt;The trace of the full Hessian &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; is the sum of the traces of each of the layerwise blocks &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt;. Since (as usual away from nodes) by the above argument each matrix &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canhappen.png&quot; alt=&quot;blogpost_canhappen&quot; title=&quot;can happen&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canhappen.png&quot; alt=&quot;blogpost_canhappen&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;whereas the image below depicts the kind of smooth local maxima that cannot happen:&lt;/p&gt;
 
@@ -448,7 +601,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//rectlinE1.png&quot; alt=&quot;rectlinE1&quot; title=&quot;rectlin E1&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images/rectlinE1.png&quot; alt=&quot;rectlinE1&quot; title=&quot;rectlin E1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Below we show an analogous plot for varying the parameters of the second layer weights &lt;script type=&quot;math/tex&quot;&gt;W^2(u,v)&lt;/script&gt;, which has the same predicted property that there are no differentiable local maxima.&lt;/p&gt;
 

@@ -182,11 +182,11 @@ For such loss functions, it follows that the pre-activation Hessian $${\cal{H}}_
 ### No differentiable local maxima 
 {:.no_toc}
 
-The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima:
+The trace of the full Hessian $$H$$ is the sum of the traces of each of the layerwise blocks $$H_\lambda$$. Since (as usual away from nodes) by the above argument each matrix $$H_\lambda$$ is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):
 
 
 {:.text-center img}
-![blogpost_canhappen]({{ site.urlimg }}/blogpost_canhappen.png "can happen")
+![blogpost_canhappen]({{ site.url }}/images/blogpost_canhappen.png)
 
 whereas the image below depicts the kind of smooth local maxima that cannot happen:
 
@@ -202,7 +202,7 @@ We consider a simple network with two layers, ReLU transfer functions and square
 As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.
 
 {:.text-center img}
-![rectlinE1]({{ site.urlimg }}/rectlinE1.png "rectlin E1")
+![rectlinE1]({{ site.urlimg }}rectlinE1.png "rectlin E1")
 
 Below we show an analogous plot for varying the parameters of the second layer weights $$W^2(u,v)$$, which has the same predicted property that there are no differentiable local maxima.
 

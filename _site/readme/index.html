@@ -284,13 +284,14 @@ Credits: http://localhost:4000/disclosure
   </li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>example.com/images/icons/apple-touch-icon-precomposed.png
+<div class="highlighter-rouge"><pre class="highlight"><code>example.com/images/icons/apple-touch-icon-precomposed.png
 example.com/images/icons/apple-touch-icon-72x72-precomposed.png
 example.com/images/icons/apple-touch-icon-114x114-precomposed.png
 example.com/images/icons/apple-touch-icon-144x144-precomposed.png
 example.com/images/icons/apple-touch-icon-180x180.png
 example.com/images/icons/android-icon-192x192.png
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li><code class="highlighter-rouge">pages/about.md</code>
@@ -304,7 +305,7 @@ example.com/images/icons/android-icon-192x192.png
       <li>Edit page title and description in YAML front matter.</li>
       <li>For web search to work, specify <a href="https://cse.google.com">Google Custom Search Engine</a> API key for <code class="highlighter-rouge">google_search</code> variable.</li>
       <li>Tag generation is experimental and dynamic size for tag box may need to be adjusted if you have more than 100 posts with one or two frequently occurring tags.</li>
-      <li>All <code class="highlighter-rouge">{% for ... %}...{% endfor %}</code> loop operations will increase site build time, and remove such features (tags, meta info, related posts, etc.) under <code class="highlighter-rouge">_includes</code>, <code class="highlighter-rouge">_layouts</code> and <code class="highlighter-rouge">syspages</code> if required.</li>
+      <li>All <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="err">...</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> loop operations will increase site build time, and remove such features (tags, meta info, related posts, etc.) under <code class="highlighter-rouge">_includes</code>, <code class="highlighter-rouge">_layouts</code> and <code class="highlighter-rouge">syspages</code> if required.</li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">pages/contact.md</code>
@@ -316,7 +317,7 @@ example.com/images/icons/android-icon-192x192.png
   <li><code class="highlighter-rouge">pages/cv.md</code>
     <ul>
       <li>Edit <code class="highlighter-rouge">_config.yml</code> to add twitter, google plus, linkedin, google scholar, ORCID profile info under owner heading.</li>
-      <li>Add pdf at <code class="highlighter-rouge">{{ site.url }}/cv/cv.pdf</code></li>
+      <li>Add pdf at <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.url</span><span class="w"> </span><span class="p">}</span><span class="err">}/cv/cv.pdf</span></code></li>
     </ul>
   </li>
   <li><code class="highlighter-rouge">pages/publications.md</code>
@@ -358,7 +359,7 @@ example.com/images/icons/android-icon-192x192.png
   </thead>
   <tbody>
     <tr>
-      <td><i class="fa fa-anchor"> http://localhost:4000/readme/</i><br /><i class="fa fa-calendar"> 09-Oct-18</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
+      <td><i class="fa fa-anchor"> http://localhost:4000/readme/</i><br /><i class="fa fa-calendar"> 24-Jul-22</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
       <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost:4000/readme/&choe=UTF-8" alt="http://localhost:4000/readme/" /></td>
     </tr>
   </tbody>
