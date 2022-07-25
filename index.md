@@ -50,6 +50,7 @@ Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you
 {% endif %}
 
 
+<!--
 <div class="posts">
   {% for post in site.categories.featured limit:2 %}
   <div class="post">
@@ -85,6 +86,10 @@ Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber) or you
   {% endunless %}
   {% endfor %}
 </div>
+-->
+
+
+
 <h3 class="post-title">
 <div class="pagination" style="margin: 0.5rem;">
     <a class="pagination-item older" href="{{ site.url }}/blog"><i class="fa fa-edit"> Blog</i></a>
