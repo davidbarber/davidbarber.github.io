@@ -23,11 +23,6 @@ callback([
   {
     "text": "Generative Neural Machine Translation",
     "href": "http://localhost:4000/blog/2018/09/12/Generative-Neural-Machine-Translation/"
-  } ,
-
-  {
-    "text": "AI Coworking",
-    "href": "http://localhost:4000/blog/2018/09/12/AI-as-a-coworker/"
   } 
 
 ])
