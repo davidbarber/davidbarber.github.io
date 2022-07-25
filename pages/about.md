@@ -31,6 +31,7 @@ tags:
 </div>
 
 
-David Barber received a BA in Mathematics from Cambridge University and subsequently a PhD in Theoretical Physics (Statistical Mechanics) from Edinburgh University. He is currently Reader in Information Processing in the department of Computer Science UCL where he develops novel information processing schemes, mainly based on the application of probabilistic reasoning. Prior to joining UCL he was a lecturer at Aston and Edinburgh Universities. 
+David Barber received a BA in Mathematics from Cambridge University and subsequently a PhD in Theoretical Physics (Statistical Mechanics) from Edinburgh University. He is Director of the UCL Centre for Artificial Intelligence, which aims to develop next generation AI techniques. He has broad research interests related to the application of probabilistic modelling and reasoning. David is also a Fellow of the Alan Turing Institute and the CSO of re:infer, an AI spin-out from UCL. 
+
 
 *[volutpat]: Tooltip for abbreviation.

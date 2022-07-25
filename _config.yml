@@ -14,7 +14,9 @@ url: https://davidbarber.github.io
 #baseurl: "/lanyon-plus"
 baseurl: ""
 #urlimg: https://dyndna.github.io/lanyon-plus/images/
-urlimg: http://web4.cs.ucl.ac.uk/staff/D.Barber/images/
+#urlimg: http://web4.cs.ucl.ac.uk/staff/D.Barber/images/
+urlimg: https://davidbarber.github.io/images/
+
 markdown: kramdown
 paginate: 5
 paginate_path: "/blog/page:num"

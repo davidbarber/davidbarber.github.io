@@ -5,7 +5,7 @@
     <description>David's blog...</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2022-07-25T16:22:06+01:00</updated>
+    <updated>2022-07-25T16:37:29+01:00</updated>
     <id>http://localhost:4000</id>
     <author>
       <name>David Barber</name>
@@ -429,12 +429,12 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;The trace of the full Hessian &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; is the sum of the traces of each of the layerwise blocks &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt;. Since (as usual away from nodes) by the above argument each matrix &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):&lt;/p&gt;
 
-&lt;!--![blogpost_canhappen](http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canhappen.png)--&gt;
+&lt;!--![blogpost_canhappen](https://davidbarber.github.io/images//blogpost_canhappen.png)--&gt;
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/blogpost_canhappen.png&quot; alt=&quot;blogpost_canhappen&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;whereas the image below depicts the kind of smooth local maxima that cannot happen:&lt;/p&gt;
 
-&lt;!--![blogpost_canthappen](http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canthappen.png &quot;cannot happen&quot;)--&gt;
+&lt;!--![blogpost_canthappen](https://davidbarber.github.io/images//blogpost_canthappen.png &quot;cannot happen&quot;)--&gt;
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/blogpost_canthappen.png&quot; alt=&quot;blogpost_canthappen&quot; title=&quot;cannot happen&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;visualisation-for-a-simple-two-layer-net&quot;&gt;Visualisation for a simple two layer net&lt;/h3&gt;

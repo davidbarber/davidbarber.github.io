@@ -20,9 +20,9 @@ tags:
 
 | <i class="fa fa-twitter"></i> | [@{{ site.owner.twitter }}](https://twitter.com/{{ site.owner.twitter }})  | 
 | - | :- |
-| <i class="fa fa-envelope"></i> | Dr David Barber<br>Department of Computer Science<br>Gower Street<br>London WC1E 6BT  | 
+| <i class="fa fa-envelope"></i> | Prof David Barber<br>Department of Computer Science<br>University College London  | 
 | - | :- |
-| <i class="fa fa-car"></i>  |  Room 3.10 66-72 Gower Street| 
+| <i class="fa fa-car"></i>  |  Room 1.01A, 1st Floor, 90 High Holborn| 
 | - | :- |
 | <i class="fa fa-paper-plane">  | david.barber@ucl.ac.uk | 
 | - | :- |
