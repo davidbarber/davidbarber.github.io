@@ -93,7 +93,7 @@ will be wildly inaccurate, see figure (a) below.  This is the source of the hist
 However, there is an easy fix for this -- simply ensure that $${\cal{S}}$$ includes the correct class $$c$$.   
 
 {:.text-center img}
-![fixing IS]({{ site.urlimg }}/aistats17.png "fixing IS")
+![fixing IS]({{ site.url }}/images/aistats17.png "fixing IS")
 
 On the left above we show for $$C=10,000$$ classes the ratio $$u_\theta(c,x)/Z_\theta(x)$$ on the $$x$$-axis against its approximation  $$u_\theta(c,x)/\tilde{Z}_\theta(x)$$ on the $$y$$-axis. Each dot represents a different randomly drawn set of $$u$$ values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line $$y=x$$.  Note the vertical scale -- these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability. 
 
@@ -116,7 +116,7 @@ Contrastive Estimation, Ranking approaches, Negative Sampling and
 BlackOut.
 
 {:.text-center img}
-![fixing IS]({{ site.urlimg }}/aistats17_2.png "fixing IS")
+![fixing IS]({{ site.url }}/images/aistats17_2.png "fixing IS")
 
  This is so simple and works so well that we use this in all our NLP deep learning training experiments.  
 

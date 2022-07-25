@@ -5,7 +5,7 @@
     <description>David's blog...</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2022-07-25T16:10:30+01:00</updated>
+    <updated>2022-07-25T16:22:06+01:00</updated>
     <id>http://localhost:4000</id>
     <author>
       <name>David Barber</name>
@@ -47,13 +47,13 @@
 
 &lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; are trainable parameters of the model.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_1.png&quot; alt=&quot;SGVB&quot; title=&quot;SGVB&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_1.png&quot; alt=&quot;SGVB&quot; title=&quot;SGVB&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(n)}&lt;/script&gt; and target sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}^{(n)}&lt;/script&gt; as:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})&lt;/script&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_2.png&quot; alt=&quot;GNMT&quot; title=&quot;GNMT&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_2.png&quot; alt=&quot;GNMT&quot; title=&quot;GNMT&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This set up means that &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}^{(n)}&lt;/script&gt; models the commonality between the source and target sentences, which is the semantic meaning.&lt;/p&gt;
 
@@ -122,7 +122,7 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})&lt;/script&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//fig_3.png&quot; alt=&quot;GNMT-Multi&quot; title=&quot;GNMT-Multi&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_3.png&quot; alt=&quot;GNMT-Multi&quot; title=&quot;GNMT-Multi&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We refer to this version of the model as GNMT-Multi.&lt;/p&gt;
 
@@ -130,11 +130,11 @@
 
 &lt;p&gt;Below, we plot the BLEU scores comparing GNMT-Multi against 6 separate GNMT models, trained with only 400,000 pairs of translated sentences. BLEU is a measure of how well the generated translations match the true target sentences; higher is better. Clearly GNMT-Multi with a limited amount of available training data performs significantly better than each of the 6 separate GNMT models.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gnmt_vs_gnmt_multi_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When there is a large amount of training data available, we find that there is very little difference in the performance of GNMT and GNMT-Multi. Below, we plot the BLEU scores for the models trained with 4,000,000 sentence pairs; we find that there is no degradation in performance due to sharing parameters across languages!&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gnmt_vs_gnmt_multi_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;semi-supervised-learning&quot;&gt;Semi-supervised learning&lt;/h2&gt;
 
@@ -142,9 +142,9 @@
 
 &lt;p&gt;Below we plot the BLEU scores of GNMT-Multi-SSL, GNMT-Multi and the 6 separate GNMT models. They are trained first with 400,000 then with 4,000,000 pairs of translated sentences. In both cases, they are also trained with approximately 20,900,000 untranslated English sentences, 2,700,000 untranslated Spanish sentences and 4,500,000 untranslated French sentences. GNMT-Multi-SSL clearly helps to mitigate overfitting when there are limited paired sentences available. In fact, GNMT-Multi-SSL trained with only 400,000 paired sentences performs about as well as each of the 6 separate GNMT models trained with 4,000,000 sentences! GNMT-Multi-SSL also produces higher BLEU scores even when there is lots of paired data; this verifies our intuition that adding monolingual data helps the model to develop a better understanding of each language individually, and output more coherent sentences accordingly.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_1.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_1&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 400,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/gnmt_vs_gnmt_multi_vs_gnmt_multi_ssl_2.png&quot; alt=&quot;GNMT_vs_GNMT-Multi_vs_GNMT-Multi-SSL_2&quot; title=&quot;GNMT vs. GNMT-Multi (trained with 4,000,000 sentence pairs)&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
@@ -188,7 +188,7 @@
 &lt;p&gt;According to &lt;a href=&quot;https://en.wikipedia.org/wiki/Dual_process_theory&quot;&gt;dual process theory&lt;/a&gt; human reasoning consists of two different kinds of thinking.
 System 1 is a fast, unconscious and automatic mode of thought, also known as intuition. System 2 is a slow, conscious, explicit and rule-based mode of reasoning that is believed to be an evolutionarily recent process.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//behaviour-design-predicting-irrational-decisions-12-638.jpg&quot; alt=&quot;dual process&quot; title=&quot;dual process theory&quot; /&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/behaviour-design-predicting-irrational-decisions-12-638.jpg&quot; alt=&quot;dual process&quot; title=&quot;dual process theory&quot; /&gt;
 &lt;a href=&quot;https://www.slideshare.net/AshDonaldson/behaviour-design-predicting-irrational-decisions&quot;&gt;image credit&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;When learning to complete a challenging planning task, such as playing a board game, humans exploit both processes: strong intuitions allow for more effective analytic reasoning by rapidly selecting interesting lines of play for consideration. Repeated deep study gradually improves intuitions. Stronger intuitions feedback to stronger analysis, creating a closed learning loop. In other words, humans learn by thinking fast and slow&lt;sup id=&quot;fnref:TFAS&quot;&gt;&lt;a href=&quot;#fn:TFAS&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
@@ -203,7 +203,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;Expert Iteration&lt;sup id=&quot;fnref:NIPSpaper&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; (ExIt) is a general framework for learning that we introduced in May 2017 and can result in powerful AI machines, without needing to mimic human strategies.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//ExIt.png&quot; alt=&quot;ExIt&quot; title=&quot;Expert Iteration&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/ExIt.png&quot; alt=&quot;ExIt&quot; title=&quot;Expert Iteration&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ExIt can be viewed as an extension of Imitation Learning (IL) methods to domains where the best known experts are unable to achieve satisfactory performance. In standard IL an apprentice is trained to imitate the behaviour of an expert.  In ExIt, we extend this to an iterative learning process.  Between each iteration, we perform an Expert Improvement step, where we bootstrap the (fast) apprentice policy to increase the performance of the (comparatively slow) expert.&lt;/p&gt;
 
@@ -231,7 +231,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hex_(board_game)&quot;&gt;Hex&lt;/a&gt; is a classic two-player board game played on a &lt;script type=&quot;math/tex&quot;&gt;n\times n&lt;/script&gt; hexagonal grid. The players, denoted by colours black and white, alternate placing stones of their colour in empty cells. The black player wins if there is a sequence of adjacent black stones connecting the North edge of the board to the South edge. White wins if he achieves a sequence of adjacent white stones running from the West edge to the East edge.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//hexBW.png&quot; alt=&quot;hex&quot; title=&quot;Hex&quot; /&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/hexBW.png&quot; alt=&quot;hex&quot; title=&quot;Hex&quot; /&gt;
 &lt;em&gt;An example game on a &lt;script type=&quot;math/tex&quot;&gt;5\times 5&lt;/script&gt; Hex board.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The above represents play on a &lt;script type=&quot;math/tex&quot;&gt;5\times 5&lt;/script&gt; board, with white winning (reproduced from &lt;sup id=&quot;fnref:MOHEX&quot;&gt;&lt;a href=&quot;#fn:MOHEX&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;).   Hex has deep strategy, making it challenging for machines to play and its large action set and connection-based rules means it shares similar challenges for AI to Go. Compared to Go, however, the rules are simpler and there can be no draws.&lt;/p&gt;
@@ -249,7 +249,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;To generate the data for training the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. We also consider a online version in which we instead keep a running buffer of the most recent moves generated; we further consider an online version that retains all data, but with exponentially more data from more recent experts (which correspond to the strongest play).  A comparison of these different approaches is given below in which we compare the strength (measured in terms of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Elo_rating_system&quot;&gt;ELO&lt;/a&gt; score) of each learned policy network against a measure of training time.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//BatchOnline.png&quot; alt=&quot;results&quot; title=&quot;results&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/BatchOnline.png&quot; alt=&quot;results&quot; title=&quot;results&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We also show the result of using a more traditional Reinforcement Learning approach in which a policy &lt;script type=&quot;math/tex&quot;&gt;\hat{\pi}(a\vert s)&lt;/script&gt; is learned only through self play (i.e. no MCTS). This is essentially the method used within AlphaGo&lt;sup id=&quot;fnref:AlphaGo:3&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; to train their policy network. The figure shows that the ExIt training approach is considerably more effective than more classical approaches. It is worth noting that in this example training has not yet fully converged and the apprentice would be expected to improve in ability further given additional training time.&lt;/p&gt;
 
@@ -257,10 +257,10 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;Our final MCTS player outperforms the best known machine Hex player, MoHex, beating it in 75% of games played on a &lt;script type=&quot;math/tex&quot;&gt;9\times 9&lt;/script&gt; board. These results are even more remarkable considering that training has not fully converged. A couple of examples of game-play of our ExIt trained player versus the state-of-the-art MoHex player are shown below&lt;sup id=&quot;fnref:RyanHayward&quot;&gt;&lt;a href=&quot;#fn:RyanHayward&quot; class=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;. We contrast the play of each algorithm when started at the same position. See the paper&lt;sup id=&quot;fnref:NIPSpaper:4&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for more examples.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game1.png&quot; alt=&quot;results&quot; title=&quot;game1&quot; /&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/game1.png&quot; alt=&quot;results&quot; title=&quot;game1&quot; /&gt;
 &lt;em&gt;ExIt (black) versus MoHex (white)&lt;/em&gt;&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game2.png&quot; alt=&quot;results&quot; title=&quot;game2&quot; /&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/game2.png&quot; alt=&quot;results&quot; title=&quot;game2&quot; /&gt;
 &lt;em&gt;MoHex (black) versus ExIt (white)&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;why-does-exit-work-so-well&quot;&gt;Why does ExIt work so well?&lt;/h3&gt;
@@ -529,7 +529,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;Fixing &lt;script type=&quot;math/tex&quot;&gt;\sigma=5&lt;/script&gt; and using &lt;script type=&quot;math/tex&quot;&gt;S=10&lt;/script&gt; samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta=0.1&lt;/script&gt;) of &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; based on Stochastic VO and compare this to the underlying function &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; (which in this case is a simple quadratic).  Note that we only plot below the parameter &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; trajectory (each red dot represents a parameter &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;, with the initial parameter in the bottom right) and not the samples from &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta)&lt;/script&gt;.  As we see, despite the noisy gradient estimate, the parameter values &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; move toward the minimum of the objective &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;.  The matlab code is &lt;a href=&quot;https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284&quot;&gt;available&lt;/a&gt; if you’d like to play with this.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dss5.png&quot; alt=&quot;fixing sigma5&quot; title=&quot;fixed sigma 5&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/VO2Dss5.png&quot; alt=&quot;fixing sigma5&quot; title=&quot;fixed sigma 5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;One can also consider the bound as a function of both the mean &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;:&lt;/p&gt;
 
@@ -539,11 +539,11 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;Using a Gaussian with covariance &lt;script type=&quot;math/tex&quot;&gt;e^\beta I&lt;/script&gt; and performing gradient descent on both &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;, for the same objective function, learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta=0.1&lt;/script&gt;  and initial &lt;script type=&quot;math/tex&quot;&gt;\sigma=5&lt;/script&gt;, we obtain the trajectory below for &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//Vo2Dssgrad.png&quot; alt=&quot;learning sigma5&quot; title=&quot;learned sigma 5&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/Vo2Dssgrad.png&quot; alt=&quot;learning sigma5&quot; title=&quot;learned sigma 5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As we can see, by learning &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt;, the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is given below, showing how the variance reduces as we home in on the optimum.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dsdtraj.png&quot; alt=&quot;learning sigma traj 5&quot; title=&quot;learned sigma traj 5&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/VO2Dsdtraj.png&quot; alt=&quot;learning sigma traj 5&quot; title=&quot;learned sigma traj 5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In the context of more general optimisation problems (such as in deep learning and reinforcement learning), VO is potentially interesting since the sampling process can be distributed across different machines.&lt;/p&gt;
 
@@ -663,7 +663,7 @@ This shows that the &quot;evolutionary approach&quot; is in fact a special case 
 
 &lt;p&gt;However, there is an easy fix for this – simply ensure that &lt;script type=&quot;math/tex&quot;&gt;{\cal{S}}&lt;/script&gt; includes the correct class &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//aistats17.png&quot; alt=&quot;fixing IS&quot; title=&quot;fixing IS&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/aistats17.png&quot; alt=&quot;fixing IS&quot; title=&quot;fixing IS&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On the left above we show for &lt;script type=&quot;math/tex&quot;&gt;C=10,000&lt;/script&gt; classes the ratio &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)/Z_\theta(x)&lt;/script&gt; on the &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;-axis against its approximation  &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)/\tilde{Z}_\theta(x)&lt;/script&gt; on the &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;-axis. Each dot represents a different randomly drawn set of &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line &lt;script type=&quot;math/tex&quot;&gt;y=x&lt;/script&gt;.  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.&lt;/p&gt;
 
@@ -683,7 +683,7 @@ competitive against a range of alternatives including Noise
 Contrastive Estimation, Ranking approaches, Negative Sampling and
 BlackOut.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//aistats17_2.png&quot; alt=&quot;fixing IS&quot; title=&quot;fixing IS&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/aistats17_2.png&quot; alt=&quot;fixing IS&quot; title=&quot;fixing IS&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is so simple and works so well that we use this in all our NLP deep learning training experiments.&lt;/p&gt;
 

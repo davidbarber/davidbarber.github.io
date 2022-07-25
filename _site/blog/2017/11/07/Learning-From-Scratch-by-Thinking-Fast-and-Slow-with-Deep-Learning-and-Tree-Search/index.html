@@ -276,7 +276,7 @@ Credits: http://localhost:4000/disclosure
 <p>According to <a href="https://en.wikipedia.org/wiki/Dual_process_theory">dual process theory</a> human reasoning consists of two different kinds of thinking.
 System 1 is a fast, unconscious and automatic mode of thought, also known as intuition. System 2 is a slow, conscious, explicit and rule-based mode of reasoning that is believed to be an evolutionarily recent process.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//behaviour-design-predicting-irrational-decisions-12-638.jpg" alt="dual process" title="dual process theory" />
+<p class="text-center"><img src="http://localhost:4000/images/behaviour-design-predicting-irrational-decisions-12-638.jpg" alt="dual process" title="dual process theory" />
 <a href="https://www.slideshare.net/AshDonaldson/behaviour-design-predicting-irrational-decisions">image credit</a></p>
 
 <p>When learning to complete a challenging planning task, such as playing a board game, humans exploit both processes: strong intuitions allow for more effective analytic reasoning by rapidly selecting interesting lines of play for consideration. Repeated deep study gradually improves intuitions. Stronger intuitions feedback to stronger analysis, creating a closed learning loop. In other words, humans learn by thinking fast and slow<sup id="fnref:TFAS"><a href="#fn:TFAS" class="footnote">1</a></sup>.</p>
@@ -291,7 +291,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 <p>Expert Iteration<sup id="fnref:NIPSpaper"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> (ExIt) is a general framework for learning that we introduced in May 2017 and can result in powerful AI machines, without needing to mimic human strategies.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//ExIt.png" alt="ExIt" title="Expert Iteration" /></p>
+<p class="text-center"><img src="http://localhost:4000/images/ExIt.png" alt="ExIt" title="Expert Iteration" /></p>
 
 <p>ExIt can be viewed as an extension of Imitation Learning (IL) methods to domains where the best known experts are unable to achieve satisfactory performance. In standard IL an apprentice is trained to imitate the behaviour of an expert.  In ExIt, we extend this to an iterative learning process.  Between each iteration, we perform an Expert Improvement step, where we bootstrap the (fast) apprentice policy to increase the performance of the (comparatively slow) expert.</p>
 
@@ -319,7 +319,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 <p><a href="https://en.wikipedia.org/wiki/Hex_(board_game)">Hex</a> is a classic two-player board game played on a <script type="math/tex">n\times n</script> hexagonal grid. The players, denoted by colours black and white, alternate placing stones of their colour in empty cells. The black player wins if there is a sequence of adjacent black stones connecting the North edge of the board to the South edge. White wins if he achieves a sequence of adjacent white stones running from the West edge to the East edge.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//hexBW.png" alt="hex" title="Hex" />
+<p class="text-center"><img src="http://localhost:4000/images/hexBW.png" alt="hex" title="Hex" />
 <em>An example game on a <script type="math/tex">5\times 5</script> Hex board.</em></p>
 
 <p>The above represents play on a <script type="math/tex">5\times 5</script> board, with white winning (reproduced from <sup id="fnref:MOHEX"><a href="#fn:MOHEX" class="footnote">7</a></sup>).   Hex has deep strategy, making it challenging for machines to play and its large action set and connection-based rules means it shares similar challenges for AI to Go. Compared to Go, however, the rules are simpler and there can be no draws.</p>
@@ -337,7 +337,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 <p>To generate the data for training the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. We also consider a online version in which we instead keep a running buffer of the most recent moves generated; we further consider an online version that retains all data, but with exponentially more data from more recent experts (which correspond to the strongest play).  A comparison of these different approaches is given below in which we compare the strength (measured in terms of the <a href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO</a> score) of each learned policy network against a measure of training time.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//BatchOnline.png" alt="results" title="results" /></p>
+<p class="text-center"><img src="http://localhost:4000/images/BatchOnline.png" alt="results" title="results" /></p>
 
 <p>We also show the result of using a more traditional Reinforcement Learning approach in which a policy <script type="math/tex">\hat{\pi}(a\vert s)</script> is learned only through self play (i.e. no MCTS). This is essentially the method used within AlphaGo<sup id="fnref:AlphaGo:3"><a href="#fn:AlphaGo" class="footnote">4</a></sup> to train their policy network. The figure shows that the ExIt training approach is considerably more effective than more classical approaches. It is worth noting that in this example training has not yet fully converged and the apprentice would be expected to improve in ability further given additional training time.</p>
 
@@ -345,10 +345,10 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 <p>Our final MCTS player outperforms the best known machine Hex player, MoHex, beating it in 75% of games played on a <script type="math/tex">9\times 9</script> board. These results are even more remarkable considering that training has not fully converged. A couple of examples of game-play of our ExIt trained player versus the state-of-the-art MoHex player are shown below<sup id="fnref:RyanHayward"><a href="#fn:RyanHayward" class="footnote">9</a></sup>. We contrast the play of each algorithm when started at the same position. See the paper<sup id="fnref:NIPSpaper:4"><a href="#fn:NIPSpaper" class="footnote">5</a></sup> for more examples.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game1.png" alt="results" title="game1" />
+<p class="text-center"><img src="http://localhost:4000/images/game1.png" alt="results" title="game1" />
 <em>ExIt (black) versus MoHex (white)</em></p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//game2.png" alt="results" title="game2" />
+<p class="text-center"><img src="http://localhost:4000/images/game2.png" alt="results" title="game2" />
 <em>MoHex (black) versus ExIt (white)</em></p>
 
 <h3 class="no_toc" id="why-does-exit-work-so-well">Why does ExIt work so well?</h3>

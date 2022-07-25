@@ -321,7 +321,7 @@ Credits: http://localhost:4000/disclosure
 
 <p>Fixing <script type="math/tex">\sigma=5</script> and using <script type="math/tex">S=10</script> samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate <script type="math/tex">\eta=0.1</script>) of <script type="math/tex">\theta</script> based on Stochastic VO and compare this to the underlying function <script type="math/tex">f(x)</script> (which in this case is a simple quadratic).  Note that we only plot below the parameter <script type="math/tex">\theta</script> trajectory (each red dot represents a parameter <script type="math/tex">\theta</script>, with the initial parameter in the bottom right) and not the samples from <script type="math/tex">p(x\vert \theta)</script>.  As we see, despite the noisy gradient estimate, the parameter values <script type="math/tex">\theta</script> move toward the minimum of the objective <script type="math/tex">f(x)</script>.  The matlab code is <a href="https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284">available</a> if you’d like to play with this.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dss5.png" alt="fixing sigma5" title="fixed sigma 5" /></p>
+<p class="text-center"><img src="http://localhost:4000/images/VO2Dss5.png" alt="fixing sigma5" title="fixed sigma 5" /></p>
 
 <p>One can also consider the bound as a function of both the mean <script type="math/tex">\theta</script> and variance <script type="math/tex">\sigma^2</script>:</p>
 
@@ -331,11 +331,11 @@ Credits: http://localhost:4000/disclosure
 
 <p>Using a Gaussian with covariance <script type="math/tex">e^\beta I</script> and performing gradient descent on both <script type="math/tex">\beta</script> and <script type="math/tex">\theta</script>, for the same objective function, learning rate <script type="math/tex">\eta=0.1</script>  and initial <script type="math/tex">\sigma=5</script>, we obtain the trajectory below for <script type="math/tex">\theta</script></p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//Vo2Dssgrad.png" alt="learning sigma5" title="learned sigma 5" /></p>
+<p class="text-center"><img src="http://localhost:4000/images/Vo2Dssgrad.png" alt="learning sigma5" title="learned sigma 5" /></p>
 
 <p>As we can see, by learning <script type="math/tex">\sigma</script>, the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation <script type="math/tex">\sigma</script> is given below, showing how the variance reduces as we home in on the optimum.</p>
 
-<p class="text-center"><img src="http://web4.cs.ucl.ac.uk/staff/D.Barber/images//VO2Dsdtraj.png" alt="learning sigma traj 5" title="learned sigma traj 5" /></p>
+<p class="text-center"><img src="http://localhost:4000/images/VO2Dsdtraj.png" alt="learning sigma traj 5" title="learned sigma traj 5" /></p>
 
 <p>In the context of more general optimisation problems (such as in deep learning and reinforcement learning), VO is potentially interesting since the sampling process can be distributed across different machines.</p>
 
