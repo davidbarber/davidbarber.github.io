@@ -5,7 +5,7 @@
     <description>David's blog...</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2022-07-25T14:51:07+01:00</updated>
+    <updated>2022-07-25T14:56:15+01:00</updated>
     <id>http://localhost:4000</id>
     <author>
       <name>David Barber</name>
@@ -594,7 +594,8 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;whereas the image below depicts the kind of smooth local maxima that cannot happen:&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canthappen.png&quot; alt=&quot;blogpost_canthappen&quot; title=&quot;cannot happen&quot; /&gt;&lt;/p&gt;
+&lt;!--![blogpost_canthappen](http://web4.cs.ucl.ac.uk/staff/D.Barber/images//blogpost_canthappen.png &quot;cannot happen&quot;)--&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/blogpost_canthappen.png&quot; alt=&quot;blogpost_canthappen&quot; title=&quot;cannot happen&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;visualisation-for-a-simple-two-layer-net&quot;&gt;Visualisation for a simple two layer net&lt;/h3&gt;
 
@@ -602,15 +603,15 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images/rectlinE1.png&quot; alt=&quot;rectlinE1&quot; title=&quot;rectlin E1&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE1.png&quot; alt=&quot;rectlinE1&quot; title=&quot;rectlin E1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Below we show an analogous plot for varying the parameters of the second layer weights &lt;script type=&quot;math/tex&quot;&gt;W^2(u,v)&lt;/script&gt;, which has the same predicted property that there are no differentiable local maxima.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//rectlinE2.png&quot; alt=&quot;rectlinE2&quot; title=&quot;rectlin E2&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE2.png&quot; alt=&quot;rectlinE2&quot; title=&quot;rectlin E2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Finally, below we plot &lt;script type=&quot;math/tex&quot;&gt;E(u,v)&lt;/script&gt; using &lt;script type=&quot;math/tex&quot;&gt;W^1=uU&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;W^2=vV&lt;/script&gt;, showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://web4.cs.ucl.ac.uk/staff/D.Barber/images//rectlinE12.png&quot; alt=&quot;rectlinE12&quot; title=&quot;rectlin E12&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE12.png&quot; alt=&quot;rectlinE12&quot; title=&quot;rectlin E12&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 

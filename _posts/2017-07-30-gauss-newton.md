@@ -192,7 +192,8 @@ The trace of the full Hessian $$H$$ is the sum of the traces of each of the laye
 whereas the image below depicts the kind of smooth local maxima that cannot happen:
 
 {:.text-center img}
-![blogpost_canthappen]({{ site.urlimg }}/blogpost_canthappen.png "cannot happen")
+<!--![blogpost_canthappen]({{ site.urlimg }}/blogpost_canthappen.png "cannot happen")-->
+![blogpost_canthappen]({{ site.url }}/images/blogpost_canthappen.png "cannot happen")
 
 
 ### Visualisation for a simple two layer net
@@ -203,17 +204,17 @@ We consider a simple network with two layers, ReLU transfer functions and square
 As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.
 
 {:.text-center img}
-![rectlinE1]({{ site.urlimg }}rectlinE1.png "rectlin E1")
+![rectlinE1]({{ site.url }}/images/rectlinE1.png "rectlin E1")
 
 Below we show an analogous plot for varying the parameters of the second layer weights $$W^2(u,v)$$, which has the same predicted property that there are no differentiable local maxima.
 
 {:.text-center img}
-![rectlinE2]({{ site.urlimg }}/rectlinE2.png "rectlin E2")
+![rectlinE2]({{ site.url }}/images/rectlinE2.png "rectlin E2")
 
 Finally, below we plot $$E(u,v)$$ using $$W^1=uU$$ and $$W^2=vV$$, showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.
 
 {:.text-center img}
-![rectlinE12]({{ site.urlimg }}/rectlinE12.png "rectlin E12")
+![rectlinE12]({{ site.url }}/images/rectlinE12.png "rectlin E12")
 
 
 # Summary
