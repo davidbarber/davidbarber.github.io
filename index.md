@@ -8,9 +8,9 @@ description: "Machine Learning"
 ## Machine Learning 
 
 
-I'm fascinated about Artificial Intelligence and how to make computers smarter. This is mainly a blog site.
+I'm fascinated about Artificial Intelligence and how to make computers smarter. 
 
-Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber)
+This is mainly a blog site. Please also see [my UCL website]( http://www.cs.ucl.ac.uk/staff/d.barber)
 
 <!--
 <a class="twitter-timeline" href="https://twitter.com/davidobarber">Tweets by davidobarber</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
