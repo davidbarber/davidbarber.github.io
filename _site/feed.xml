@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>David Barber</title>
-    <description>David's blog...</description>
+    <description>David&apos;s blog...</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <updated>2022-07-25T16:45:07+01:00</updated>
+    <updated>2023-11-26T17:13:10+00:00</updated>
     <id>http://localhost:4000</id>
     <author>
       <name>David Barber</name>
@@ -18,7 +18,7 @@
 
 &lt;!--more--&gt;
 
-&lt;p&gt;One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018&lt;sup id=&quot;fnref:SB2018&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (&lt;a href=&quot;https://arxiv.org/abs/1806.05138&quot;&gt;arxiv version&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018&lt;sup id=&quot;fnref:SB2018&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (&lt;a href=&quot;https://arxiv.org/abs/1806.05138&quot;&gt;arxiv version&lt;/a&gt;).&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;learning-meaningful-representations-of-data&quot;&gt;Learning meaningful representations of data&lt;/h2&gt;
 
@@ -39,52 +39,52 @@
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;generative-neural-machine-translation-gnmt&quot;&gt;Generative Neural Machine Translation (GNMT)&lt;/h2&gt;
 
-&lt;p&gt;With Generative Neural Machine Translation (GNMT)&lt;sup id=&quot;fnref:SB2018:1&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, we use a single shared latent representation to model the same sentence in multiple languages. The latent variable is a language agnostic representation of the sentence; by giving it the responsiblity for modelling the same sentence in multiple languages, it is encouraged to learn the semantic meaning.&lt;/p&gt;
+&lt;p&gt;With Generative Neural Machine Translation (GNMT)&lt;sup id=&quot;fnref:SB2018:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, we use a single shared latent representation to model the same sentence in multiple languages. The latent variable is a language agnostic representation of the sentence; by giving it the responsiblity for modelling the same sentence in multiple languages, it is encouraged to learn the semantic meaning.&lt;/p&gt;
 
-&lt;p&gt;For each data point &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; in a data set, typical latent variable architectures model the joint distribution of the latent representation &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}^{(n)}&lt;/script&gt; and the observed sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(n)}&lt;/script&gt; as:&lt;/p&gt;
+&lt;p&gt;For each data point \(n\) in a data set, typical latent variable architectures model the joint distribution of the latent representation \(\mathbf{z}^{(n)}\) and the observed sentence \(\mathbf{x}^{(n)}\) as:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)})&lt;/script&gt;
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)})\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; are trainable parameters of the model.&lt;/p&gt;
+&lt;p&gt;where \(\theta\) are trainable parameters of the model.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_1.png&quot; alt=&quot;SGVB&quot; title=&quot;SGVB&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}^{(n)}&lt;/script&gt; and target sentence &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}^{(n)}&lt;/script&gt; as:&lt;/p&gt;
+&lt;p&gt;Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence \(\mathbf{x}^{(n)}\) and target sentence \(\mathbf{y}^{(n)}\) as:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})&lt;/script&gt;
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})\]
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_2.png&quot; alt=&quot;GNMT&quot; title=&quot;GNMT&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This set up means that &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}^{(n)}&lt;/script&gt; models the commonality between the source and target sentences, which is the semantic meaning.&lt;/p&gt;
+&lt;p&gt;This set up means that \(\mathbf{z}^{(n)}\) models the commonality between the source and target sentences, which is the semantic meaning.&lt;/p&gt;
 
-&lt;p&gt;For full details on the neural networks used to model the distributions of the source &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{x}^{(n)}\vert\mathbf{z}^{(n)})&lt;/script&gt; and target &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})&lt;/script&gt;, see &lt;sup id=&quot;fnref:SB2018:2&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;For full details on the neural networks used to model the distributions of the source \(p_{\theta}(\mathbf{x}^{(n)}\vert\mathbf{z}^{(n)})\) and target \(p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})\), see &lt;sup id=&quot;fnref:SB2018:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SB2018&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
-&lt;p&gt;One may argue that it would be better if the target sentence were dependent only on the latent representation and not directly on the source sentence, giving the model &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{x}\vert \mathbf{z})p(\mathbf{y}\vert \mathbf{z})p(\mathbf{z})&lt;/script&gt; – forcing the latent representation to be fully responsible for generating both the source and target sentence. However, we found that the generated translations weren’t sufficiently syntactically coherent.&lt;/p&gt;
+&lt;p&gt;One may argue that it would be better if the target sentence were dependent only on the latent representation and not directly on the source sentence, giving the model \(p(\mathbf{x}\vert \mathbf{z})p(\mathbf{y}\vert \mathbf{z})p(\mathbf{z})\) – forcing the latent representation to be fully responsible for generating both the source and target sentence. However, we found that the generated translations weren’t sufficiently syntactically coherent.&lt;/p&gt;
 
 &lt;h2 id=&quot;training-the-model&quot;&gt;Training the model&lt;/h2&gt;
 
-&lt;p&gt;We use the Stochastic Gradient Variational Bayes (SGVB)&lt;sup id=&quot;fnref:KW2014&quot;&gt;&lt;a href=&quot;#fn:KW2014&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:R2014&quot;&gt;&lt;a href=&quot;#fn:R2014&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; algorithm to train the model described above. SGVB introduces a ‘recognition’ model &lt;script type=&quot;math/tex&quot;&gt;q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})&lt;/script&gt; which acts as an approximation to the true but intractable posterior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})&lt;/script&gt;, thus forming the following lower bound on the log likelihood of the observed data:&lt;/p&gt;
+&lt;p&gt;We use the Stochastic Gradient Variational Bayes (SGVB)&lt;sup id=&quot;fnref:KW2014&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:KW2014&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&quot;fnref:R2014&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:R2014&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; algorithm to train the model described above. SGVB introduces a ‘recognition’ model \(q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})\) which acts as an approximation to the true but intractable posterior \(p(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})\), thus forming the following lower bound on the log likelihood of the observed data:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathcal{L}(\mathbf{x}^{(n)}) = \mathbb{E}_{q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})} [\log p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) - \log q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})]&lt;/script&gt;
+\[\mathcal{L}(\mathbf{x}^{(n)}) = \mathbb{E}_{q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})} [\log p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) - \log q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})]\]
 
-&lt;p&gt;The model parameters &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and recognition parameters &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; are then jointly learned by performing gradient ascent on this lower bound.&lt;/p&gt;
+&lt;p&gt;The model parameters \(\theta\) and recognition parameters \(\phi\) are then jointly learned by performing gradient ascent on this lower bound.&lt;/p&gt;
 
 &lt;h2 id=&quot;generating-translations---the-banana-trick&quot;&gt;Generating translations - the ‘banana trick’&lt;/h2&gt;
 
-&lt;p&gt;Suppose the model has been trained, and then we are given a sentence in the source language (&lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt;) and asked to find a translation of that sentence. In this scenario, we want to find the most likely target sentence conditioned on the given source sentence. The natural objective is therefore:&lt;/p&gt;
+&lt;p&gt;Suppose the model has been trained, and then we are given a sentence in the source language (\(\mathbf{x}\)) and asked to find a translation of that sentence. In this scenario, we want to find the most likely target sentence conditioned on the given source sentence. The natural objective is therefore:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{y}^{*} = \arg \max_{y} p(\mathbf{y}\vert \mathbf{x}) = \arg \max_{y} \int p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x}) p(\mathbf{z}\vert \mathbf{x}) d\mathbf{z}&lt;/script&gt;
+\[\mathbf{y}^{*} = \arg \max_{y} p(\mathbf{y}\vert \mathbf{x}) = \arg \max_{y} \int p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x}) p(\mathbf{z}\vert \mathbf{x}) d\mathbf{z}\]
 
 &lt;p&gt;However this integral is intractable, and so we cannot perform this maximisation exactly. Instead, we perform approximate maximisation by iteratively refining a ‘guess’ for the target sentence. We first make a random guess for the target sentence, and then iterate between the following two steps:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Draw samples of the latent representation from the approximate posterior, using the source sentence and the latest guess for the target sentence.&lt;/li&gt;
-  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1. This update is done by choosing \(\mathbf{y}\) to maximise \(p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})\).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Intuitively, this procedure computes the values of the latent representation that are likely to have generated both the source sentence and the latest guess for the target sentence. It then improves the guess based on those values of the latent variable. Mathematically, this iteratively increases a lower bound on &lt;script type=&quot;math/tex&quot;&gt;\log p(\mathbf{y}\vert \mathbf{x})&lt;/script&gt; until convergence and is an application of the Expectation Maximisation algorithm, here &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; playing the role of parameters.&lt;/p&gt;
+&lt;p&gt;Intuitively, this procedure computes the values of the latent representation that are likely to have generated both the source sentence and the latest guess for the target sentence. It then improves the guess based on those values of the latent variable. Mathematically, this iteratively increases a lower bound on \(\log p(\mathbf{y}\vert \mathbf{x})\) until convergence and is an application of the Expectation Maximisation algorithm, here \(\mathbf{y}\) playing the role of parameters.&lt;/p&gt;
 
-&lt;p&gt;Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in &lt;sup id=&quot;fnref:B2012&quot;&gt;&lt;a href=&quot;#fn:B2012&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, discussing a fictitious protein sequence in bananas.&lt;/p&gt;
+&lt;p&gt;Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in &lt;sup id=&quot;fnref:B2012&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:B2012&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, discussing a fictitious protein sequence in bananas.&lt;/p&gt;
 
 &lt;p&gt;Below, we show an example of a long sentence translated from French to English by GNMT. The long range coherence of the translation is a good indicator of the model’s ability to capture semantic information about the sentence within the latent representation.&lt;/p&gt;
 
@@ -102,8 +102,8 @@
 
 &lt;ol&gt;
   &lt;li&gt;Draw samples of the latent representation from the approximate posterior, using the latest guesses for the source and target sentences.&lt;/li&gt;
-  &lt;li&gt;Update the guess for the source sentence based on the latent representation samples from step 1. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{x}\vert \mathbf{z})&lt;/script&gt;.&lt;/li&gt;
-  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1 and on the updated guess for the source sentence from step 2. This update is done by choosing &lt;script type=&quot;math/tex&quot;&gt;\mathbf{y}&lt;/script&gt; to maximise &lt;script type=&quot;math/tex&quot;&gt;p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;Update the guess for the source sentence based on the latent representation samples from step 1. This update is done by choosing \(\mathbf{x}\) to maximise \(p_{\theta}(\mathbf{x}\vert \mathbf{z})\).&lt;/li&gt;
+  &lt;li&gt;Update the guess for the target sentence based on the latent representation samples from step 1 and on the updated guess for the source sentence from step 2. This update is done by choosing \(\mathbf{y}\) to maximise \(p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})\).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Below is an example of a sentence translated from Spanish to English, where the struck through words in the source sentence are considered missing. Using its latent representation, the model does remarkably well at imputing what the missing words may be and translating them accordingly.&lt;/p&gt;
@@ -116,11 +116,11 @@
 
 &lt;h2 id=&quot;cross-language-parameter-sharing&quot;&gt;Cross-language parameter sharing&lt;/h2&gt;
 
-&lt;p&gt;With the architecture described above, if we wanted to translate between, say, English (EN), Spanish (ES) and French (FR), we would have to train 6 separate models for EN → ES, ES → EN, EN → FR, etc. However because all three of these languages share somewhat similar structures, we may not lose much performance by sharing parameters. We therefore add two indicator variables to the model, one for the input language (&lt;script type=&quot;math/tex&quot;&gt;l_{x}&lt;/script&gt;) and another for the output language (&lt;script type=&quot;math/tex&quot;&gt;l_{y}&lt;/script&gt;). By doing this, we only have to train a single model to translate between three languages, instead of having 6 separate models.&lt;/p&gt;
+&lt;p&gt;With the architecture described above, if we wanted to translate between, say, English (EN), Spanish (ES) and French (FR), we would have to train 6 separate models for EN → ES, ES → EN, EN → FR, etc. However because all three of these languages share somewhat similar structures, we may not lose much performance by sharing parameters. We therefore add two indicator variables to the model, one for the input language (\(l_{x}\)) and another for the output language (\(l_{y}\)). By doing this, we only have to train a single model to translate between three languages, instead of having 6 separate models.&lt;/p&gt;
 
 &lt;p&gt;The joint distribution of the latent representation, source sentence and target sentence becomes:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})&lt;/script&gt;
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})\]
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/fig_3.png&quot; alt=&quot;GNMT-Multi&quot; title=&quot;GNMT-Multi&quot; /&gt;&lt;/p&gt;
 
@@ -138,7 +138,7 @@
 
 &lt;h2 id=&quot;semi-supervised-learning&quot;&gt;Semi-supervised learning&lt;/h2&gt;
 
-&lt;p&gt;Suppose, as in the previous section, that we only have access to a limited number of paired sentences, but that we now have available lots of untranslated sentences in each language. To learn from untranslated sentences, we can set the input language &lt;script type=&quot;math/tex&quot;&gt;l_{x}&lt;/script&gt; and output language &lt;script type=&quot;math/tex&quot;&gt;l_{y}&lt;/script&gt; to the same value, so that the model learns to reconstruct the sentence instead of translating it. Intuitively, this should further help the model to learn the structure and style of each language and thus produce more coherent translations at test time. We refer to this version of the model as GNMT-Multi-SSL.&lt;/p&gt;
+&lt;p&gt;Suppose, as in the previous section, that we only have access to a limited number of paired sentences, but that we now have available lots of untranslated sentences in each language. To learn from untranslated sentences, we can set the input language \(l_{x}\) and output language \(l_{y}\) to the same value, so that the model learns to reconstruct the sentence instead of translating it. Intuitively, this should further help the model to learn the structure and style of each language and thus produce more coherent translations at test time. We refer to this version of the model as GNMT-Multi-SSL.&lt;/p&gt;
 
 &lt;p&gt;Below we plot the BLEU scores of GNMT-Multi-SSL, GNMT-Multi and the 6 separate GNMT models. They are trained first with 400,000 then with 4,000,000 pairs of translated sentences. In both cases, they are also trained with approximately 20,900,000 untranslated English sentences, 2,700,000 untranslated Spanish sentences and 4,500,000 untranslated French sentences. GNMT-Multi-SSL clearly helps to mitigate overfitting when there are limited paired sentences available. In fact, GNMT-Multi-SSL trained with only 400,000 paired sentences performs about as well as each of the 6 separate GNMT models trained with 4,000,000 sentences! GNMT-Multi-SSL also produces higher BLEU scores even when there is lots of paired data; this verifies our intuition that adding monolingual data helps the model to develop a better understanding of each language individually, and output more coherent sentences accordingly.&lt;/p&gt;
 
@@ -152,19 +152,19 @@
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:SB2018&quot;&gt;
-      &lt;p&gt;H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018.&amp;nbsp;&lt;a href=&quot;#fnref:SB2018&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:SB2018:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:SB2018&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018. &lt;a href=&quot;#fnref:SB2018&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:SB2018:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:SB2018:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:KW2014&quot;&gt;
-      &lt;p&gt;D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:KW2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:KW2014&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014. &lt;a href=&quot;#fnref:KW2014&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:R2014&quot;&gt;
-      &lt;p&gt;D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014.&amp;nbsp;&lt;a href=&quot;#fnref:R2014&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:R2014&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014. &lt;a href=&quot;#fnref:R2014&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:B2012&quot;&gt;
-      &lt;p&gt;D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012.&amp;nbsp;&lt;a href=&quot;#fnref:B2012&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:B2012&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012. &lt;a href=&quot;#fnref:B2012&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -191,17 +191,17 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/behaviour-design-predicting-irrational-decisions-12-638.jpg&quot; alt=&quot;dual process&quot; title=&quot;dual process theory&quot; /&gt;
 &lt;a href=&quot;https://www.slideshare.net/AshDonaldson/behaviour-design-predicting-irrational-decisions&quot;&gt;image credit&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;When learning to complete a challenging planning task, such as playing a board game, humans exploit both processes: strong intuitions allow for more effective analytic reasoning by rapidly selecting interesting lines of play for consideration. Repeated deep study gradually improves intuitions. Stronger intuitions feedback to stronger analysis, creating a closed learning loop. In other words, humans learn by thinking fast and slow&lt;sup id=&quot;fnref:TFAS&quot;&gt;&lt;a href=&quot;#fn:TFAS&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;When learning to complete a challenging planning task, such as playing a board game, humans exploit both processes: strong intuitions allow for more effective analytic reasoning by rapidly selecting interesting lines of play for consideration. Repeated deep study gradually improves intuitions. Stronger intuitions feedback to stronger analysis, creating a closed learning loop. In other words, humans learn by thinking fast and slow&lt;sup id=&quot;fnref:TFAS&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TFAS&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;whats-wrong-with-current-deep-rl&quot;&gt;What’s wrong with current Deep RL?&lt;/h3&gt;
 
-&lt;p&gt;In current Deep Reinforcement Learning (RL) algorithms such as Policy Gradients&lt;sup id=&quot;fnref:Williams&quot;&gt;&lt;a href=&quot;#fn:Williams&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; and DQN&lt;sup id=&quot;fnref:DQN&quot;&gt;&lt;a href=&quot;#fn:DQN&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, neural networks make action selections with no lookahead; this is analogous to System 1. Unlike human intuition, their training does not benefit from a ‘System 2’ to suggest strong policies.&lt;/p&gt;
+&lt;p&gt;In current Deep Reinforcement Learning (RL) algorithms such as Policy Gradients&lt;sup id=&quot;fnref:Williams&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Williams&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; and DQN&lt;sup id=&quot;fnref:DQN&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:DQN&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, neural networks make action selections with no lookahead; this is analogous to System 1. Unlike human intuition, their training does not benefit from a ‘System 2’ to suggest strong policies.&lt;/p&gt;
 
-&lt;p&gt;A criticism of some AI algorithms such as AlphaGo&lt;sup id=&quot;fnref:AlphaGo&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; is that they use a database of human expert play&lt;sup id=&quot;fnref:AlphaGo:1&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.   In the initial phase of training the RL agent mimics the moves of a human expert – only after this initial phase does it begin to learn potentially more powerful super-human play. This is somewhat unsatisfactory since the resulting algorithm may be heavily biased toward a human style of playing, blind to potentially more powerful lines of play. Whilst, in areas such as game playing, it may be natural to assume that there will be a database of human expert play available, in other settings in which we wish to train an AI machine, no such database may be available. Therefore, showing how to train a state-of-the-art board game player &lt;em&gt;ex nihilo&lt;/em&gt; is a major challenge for AI.&lt;/p&gt;
+&lt;p&gt;A criticism of some AI algorithms such as AlphaGo&lt;sup id=&quot;fnref:AlphaGo&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; is that they use a database of human expert play&lt;sup id=&quot;fnref:AlphaGo:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;.   In the initial phase of training the RL agent mimics the moves of a human expert – only after this initial phase does it begin to learn potentially more powerful super-human play. This is somewhat unsatisfactory since the resulting algorithm may be heavily biased toward a human style of playing, blind to potentially more powerful lines of play. Whilst, in areas such as game playing, it may be natural to assume that there will be a database of human expert play available, in other settings in which we wish to train an AI machine, no such database may be available. Therefore, showing how to train a state-of-the-art board game player &lt;em&gt;ex nihilo&lt;/em&gt; is a major challenge for AI.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;expert-iteration-exit&quot;&gt;Expert Iteration (ExIt)&lt;/h2&gt;
 
-&lt;p&gt;Expert Iteration&lt;sup id=&quot;fnref:NIPSpaper&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; (ExIt) is a general framework for learning that we introduced in May 2017 and can result in powerful AI machines, without needing to mimic human strategies.&lt;/p&gt;
+&lt;p&gt;Expert Iteration&lt;sup id=&quot;fnref:NIPSpaper&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; (ExIt) is a general framework for learning that we introduced in May 2017 and can result in powerful AI machines, without needing to mimic human strategies.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/ExIt.png&quot; alt=&quot;ExIt&quot; title=&quot;Expert Iteration&quot; /&gt;&lt;/p&gt;
 
@@ -223,39 +223,39 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;tree-search-and-deep-learning&quot;&gt;Tree Search and Deep Learning&lt;/h3&gt;
 
-&lt;p&gt;Exit is a general strategy for learning and the apprentice and expert can be specified in a variety of ways. In board games Monte Carlo Tree Search (MCTS) is a strong playing strategy&lt;sup id=&quot;fnref:MCTS&quot;&gt;&lt;a href=&quot;#fn:MCTS&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; and is a natural candidate to play the role of the expert.  Deep Learning has been shown to be a successful method to imitate the play of strong players&lt;sup id=&quot;fnref:AlphaGo:2&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; which we therefore use as the apprentice.&lt;/p&gt;
+&lt;p&gt;Exit is a general strategy for learning and the apprentice and expert can be specified in a variety of ways. In board games Monte Carlo Tree Search (MCTS) is a strong playing strategy&lt;sup id=&quot;fnref:MCTS&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:MCTS&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; and is a natural candidate to play the role of the expert.  Deep Learning has been shown to be a successful method to imitate the play of strong players&lt;sup id=&quot;fnref:AlphaGo:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; which we therefore use as the apprentice.&lt;/p&gt;
 
 &lt;p&gt;At the Expert Improvement phase we use the apprentice to direct the MCTS algorithm toward promising moves, effectively reducing the game tree search breadth and depth. In this way, we bootstrap the knowledge acquired by Imitation Learning back into the planning algorithm.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;the-board-game-hex&quot;&gt;The board game Hex&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hex_(board_game)&quot;&gt;Hex&lt;/a&gt; is a classic two-player board game played on a &lt;script type=&quot;math/tex&quot;&gt;n\times n&lt;/script&gt; hexagonal grid. The players, denoted by colours black and white, alternate placing stones of their colour in empty cells. The black player wins if there is a sequence of adjacent black stones connecting the North edge of the board to the South edge. White wins if he achieves a sequence of adjacent white stones running from the West edge to the East edge.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hex_(board_game)&quot;&gt;Hex&lt;/a&gt; is a classic two-player board game played on a \(n\times n\) hexagonal grid. The players, denoted by colours black and white, alternate placing stones of their colour in empty cells. The black player wins if there is a sequence of adjacent black stones connecting the North edge of the board to the South edge. White wins if he achieves a sequence of adjacent white stones running from the West edge to the East edge.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/hexBW.png&quot; alt=&quot;hex&quot; title=&quot;Hex&quot; /&gt;
-&lt;em&gt;An example game on a &lt;script type=&quot;math/tex&quot;&gt;5\times 5&lt;/script&gt; Hex board.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;An example game on a \(5\times 5\) Hex board.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;The above represents play on a &lt;script type=&quot;math/tex&quot;&gt;5\times 5&lt;/script&gt; board, with white winning (reproduced from &lt;sup id=&quot;fnref:MOHEX&quot;&gt;&lt;a href=&quot;#fn:MOHEX&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;).   Hex has deep strategy, making it challenging for machines to play and its large action set and connection-based rules means it shares similar challenges for AI to Go. Compared to Go, however, the rules are simpler and there can be no draws.&lt;/p&gt;
+&lt;p&gt;The above represents play on a \(5\times 5\) board, with white winning (reproduced from &lt;sup id=&quot;fnref:MOHEX&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:MOHEX&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;).   Hex has deep strategy, making it challenging for machines to play and its large action set and connection-based rules means it shares similar challenges for AI to Go. Compared to Go, however, the rules are simpler and there can be no draws.&lt;/p&gt;
 
-&lt;p&gt;Because the rules of Hex are so simple, the game is relatively amenable to mathematical analysis (compared for example to Go) and the current best machine player MoHex&lt;sup id=&quot;fnref:MOHEX:1&quot;&gt;&lt;a href=&quot;#fn:MOHEX&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; uses a combination of MCTS and smart mathematical insights.  MoHex has won every Computer Games Olympiad Hex tournament since 2009. It is noteworthy, that MoHex uses a rollout policy trained on datasets of human expert play.&lt;/p&gt;
+&lt;p&gt;Because the rules of Hex are so simple, the game is relatively amenable to mathematical analysis (compared for example to Go) and the current best machine player MoHex&lt;sup id=&quot;fnref:MOHEX:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:MOHEX&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt; uses a combination of MCTS and smart mathematical insights.  MoHex has won every Computer Games Olympiad Hex tournament since 2009. It is noteworthy, that MoHex uses a rollout policy trained on datasets of human expert play.&lt;/p&gt;
 
-&lt;p&gt;We wanted to see if we can use our ExIt training strategy to learn an AI player than can outperform MoHex, without using any game-specific knowledge or human example play (beside the rules of the game). To do this, our expert is a MCTS player that is guided by the apprentice neural network.  Our neural network is a form of deep convolutional network with two output policies – ones for black play and one for white (see &lt;sup id=&quot;fnref:NIPSpaper:1&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for details).&lt;/p&gt;
+&lt;p&gt;We wanted to see if we can use our ExIt training strategy to learn an AI player than can outperform MoHex, without using any game-specific knowledge or human example play (beside the rules of the game). To do this, our expert is a MCTS player that is guided by the apprentice neural network.  Our neural network is a form of deep convolutional network with two output policies – ones for black play and one for white (see &lt;sup id=&quot;fnref:NIPSpaper:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for details).&lt;/p&gt;
 
-&lt;p&gt;Expert Improvement is achieved by using the modified MCTS formula&lt;sup id=&quot;fnref:OnlineOffline&quot;&gt;&lt;a href=&quot;#fn:OnlineOffline&quot; class=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Expert Improvement is achieved by using the modified MCTS formula&lt;sup id=&quot;fnref:OnlineOffline&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:OnlineOffline&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;UCT(s,a) + w \frac{\hat{\pi}(a|s)}{n(s,a)+1}
-\tag{1}\label{eq:uct}&lt;/script&gt;
+\[UCT(s,a) + w \frac{\hat{\pi}(a|s)}{n(s,a)+1}
+\tag{1}\label{eq:uct}\]
 
-&lt;p&gt;Here &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; is the state of the Hex board, &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; is a possible action (i.e. move) from &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt;. The term &lt;script type=&quot;math/tex&quot;&gt;UCT(s,a)&lt;/script&gt; represents the classical Upper Confidence Bound for Trees&lt;sup id=&quot;fnref:MCTS:1&quot;&gt;&lt;a href=&quot;#fn:MCTS&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; used in MCTS. The additional term helps the neural network apprentice  guide the search to more promising moves. In this term &lt;script type=&quot;math/tex&quot;&gt;\hat{\pi}&lt;/script&gt; is the policy (suggested relative strength of each possible action &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt; from the board state &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt;) of the apprentice and &lt;script type=&quot;math/tex&quot;&gt;n(s,a)&lt;/script&gt; the number of visits currently made by the search algorithm through state &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; and taking action &lt;script type=&quot;math/tex&quot;&gt;a&lt;/script&gt;; &lt;script type=&quot;math/tex&quot;&gt;w&lt;/script&gt; is an empirically chosen weighting factor that balances the slow thinking of the expert with the fast intuition of the apprentice. Through the additional term, the neural network apprentice guides the search to more promising moves, and rejects weak moves more quickly.&lt;/p&gt;
+&lt;p&gt;Here \(s\) is the state of the Hex board, \(a\) is a possible action (i.e. move) from \(s\). The term \(UCT(s,a)\) represents the classical Upper Confidence Bound for Trees&lt;sup id=&quot;fnref:MCTS:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:MCTS&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt; used in MCTS. The additional term helps the neural network apprentice  guide the search to more promising moves. In this term \(\hat{\pi}\) is the policy (suggested relative strength of each possible action \(a\) from the board state \(s\)) of the apprentice and \(n(s,a)\) the number of visits currently made by the search algorithm through state \(s\) and taking action \(a\); \(w\) is an empirically chosen weighting factor that balances the slow thinking of the expert with the fast intuition of the apprentice. Through the additional term, the neural network apprentice guides the search to more promising moves, and rejects weak moves more quickly.&lt;/p&gt;
 
 &lt;p&gt;To generate the data for training the apprentice (during each Imitation Learning phase), the batch approach generates data afresh, discarding all data from previous iterations. We also consider a online version in which we instead keep a running buffer of the most recent moves generated; we further consider an online version that retains all data, but with exponentially more data from more recent experts (which correspond to the strongest play).  A comparison of these different approaches is given below in which we compare the strength (measured in terms of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Elo_rating_system&quot;&gt;ELO&lt;/a&gt; score) of each learned policy network against a measure of training time.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/BatchOnline.png&quot; alt=&quot;results&quot; title=&quot;results&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We also show the result of using a more traditional Reinforcement Learning approach in which a policy &lt;script type=&quot;math/tex&quot;&gt;\hat{\pi}(a\vert s)&lt;/script&gt; is learned only through self play (i.e. no MCTS). This is essentially the method used within AlphaGo&lt;sup id=&quot;fnref:AlphaGo:3&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; to train their policy network. The figure shows that the ExIt training approach is considerably more effective than more classical approaches. It is worth noting that in this example training has not yet fully converged and the apprentice would be expected to improve in ability further given additional training time.&lt;/p&gt;
+&lt;p&gt;We also show the result of using a more traditional Reinforcement Learning approach in which a policy \(\hat{\pi}(a\vert s)\) is learned only through self play (i.e. no MCTS). This is essentially the method used within AlphaGo&lt;sup id=&quot;fnref:AlphaGo:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AlphaGo&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; to train their policy network. The figure shows that the ExIt training approach is considerably more effective than more classical approaches. It is worth noting that in this example training has not yet fully converged and the apprentice would be expected to improve in ability further given additional training time.&lt;/p&gt;
 
-&lt;p&gt;In our paper&lt;sup id=&quot;fnref:NIPSpaper:2&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; we include an additional mechanism to improve play, namely a value network &lt;script type=&quot;math/tex&quot;&gt;V^{\hat{\pi}}(s)&lt;/script&gt; that approximates the probability that the apprentice (alone) would win the game from position &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt;. Both the policy and value network are then used in combination to help guide the final apprentice-aided MCTS player. The policy network and value networks guide the final MCTS player using an equation similar  \eqref{eq:uct}, but modified to include the apprentice’s value of the state &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; (see &lt;sup id=&quot;fnref:NIPSpaper:3&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for details).&lt;/p&gt;
+&lt;p&gt;In our paper&lt;sup id=&quot;fnref:NIPSpaper:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; we include an additional mechanism to improve play, namely a value network \(V^{\hat{\pi}}(s)\) that approximates the probability that the apprentice (alone) would win the game from position \(s\). Both the policy and value network are then used in combination to help guide the final apprentice-aided MCTS player. The policy network and value networks guide the final MCTS player using an equation similar  \eqref{eq:uct}, but modified to include the apprentice’s value of the state \(s\) (see &lt;sup id=&quot;fnref:NIPSpaper:3&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for details).&lt;/p&gt;
 
-&lt;p&gt;Our final MCTS player outperforms the best known machine Hex player, MoHex, beating it in 75% of games played on a &lt;script type=&quot;math/tex&quot;&gt;9\times 9&lt;/script&gt; board. These results are even more remarkable considering that training has not fully converged. A couple of examples of game-play of our ExIt trained player versus the state-of-the-art MoHex player are shown below&lt;sup id=&quot;fnref:RyanHayward&quot;&gt;&lt;a href=&quot;#fn:RyanHayward&quot; class=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;. We contrast the play of each algorithm when started at the same position. See the paper&lt;sup id=&quot;fnref:NIPSpaper:4&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for more examples.&lt;/p&gt;
+&lt;p&gt;Our final MCTS player outperforms the best known machine Hex player, MoHex, beating it in 75% of games played on a \(9\times 9\) board. These results are even more remarkable considering that training has not fully converged. A couple of examples of game-play of our ExIt trained player versus the state-of-the-art MoHex player are shown below&lt;sup id=&quot;fnref:RyanHayward&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:RyanHayward&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;. We contrast the play of each algorithm when started at the same position. See the paper&lt;sup id=&quot;fnref:NIPSpaper:4&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; for more examples.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/game1.png&quot; alt=&quot;results&quot; title=&quot;game1&quot; /&gt;
 &lt;em&gt;ExIt (black) versus MoHex (white)&lt;/em&gt;&lt;/p&gt;
@@ -271,7 +271,7 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;relation-to-alphago-zero&quot;&gt;Relation to AlphaGo Zero&lt;/h3&gt;
 
-&lt;p&gt;AlphaGo Zero&lt;sup id=&quot;fnref:AlphaGoZero&quot;&gt;&lt;a href=&quot;#fn:AlphaGoZero&quot; class=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt; (developed independently of our work&lt;sup id=&quot;fnref:AXpaper&quot;&gt;&lt;a href=&quot;#fn:AXpaper&quot; class=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;) also implements an ExIt style algorithm and shows that it is possible to achieve state-of-the-art performance in Go without the use of human expert play. A detailed comparison of the approaches is given in our paper&lt;sup id=&quot;fnref:NIPSpaper:5&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;AlphaGo Zero&lt;sup id=&quot;fnref:AlphaGoZero&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AlphaGoZero&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;10&lt;/a&gt;&lt;/sup&gt; (developed independently of our work&lt;sup id=&quot;fnref:AXpaper&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:AXpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;) also implements an ExIt style algorithm and shows that it is possible to achieve state-of-the-art performance in Go without the use of human expert play. A detailed comparison of the approaches is given in our paper&lt;sup id=&quot;fnref:NIPSpaper:5&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:NIPSpaper&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
@@ -279,40 +279,40 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;references&quot;&gt;References&lt;/h3&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:TFAS&quot;&gt;
-      &lt;p&gt;D. Kahneman. Thinking, Fast and Slow. Macmillan, 2011.&amp;nbsp;&lt;a href=&quot;#fnref:TFAS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:TFAS&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Kahneman. Thinking, Fast and Slow. Macmillan, 2011. &lt;a href=&quot;#fnref:TFAS&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:Williams&quot;&gt;
-      &lt;p&gt;R. J. Williams. Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning. Machine Learning, 8(3-4):229–256, 1992.&amp;nbsp;&lt;a href=&quot;#fnref:Williams&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:Williams&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;R. J. Williams. Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning. Machine Learning, 8(3-4):229–256, 1992. &lt;a href=&quot;#fnref:Williams&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:DQN&quot;&gt;
-      &lt;p&gt;V. Mnih et al. Human-Level Control through Deep Reinforcement Learning. Nature, 518(7540):529–533, 2015.&amp;nbsp;&lt;a href=&quot;#fnref:DQN&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:DQN&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;V. Mnih et al. Human-Level Control through Deep Reinforcement Learning. Nature, 518(7540):529–533, 2015. &lt;a href=&quot;#fnref:DQN&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:AlphaGo&quot;&gt;
-      &lt;p&gt;D. Silver et al. Mastering the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489, 2016.&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGo:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:AlphaGo&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Silver et al. Mastering the Game of Go with Deep Neural Networks and Tree Search. Nature, 529(7587):484–489, 2016. &lt;a href=&quot;#fnref:AlphaGo&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:AlphaGo:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:NIPSpaper&quot;&gt;
-      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search, Neural Information Processing Systems (NIPS 2017). In Press.&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:NIPSpaper:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:NIPSpaper&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search, Neural Information Processing Systems (NIPS 2017). In Press. &lt;a href=&quot;#fnref:NIPSpaper&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:3&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:4&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:NIPSpaper:5&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:MCTS&quot;&gt;
-      &lt;p&gt;L. Kocsis and C. Szepesvári. Bandit Based Monte-Carlo Planning. In European Conference on Machine Learning, pages 282–293. Springer, 2006.&amp;nbsp;&lt;a href=&quot;#fnref:MCTS&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:MCTS:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:MCTS&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;L. Kocsis and C. Szepesvári. Bandit Based Monte-Carlo Planning. In European Conference on Machine Learning, pages 282–293. Springer, 2006. &lt;a href=&quot;#fnref:MCTS&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:MCTS:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:MOHEX&quot;&gt;
-      &lt;p&gt;S.-C. Huang, B. Arneson, R. Hayward, M. Müller, and J. Pawlewicz. MoHex 2.0: A Pattern-Based MCTS Hex Player. In International Conference on Computers and Games, pages 60–71. Springer, 2013.&amp;nbsp;&lt;a href=&quot;#fnref:MOHEX&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;#fnref:MOHEX:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:MOHEX&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;S.-C. Huang, B. Arneson, R. Hayward, M. Müller, and J. Pawlewicz. MoHex 2.0: A Pattern-Based MCTS Hex Player. In International Conference on Computers and Games, pages 60–71. Springer, 2013. &lt;a href=&quot;#fnref:MOHEX&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:MOHEX:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:OnlineOffline&quot;&gt;
-      &lt;p&gt;S. Gelly and D. Silver. Combining Online and Offline Knowledge in UCT. In Proceedings of the 24th International Conference on Machine learning, pages 273–280. ACM, 2007.&amp;nbsp;&lt;a href=&quot;#fnref:OnlineOffline&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:OnlineOffline&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;S. Gelly and D. Silver. Combining Online and Offline Knowledge in UCT. In Proceedings of the 24th International Conference on Machine learning, pages 273–280. ACM, 2007. &lt;a href=&quot;#fnref:OnlineOffline&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:RyanHayward&quot;&gt;
-      &lt;p&gt;Thanks to Ryan Hayward for providing a tool to draw Hex positions.&amp;nbsp;&lt;a href=&quot;#fnref:RyanHayward&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:RyanHayward&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Thanks to Ryan Hayward for providing a tool to draw Hex positions. &lt;a href=&quot;#fnref:RyanHayward&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:AlphaGoZero&quot;&gt;
-      &lt;p&gt;D. Silver,  et al.  Mastering the game of Go without human knowledge. Nature 550:354–359, October 2017.&amp;nbsp;&lt;a href=&quot;#fnref:AlphaGoZero&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:AlphaGoZero&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;D. Silver,  et al.  Mastering the game of Go without human knowledge. Nature 550:354–359, October 2017. &lt;a href=&quot;#fnref:AlphaGoZero&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:AXpaper&quot;&gt;
-      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search. &lt;a href=&quot;http://arxiv.org/abs/1705.08439&quot;&gt;arXiv CoRR:abs/1705.08439&lt;/a&gt;, May 2017.&amp;nbsp;&lt;a href=&quot;#fnref:AXpaper&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:AXpaper&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;T. Anthony, Z. Tian and D. Barber. Thinking Fast and Slow with Deep Learning and Tree Search. &lt;a href=&quot;http://arxiv.org/abs/1705.08439&quot;&gt;arXiv CoRR:abs/1705.08439&lt;/a&gt;, May 2017. &lt;a href=&quot;#fnref:AXpaper&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -333,37 +333,37 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 &lt;!--more--&gt;
 
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\br}[1]{\left(#1\right)}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\sq}[1]{\left[#1\right]}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;\(\newcommand{\br}[1]{\left(#1\right)}\)
+\(\newcommand{\sq}[1]{\left[#1\right]}\)
+\(\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}\)&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;feedforward-neural-networks&quot;&gt;Feedforward Neural Networks&lt;/h2&gt;
 
-&lt;p&gt;In our description, a feedforward NN takes an input vector &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and produces a vector &lt;script type=&quot;math/tex&quot;&gt;h_L&lt;/script&gt; on the final &lt;script type=&quot;math/tex&quot;&gt;L^{th}&lt;/script&gt; layer. We write &lt;script type=&quot;math/tex&quot;&gt;h_\lambda&lt;/script&gt; to be the vector of pre-activation values for layer &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;a_\lambda&lt;/script&gt; to denote the vector of activation values after passing through the transfer function &lt;script type=&quot;math/tex&quot;&gt;f_\lambda&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;In our description, a feedforward NN takes an input vector \(x\) and produces a vector \(h_L\) on the final \(L^{th}\) layer. We write \(h_\lambda\) to be the vector of pre-activation values for layer \(\lambda\) and \(a_\lambda\) to denote the vector of activation values after passing through the transfer function \(f_\lambda\).&lt;/p&gt;
 
-&lt;p&gt;Starting with setting &lt;script type=&quot;math/tex&quot;&gt;a_0&lt;/script&gt;  to the input &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, a feedforward NN is defined by the recursion&lt;/p&gt;
+&lt;p&gt;Starting with setting \(a_0\)  to the input \(x\), a feedforward NN is defined by the recursion&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;h_\lambda = W_\lambda a_{\lambda-1}&lt;/script&gt;
+\[h_\lambda = W_\lambda a_{\lambda-1}\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;W_\lambda&lt;/script&gt; is the weight matrix of layer &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; (we use a sub or superscript &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; wherever most convenient) and the activation vector is given by&lt;/p&gt;
+&lt;p&gt;where \(W_\lambda\) is the weight matrix of layer \(\lambda\) (we use a sub or superscript \(\lambda\) wherever most convenient) and the activation vector is given by&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;a_\lambda = f_\lambda(h_\lambda)&lt;/script&gt;
+\[a_\lambda = f_\lambda(h_\lambda)\]
 
-&lt;p&gt;We define a loss &lt;script type=&quot;math/tex&quot;&gt;E(h_L,y)&lt;/script&gt; between the final output layer &lt;script type=&quot;math/tex&quot;&gt;h_L&lt;/script&gt; and a desired training output &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;. For example, we might use a squared loss&lt;/p&gt;
+&lt;p&gt;We define a loss \(E(h_L,y)\) between the final output layer \(h_L\) and a desired training output \(y\). For example, we might use a squared loss&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;E(h_L,y) = (h_L-y)^2&lt;/script&gt;
+\[E(h_L,y) = (h_L-y)^2\]
 
 &lt;p&gt;where the loss is summed over all elements of the vector.  For a training dataset the total error function is the summed  loss over individual training points&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{E}(\theta) = \sum_{n=1}^N E(h_L(n),y(n))&lt;/script&gt;
+\[\bar{E}(\theta) = \sum_{n=1}^N E(h_L(n),y(n))\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; represents the stacked vector of all parameters of the network. For simplicity we will write &lt;script type=&quot;math/tex&quot;&gt;E(\theta)&lt;/script&gt; for the error for a single generic datapoint.&lt;/p&gt;
+&lt;p&gt;where \(\theta\) represents the stacked vector of all parameters of the network. For simplicity we will write \(E(\theta)\) for the error for a single generic datapoint.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;the-gradient&quot;&gt;The Gradient&lt;/h3&gt;
 
 &lt;p&gt;For training a NN, a key quantity is the gradient of the error&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;g_{i} = \frac{\partial}{\partial\theta_i} E(\theta)&lt;/script&gt;
+\[g_{i} = \frac{\partial}{\partial\theta_i} E(\theta)\]
 
 &lt;p&gt;We use this for example in gradient descent training algorithms. An important issue is how to compute the gradient efficiently. Thanks to the layered structure of the network, it’s intuitive that there is an efficient scheme (backprop which is a special case of Reverse Mode AutoDiff) that propagates information from layer to layer.&lt;/p&gt;
 
@@ -371,63 +371,63 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;p&gt;One aspect of the structure of the error surface is the local curvature, defined by the Hessian matrix with elements&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;H_{ij} = \frac{\partial^2}{\partial\theta_i\partial\theta_j} E(\theta)&lt;/script&gt;
+\[H_{ij} = \frac{\partial^2}{\partial\theta_i\partial\theta_j} E(\theta)\]
 
-&lt;p&gt;The Hessian matrix itself is typically very large. To make this more manageable, we’ll focus here on the Hessian of the parameters of a given layer &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt;.  That is&lt;/p&gt;
+&lt;p&gt;The Hessian matrix itself is typically very large. To make this more manageable, we’ll focus here on the Hessian of the parameters of a given layer \(\lambda\).  That is&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[H_\lambda]_{(a,b),(c,d)} = \frac{\partial^2 E}{\partial W^\lambda_{a,b}\partial W^\lambda_{c,d}}&lt;/script&gt;
+\[[H_\lambda]_{(a,b),(c,d)} = \frac{\partial^2 E}{\partial W^\lambda_{a,b}\partial W^\lambda_{c,d}}\]
 
-&lt;p&gt;The Hessians &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; then form the diagonal block matrices of the full Hessian &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;The Hessians \(H_\lambda\) then form the diagonal block matrices of the full Hessian \(H\).&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;a-recursion-for-the-hessian&quot;&gt;A recursion for the Hessian&lt;/h2&gt;
 
 &lt;p&gt;Similar to the gradient, it’s perhaps intuitive that a recursion exists to calculate this layerwise Hessian.  Starting from&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial E}{\partial W^\lambda_{a,b}}=\sum_i \frac{\partial h^\lambda_i}{W^\lambda_{a,b}}\frac{\partial E}{\partial h^\lambda_i} = a^{\lambda-1}_b\frac{\partial E}{\partial h^\lambda_a}&lt;/script&gt;
+\[\frac{\partial E}{\partial W^\lambda_{a,b}}=\sum_i \frac{\partial h^\lambda_i}{W^\lambda_{a,b}}\frac{\partial E}{\partial h^\lambda_i} = a^{\lambda-1}_b\frac{\partial E}{\partial h^\lambda_a}\]
 
 &lt;p&gt;and differentiating again we obtain&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[H_\lambda]_{(a,b),(c,d)} = a^{\lambda-1}_b a^{\lambda-1}_d [{\cal{H}}_\lambda]_{a,c}
-\tag{1}\label{eq:H}&lt;/script&gt;
+\[[H_\lambda]_{(a,b),(c,d)} = a^{\lambda-1}_b a^{\lambda-1}_d [{\cal{H}}_\lambda]_{a,c}
+\tag{1}\label{eq:H}\]
 
-&lt;p&gt;where we define the pre-activation Hessian for layer &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; as&lt;/p&gt;
+&lt;p&gt;where we define the pre-activation Hessian for layer \(\lambda\) as&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;[{\cal{H}}_\lambda]_{a,c} = \frac{\partial^2 E}{\partial h^\lambda_a\partial h^\lambda_c}&lt;/script&gt;
+\[[{\cal{H}}_\lambda]_{a,c} = \frac{\partial^2 E}{\partial h^\lambda_a\partial h^\lambda_c}\]
 
-&lt;p&gt;We show in &lt;a href=&quot;http://proceedings.mlr.press/v70/botev17a.html&quot;&gt;Practical Gauss-Newton Optimisation for Deep Learning&lt;/a&gt; that one can derive a simple backwards recursion for this pre-activation Hessian (the recursion is for a single datapoint – the total Hessian &lt;script type=&quot;math/tex&quot;&gt;\bar{H}&lt;/script&gt; is a sum over the individual datapoint Hessians):&lt;/p&gt;
+&lt;p&gt;We show in &lt;a href=&quot;http://proceedings.mlr.press/v70/botev17a.html&quot;&gt;Practical Gauss-Newton Optimisation for Deep Learning&lt;/a&gt; that one can derive a simple backwards recursion for this pre-activation Hessian (the recursion is for a single datapoint – the total Hessian \(\bar{H}\) is a sum over the individual datapoint Hessians):&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;{\cal{H}}_\lambda = B_\lambda W_{\lambda+1}^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
-\tag{2}\label{eq:recursion}&lt;/script&gt;
+\[{\cal{H}}_\lambda = B_\lambda W_{\lambda+1}^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
+\tag{2}\label{eq:recursion}\]
 
 &lt;p&gt;where we define the diagonal matrices&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;B_\lambda = \text{diag}(f'_\lambda(h_\lambda))&lt;/script&gt;
+\[B_\lambda = \text{diag}(f&apos;_\lambda(h_\lambda))\]
 
 &lt;p&gt;and&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;D_\lambda = \text{diag}\br{f''_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda}}&lt;/script&gt;
+\[D_\lambda = \text{diag}\br{f&apos;&apos;_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda}}\]
 
-&lt;p&gt;Here &lt;script type=&quot;math/tex&quot;&gt;f'&lt;/script&gt; is the first derivative of the transfer function and &lt;script type=&quot;math/tex&quot;&gt;f''&lt;/script&gt; is the second derivative.&lt;/p&gt;
+&lt;p&gt;Here \(f&apos;\) is the first derivative of the transfer function and \(f&apos;&apos;\) is the second derivative.&lt;/p&gt;
 
-&lt;p&gt;The recursion is initialised with &lt;script type=&quot;math/tex&quot;&gt;{\cal{H}}_L&lt;/script&gt; which depends on the objective &lt;script type=&quot;math/tex&quot;&gt;E(h_L,y)&lt;/script&gt; and is easily calculated for the usual loss functions. For example, for the square loss &lt;script type=&quot;math/tex&quot;&gt;(y-h_L)^2/2&lt;/script&gt; we have &lt;script type=&quot;math/tex&quot;&gt;{\cal{H}}_L=I&lt;/script&gt;, namely the identity matrix. We use this recursion in our &lt;a href=&quot;http://proceedings.mlr.press/v70/botev17a.html&quot;&gt;paper&lt;/a&gt; to build an approximate Gauss-Newton optimisation method.&lt;/p&gt;
+&lt;p&gt;The recursion is initialised with \({\cal{H}}_L\) which depends on the objective \(E(h_L,y)\) and is easily calculated for the usual loss functions. For example, for the square loss \((y-h_L)^2/2\) we have \({\cal{H}}_L=I\), namely the identity matrix. We use this recursion in our &lt;a href=&quot;http://proceedings.mlr.press/v70/botev17a.html&quot;&gt;paper&lt;/a&gt; to build an approximate Gauss-Newton optimisation method.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;consequences&quot;&gt;Consequences&lt;/h2&gt;
 
-&lt;p&gt;Piecewise linear transfer functions, such as the ReLU &lt;script type=&quot;math/tex&quot;&gt;f(x) = \max(x,0)&lt;/script&gt; are currently popular due to both their speed of evaluation (compared to more traditional transfer functions such as &lt;script type=&quot;math/tex&quot;&gt;\tanh(x)&lt;/script&gt;) and also the empirical observation that, under gradient based training, they tend to get trapped less often in local optima. Note that if the transfer functions are piecewise linear, this does not necessarily mean that the objective will be piecewise linear (since the loss is usually itself not piecewise linear).&lt;/p&gt;
+&lt;p&gt;Piecewise linear transfer functions, such as the ReLU \(f(x) = \max(x,0)\) are currently popular due to both their speed of evaluation (compared to more traditional transfer functions such as \(\tanh(x)\)) and also the empirical observation that, under gradient based training, they tend to get trapped less often in local optima. Note that if the transfer functions are piecewise linear, this does not necessarily mean that the objective will be piecewise linear (since the loss is usually itself not piecewise linear).&lt;/p&gt;
 
-&lt;p&gt;For a piecewise linear transfer function, apart from the `nodes’ where the linear sections meet, the function is differentiable and has zero second derivative, &lt;script type=&quot;math/tex&quot;&gt;f''(x)=0&lt;/script&gt;. This means that the matrices &lt;script type=&quot;math/tex&quot;&gt;D_\lambda&lt;/script&gt; in the above Hessian recursion will be zero (away from nodes).&lt;/p&gt;
+&lt;p&gt;For a piecewise linear transfer function, apart from the `nodes’ where the linear sections meet, the function is differentiable and has zero second derivative, \(f&apos;&apos;(x)=0\). This means that the matrices \(D_\lambda\) in the above Hessian recursion will be zero (away from nodes).&lt;/p&gt;
 
-&lt;p&gt;For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian &lt;script type=&quot;math/tex&quot;&gt;{\cal{H}}_L&lt;/script&gt; is Positive Semi-Definite (PSD).&lt;/p&gt;
+&lt;p&gt;For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian \({\cal{H}}_L\) is Positive Semi-Definite (PSD).&lt;/p&gt;
 
-&lt;p&gt;Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points &lt;script type=&quot;math/tex&quot;&gt;f'(x)=0&lt;/script&gt; then the Hessian &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; can have lower rank than &lt;script type=&quot;math/tex&quot;&gt;H_{\lambda+1}&lt;/script&gt;, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero &lt;script type=&quot;math/tex&quot;&gt;f'\neq 0&lt;/script&gt;, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.&lt;/p&gt;
+&lt;p&gt;Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points \(f&apos;(x)=0\) then the Hessian \(H_\lambda\) can have lower rank than \(H_{\lambda+1}\), reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero \(f&apos;\neq 0\), then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;structure-within-a-layer&quot;&gt;Structure within a layer&lt;/h3&gt;
 
-&lt;p&gt;For such loss functions, it follows that the pre-activation Hessian &lt;script type=&quot;math/tex&quot;&gt;{\cal{H}}_\lambda&lt;/script&gt; for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; for each layer &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; is PSD.  This means that, if we fix all the parameters of the network, and vary only  the parameters in a layer &lt;script type=&quot;math/tex&quot;&gt;W^\lambda&lt;/script&gt;, then the objective &lt;script type=&quot;math/tex&quot;&gt;E&lt;/script&gt; can exhibit no smooth local maxima or smooth saddle points.  Note that this does not imply that the objective is convex everywhere with respect to &lt;script type=&quot;math/tex&quot;&gt;W_\lambda&lt;/script&gt; as the surface will contain ridges corresponding to the non-differentiable nodes.&lt;/p&gt;
+&lt;p&gt;For such loss functions, it follows that the pre-activation Hessian \({\cal{H}}_\lambda\) for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian \(H_\lambda\) for each layer \(\lambda\) is PSD.  This means that, if we fix all the parameters of the network, and vary only  the parameters in a layer \(W^\lambda\), then the objective \(E\) can exhibit no smooth local maxima or smooth saddle points.  Note that this does not imply that the objective is convex everywhere with respect to \(W_\lambda\) as the surface will contain ridges corresponding to the non-differentiable nodes.&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;no-differentiable-local-maxima&quot;&gt;No differentiable local maxima&lt;/h3&gt;
 
-&lt;p&gt;The trace of the full Hessian &lt;script type=&quot;math/tex&quot;&gt;H&lt;/script&gt; is the sum of the traces of each of the layerwise blocks &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt;. Since (as usual away from nodes) by the above argument each matrix &lt;script type=&quot;math/tex&quot;&gt;H_\lambda&lt;/script&gt; is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):&lt;/p&gt;
+&lt;p&gt;The trace of the full Hessian \(H\) is the sum of the traces of each of the layerwise blocks \(H_\lambda\). Since (as usual away from nodes) by the above argument each matrix \(H_\lambda\) is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):&lt;/p&gt;
 
 &lt;!--![blogpost_canhappen](https://davidbarber.github.io/images//blogpost_canhappen.png)--&gt;
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/blogpost_canhappen.png&quot; alt=&quot;blogpost_canhappen&quot; /&gt;&lt;/p&gt;
@@ -439,23 +439,23 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;visualisation-for-a-simple-two-layer-net&quot;&gt;Visualisation for a simple two layer net&lt;/h3&gt;
 
-&lt;p&gt;We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices &lt;script type=&quot;math/tex&quot;&gt;W^1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;W^2&lt;/script&gt;.  Below we choose two fixed matrices &lt;script type=&quot;math/tex&quot;&gt;U&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;V&lt;/script&gt; and parameterise the weight matrix &lt;script type=&quot;math/tex&quot;&gt;W^1&lt;/script&gt; as a function of two scalars &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;v&lt;/script&gt;, so that &lt;script type=&quot;math/tex&quot;&gt;W^1(u,v)=uU + vV&lt;/script&gt;.  As we vary &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;v&lt;/script&gt; we then plot the objective function &lt;script type=&quot;math/tex&quot;&gt;E(u,v)&lt;/script&gt;, keeping all other parameters of the network fixed.&lt;/p&gt;
+&lt;p&gt;We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices \(W^1\) and \(W^2\).  Below we choose two fixed matrices \(U\) and \(V\) and parameterise the weight matrix \(W^1\) as a function of two scalars \(u\) and \(v\), so that \(W^1(u,v)=uU + vV\).  As we vary \(u\) and \(v\) we then plot the objective function \(E(u,v)\), keeping all other parameters of the network fixed.&lt;/p&gt;
 
 &lt;p&gt;As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE1.png&quot; alt=&quot;rectlinE1&quot; title=&quot;rectlin E1&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Below we show an analogous plot for varying the parameters of the second layer weights &lt;script type=&quot;math/tex&quot;&gt;W^2(u,v)&lt;/script&gt;, which has the same predicted property that there are no differentiable local maxima.&lt;/p&gt;
+&lt;p&gt;Below we show an analogous plot for varying the parameters of the second layer weights \(W^2(u,v)\), which has the same predicted property that there are no differentiable local maxima.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE2.png&quot; alt=&quot;rectlinE2&quot; title=&quot;rectlin E2&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Finally, below we plot &lt;script type=&quot;math/tex&quot;&gt;E(u,v)&lt;/script&gt; using &lt;script type=&quot;math/tex&quot;&gt;W^1=uU&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;W^2=vV&lt;/script&gt;, showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.&lt;/p&gt;
+&lt;p&gt;Finally, below we plot \(E(u,v)\) using \(W^1=uU\) and \(W^2=vV\), showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/rectlinE12.png&quot; alt=&quot;rectlinE12&quot; title=&quot;rectlin E12&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 class=&quot;no_toc&quot; id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 
-&lt;p&gt;A simple consequence of using piecewise linear transfer functions and a convex loss, is that feedforward networks cannot have any differentiable maxima (or saddle points) as parameters are varied within a layer. Furthermore, the objective cannot contain any differentiable maxima, even as we vary parameters across layers. Note that the objective &lt;script type=&quot;math/tex&quot;&gt;E(u,v)&lt;/script&gt; though can (and empirically does) have smooth saddle points as one varies parameters &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;v&lt;/script&gt; across &lt;em&gt;different&lt;/em&gt; layers.&lt;/p&gt;
+&lt;p&gt;A simple consequence of using piecewise linear transfer functions and a convex loss, is that feedforward networks cannot have any differentiable maxima (or saddle points) as parameters are varied within a layer. Furthermore, the objective cannot contain any differentiable maxima, even as we vary parameters across layers. Note that the objective \(E(u,v)\) though can (and empirically does) have smooth saddle points as one varies parameters \(u\) and \(v\) across &lt;em&gt;different&lt;/em&gt; layers.&lt;/p&gt;
 
 &lt;p&gt;It’s unclear how practically significant these modest insights are. However, they do potentially partially support the use of piecewise linear transfer functions (particularly those with no zero gradient regions) since for such transfer functions  gradient based training algorithms cannot easily dawdle on local maxima (anywhere), or idle around saddle points (within a layer) since such regions correspond to sharp slopes in the objective.&lt;/p&gt;
 
@@ -479,69 +479,69 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 &lt;!--more--&gt;
 
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\sq}[1]{\left[#1\right]}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;\(\newcommand{\sq}[1]{\left[#1\right]}\)
+\(\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}\)&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;variational-optimization&quot;&gt;Variational Optimization&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1212.4507&quot;&gt;Variational Optimization&lt;/a&gt; is based on the bound&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;min_x f(x) \leq \ave{f(x)}_{p(x|\theta)}&lt;/script&gt;
+\[min_x f(x) \leq \ave{f(x)}_{p(x|\theta)}\]
 
 &lt;p&gt;That is, the minimum of a collection of values is always less than their average.  By defining&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U(\theta) = \ave{f(x)}_{p(x|\theta)}&lt;/script&gt;
+\[U(\theta) = \ave{f(x)}_{p(x|\theta)}\]
 
-&lt;p&gt;instead of minimising &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; with respect to &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, we can minimise the upper bound &lt;script type=&quot;math/tex&quot;&gt;U&lt;/script&gt; with respect to &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;. Provided the distribution &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta)&lt;/script&gt; is rich enough, this will be equivalent to minimising &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;instead of minimising \(f\) with respect to \(x\), we can minimise the upper bound \(U\) with respect to \(\theta\). Provided the distribution \(p(x\vert \theta)\) is rich enough, this will be equivalent to minimising \(f(x)\).&lt;/p&gt;
 
 &lt;p&gt;The gradient of the upper bound is then given by&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial U}{\partial \theta} = \ave{f(x)\frac{\partial}{\partial \theta}\log p(x|\theta)}_{p(x|\theta)}&lt;/script&gt;
+\[\frac{\partial U}{\partial \theta} = \ave{f(x)\frac{\partial}{\partial \theta}\log p(x|\theta)}_{p(x|\theta)}\]
 
 &lt;p&gt;which is reminiscent of the REINFORCE (Williams 1992) policy gradient approach in Reinforcement Learning.&lt;/p&gt;
 
-&lt;p&gt;In  the original VO &lt;a href=&quot;https://arxiv.org/abs/1212.4507&quot;&gt;report&lt;/a&gt;  and &lt;a href=&quot;https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2013-65.pdf&quot;&gt;paper&lt;/a&gt; this idea was used to form a differentiable upper bound for non-differentiable &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; and also discrete &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;In  the original VO &lt;a href=&quot;https://arxiv.org/abs/1212.4507&quot;&gt;report&lt;/a&gt;  and &lt;a href=&quot;https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2013-65.pdf&quot;&gt;paper&lt;/a&gt; this idea was used to form a differentiable upper bound for non-differentiable \(f\) and also discrete \(x\).&lt;/p&gt;
 
 &lt;h3 class=&quot;no_toc&quot; id=&quot;sampling-approximation&quot;&gt;Sampling Approximation&lt;/h3&gt;
 
-&lt;p&gt;There is an interesting connection to evolutionary computation (more precisely &lt;a href=&quot;https://arxiv.org/abs/1212.4507&quot;&gt;Estimation of Distribution Algorithms&lt;/a&gt;) if the expectation with respect to &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta)&lt;/script&gt; is performed using sampling. In this case one can draw samples &lt;script type=&quot;math/tex&quot;&gt;x^1,\ldots,x^S&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;p(x\vert\theta)&lt;/script&gt; and form an unbiased approximation to the upper bound gradient&lt;/p&gt;
+&lt;p&gt;There is an interesting connection to evolutionary computation (more precisely &lt;a href=&quot;https://arxiv.org/abs/1212.4507&quot;&gt;Estimation of Distribution Algorithms&lt;/a&gt;) if the expectation with respect to \(p(x\vert \theta)\) is performed using sampling. In this case one can draw samples \(x^1,\ldots,x^S\) from \(p(x\vert\theta)\) and form an unbiased approximation to the upper bound gradient&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial U}{\partial \theta} \approx \frac{1}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)&lt;/script&gt;
+\[\frac{\partial U}{\partial \theta} \approx \frac{1}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)\]
 
-&lt;p&gt;The “evolutionary” connection is that the samples &lt;script type=&quot;math/tex&quot;&gt;x^s&lt;/script&gt; can be thought of as “particles” or “swarm members” that are used to estimate the gradient. Based on the approximate gradient, simple Stochastic Gradient Descent (SGD) would then perform the parameter update (for learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta&lt;/script&gt;)&lt;/p&gt;
+&lt;p&gt;The “evolutionary” connection is that the samples \(x^s\) can be thought of as “particles” or “swarm members” that are used to estimate the gradient. Based on the approximate gradient, simple Stochastic Gradient Descent (SGD) would then perform the parameter update (for learning rate \(\eta\))&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta^{new} = \theta-\frac{\eta}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)&lt;/script&gt;
+\[\theta^{new} = \theta-\frac{\eta}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)\]
 
-&lt;p&gt;The “swarm” then disperses and draws a new set of members from &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta^{new})&lt;/script&gt; and the process repeats.&lt;/p&gt;
+&lt;p&gt;The “swarm” then disperses and draws a new set of members from \(p(x\vert \theta^{new})\) and the process repeats.&lt;/p&gt;
 
 &lt;p&gt;A special case of VO is to use a Gaussian so that (for the scalar case – the multivariate setting follows similarly)&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx&lt;/script&gt;
+\[U(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx\]
 
 &lt;p&gt;Then the gradient of this upper bound is given by&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U'(\theta) = \frac{1}{\sigma^2}\ave{(x-\theta)f(x)}_{x\sim N(\theta,\sigma^2)}&lt;/script&gt;
+\[U&apos;(\theta) = \frac{1}{\sigma^2}\ave{(x-\theta)f(x)}_{x\sim N(\theta,\sigma^2)}\]
 
-&lt;p&gt;By changing variable &lt;script type=&quot;math/tex&quot;&gt;\epsilon=x-\theta&lt;/script&gt; this is equivalent to&lt;/p&gt;
+&lt;p&gt;By changing variable \(\epsilon=x-\theta\) this is equivalent to&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U'(\theta) = \frac{1}{\sigma^2}\ave{\epsilon f(\theta+\epsilon)}_{\epsilon \sim N(0,\sigma^2)}
-\label{eq:grad}\tag{1}&lt;/script&gt;
+\[U&apos;(\theta) = \frac{1}{\sigma^2}\ave{\epsilon f(\theta+\epsilon)}_{\epsilon \sim N(0,\sigma^2)}
+\label{eq:grad}\tag{1}\]
 
-&lt;p&gt;Fixing &lt;script type=&quot;math/tex&quot;&gt;\sigma=5&lt;/script&gt; and using &lt;script type=&quot;math/tex&quot;&gt;S=10&lt;/script&gt; samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta=0.1&lt;/script&gt;) of &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; based on Stochastic VO and compare this to the underlying function &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; (which in this case is a simple quadratic).  Note that we only plot below the parameter &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; trajectory (each red dot represents a parameter &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;, with the initial parameter in the bottom right) and not the samples from &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta)&lt;/script&gt;.  As we see, despite the noisy gradient estimate, the parameter values &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; move toward the minimum of the objective &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;.  The matlab code is &lt;a href=&quot;https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284&quot;&gt;available&lt;/a&gt; if you’d like to play with this.&lt;/p&gt;
+&lt;p&gt;Fixing \(\sigma=5\) and using \(S=10\) samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate \(\eta=0.1\)) of \(\theta\) based on Stochastic VO and compare this to the underlying function \(f(x)\) (which in this case is a simple quadratic).  Note that we only plot below the parameter \(\theta\) trajectory (each red dot represents a parameter \(\theta\), with the initial parameter in the bottom right) and not the samples from \(p(x\vert \theta)\).  As we see, despite the noisy gradient estimate, the parameter values \(\theta\) move toward the minimum of the objective \(f(x)\).  The matlab code is &lt;a href=&quot;https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284&quot;&gt;available&lt;/a&gt; if you’d like to play with this.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/VO2Dss5.png&quot; alt=&quot;fixing sigma5&quot; title=&quot;fixed sigma 5&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;One can also consider the bound as a function of both the mean &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt;:&lt;/p&gt;
+&lt;p&gt;One can also consider the bound as a function of both the mean \(\theta\) and variance \(\sigma^2\):&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;U(\theta,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx&lt;/script&gt;
+\[U(\theta,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx\]
 
-&lt;p&gt;and minimise the bound with respect to both &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt; (which we will parameterise using &lt;script type=&quot;math/tex&quot;&gt;\sigma^2=e^\beta&lt;/script&gt; to ensure a positive variance). More generally, one can consider parameterising the Gaussian covariance matrix for example using factor analysis and minimsing the bound with respect to the factor loadings.&lt;/p&gt;
+&lt;p&gt;and minimise the bound with respect to both \(\theta\) and \(\sigma^2\) (which we will parameterise using \(\sigma^2=e^\beta\) to ensure a positive variance). More generally, one can consider parameterising the Gaussian covariance matrix for example using factor analysis and minimsing the bound with respect to the factor loadings.&lt;/p&gt;
 
-&lt;p&gt;Using a Gaussian with covariance &lt;script type=&quot;math/tex&quot;&gt;e^\beta I&lt;/script&gt; and performing gradient descent on both &lt;script type=&quot;math/tex&quot;&gt;\beta&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;, for the same objective function, learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta=0.1&lt;/script&gt;  and initial &lt;script type=&quot;math/tex&quot;&gt;\sigma=5&lt;/script&gt;, we obtain the trajectory below for &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Using a Gaussian with covariance \(e^\beta I\) and performing gradient descent on both \(\beta\) and \(\theta\), for the same objective function, learning rate \(\eta=0.1\)  and initial \(\sigma=5\), we obtain the trajectory below for \(\theta\)&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/Vo2Dssgrad.png&quot; alt=&quot;learning sigma5&quot; title=&quot;learned sigma 5&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;As we can see, by learning &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt;, the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is given below, showing how the variance reduces as we home in on the optimum.&lt;/p&gt;
+&lt;p&gt;As we can see, by learning \(\sigma\), the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation \(\sigma\) is given below, showing how the variance reduces as we home in on the optimum.&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/VO2Dsdtraj.png&quot; alt=&quot;learning sigma traj 5&quot; title=&quot;learned sigma traj 5&quot; /&gt;&lt;/p&gt;
 
@@ -553,10 +553,10 @@ System 1 is a fast, unconscious and automatic mode of thought, also known as int
 which is the same as equation $(\ref{eq:grad})$ above on interchanging $x$ with $\theta$.  A simple optimisation strategy is then gradient descent
 
 $$
-\theta^{new} = \theta - \eta U'(\theta)
+\theta^{new} = \theta - \eta U&apos;(\theta)
 $$
 
-where $U'(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
+where $U&apos;(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
 
 
 This shows that the &quot;evolutionary approach&quot; is in fact a special case of VO (using an isotropic Gaussian). A potential benefit of this insight is that the upper bound gives a principled way to adjust parameters, such as not just the mean $\theta$ but also the variance $\sigma^2$. 
@@ -570,38 +570,38 @@ This shows that the &quot;evolutionary approach&quot; is in fact a special case 
 
 &lt;p&gt;Ferenc Huszar‏ has a nice post &lt;a href=&quot;http://www.inference.vc/evolutionary-strategies-embarrassingly-parallelizable-optimization/&quot;&gt;Evolution Strategies: Almost Embarrassingly Parallel Optimization&lt;/a&gt; summarising recent work by Salimans etal on &lt;a href=&quot;https://arxiv.org/abs/1703.03864&quot;&gt;Evolution Strategies as a Scalable Alternative to Reinforcement Learning&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The aim is to minimise a function &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; by using gradient based approaches, without explicitly calculating the gradient. The first observation is that the gradient can be approximated by considering the Taylor expansion&lt;/p&gt;
+&lt;p&gt;The aim is to minimise a function \(f(x)\) by using gradient based approaches, without explicitly calculating the gradient. The first observation is that the gradient can be approximated by considering the Taylor expansion&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x+\epsilon) = f(x)+\epsilon f'(x) + \frac{\epsilon^2}{2} f''(x) + O(\epsilon^3)&lt;/script&gt;
+\[f(x+\epsilon) = f(x)+\epsilon f&apos;(x) + \frac{\epsilon^2}{2} f&apos;&apos;(x) + O(\epsilon^3)\]
 
-&lt;p&gt;Multiplying both sides by &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;Multiplying both sides by \(\epsilon\)&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\epsilon f(x+\epsilon) = \epsilon f(x)+\epsilon^2 f'(x) +\frac{\epsilon^3}{2}f''(x)+ O(\epsilon^4)&lt;/script&gt;
+\[\epsilon f(x+\epsilon) = \epsilon f(x)+\epsilon^2 f&apos;(x) +\frac{\epsilon^3}{2}f&apos;&apos;(x)+ O(\epsilon^4)\]
 
-&lt;p&gt;Finally, taking the expectation with respect to &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; drawn from a Gaussian distribution with zero mean and variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt; we have&lt;/p&gt;
+&lt;p&gt;Finally, taking the expectation with respect to \(\epsilon\) drawn from a Gaussian distribution with zero mean and variance \(\sigma^2\) we have&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\ave{\epsilon f(x+\epsilon)} = \sigma^2 f'(x) + O(\epsilon^4)&lt;/script&gt;
+\[\ave{\epsilon f(x+\epsilon)} = \sigma^2 f&apos;(x) + O(\epsilon^4)\]
 
 &lt;p&gt;Hence, we have the approximation&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f'(x) \approx \frac{1}{\sigma^2}\ave{\epsilon f(x+\epsilon)}
-\label{eq:grad2}\tag{2}&lt;/script&gt;
+\[f&apos;(x) \approx \frac{1}{\sigma^2}\ave{\epsilon f(x+\epsilon)}
+\label{eq:grad2}\tag{2}\]
 
-&lt;p&gt;Based on the above discussion of VO, and comparing equations (1) and (2) we see that this Gaussian perturbation approach is related to VO in which we use a Gaussian &lt;script type=&quot;math/tex&quot;&gt;p(x\vert \theta)&lt;/script&gt;, with the understanding that in the VO case the optimisation is over &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; rather than &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.  An advantage of the VO approach, however, is that it provides a principled way to adjust parameters such as the variance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2&lt;/script&gt; (based on minimising the upper bound).&lt;/p&gt;
+&lt;p&gt;Based on the above discussion of VO, and comparing equations (1) and (2) we see that this Gaussian perturbation approach is related to VO in which we use a Gaussian \(p(x\vert \theta)\), with the understanding that in the VO case the optimisation is over \(\theta\) rather than \(x\).  An advantage of the VO approach, however, is that it provides a principled way to adjust parameters such as the variance \(\sigma^2\) (based on minimising the upper bound).&lt;/p&gt;
 
-&lt;p&gt;Whilst this was derived for the scalar setting, the vector derivative is obtained by applying the same method, where the &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; vector is drawn from the zero mean multivariate Gaussian with covariance &lt;script type=&quot;math/tex&quot;&gt;\sigma^2 I&lt;/script&gt; for identity matrix &lt;script type=&quot;math/tex&quot;&gt;I&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;Whilst this was derived for the scalar setting, the vector derivative is obtained by applying the same method, where the \(\epsilon\) vector is drawn from the zero mean multivariate Gaussian with covariance \(\sigma^2 I\) for identity matrix \(I\).&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;efficient-communication&quot;&gt;Efficient Communication&lt;/h2&gt;
 
-&lt;p&gt;A key insight in &lt;a href=&quot;https://arxiv.org/abs/1703.03864&quot;&gt;Evolution Strategies as a Scalable Alternative to Reinforcement Learning&lt;/a&gt; is that the sampling process can be distributed across multiple machines, &lt;script type=&quot;math/tex&quot;&gt;i\in\{1,\ldots,S\}&lt;/script&gt; so that&lt;/p&gt;
+&lt;p&gt;A key insight in &lt;a href=&quot;https://arxiv.org/abs/1703.03864&quot;&gt;Evolution Strategies as a Scalable Alternative to Reinforcement Learning&lt;/a&gt; is that the sampling process can be distributed across multiple machines, \(i\in\{1,\ldots,S\}\) so that&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f'(x) \approx \frac{1}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}&lt;/script&gt;
+\[f&apos;(x) \approx \frac{1}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\epsilon^i&lt;/script&gt; is a vector sample and &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; is the sample index. Each machine &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; can then calculate &lt;script type=&quot;math/tex&quot;&gt;f(x+\epsilon^i)&lt;/script&gt;. The Stochastic Gradient parameter update with learning rate &lt;script type=&quot;math/tex&quot;&gt;\eta&lt;/script&gt; is&lt;/p&gt;
+&lt;p&gt;where \(\epsilon^i\) is a vector sample and \(i\) is the sample index. Each machine \(i\) can then calculate \(f(x+\epsilon^i)\). The Stochastic Gradient parameter update with learning rate \(\eta\) is&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;x^{new} = x - \frac{\eta}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}&lt;/script&gt;
+\[x^{new} = x - \frac{\eta}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}\]
 
-&lt;p&gt;Provided each machine &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt; also knows the random seed used to generate the &lt;script type=&quot;math/tex&quot;&gt;\epsilon^j&lt;/script&gt; of each other machine, it therefore knows what all the &lt;script type=&quot;math/tex&quot;&gt;\epsilon^j&lt;/script&gt; are (by sampling according to the known seeds) and can thus calculate &lt;script type=&quot;math/tex&quot;&gt;x^{new}&lt;/script&gt; based on only the &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; scalar values calculated by each machine. The basic point here is that, thanks to seed sharing, there is no requirement to send the vectors &lt;script type=&quot;math/tex&quot;&gt;\epsilon^i&lt;/script&gt; between the machines (only the scalar values &lt;script type=&quot;math/tex&quot;&gt;f(x+\epsilon^i)&lt;/script&gt; need be sent), keeping the transmission costs very low.&lt;/p&gt;
+&lt;p&gt;Provided each machine \(i\) also knows the random seed used to generate the \(\epsilon^j\) of each other machine, it therefore knows what all the \(\epsilon^j\) are (by sampling according to the known seeds) and can thus calculate \(x^{new}\) based on only the \(S\) scalar values calculated by each machine. The basic point here is that, thanks to seed sharing, there is no requirement to send the vectors \(\epsilon^i\) between the machines (only the scalar values \(f(x+\epsilon^i)\) need be sent), keeping the transmission costs very low.&lt;/p&gt;
 
 &lt;p&gt;Based on the insight that the &lt;a href=&quot;https://arxiv.org/abs/1703.03864&quot;&gt;Parallel Gaussian Perturbation&lt;/a&gt; approach is a special case of VO, it would be natural to apply VO using seed sharing to efficiently parallelise the sampling. This has the benefit that other parameters such as the variance can also be efficiently communicated, potentially significantly speeding up convergence.&lt;/p&gt;
 
@@ -609,7 +609,7 @@ This shows that the &quot;evolutionary approach&quot; is in fact a special case 
 One can view this as an &quot;evolutionary&quot; optimisation approach in which a collection of particles $\epsilon^1,\ldots,\epsilon^S$ is created at each iteration of Stochastic Gradient Descent.
 
 
-where $U'(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
+where $U&apos;(\theta)$ can be approximated by sampling. This would then be fully equivalent to the approach suggested in [Evolution Strategies as a Scalable Alternative to Reinforcement Learning](https://arxiv.org/abs/1703.03864). 
 
 
 This shows that the &quot;evolutionary approach&quot; is in fact a special case of VO (using an isotropic Gaussian). A potential benefit of this insight is that the upper bound gives a principled way to adjust parameters, such as not just the mean $\theta$ but also the variance $\sigma^2$. 
@@ -631,51 +631,51 @@ This shows that the &quot;evolutionary approach&quot; is in fact a special case 
 
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;probabilistic-classification&quot;&gt;Probabilistic Classification&lt;/h2&gt;
-&lt;p&gt;In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and class label &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;, the probability of predicting class &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; is&lt;/p&gt;
+&lt;p&gt;In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input \(x\) and class label \(c\), the probability of predicting class \(c\) is&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}&lt;/script&gt;
+\[p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)&lt;/script&gt; is some defined function with parameters &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;. For example, &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)=\exp(w_c'x)&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;w_c&lt;/script&gt; is a parameter vector for class &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; is the vector input.  The normalising term is&lt;/p&gt;
+&lt;p&gt;where \(u_\theta(c,x)\) is some defined function with parameters \(\theta\). For example, \(u_\theta(c,x)=\exp(w_c&apos;x)\), where \(w_c\) is a parameter vector for class \(c\) and \(x\) is the vector input.  The normalising term is&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)&lt;/script&gt;
+\[Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)\]
 
-&lt;p&gt;The task is then to adjust the parameters &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; to maximise the probability of the correct class for each of the training points.&lt;/p&gt;
+&lt;p&gt;The task is then to adjust the parameters \(\theta\) to maximise the probability of the correct class for each of the training points.&lt;/p&gt;
 
-&lt;p&gt;However, if there are &lt;script type=&quot;math/tex&quot;&gt;C=100,000&lt;/script&gt; words in the dictionary, this means calculating the normalisation &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; for each datapoint is going to be expensive.  There have been a variety of approaches suggested over the years to make computationally efficient approximations, many based on importance sampling.&lt;/p&gt;
+&lt;p&gt;However, if there are \(C=100,000\) words in the dictionary, this means calculating the normalisation \(Z\) for each datapoint is going to be expensive.  There have been a variety of approaches suggested over the years to make computationally efficient approximations, many based on importance sampling.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;why-plain-importance-sampling-doesnt-work&quot;&gt;Why plain Importance Sampling doesn’t work&lt;/h2&gt;
 
-&lt;p&gt;A standard approach to approximating &lt;script type=&quot;math/tex&quot;&gt;Z_\theta(x)&lt;/script&gt; is to use&lt;/p&gt;
+&lt;p&gt;A standard approach to approximating \(Z_\theta(x)\) is to use&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}&lt;/script&gt;
+\[Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}\]
 
-&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; is an importance distribution over all &lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt; classes.  We can then form an approximation by sampling from &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; a small number &lt;script type=&quot;math/tex&quot;&gt;S&lt;/script&gt; of classes to form a sample bag &lt;script type=&quot;math/tex&quot;&gt;{\cal{S}}&lt;/script&gt; and using&lt;/p&gt;
+&lt;p&gt;where \(q\) is an importance distribution over all \(C\) classes.  We can then form an approximation by sampling from \(q\) a small number \(S\) of classes to form a sample bag \({\cal{S}}\) and using&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}&lt;/script&gt;
+\[Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}\]
 
-&lt;p&gt;The problem with this approach is that it results in a potentially catastrophic under-estimate of &lt;script type=&quot;math/tex&quot;&gt;Z_\theta(x)&lt;/script&gt;.  If the classifier is working well, we want that &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)&lt;/script&gt; is much higher than &lt;script type=&quot;math/tex&quot;&gt;u_\theta(d,x)&lt;/script&gt; for any incorrect class &lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt;.  Hence, unless the importance sample bag &lt;script type=&quot;math/tex&quot;&gt;{\cal{S}}&lt;/script&gt; includes class &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;, then the normalisation approximation will miss this significant mass and the probability approximation&lt;/p&gt;
+&lt;p&gt;The problem with this approach is that it results in a potentially catastrophic under-estimate of \(Z_\theta(x)\).  If the classifier is working well, we want that \(u_\theta(c,x)\) is much higher than \(u_\theta(d,x)\) for any incorrect class \(d\).  Hence, unless the importance sample bag \({\cal{S}}\) includes class \(c\), then the normalisation approximation will miss this significant mass and the probability approximation&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}&lt;/script&gt;
+\[\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}\]
 
 &lt;p&gt;will be wildly inaccurate, see figure (a) below.  This is the source of the historically well-documented instabilities in training large-scale classifiers.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;making-importance-sampling-work&quot;&gt;Making Importance Sampling work&lt;/h2&gt;
 
-&lt;p&gt;However, there is an easy fix for this – simply ensure that &lt;script type=&quot;math/tex&quot;&gt;{\cal{S}}&lt;/script&gt; includes the correct class &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt;.&lt;/p&gt;
+&lt;p&gt;However, there is an easy fix for this – simply ensure that \({\cal{S}}\) includes the correct class \(c\).&lt;/p&gt;
 
 &lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/aistats17.png&quot; alt=&quot;fixing IS&quot; title=&quot;fixing IS&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;On the left above we show for &lt;script type=&quot;math/tex&quot;&gt;C=10,000&lt;/script&gt; classes the ratio &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)/Z_\theta(x)&lt;/script&gt; on the &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;-axis against its approximation  &lt;script type=&quot;math/tex&quot;&gt;u_\theta(c,x)/\tilde{Z}_\theta(x)&lt;/script&gt; on the &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;-axis. Each dot represents a different randomly drawn set of &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line &lt;script type=&quot;math/tex&quot;&gt;y=x&lt;/script&gt;.  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.&lt;/p&gt;
+&lt;p&gt;On the left above we show for \(C=10,000\) classes the ratio \(u_\theta(c,x)/Z_\theta(x)\) on the \(x\)-axis against its approximation  \(u_\theta(c,x)/\tilde{Z}_\theta(x)\) on the \(y\)-axis. Each dot represents a different randomly drawn set of \(u\) values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line \(y=x\).  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.&lt;/p&gt;
 
-&lt;p&gt;On the right above we show the same probability estimate but now simply also include the correct class in the set &lt;script type=&quot;math/tex&quot;&gt;{\cal{S}}&lt;/script&gt;. The vertical scale is now sensible and the estimated probabiliy is close to the true value.&lt;/p&gt;
+&lt;p&gt;On the right above we show the same probability estimate but now simply also include the correct class in the set \({\cal{S}}\). The vertical scale is now sensible and the estimated probabiliy is close to the true value.&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;deep-learning-recurrent-nlp-models&quot;&gt;Deep Learning Recurrent NLP models&lt;/h2&gt;
 
 &lt;p&gt;We applied this method to learning word embeddings for a deep
 recurrent network.  The training objective was standard maximum
 likelihood, but with the normalisation approximation above. Below we
-plot the exact log likelihood (&lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;-axis) against the optimisation
-gradient ascent iteration (&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;-axis). We also plot the exact log
+plot the exact log likelihood (\(y\)-axis) against the optimisation
+gradient ascent iteration (\(x\)-axis). We also plot the exact log
 likelihood for some alternative training approaches. As we
 see, standard Importance Sampling becomes unstable as learning
 progresses. However our simple modification stabilizes learning and is

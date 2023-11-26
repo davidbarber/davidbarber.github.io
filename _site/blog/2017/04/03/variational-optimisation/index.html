@@ -271,69 +271,69 @@ Credits: http://localhost:4000/disclosure
 <!--more-->
 
 
-<p><script type="math/tex">\newcommand{\sq}[1]{\left[#1\right]}</script>
-<script type="math/tex">\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}</script></p>
+<p>\(\newcommand{\sq}[1]{\left[#1\right]}\)
+\(\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}\)</p>
 
 <h2 class="no_toc" id="variational-optimization">Variational Optimization</h2>
 
 <p><a href="https://arxiv.org/abs/1212.4507">Variational Optimization</a> is based on the bound</p>
 
-<script type="math/tex; mode=display">min_x f(x) \leq \ave{f(x)}_{p(x|\theta)}</script>
+\[min_x f(x) \leq \ave{f(x)}_{p(x|\theta)}\]
 
 <p>That is, the minimum of a collection of values is always less than their average.  By defining</p>
 
-<script type="math/tex; mode=display">U(\theta) = \ave{f(x)}_{p(x|\theta)}</script>
+\[U(\theta) = \ave{f(x)}_{p(x|\theta)}\]
 
-<p>instead of minimising <script type="math/tex">f</script> with respect to <script type="math/tex">x</script>, we can minimise the upper bound <script type="math/tex">U</script> with respect to <script type="math/tex">\theta</script>. Provided the distribution <script type="math/tex">p(x\vert \theta)</script> is rich enough, this will be equivalent to minimising <script type="math/tex">f(x)</script>.</p>
+<p>instead of minimising \(f\) with respect to \(x\), we can minimise the upper bound \(U\) with respect to \(\theta\). Provided the distribution \(p(x\vert \theta)\) is rich enough, this will be equivalent to minimising \(f(x)\).</p>
 
 <p>The gradient of the upper bound is then given by</p>
 
-<script type="math/tex; mode=display">\frac{\partial U}{\partial \theta} = \ave{f(x)\frac{\partial}{\partial \theta}\log p(x|\theta)}_{p(x|\theta)}</script>
+\[\frac{\partial U}{\partial \theta} = \ave{f(x)\frac{\partial}{\partial \theta}\log p(x|\theta)}_{p(x|\theta)}\]
 
 <p>which is reminiscent of the REINFORCE (Williams 1992) policy gradient approach in Reinforcement Learning.</p>
 
-<p>In  the original VO <a href="https://arxiv.org/abs/1212.4507">report</a>  and <a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2013-65.pdf">paper</a> this idea was used to form a differentiable upper bound for non-differentiable <script type="math/tex">f</script> and also discrete <script type="math/tex">x</script>.</p>
+<p>In  the original VO <a href="https://arxiv.org/abs/1212.4507">report</a>  and <a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2013-65.pdf">paper</a> this idea was used to form a differentiable upper bound for non-differentiable \(f\) and also discrete \(x\).</p>
 
 <h3 class="no_toc" id="sampling-approximation">Sampling Approximation</h3>
 
-<p>There is an interesting connection to evolutionary computation (more precisely <a href="https://arxiv.org/abs/1212.4507">Estimation of Distribution Algorithms</a>) if the expectation with respect to <script type="math/tex">p(x\vert \theta)</script> is performed using sampling. In this case one can draw samples <script type="math/tex">x^1,\ldots,x^S</script> from <script type="math/tex">p(x\vert\theta)</script> and form an unbiased approximation to the upper bound gradient</p>
+<p>There is an interesting connection to evolutionary computation (more precisely <a href="https://arxiv.org/abs/1212.4507">Estimation of Distribution Algorithms</a>) if the expectation with respect to \(p(x\vert \theta)\) is performed using sampling. In this case one can draw samples \(x^1,\ldots,x^S\) from \(p(x\vert\theta)\) and form an unbiased approximation to the upper bound gradient</p>
 
-<script type="math/tex; mode=display">\frac{\partial U}{\partial \theta} \approx \frac{1}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)</script>
+\[\frac{\partial U}{\partial \theta} \approx \frac{1}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)\]
 
-<p>The “evolutionary” connection is that the samples <script type="math/tex">x^s</script> can be thought of as “particles” or “swarm members” that are used to estimate the gradient. Based on the approximate gradient, simple Stochastic Gradient Descent (SGD) would then perform the parameter update (for learning rate <script type="math/tex">\eta</script>)</p>
+<p>The “evolutionary” connection is that the samples \(x^s\) can be thought of as “particles” or “swarm members” that are used to estimate the gradient. Based on the approximate gradient, simple Stochastic Gradient Descent (SGD) would then perform the parameter update (for learning rate \(\eta\))</p>
 
-<script type="math/tex; mode=display">\theta^{new} = \theta-\frac{\eta}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)</script>
+\[\theta^{new} = \theta-\frac{\eta}{S} \sum_{s}f(x^s)\frac{\partial}{\partial \theta}\log p(x^s|\theta)\]
 
-<p>The “swarm” then disperses and draws a new set of members from <script type="math/tex">p(x\vert \theta^{new})</script> and the process repeats.</p>
+<p>The “swarm” then disperses and draws a new set of members from \(p(x\vert \theta^{new})\) and the process repeats.</p>
 
 <p>A special case of VO is to use a Gaussian so that (for the scalar case – the multivariate setting follows similarly)</p>
 
-<script type="math/tex; mode=display">U(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx</script>
+\[U(\theta) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx\]
 
 <p>Then the gradient of this upper bound is given by</p>
 
-<script type="math/tex; mode=display">U'(\theta) = \frac{1}{\sigma^2}\ave{(x-\theta)f(x)}_{x\sim N(\theta,\sigma^2)}</script>
+\[U'(\theta) = \frac{1}{\sigma^2}\ave{(x-\theta)f(x)}_{x\sim N(\theta,\sigma^2)}\]
 
-<p>By changing variable <script type="math/tex">\epsilon=x-\theta</script> this is equivalent to</p>
+<p>By changing variable \(\epsilon=x-\theta\) this is equivalent to</p>
 
-<script type="math/tex; mode=display">U'(\theta) = \frac{1}{\sigma^2}\ave{\epsilon f(\theta+\epsilon)}_{\epsilon \sim N(0,\sigma^2)}
-\label{eq:grad}\tag{1}</script>
+\[U'(\theta) = \frac{1}{\sigma^2}\ave{\epsilon f(\theta+\epsilon)}_{\epsilon \sim N(0,\sigma^2)}
+\label{eq:grad}\tag{1}\]
 
-<p>Fixing <script type="math/tex">\sigma=5</script> and using <script type="math/tex">S=10</script> samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate <script type="math/tex">\eta=0.1</script>) of <script type="math/tex">\theta</script> based on Stochastic VO and compare this to the underlying function <script type="math/tex">f(x)</script> (which in this case is a simple quadratic).  Note that we only plot below the parameter <script type="math/tex">\theta</script> trajectory (each red dot represents a parameter <script type="math/tex">\theta</script>, with the initial parameter in the bottom right) and not the samples from <script type="math/tex">p(x\vert \theta)</script>.  As we see, despite the noisy gradient estimate, the parameter values <script type="math/tex">\theta</script> move toward the minimum of the objective <script type="math/tex">f(x)</script>.  The matlab code is <a href="https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284">available</a> if you’d like to play with this.</p>
+<p>Fixing \(\sigma=5\) and using \(S=10\) samples, we show below the trajectory (for 150 steps of SGD with fixed learning rate \(\eta=0.1\)) of \(\theta\) based on Stochastic VO and compare this to the underlying function \(f(x)\) (which in this case is a simple quadratic).  Note that we only plot below the parameter \(\theta\) trajectory (each red dot represents a parameter \(\theta\), with the initial parameter in the bottom right) and not the samples from \(p(x\vert \theta)\).  As we see, despite the noisy gradient estimate, the parameter values \(\theta\) move toward the minimum of the objective \(f(x)\).  The matlab code is <a href="https://gist.github.com/davidbarber/16708b9135f13c9599f754f4010a0284">available</a> if you’d like to play with this.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/VO2Dss5.png" alt="fixing sigma5" title="fixed sigma 5" /></p>
 
-<p>One can also consider the bound as a function of both the mean <script type="math/tex">\theta</script> and variance <script type="math/tex">\sigma^2</script>:</p>
+<p>One can also consider the bound as a function of both the mean \(\theta\) and variance \(\sigma^2\):</p>
 
-<script type="math/tex; mode=display">U(\theta,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx</script>
+\[U(\theta,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\int e^{-\frac{1}{2\sigma^2}(x-\theta)^2}f(x)dx\]
 
-<p>and minimise the bound with respect to both <script type="math/tex">\theta</script> and <script type="math/tex">\sigma^2</script> (which we will parameterise using <script type="math/tex">\sigma^2=e^\beta</script> to ensure a positive variance). More generally, one can consider parameterising the Gaussian covariance matrix for example using factor analysis and minimsing the bound with respect to the factor loadings.</p>
+<p>and minimise the bound with respect to both \(\theta\) and \(\sigma^2\) (which we will parameterise using \(\sigma^2=e^\beta\) to ensure a positive variance). More generally, one can consider parameterising the Gaussian covariance matrix for example using factor analysis and minimsing the bound with respect to the factor loadings.</p>
 
-<p>Using a Gaussian with covariance <script type="math/tex">e^\beta I</script> and performing gradient descent on both <script type="math/tex">\beta</script> and <script type="math/tex">\theta</script>, for the same objective function, learning rate <script type="math/tex">\eta=0.1</script>  and initial <script type="math/tex">\sigma=5</script>, we obtain the trajectory below for <script type="math/tex">\theta</script></p>
+<p>Using a Gaussian with covariance \(e^\beta I\) and performing gradient descent on both \(\beta\) and \(\theta\), for the same objective function, learning rate \(\eta=0.1\)  and initial \(\sigma=5\), we obtain the trajectory below for \(\theta\)</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/Vo2Dssgrad.png" alt="learning sigma5" title="learned sigma 5" /></p>
 
-<p>As we can see, by learning <script type="math/tex">\sigma</script>, the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation <script type="math/tex">\sigma</script> is given below, showing how the variance reduces as we home in on the optimum.</p>
+<p>As we can see, by learning \(\sigma\), the trajectory is much less noisy and more quickly homes in on the optimum.  The trajectory of the learned standard deviation \(\sigma\) is given below, showing how the variance reduces as we home in on the optimum.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/VO2Dsdtraj.png" alt="learning sigma traj 5" title="learned sigma traj 5" /></p>
 
@@ -362,38 +362,38 @@ This shows that the "evolutionary approach" is in fact a special case of VO (usi
 
 <p>Ferenc Huszar‏ has a nice post <a href="http://www.inference.vc/evolutionary-strategies-embarrassingly-parallelizable-optimization/">Evolution Strategies: Almost Embarrassingly Parallel Optimization</a> summarising recent work by Salimans etal on <a href="https://arxiv.org/abs/1703.03864">Evolution Strategies as a Scalable Alternative to Reinforcement Learning</a>.</p>
 
-<p>The aim is to minimise a function <script type="math/tex">f(x)</script> by using gradient based approaches, without explicitly calculating the gradient. The first observation is that the gradient can be approximated by considering the Taylor expansion</p>
+<p>The aim is to minimise a function \(f(x)\) by using gradient based approaches, without explicitly calculating the gradient. The first observation is that the gradient can be approximated by considering the Taylor expansion</p>
 
-<script type="math/tex; mode=display">f(x+\epsilon) = f(x)+\epsilon f'(x) + \frac{\epsilon^2}{2} f''(x) + O(\epsilon^3)</script>
+\[f(x+\epsilon) = f(x)+\epsilon f'(x) + \frac{\epsilon^2}{2} f''(x) + O(\epsilon^3)\]
 
-<p>Multiplying both sides by <script type="math/tex">\epsilon</script></p>
+<p>Multiplying both sides by \(\epsilon\)</p>
 
-<script type="math/tex; mode=display">\epsilon f(x+\epsilon) = \epsilon f(x)+\epsilon^2 f'(x) +\frac{\epsilon^3}{2}f''(x)+ O(\epsilon^4)</script>
+\[\epsilon f(x+\epsilon) = \epsilon f(x)+\epsilon^2 f'(x) +\frac{\epsilon^3}{2}f''(x)+ O(\epsilon^4)\]
 
-<p>Finally, taking the expectation with respect to <script type="math/tex">\epsilon</script> drawn from a Gaussian distribution with zero mean and variance <script type="math/tex">\sigma^2</script> we have</p>
+<p>Finally, taking the expectation with respect to \(\epsilon\) drawn from a Gaussian distribution with zero mean and variance \(\sigma^2\) we have</p>
 
-<script type="math/tex; mode=display">\ave{\epsilon f(x+\epsilon)} = \sigma^2 f'(x) + O(\epsilon^4)</script>
+\[\ave{\epsilon f(x+\epsilon)} = \sigma^2 f'(x) + O(\epsilon^4)\]
 
 <p>Hence, we have the approximation</p>
 
-<script type="math/tex; mode=display">f'(x) \approx \frac{1}{\sigma^2}\ave{\epsilon f(x+\epsilon)}
-\label{eq:grad2}\tag{2}</script>
+\[f'(x) \approx \frac{1}{\sigma^2}\ave{\epsilon f(x+\epsilon)}
+\label{eq:grad2}\tag{2}\]
 
-<p>Based on the above discussion of VO, and comparing equations (1) and (2) we see that this Gaussian perturbation approach is related to VO in which we use a Gaussian <script type="math/tex">p(x\vert \theta)</script>, with the understanding that in the VO case the optimisation is over <script type="math/tex">\theta</script> rather than <script type="math/tex">x</script>.  An advantage of the VO approach, however, is that it provides a principled way to adjust parameters such as the variance <script type="math/tex">\sigma^2</script> (based on minimising the upper bound).</p>
+<p>Based on the above discussion of VO, and comparing equations (1) and (2) we see that this Gaussian perturbation approach is related to VO in which we use a Gaussian \(p(x\vert \theta)\), with the understanding that in the VO case the optimisation is over \(\theta\) rather than \(x\).  An advantage of the VO approach, however, is that it provides a principled way to adjust parameters such as the variance \(\sigma^2\) (based on minimising the upper bound).</p>
 
-<p>Whilst this was derived for the scalar setting, the vector derivative is obtained by applying the same method, where the <script type="math/tex">\epsilon</script> vector is drawn from the zero mean multivariate Gaussian with covariance <script type="math/tex">\sigma^2 I</script> for identity matrix <script type="math/tex">I</script>.</p>
+<p>Whilst this was derived for the scalar setting, the vector derivative is obtained by applying the same method, where the \(\epsilon\) vector is drawn from the zero mean multivariate Gaussian with covariance \(\sigma^2 I\) for identity matrix \(I\).</p>
 
 <h2 class="no_toc" id="efficient-communication">Efficient Communication</h2>
 
-<p>A key insight in <a href="https://arxiv.org/abs/1703.03864">Evolution Strategies as a Scalable Alternative to Reinforcement Learning</a> is that the sampling process can be distributed across multiple machines, <script type="math/tex">i\in\{1,\ldots,S\}</script> so that</p>
+<p>A key insight in <a href="https://arxiv.org/abs/1703.03864">Evolution Strategies as a Scalable Alternative to Reinforcement Learning</a> is that the sampling process can be distributed across multiple machines, \(i\in\{1,\ldots,S\}\) so that</p>
 
-<script type="math/tex; mode=display">f'(x) \approx \frac{1}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}</script>
+\[f'(x) \approx \frac{1}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}\]
 
-<p>where <script type="math/tex">\epsilon^i</script> is a vector sample and <script type="math/tex">i</script> is the sample index. Each machine <script type="math/tex">i</script> can then calculate <script type="math/tex">f(x+\epsilon^i)</script>. The Stochastic Gradient parameter update with learning rate <script type="math/tex">\eta</script> is</p>
+<p>where \(\epsilon^i\) is a vector sample and \(i\) is the sample index. Each machine \(i\) can then calculate \(f(x+\epsilon^i)\). The Stochastic Gradient parameter update with learning rate \(\eta\) is</p>
 
-<script type="math/tex; mode=display">x^{new} = x - \frac{\eta}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}</script>
+\[x^{new} = x - \frac{\eta}{S\sigma^2}\sum_{i=1}^S {\epsilon^i f(x+\epsilon^i)}\]
 
-<p>Provided each machine <script type="math/tex">i</script> also knows the random seed used to generate the <script type="math/tex">\epsilon^j</script> of each other machine, it therefore knows what all the <script type="math/tex">\epsilon^j</script> are (by sampling according to the known seeds) and can thus calculate <script type="math/tex">x^{new}</script> based on only the <script type="math/tex">S</script> scalar values calculated by each machine. The basic point here is that, thanks to seed sharing, there is no requirement to send the vectors <script type="math/tex">\epsilon^i</script> between the machines (only the scalar values <script type="math/tex">f(x+\epsilon^i)</script> need be sent), keeping the transmission costs very low.</p>
+<p>Provided each machine \(i\) also knows the random seed used to generate the \(\epsilon^j\) of each other machine, it therefore knows what all the \(\epsilon^j\) are (by sampling according to the known seeds) and can thus calculate \(x^{new}\) based on only the \(S\) scalar values calculated by each machine. The basic point here is that, thanks to seed sharing, there is no requirement to send the vectors \(\epsilon^i\) between the machines (only the scalar values \(f(x+\epsilon^i)\) need be sent), keeping the transmission costs very low.</p>
 
 <p>Based on the insight that the <a href="https://arxiv.org/abs/1703.03864">Parallel Gaussian Perturbation</a> approach is a special case of VO, it would be natural to apply VO using seed sharing to efficiently parallelise the sampling. This has the benefit that other parameters such as the variance can also be efficiently communicated, potentially significantly speeding up convergence.</p>
 

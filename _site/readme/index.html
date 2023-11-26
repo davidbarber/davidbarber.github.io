@@ -205,10 +205,10 @@ Credits: http://localhost:4000/disclosure
 <h4 id="_configyml">_config.yml</h4>
 
 <ul>
-  <li>Edit lines where text string <code class="highlighter-rouge">foo</code> is present with relevant information.</li>
+  <li>Edit lines where text string <code class="language-plaintext highlighter-rouge">foo</code> is present with relevant information.</li>
   <li>Add relevant author and owner information
     <ul>
-      <li>For proper sidebar, meta info below post title, and footer bar, add at least twitter, google plus info under <code class="highlighter-rouge">owner</code> and <code class="highlighter-rouge">sidebar</code> section.</li>
+      <li>For proper sidebar, meta info below post title, and footer bar, add at least twitter, google plus info under <code class="language-plaintext highlighter-rouge">owner</code> and <code class="language-plaintext highlighter-rouge">sidebar</code> section.</li>
       <li>Uncomment and add relevant user names/keys to enable features, e.g., google analytics, disqus comments, twitter widget, google custom search.</li>
     </ul>
   </li>
@@ -218,8 +218,8 @@ Credits: http://localhost:4000/disclosure
 
 <ul>
   <li>Read <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">Using a custom domain with GitHub Pages</a> for set-up details.</li>
-  <li>If you are hosting website on domain other than <code class="highlighter-rouge">github.io</code>, rename <code class="highlighter-rouge">CNAME.sample</code> file to <code class="highlighter-rouge">CNAME</code>, and add your custom domain name, e.g., <code class="highlighter-rouge">example.com</code> (only one domain is allowed), otherwise remove <code class="highlighter-rouge">CNAME</code> file if you want to host at default <code class="highlighter-rouge">github.io</code>.</li>
-  <li>If you are hosting website on <code class="highlighter-rouge">github.io</code>, replace <code class="highlighter-rouge">example.com</code> with <code class="highlighter-rouge">https://&lt;github-username&gt;.github.io/&lt;repository_name&gt;</code> (for project site) or <code class="highlighter-rouge">https://&lt;github-username&gt;.github.io</code> (for user site) under <code class="highlighter-rouge">site.url</code> and <code class="highlighter-rouge">site.urlimg</code> in <code class="highlighter-rouge">_config.yml</code> and <code class="highlighter-rouge">_prose.yml</code> file.</li>
+  <li>If you are hosting website on domain other than <code class="language-plaintext highlighter-rouge">github.io</code>, rename <code class="language-plaintext highlighter-rouge">CNAME.sample</code> file to <code class="language-plaintext highlighter-rouge">CNAME</code>, and add your custom domain name, e.g., <code class="language-plaintext highlighter-rouge">example.com</code> (only one domain is allowed), otherwise remove <code class="language-plaintext highlighter-rouge">CNAME</code> file if you want to host at default <code class="language-plaintext highlighter-rouge">github.io</code>.</li>
+  <li>If you are hosting website on <code class="language-plaintext highlighter-rouge">github.io</code>, replace <code class="language-plaintext highlighter-rouge">example.com</code> with <code class="language-plaintext highlighter-rouge">https://&lt;github-username&gt;.github.io/&lt;repository_name&gt;</code> (for project site) or <code class="language-plaintext highlighter-rouge">https://&lt;github-username&gt;.github.io</code> (for user site) under <code class="language-plaintext highlighter-rouge">site.url</code> and <code class="language-plaintext highlighter-rouge">site.urlimg</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code> and <code class="language-plaintext highlighter-rouge">_prose.yml</code> file.</li>
 </ul>
 
 <h4 id="travisyml">.travis.yml</h4>
@@ -231,111 +231,110 @@ Credits: http://localhost:4000/disclosure
 
 <ul>
   <li><a href="https://github.com/prose/prose/wiki/Getting-Started">https://github.com/prose/prose/wiki/Getting-Started</a></li>
-  <li>Edit <code class="highlighter-rouge">example.com</code> with your domain name.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">example.com</code> with your domain name.</li>
   <li>You may edit names for custom categories.</li>
 </ul>
 
 <h4 id="robotstxt">robots.txt</h4>
 
 <ul>
-  <li>replace <code class="highlighter-rouge">example.com</code> with your valid url.</li>
+  <li>replace <code class="language-plaintext highlighter-rouge">example.com</code> with your valid url.</li>
   <li>Edit search engine inclusion/exclusion if desired.</li>
 </ul>
 
 <h4 id="page-specific-edits">page specific edits</h4>
 
 <ul>
-  <li><code class="highlighter-rouge">_data/socialmedia.html</code>
+  <li><code class="language-plaintext highlighter-rouge">_data/socialmedia.html</code>
     <ul>
-      <li>Replace user <code class="highlighter-rouge">foo</code> with appropriate username</li>
+      <li>Replace user <code class="language-plaintext highlighter-rouge">foo</code> with appropriate username</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">_includes/</code>
+  <li><code class="language-plaintext highlighter-rouge">_includes/</code>
     <ul>
-      <li>Check if file paths for appropriate urls have valid css files, scripts, icons, and images in <code class="highlighter-rouge">head.html</code> and <code class="highlighter-rouge">head_minimal.html</code>, else comment html tags which are not being used.</li>
-      <li>Also, check if variables (twitter, google plus, linkedin, google analytics key and disqus username, etc.) are specified in <code class="highlighter-rouge">_config.yml</code> located under root path.</li>
-      <li>You may edit <code class="highlighter-rouge">meta_info.html</code>, <code class="highlighter-rouge">footer.html</code> and similar include files to add/remove elements in page meta bar, footer, etc.</li>
-      <li>For publications page, <code class="highlighter-rouge">mypubs.html</code> and <code class="highlighter-rouge">myaoi.html</code> are trimmed outputs from <a href="https://github.com/davidswelt/zot_bib_web">zot_bib_web</a>. Github pages can not dynamically build these pages. Alternately, you may export <code class="highlighter-rouge">bib</code> format for publications under <code class="highlighter-rouge">/files/</code> directory which can be parsed dynamically using <a href="http://bibbase.org">bibbase.org</a></li>
-      <li><code class="highlighter-rouge">_includes/footer.html</code>: Edit copyright information as needed.</li>
+      <li>Check if file paths for appropriate urls have valid css files, scripts, icons, and images in <code class="language-plaintext highlighter-rouge">head.html</code> and <code class="language-plaintext highlighter-rouge">head_minimal.html</code>, else comment html tags which are not being used.</li>
+      <li>Also, check if variables (twitter, google plus, linkedin, google analytics key and disqus username, etc.) are specified in <code class="language-plaintext highlighter-rouge">_config.yml</code> located under root path.</li>
+      <li>You may edit <code class="language-plaintext highlighter-rouge">meta_info.html</code>, <code class="language-plaintext highlighter-rouge">footer.html</code> and similar include files to add/remove elements in page meta bar, footer, etc.</li>
+      <li>For publications page, <code class="language-plaintext highlighter-rouge">mypubs.html</code> and <code class="language-plaintext highlighter-rouge">myaoi.html</code> are trimmed outputs from <a href="https://github.com/davidswelt/zot_bib_web">zot_bib_web</a>. Github pages can not dynamically build these pages. Alternately, you may export <code class="language-plaintext highlighter-rouge">bib</code> format for publications under <code class="language-plaintext highlighter-rouge">/files/</code> directory which can be parsed dynamically using <a href="http://bibbase.org">bibbase.org</a></li>
+      <li><code class="language-plaintext highlighter-rouge">_includes/footer.html</code>: Edit copyright information as needed.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">_layouts</code>
+  <li><code class="language-plaintext highlighter-rouge">_layouts</code>
     <ul>
-      <li>To add/remove/reorder page/post contents, edit <code class="highlighter-rouge">default.html</code> plus <code class="highlighter-rouge">page.html</code> or <code class="highlighter-rouge">post.html</code>.</li>
+      <li>To add/remove/reorder page/post contents, edit <code class="language-plaintext highlighter-rouge">default.html</code> plus <code class="language-plaintext highlighter-rouge">page.html</code> or <code class="language-plaintext highlighter-rouge">post.html</code>.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">_posts</code>
+  <li><code class="language-plaintext highlighter-rouge">_posts</code>
     <ul>
-      <li>Live blog posts goes here with markdown formatted post. File name format must have following date-title format <code class="highlighter-rouge">yyyy-mm-dd-title.md</code> for jekyll to render blog post correctly.</li>
+      <li>Live blog posts goes here with markdown formatted post. File name format must have following date-title format <code class="language-plaintext highlighter-rouge">yyyy-mm-dd-title.md</code> for jekyll to render blog post correctly.</li>
       <li>YAML sample header shows all available options. Minimal required elements are: layout, title and date. Date tag overrides date given in post file name.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">blog/index.html</code>
+  <li><code class="language-plaintext highlighter-rouge">blog/index.html</code>
     <ul>
       <li>Edit blog title and description.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">images/</code>
+  <li><code class="language-plaintext highlighter-rouge">images/</code>
     <ul>
-      <li>Under <code class="highlighter-rouge">icons</code> directory, keep appropriate sized favicons and thumbnails as specified in <code class="highlighter-rouge">_includes/head.html</code> and <code class="highlighter-rouge">_includes/head_minimal.html</code></li>
-      <li>Also, keep <code class="highlighter-rouge">favicon.png</code> and <code class="highlighter-rouge">favicon.ico</code> in root directory.</li>
-      <li>Final, <code class="highlighter-rouge">images/icons/</code> should have following images with exact filenames and image size as specified in respective filenames. These images can be generated using online <em>favicon generator</em>. Replace <code class="highlighter-rouge">foo</code> with your site title or other name if desired.</li>
+      <li>Under <code class="language-plaintext highlighter-rouge">icons</code> directory, keep appropriate sized favicons and thumbnails as specified in <code class="language-plaintext highlighter-rouge">_includes/head.html</code> and <code class="language-plaintext highlighter-rouge">_includes/head_minimal.html</code></li>
+      <li>Also, keep <code class="language-plaintext highlighter-rouge">favicon.png</code> and <code class="language-plaintext highlighter-rouge">favicon.ico</code> in root directory.</li>
+      <li>Final, <code class="language-plaintext highlighter-rouge">images/icons/</code> should have following images with exact filenames and image size as specified in respective filenames. These images can be generated using online <em>favicon generator</em>. Replace <code class="language-plaintext highlighter-rouge">foo</code> with your site title or other name if desired.</li>
     </ul>
   </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>example.com/images/icons/apple-touch-icon-precomposed.png
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>example.com/images/icons/apple-touch-icon-precomposed.png
 example.com/images/icons/apple-touch-icon-72x72-precomposed.png
 example.com/images/icons/apple-touch-icon-114x114-precomposed.png
 example.com/images/icons/apple-touch-icon-144x144-precomposed.png
 example.com/images/icons/apple-touch-icon-180x180.png
 example.com/images/icons/android-icon-192x192.png
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">pages/about.md</code>
+  <li><code class="language-plaintext highlighter-rouge">pages/about.md</code>
     <ul>
-      <li>YAML variable <code class="highlighter-rouge">imagefeature</code> shoud have image path relative to <code class="highlighter-rouge">images/</code> directory, i.e., <code class="highlighter-rouge">foo.png</code> will link to <code class="highlighter-rouge">example.com/images/foo.png</code></li>
-      <li>Specify <code class="highlighter-rouge">site.owner.avatar</code> and <code class="highlighter-rouge">site.owner.twitter</code> along with other variables in <code class="highlighter-rouge">_config.yml</code></li>
+      <li>YAML variable <code class="language-plaintext highlighter-rouge">imagefeature</code> shoud have image path relative to <code class="language-plaintext highlighter-rouge">images/</code> directory, i.e., <code class="language-plaintext highlighter-rouge">foo.png</code> will link to <code class="language-plaintext highlighter-rouge">example.com/images/foo.png</code></li>
+      <li>Specify <code class="language-plaintext highlighter-rouge">site.owner.avatar</code> and <code class="language-plaintext highlighter-rouge">site.owner.twitter</code> along with other variables in <code class="language-plaintext highlighter-rouge">_config.yml</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">syspages/</code>:
+  <li><code class="language-plaintext highlighter-rouge">syspages/</code>:
     <ul>
       <li>Edit page title and description in YAML front matter.</li>
-      <li>For web search to work, specify <a href="https://cse.google.com">Google Custom Search Engine</a> API key for <code class="highlighter-rouge">google_search</code> variable.</li>
+      <li>For web search to work, specify <a href="https://cse.google.com">Google Custom Search Engine</a> API key for <code class="language-plaintext highlighter-rouge">google_search</code> variable.</li>
       <li>Tag generation is experimental and dynamic size for tag box may need to be adjusted if you have more than 100 posts with one or two frequently occurring tags.</li>
-      <li>All <code class="highlighter-rouge"><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="err">...</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code> loop operations will increase site build time, and remove such features (tags, meta info, related posts, etc.) under <code class="highlighter-rouge">_includes</code>, <code class="highlighter-rouge">_layouts</code> and <code class="highlighter-rouge">syspages</code> if required.</li>
+      <li>All <code class="language-plaintext highlighter-rouge">{% for ... %}...{% endfor %}</code> loop operations will increase site build time, and remove such features (tags, meta info, related posts, etc.) under <code class="language-plaintext highlighter-rouge">_includes</code>, <code class="language-plaintext highlighter-rouge">_layouts</code> and <code class="language-plaintext highlighter-rouge">syspages</code> if required.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">pages/contact.md</code>
+  <li><code class="language-plaintext highlighter-rouge">pages/contact.md</code>
     <ul>
       <li>Edit page title and description.</li>
       <li>Edit address, driving direction url, etc.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">pages/cv.md</code>
+  <li><code class="language-plaintext highlighter-rouge">pages/cv.md</code>
     <ul>
-      <li>Edit <code class="highlighter-rouge">_config.yml</code> to add twitter, google plus, linkedin, google scholar, ORCID profile info under owner heading.</li>
-      <li>Add pdf at <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.url</span><span class="w"> </span><span class="p">}</span><span class="err">}/cv/cv.pdf</span></code></li>
+      <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> to add twitter, google plus, linkedin, google scholar, ORCID profile info under owner heading.</li>
+      <li>Add pdf at <code class="language-plaintext highlighter-rouge">{{ site.url }}/cv/cv.pdf</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">pages/publications.md</code>
+  <li><code class="language-plaintext highlighter-rouge">pages/publications.md</code>
     <ul>
-      <li>Add your publications at <code class="highlighter-rouge">/files/mypubs.bib</code> and <code class="highlighter-rouge">_includes/mypubs.html</code>. See above under <code class="highlighter-rouge">_includes</code> for more.</li>
+      <li>Add your publications at <code class="language-plaintext highlighter-rouge">/files/mypubs.bib</code> and <code class="language-plaintext highlighter-rouge">_includes/mypubs.html</code>. See above under <code class="language-plaintext highlighter-rouge">_includes</code> for more.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">pages/disclosure.md</code>
+  <li><code class="language-plaintext highlighter-rouge">pages/disclosure.md</code>
     <ul>
       <li>Appreciated if you keep relevant credits in disclosure page.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">humans.txt</code>
+  <li><code class="language-plaintext highlighter-rouge">humans.txt</code>
     <ul>
-      <li>Replace <code class="highlighter-rouge">foo</code> with your name.</li>
+      <li>Replace <code class="language-plaintext highlighter-rouge">foo</code> with your name.</li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">rfeed.xml</code>
+  <li><code class="language-plaintext highlighter-rouge">rfeed.xml</code>
     <ul>
       <li>Not required unless you are cross-posting about R language on blog aggregation site(s).</li>
     </ul>
@@ -359,7 +358,7 @@ example.com/images/icons/android-icon-192x192.png
   </thead>
   <tbody>
     <tr>
-      <td><i class="fa fa-anchor"> http://localhost:4000/readme/</i><br /><i class="fa fa-calendar"> 25-Jul-22</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
+      <td><i class="fa fa-anchor"> http://localhost:4000/readme/</i><br /><i class="fa fa-calendar"> 26-Nov-23</i><br /><i class="fa fa-creative-commons"> BY-NC-SA 4.0 http://localhost:4000/disclosure</i></td>
       <td><img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://localhost:4000/readme/&choe=UTF-8" alt="http://localhost:4000/readme/" /></td>
     </tr>
   </tbody>

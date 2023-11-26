@@ -113,7 +113,7 @@
     <url>
       <loc>http://localhost:4000/archive/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -160,7 +160,7 @@
     <url>
       <loc>http://localhost:4000/disclosure/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -177,7 +177,7 @@
     <url>
       <loc>http://localhost:4000/feed.xml</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -192,7 +192,7 @@
     <url>
       <loc>http://localhost:4000/humans.txt</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -207,7 +207,7 @@
     <url>
       <loc>http://localhost:4000/blog/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -222,7 +222,7 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -237,7 +237,7 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -252,7 +252,7 @@
     <url>
       <loc>http://localhost:4000/links.jsonp</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -286,7 +286,7 @@
     <url>
       <loc>http://localhost:4000/readme/</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -303,7 +303,7 @@
     <url>
       <loc>http://localhost:4000/rfeed.xml</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -320,7 +320,7 @@
     <url>
       <loc>http://localhost:4000/sitemap.xml</loc>
       
-        <lastmod>2022-07-25T16:45:07+01:00</lastmod>
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -331,6 +331,21 @@
     </url>
     
   
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/redirects.json</loc>
+      
+        <lastmod>2023-11-26T17:13:10+00:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
     
   
 </urlset>

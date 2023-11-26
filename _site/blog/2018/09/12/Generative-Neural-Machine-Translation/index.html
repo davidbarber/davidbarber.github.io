@@ -280,7 +280,7 @@ Harshil Shah
 
 <!--more-->
 
-<p>One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018<sup id="fnref:SB2018"><a href="#fn:SB2018" class="footnote">1</a></sup> (<a href="https://arxiv.org/abs/1806.05138">arxiv version</a>).</p>
+<p>One approach to achieve this is to require models to be good, not only at translation, but additional tasks, such as question answering.  A parallel direction is to encourage models to internally focus on the meaning of the sentence. This post summarises our approach to this latter direction, published at NIPS 2018<sup id="fnref:SB2018" role="doc-noteref"><a href="#fn:SB2018" class="footnote" rel="footnote">1</a></sup> (<a href="https://arxiv.org/abs/1806.05138">arxiv version</a>).</p>
 
 <h2 class="no_toc" id="learning-meaningful-representations-of-data">Learning meaningful representations of data</h2>
 
@@ -301,52 +301,52 @@ Harshil Shah
 
 <h2 class="no_toc" id="generative-neural-machine-translation-gnmt">Generative Neural Machine Translation (GNMT)</h2>
 
-<p>With Generative Neural Machine Translation (GNMT)<sup id="fnref:SB2018:1"><a href="#fn:SB2018" class="footnote">1</a></sup>, we use a single shared latent representation to model the same sentence in multiple languages. The latent variable is a language agnostic representation of the sentence; by giving it the responsiblity for modelling the same sentence in multiple languages, it is encouraged to learn the semantic meaning.</p>
+<p>With Generative Neural Machine Translation (GNMT)<sup id="fnref:SB2018:1" role="doc-noteref"><a href="#fn:SB2018" class="footnote" rel="footnote">1</a></sup>, we use a single shared latent representation to model the same sentence in multiple languages. The latent variable is a language agnostic representation of the sentence; by giving it the responsiblity for modelling the same sentence in multiple languages, it is encouraged to learn the semantic meaning.</p>
 
-<p>For each data point <script type="math/tex">n</script> in a data set, typical latent variable architectures model the joint distribution of the latent representation <script type="math/tex">\mathbf{z}^{(n)}</script> and the observed sentence <script type="math/tex">\mathbf{x}^{(n)}</script> as:</p>
+<p>For each data point \(n\) in a data set, typical latent variable architectures model the joint distribution of the latent representation \(\mathbf{z}^{(n)}\) and the observed sentence \(\mathbf{x}^{(n)}\) as:</p>
 
-<script type="math/tex; mode=display">p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)})</script>
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)})\]
 
-<p>where <script type="math/tex">\theta</script> are trainable parameters of the model.</p>
+<p>where \(\theta\) are trainable parameters of the model.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/fig_1.png" alt="SGVB" title="SGVB" /></p>
 
-<p>Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence <script type="math/tex">\mathbf{x}^{(n)}</script> and target sentence <script type="math/tex">\mathbf{y}^{(n)}</script> as:</p>
+<p>Instead of modelling a single sentence per latent representation, GNMT uses a shared latent representation to model the same sentence both in the source and target languages. GNMT models the joint distribution of the latent representation, source sentence \(\mathbf{x}^{(n)}\) and target sentence \(\mathbf{y}^{(n)}\) as:</p>
 
-<script type="math/tex; mode=display">p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})</script>
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})\]
 
 <p class="text-center"><img src="http://localhost:4000/images/fig_2.png" alt="GNMT" title="GNMT" /></p>
 
-<p>This set up means that <script type="math/tex">\mathbf{z}^{(n)}</script> models the commonality between the source and target sentences, which is the semantic meaning.</p>
+<p>This set up means that \(\mathbf{z}^{(n)}\) models the commonality between the source and target sentences, which is the semantic meaning.</p>
 
-<p>For full details on the neural networks used to model the distributions of the source <script type="math/tex">p_{\theta}(\mathbf{x}^{(n)}\vert\mathbf{z}^{(n)})</script> and target <script type="math/tex">p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})</script>, see <sup id="fnref:SB2018:2"><a href="#fn:SB2018" class="footnote">1</a></sup>.</p>
+<p>For full details on the neural networks used to model the distributions of the source \(p_{\theta}(\mathbf{x}^{(n)}\vert\mathbf{z}^{(n)})\) and target \(p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)})\), see <sup id="fnref:SB2018:2" role="doc-noteref"><a href="#fn:SB2018" class="footnote" rel="footnote">1</a></sup>.</p>
 
-<p>One may argue that it would be better if the target sentence were dependent only on the latent representation and not directly on the source sentence, giving the model <script type="math/tex">p(\mathbf{x}\vert \mathbf{z})p(\mathbf{y}\vert \mathbf{z})p(\mathbf{z})</script> – forcing the latent representation to be fully responsible for generating both the source and target sentence. However, we found that the generated translations weren’t sufficiently syntactically coherent.</p>
+<p>One may argue that it would be better if the target sentence were dependent only on the latent representation and not directly on the source sentence, giving the model \(p(\mathbf{x}\vert \mathbf{z})p(\mathbf{y}\vert \mathbf{z})p(\mathbf{z})\) – forcing the latent representation to be fully responsible for generating both the source and target sentence. However, we found that the generated translations weren’t sufficiently syntactically coherent.</p>
 
 <h2 id="training-the-model">Training the model</h2>
 
-<p>We use the Stochastic Gradient Variational Bayes (SGVB)<sup id="fnref:KW2014"><a href="#fn:KW2014" class="footnote">2</a></sup><sup id="fnref:R2014"><a href="#fn:R2014" class="footnote">3</a></sup> algorithm to train the model described above. SGVB introduces a ‘recognition’ model <script type="math/tex">q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})</script> which acts as an approximation to the true but intractable posterior <script type="math/tex">p(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})</script>, thus forming the following lower bound on the log likelihood of the observed data:</p>
+<p>We use the Stochastic Gradient Variational Bayes (SGVB)<sup id="fnref:KW2014" role="doc-noteref"><a href="#fn:KW2014" class="footnote" rel="footnote">2</a></sup><sup id="fnref:R2014" role="doc-noteref"><a href="#fn:R2014" class="footnote" rel="footnote">3</a></sup> algorithm to train the model described above. SGVB introduces a ‘recognition’ model \(q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})\) which acts as an approximation to the true but intractable posterior \(p(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})\), thus forming the following lower bound on the log likelihood of the observed data:</p>
 
-<script type="math/tex; mode=display">\mathcal{L}(\mathbf{x}^{(n)}) = \mathbb{E}_{q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})} [\log p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) - \log q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})]</script>
+\[\mathcal{L}(\mathbf{x}^{(n)}) = \mathbb{E}_{q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})} [\log p(\mathbf{z}^{(n)},\mathbf{x}^{(n)}) - \log q_{\phi}(\mathbf{z}^{(n)}\vert \mathbf{x}^{(n)})]\]
 
-<p>The model parameters <script type="math/tex">\theta</script> and recognition parameters <script type="math/tex">\phi</script> are then jointly learned by performing gradient ascent on this lower bound.</p>
+<p>The model parameters \(\theta\) and recognition parameters \(\phi\) are then jointly learned by performing gradient ascent on this lower bound.</p>
 
 <h2 id="generating-translations---the-banana-trick">Generating translations - the ‘banana trick’</h2>
 
-<p>Suppose the model has been trained, and then we are given a sentence in the source language (<script type="math/tex">\mathbf{x}</script>) and asked to find a translation of that sentence. In this scenario, we want to find the most likely target sentence conditioned on the given source sentence. The natural objective is therefore:</p>
+<p>Suppose the model has been trained, and then we are given a sentence in the source language (\(\mathbf{x}\)) and asked to find a translation of that sentence. In this scenario, we want to find the most likely target sentence conditioned on the given source sentence. The natural objective is therefore:</p>
 
-<script type="math/tex; mode=display">\mathbf{y}^{*} = \arg \max_{y} p(\mathbf{y}\vert \mathbf{x}) = \arg \max_{y} \int p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x}) p(\mathbf{z}\vert \mathbf{x}) d\mathbf{z}</script>
+\[\mathbf{y}^{*} = \arg \max_{y} p(\mathbf{y}\vert \mathbf{x}) = \arg \max_{y} \int p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x}) p(\mathbf{z}\vert \mathbf{x}) d\mathbf{z}\]
 
 <p>However this integral is intractable, and so we cannot perform this maximisation exactly. Instead, we perform approximate maximisation by iteratively refining a ‘guess’ for the target sentence. We first make a random guess for the target sentence, and then iterate between the following two steps:</p>
 
 <ol>
   <li>Draw samples of the latent representation from the approximate posterior, using the source sentence and the latest guess for the target sentence.</li>
-  <li>Update the guess for the target sentence based on the latent representation samples from step 1. This update is done by choosing <script type="math/tex">\mathbf{y}</script> to maximise <script type="math/tex">p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})</script>.</li>
+  <li>Update the guess for the target sentence based on the latent representation samples from step 1. This update is done by choosing \(\mathbf{y}\) to maximise \(p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})\).</li>
 </ol>
 
-<p>Intuitively, this procedure computes the values of the latent representation that are likely to have generated both the source sentence and the latest guess for the target sentence. It then improves the guess based on those values of the latent variable. Mathematically, this iteratively increases a lower bound on <script type="math/tex">\log p(\mathbf{y}\vert \mathbf{x})</script> until convergence and is an application of the Expectation Maximisation algorithm, here <script type="math/tex">\mathbf{y}</script> playing the role of parameters.</p>
+<p>Intuitively, this procedure computes the values of the latent representation that are likely to have generated both the source sentence and the latest guess for the target sentence. It then improves the guess based on those values of the latent variable. Mathematically, this iteratively increases a lower bound on \(\log p(\mathbf{y}\vert \mathbf{x})\) until convergence and is an application of the Expectation Maximisation algorithm, here \(\mathbf{y}\) playing the role of parameters.</p>
 
-<p>Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in <sup id="fnref:B2012"><a href="#fn:B2012" class="footnote">4</a></sup>, discussing a fictitious protein sequence in bananas.</p>
+<p>Note: in our group we refer to this as the ‘banana trick’ because we are first aware of its usage in exercise 5.7 in <sup id="fnref:B2012" role="doc-noteref"><a href="#fn:B2012" class="footnote" rel="footnote">4</a></sup>, discussing a fictitious protein sequence in bananas.</p>
 
 <p>Below, we show an example of a long sentence translated from French to English by GNMT. The long range coherence of the translation is a good indicator of the model’s ability to capture semantic information about the sentence within the latent representation.</p>
 
@@ -364,8 +364,8 @@ Harshil Shah
 
 <ol>
   <li>Draw samples of the latent representation from the approximate posterior, using the latest guesses for the source and target sentences.</li>
-  <li>Update the guess for the source sentence based on the latent representation samples from step 1. This update is done by choosing <script type="math/tex">\mathbf{x}</script> to maximise <script type="math/tex">p_{\theta}(\mathbf{x}\vert \mathbf{z})</script>.</li>
-  <li>Update the guess for the target sentence based on the latent representation samples from step 1 and on the updated guess for the source sentence from step 2. This update is done by choosing <script type="math/tex">\mathbf{y}</script> to maximise <script type="math/tex">p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})</script>.</li>
+  <li>Update the guess for the source sentence based on the latent representation samples from step 1. This update is done by choosing \(\mathbf{x}\) to maximise \(p_{\theta}(\mathbf{x}\vert \mathbf{z})\).</li>
+  <li>Update the guess for the target sentence based on the latent representation samples from step 1 and on the updated guess for the source sentence from step 2. This update is done by choosing \(\mathbf{y}\) to maximise \(p_{\theta}(\mathbf{y}\vert \mathbf{z},\mathbf{x})\).</li>
 </ol>
 
 <p>Below is an example of a sentence translated from Spanish to English, where the struck through words in the source sentence are considered missing. Using its latent representation, the model does remarkably well at imputing what the missing words may be and translating them accordingly.</p>
@@ -378,11 +378,11 @@ Harshil Shah
 
 <h2 id="cross-language-parameter-sharing">Cross-language parameter sharing</h2>
 
-<p>With the architecture described above, if we wanted to translate between, say, English (EN), Spanish (ES) and French (FR), we would have to train 6 separate models for EN → ES, ES → EN, EN → FR, etc. However because all three of these languages share somewhat similar structures, we may not lose much performance by sharing parameters. We therefore add two indicator variables to the model, one for the input language (<script type="math/tex">l_{x}</script>) and another for the output language (<script type="math/tex">l_{y}</script>). By doing this, we only have to train a single model to translate between three languages, instead of having 6 separate models.</p>
+<p>With the architecture described above, if we wanted to translate between, say, English (EN), Spanish (ES) and French (FR), we would have to train 6 separate models for EN → ES, ES → EN, EN → FR, etc. However because all three of these languages share somewhat similar structures, we may not lose much performance by sharing parameters. We therefore add two indicator variables to the model, one for the input language (\(l_{x}\)) and another for the output language (\(l_{y}\)). By doing this, we only have to train a single model to translate between three languages, instead of having 6 separate models.</p>
 
 <p>The joint distribution of the latent representation, source sentence and target sentence becomes:</p>
 
-<script type="math/tex; mode=display">p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})</script>
+\[p(\mathbf{z}^{(n)},\mathbf{x}^{(n)},\mathbf{y}^{(n)}\vert l_{x},l_{y}) = p(\mathbf{z}^{(n)}) p_{\theta}(\mathbf{x}^{(n)}\vert \mathbf{z}^{(n)},l_{x}) p_{\theta}(\mathbf{y}^{(n)}\vert \mathbf{z}^{(n)},\mathbf{x}^{(n)},l_{x},l_{y})\]
 
 <p class="text-center"><img src="http://localhost:4000/images/fig_3.png" alt="GNMT-Multi" title="GNMT-Multi" /></p>
 
@@ -400,7 +400,7 @@ Harshil Shah
 
 <h2 id="semi-supervised-learning">Semi-supervised learning</h2>
 
-<p>Suppose, as in the previous section, that we only have access to a limited number of paired sentences, but that we now have available lots of untranslated sentences in each language. To learn from untranslated sentences, we can set the input language <script type="math/tex">l_{x}</script> and output language <script type="math/tex">l_{y}</script> to the same value, so that the model learns to reconstruct the sentence instead of translating it. Intuitively, this should further help the model to learn the structure and style of each language and thus produce more coherent translations at test time. We refer to this version of the model as GNMT-Multi-SSL.</p>
+<p>Suppose, as in the previous section, that we only have access to a limited number of paired sentences, but that we now have available lots of untranslated sentences in each language. To learn from untranslated sentences, we can set the input language \(l_{x}\) and output language \(l_{y}\) to the same value, so that the model learns to reconstruct the sentence instead of translating it. Intuitively, this should further help the model to learn the structure and style of each language and thus produce more coherent translations at test time. We refer to this version of the model as GNMT-Multi-SSL.</p>
 
 <p>Below we plot the BLEU scores of GNMT-Multi-SSL, GNMT-Multi and the 6 separate GNMT models. They are trained first with 400,000 then with 4,000,000 pairs of translated sentences. In both cases, they are also trained with approximately 20,900,000 untranslated English sentences, 2,700,000 untranslated Spanish sentences and 4,500,000 untranslated French sentences. GNMT-Multi-SSL clearly helps to mitigate overfitting when there are limited paired sentences available. In fact, GNMT-Multi-SSL trained with only 400,000 paired sentences performs about as well as each of the 6 separate GNMT models trained with 4,000,000 sentences! GNMT-Multi-SSL also produces higher BLEU scores even when there is lots of paired data; this verifies our intuition that adding monolingual data helps the model to develop a better understanding of each language individually, and output more coherent sentences accordingly.</p>
 
@@ -414,19 +414,19 @@ Harshil Shah
 
 <h3 class="no_toc" id="references">References</h3>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:SB2018">
-      <p>H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018.&nbsp;<a href="#fnref:SB2018" class="reversefootnote">&#8617;</a>&nbsp;<a href="#fnref:SB2018:1" class="reversefootnote">&#8617;<sup>2</sup></a>&nbsp;<a href="#fnref:SB2018:2" class="reversefootnote">&#8617;<sup>3</sup></a></p>
+    <li id="fn:SB2018" role="doc-endnote">
+      <p>H. Shah and D. Barber. Generative Neural Machine Translation. In Advances in Neural Information Processing Systems, 2018. <a href="#fnref:SB2018" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:SB2018:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:SB2018:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
     </li>
-    <li id="fn:KW2014">
-      <p>D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014.&nbsp;<a href="#fnref:KW2014" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:KW2014" role="doc-endnote">
+      <p>D. Kingma and M. Welling. Auto-Encoding Variational Bayes. In International Conference on Learning Representations, 2014. <a href="#fnref:KW2014" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:R2014">
-      <p>D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014.&nbsp;<a href="#fnref:R2014" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:R2014" role="doc-endnote">
+      <p>D. Rezende et al. Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In Proceedings of the 31st International Conference on Machine Learning, PMLR 32, pages 1278–1286, 2014. <a href="#fnref:R2014" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:B2012">
-      <p>D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012.&nbsp;<a href="#fnref:B2012" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:B2012" role="doc-endnote">
+      <p>D. Barber. Bayesian Reasoning and Machine Learning. Cambridge University Press, 2012. <a href="#fnref:B2012" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

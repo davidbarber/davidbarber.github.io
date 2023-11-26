@@ -272,51 +272,51 @@ Credits: http://localhost:4000/disclosure
 
 
 <h2 class="no_toc" id="probabilistic-classification">Probabilistic Classification</h2>
-<p>In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input <script type="math/tex">x</script> and class label <script type="math/tex">c</script>, the probability of predicting class <script type="math/tex">c</script> is</p>
+<p>In areas like Natural Language Processing (NLP) a common task is to predict the next word in sequence (like in preditictive text on a smartphone or in learning word embeddings).  For input \(x\) and class label \(c\), the probability of predicting class \(c\) is</p>
 
-<script type="math/tex; mode=display">p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}</script>
+\[p_\theta(c|x) = \frac{u_\theta(c,x)}{Z_\theta(x)}\]
 
-<p>where <script type="math/tex">u_\theta(c,x)</script> is some defined function with parameters <script type="math/tex">\theta</script>. For example, <script type="math/tex">u_\theta(c,x)=\exp(w_c'x)</script>, where <script type="math/tex">w_c</script> is a parameter vector for class <script type="math/tex">c</script> and <script type="math/tex">x</script> is the vector input.  The normalising term is</p>
+<p>where \(u_\theta(c,x)\) is some defined function with parameters \(\theta\). For example, \(u_\theta(c,x)=\exp(w_c'x)\), where \(w_c\) is a parameter vector for class \(c\) and \(x\) is the vector input.  The normalising term is</p>
 
-<script type="math/tex; mode=display">Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)</script>
+\[Z_\theta(x) = \sum_{c=1}^C u_\theta(c,x)\]
 
-<p>The task is then to adjust the parameters <script type="math/tex">\theta</script> to maximise the probability of the correct class for each of the training points.</p>
+<p>The task is then to adjust the parameters \(\theta\) to maximise the probability of the correct class for each of the training points.</p>
 
-<p>However, if there are <script type="math/tex">C=100,000</script> words in the dictionary, this means calculating the normalisation <script type="math/tex">Z</script> for each datapoint is going to be expensive.  There have been a variety of approaches suggested over the years to make computationally efficient approximations, many based on importance sampling.</p>
+<p>However, if there are \(C=100,000\) words in the dictionary, this means calculating the normalisation \(Z\) for each datapoint is going to be expensive.  There have been a variety of approaches suggested over the years to make computationally efficient approximations, many based on importance sampling.</p>
 
 <h2 class="no_toc" id="why-plain-importance-sampling-doesnt-work">Why plain Importance Sampling doesn’t work</h2>
 
-<p>A standard approach to approximating <script type="math/tex">Z_\theta(x)</script> is to use</p>
+<p>A standard approach to approximating \(Z_\theta(x)\) is to use</p>
 
-<script type="math/tex; mode=display">Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}</script>
+\[Z_\theta(x) = \sum_{c=1}^C q(c) \frac{u_\theta(c,x)}{q(c)}\]
 
-<p>where <script type="math/tex">q</script> is an importance distribution over all <script type="math/tex">C</script> classes.  We can then form an approximation by sampling from <script type="math/tex">q</script> a small number <script type="math/tex">S</script> of classes to form a sample bag <script type="math/tex">{\cal{S}}</script> and using</p>
+<p>where \(q\) is an importance distribution over all \(C\) classes.  We can then form an approximation by sampling from \(q\) a small number \(S\) of classes to form a sample bag \({\cal{S}}\) and using</p>
 
-<script type="math/tex; mode=display">Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}</script>
+\[Z_\theta(x) \approx \tilde{Z}_\theta(x) = \frac{1}{S}\sum_{s\in{\cal{S}}}  \frac{u_\theta(s,x)}{q(s)}\]
 
-<p>The problem with this approach is that it results in a potentially catastrophic under-estimate of <script type="math/tex">Z_\theta(x)</script>.  If the classifier is working well, we want that <script type="math/tex">u_\theta(c,x)</script> is much higher than <script type="math/tex">u_\theta(d,x)</script> for any incorrect class <script type="math/tex">d</script>.  Hence, unless the importance sample bag <script type="math/tex">{\cal{S}}</script> includes class <script type="math/tex">c</script>, then the normalisation approximation will miss this significant mass and the probability approximation</p>
+<p>The problem with this approach is that it results in a potentially catastrophic under-estimate of \(Z_\theta(x)\).  If the classifier is working well, we want that \(u_\theta(c,x)\) is much higher than \(u_\theta(d,x)\) for any incorrect class \(d\).  Hence, unless the importance sample bag \({\cal{S}}\) includes class \(c\), then the normalisation approximation will miss this significant mass and the probability approximation</p>
 
-<script type="math/tex; mode=display">\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}</script>
+\[\frac{u_\theta(c,x)}{\tilde{Z}_\theta(x)}\]
 
 <p>will be wildly inaccurate, see figure (a) below.  This is the source of the historically well-documented instabilities in training large-scale classifiers.</p>
 
 <h2 class="no_toc" id="making-importance-sampling-work">Making Importance Sampling work</h2>
 
-<p>However, there is an easy fix for this – simply ensure that <script type="math/tex">{\cal{S}}</script> includes the correct class <script type="math/tex">c</script>.</p>
+<p>However, there is an easy fix for this – simply ensure that \({\cal{S}}\) includes the correct class \(c\).</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/aistats17.png" alt="fixing IS" title="fixing IS" /></p>
 
-<p>On the left above we show for <script type="math/tex">C=10,000</script> classes the ratio <script type="math/tex">u_\theta(c,x)/Z_\theta(x)</script> on the <script type="math/tex">x</script>-axis against its approximation  <script type="math/tex">u_\theta(c,x)/\tilde{Z}_\theta(x)</script> on the <script type="math/tex">y</script>-axis. Each dot represents a different randomly drawn set of <script type="math/tex">u</script> values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line <script type="math/tex">y=x</script>.  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.</p>
+<p>On the left above we show for \(C=10,000\) classes the ratio \(u_\theta(c,x)/Z_\theta(x)\) on the \(x\)-axis against its approximation  \(u_\theta(c,x)/\tilde{Z}_\theta(x)\) on the \(y\)-axis. Each dot represents a different randomly drawn set of \(u\) values. Red, green and blue represent 10, 20 and 50 importance samples respectively. The ideal estimation would be such that all points are along the line \(y=x\).  Note the vertical scale – these values are supposed to be probabilities and lie between 0 and 1.  Even as we increase the number of importance samples, this remains a wildly incorrect estimation of the probability.</p>
 
-<p>On the right above we show the same probability estimate but now simply also include the correct class in the set <script type="math/tex">{\cal{S}}</script>. The vertical scale is now sensible and the estimated probabiliy is close to the true value.</p>
+<p>On the right above we show the same probability estimate but now simply also include the correct class in the set \({\cal{S}}\). The vertical scale is now sensible and the estimated probabiliy is close to the true value.</p>
 
 <h2 class="no_toc" id="deep-learning-recurrent-nlp-models">Deep Learning Recurrent NLP models</h2>
 
 <p>We applied this method to learning word embeddings for a deep
 recurrent network.  The training objective was standard maximum
 likelihood, but with the normalisation approximation above. Below we
-plot the exact log likelihood (<script type="math/tex">y</script>-axis) against the optimisation
-gradient ascent iteration (<script type="math/tex">x</script>-axis). We also plot the exact log
+plot the exact log likelihood (\(y\)-axis) against the optimisation
+gradient ascent iteration (\(x\)-axis). We also plot the exact log
 likelihood for some alternative training approaches. As we
 see, standard Importance Sampling becomes unstable as learning
 progresses. However our simple modification stabilizes learning and is

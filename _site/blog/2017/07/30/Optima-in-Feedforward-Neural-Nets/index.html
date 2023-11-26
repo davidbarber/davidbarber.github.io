@@ -273,37 +273,37 @@ Credits: http://localhost:4000/disclosure
 <!--more-->
 
 
-<p><script type="math/tex">\newcommand{\br}[1]{\left(#1\right)}</script>
-<script type="math/tex">\newcommand{\sq}[1]{\left[#1\right]}</script>
-<script type="math/tex">\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}</script></p>
+<p>\(\newcommand{\br}[1]{\left(#1\right)}\)
+\(\newcommand{\sq}[1]{\left[#1\right]}\)
+\(\newcommand{\ave}[1]{\mathbb{E}\sq{#1}}\)</p>
 
 <h2 class="no_toc" id="feedforward-neural-networks">Feedforward Neural Networks</h2>
 
-<p>In our description, a feedforward NN takes an input vector <script type="math/tex">x</script> and produces a vector <script type="math/tex">h_L</script> on the final <script type="math/tex">L^{th}</script> layer. We write <script type="math/tex">h_\lambda</script> to be the vector of pre-activation values for layer <script type="math/tex">\lambda</script> and <script type="math/tex">a_\lambda</script> to denote the vector of activation values after passing through the transfer function <script type="math/tex">f_\lambda</script>.</p>
+<p>In our description, a feedforward NN takes an input vector \(x\) and produces a vector \(h_L\) on the final \(L^{th}\) layer. We write \(h_\lambda\) to be the vector of pre-activation values for layer \(\lambda\) and \(a_\lambda\) to denote the vector of activation values after passing through the transfer function \(f_\lambda\).</p>
 
-<p>Starting with setting <script type="math/tex">a_0</script>  to the input <script type="math/tex">x</script>, a feedforward NN is defined by the recursion</p>
+<p>Starting with setting \(a_0\)  to the input \(x\), a feedforward NN is defined by the recursion</p>
 
-<script type="math/tex; mode=display">h_\lambda = W_\lambda a_{\lambda-1}</script>
+\[h_\lambda = W_\lambda a_{\lambda-1}\]
 
-<p>where <script type="math/tex">W_\lambda</script> is the weight matrix of layer <script type="math/tex">\lambda</script> (we use a sub or superscript <script type="math/tex">\lambda</script> wherever most convenient) and the activation vector is given by</p>
+<p>where \(W_\lambda\) is the weight matrix of layer \(\lambda\) (we use a sub or superscript \(\lambda\) wherever most convenient) and the activation vector is given by</p>
 
-<script type="math/tex; mode=display">a_\lambda = f_\lambda(h_\lambda)</script>
+\[a_\lambda = f_\lambda(h_\lambda)\]
 
-<p>We define a loss <script type="math/tex">E(h_L,y)</script> between the final output layer <script type="math/tex">h_L</script> and a desired training output <script type="math/tex">y</script>. For example, we might use a squared loss</p>
+<p>We define a loss \(E(h_L,y)\) between the final output layer \(h_L\) and a desired training output \(y\). For example, we might use a squared loss</p>
 
-<script type="math/tex; mode=display">E(h_L,y) = (h_L-y)^2</script>
+\[E(h_L,y) = (h_L-y)^2\]
 
 <p>where the loss is summed over all elements of the vector.  For a training dataset the total error function is the summed  loss over individual training points</p>
 
-<script type="math/tex; mode=display">\bar{E}(\theta) = \sum_{n=1}^N E(h_L(n),y(n))</script>
+\[\bar{E}(\theta) = \sum_{n=1}^N E(h_L(n),y(n))\]
 
-<p>where <script type="math/tex">\theta</script> represents the stacked vector of all parameters of the network. For simplicity we will write <script type="math/tex">E(\theta)</script> for the error for a single generic datapoint.</p>
+<p>where \(\theta\) represents the stacked vector of all parameters of the network. For simplicity we will write \(E(\theta)\) for the error for a single generic datapoint.</p>
 
 <h3 class="no_toc" id="the-gradient">The Gradient</h3>
 
 <p>For training a NN, a key quantity is the gradient of the error</p>
 
-<script type="math/tex; mode=display">g_{i} = \frac{\partial}{\partial\theta_i} E(\theta)</script>
+\[g_{i} = \frac{\partial}{\partial\theta_i} E(\theta)\]
 
 <p>We use this for example in gradient descent training algorithms. An important issue is how to compute the gradient efficiently. Thanks to the layered structure of the network, it’s intuitive that there is an efficient scheme (backprop which is a special case of Reverse Mode AutoDiff) that propagates information from layer to layer.</p>
 
@@ -311,63 +311,63 @@ Credits: http://localhost:4000/disclosure
 
 <p>One aspect of the structure of the error surface is the local curvature, defined by the Hessian matrix with elements</p>
 
-<script type="math/tex; mode=display">H_{ij} = \frac{\partial^2}{\partial\theta_i\partial\theta_j} E(\theta)</script>
+\[H_{ij} = \frac{\partial^2}{\partial\theta_i\partial\theta_j} E(\theta)\]
 
-<p>The Hessian matrix itself is typically very large. To make this more manageable, we’ll focus here on the Hessian of the parameters of a given layer <script type="math/tex">\lambda</script>.  That is</p>
+<p>The Hessian matrix itself is typically very large. To make this more manageable, we’ll focus here on the Hessian of the parameters of a given layer \(\lambda\).  That is</p>
 
-<script type="math/tex; mode=display">[H_\lambda]_{(a,b),(c,d)} = \frac{\partial^2 E}{\partial W^\lambda_{a,b}\partial W^\lambda_{c,d}}</script>
+\[[H_\lambda]_{(a,b),(c,d)} = \frac{\partial^2 E}{\partial W^\lambda_{a,b}\partial W^\lambda_{c,d}}\]
 
-<p>The Hessians <script type="math/tex">H_\lambda</script> then form the diagonal block matrices of the full Hessian <script type="math/tex">H</script>.</p>
+<p>The Hessians \(H_\lambda\) then form the diagonal block matrices of the full Hessian \(H\).</p>
 
 <h2 class="no_toc" id="a-recursion-for-the-hessian">A recursion for the Hessian</h2>
 
 <p>Similar to the gradient, it’s perhaps intuitive that a recursion exists to calculate this layerwise Hessian.  Starting from</p>
 
-<script type="math/tex; mode=display">\frac{\partial E}{\partial W^\lambda_{a,b}}=\sum_i \frac{\partial h^\lambda_i}{W^\lambda_{a,b}}\frac{\partial E}{\partial h^\lambda_i} = a^{\lambda-1}_b\frac{\partial E}{\partial h^\lambda_a}</script>
+\[\frac{\partial E}{\partial W^\lambda_{a,b}}=\sum_i \frac{\partial h^\lambda_i}{W^\lambda_{a,b}}\frac{\partial E}{\partial h^\lambda_i} = a^{\lambda-1}_b\frac{\partial E}{\partial h^\lambda_a}\]
 
 <p>and differentiating again we obtain</p>
 
-<script type="math/tex; mode=display">[H_\lambda]_{(a,b),(c,d)} = a^{\lambda-1}_b a^{\lambda-1}_d [{\cal{H}}_\lambda]_{a,c}
-\tag{1}\label{eq:H}</script>
+\[[H_\lambda]_{(a,b),(c,d)} = a^{\lambda-1}_b a^{\lambda-1}_d [{\cal{H}}_\lambda]_{a,c}
+\tag{1}\label{eq:H}\]
 
-<p>where we define the pre-activation Hessian for layer <script type="math/tex">\lambda</script> as</p>
+<p>where we define the pre-activation Hessian for layer \(\lambda\) as</p>
 
-<script type="math/tex; mode=display">[{\cal{H}}_\lambda]_{a,c} = \frac{\partial^2 E}{\partial h^\lambda_a\partial h^\lambda_c}</script>
+\[[{\cal{H}}_\lambda]_{a,c} = \frac{\partial^2 E}{\partial h^\lambda_a\partial h^\lambda_c}\]
 
-<p>We show in <a href="http://proceedings.mlr.press/v70/botev17a.html">Practical Gauss-Newton Optimisation for Deep Learning</a> that one can derive a simple backwards recursion for this pre-activation Hessian (the recursion is for a single datapoint – the total Hessian <script type="math/tex">\bar{H}</script> is a sum over the individual datapoint Hessians):</p>
+<p>We show in <a href="http://proceedings.mlr.press/v70/botev17a.html">Practical Gauss-Newton Optimisation for Deep Learning</a> that one can derive a simple backwards recursion for this pre-activation Hessian (the recursion is for a single datapoint – the total Hessian \(\bar{H}\) is a sum over the individual datapoint Hessians):</p>
 
-<script type="math/tex; mode=display">{\cal{H}}_\lambda = B_\lambda W_{\lambda+1}^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
-\tag{2}\label{eq:recursion}</script>
+\[{\cal{H}}_\lambda = B_\lambda W_{\lambda+1}^\top {\cal{H}}_{\lambda+1}W_{\lambda+1}B_{\lambda}+D_\lambda
+\tag{2}\label{eq:recursion}\]
 
 <p>where we define the diagonal matrices</p>
 
-<script type="math/tex; mode=display">B_\lambda = \text{diag}(f'_\lambda(h_\lambda))</script>
+\[B_\lambda = \text{diag}(f'_\lambda(h_\lambda))\]
 
 <p>and</p>
 
-<script type="math/tex; mode=display">D_\lambda = \text{diag}\br{f''_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda}}</script>
+\[D_\lambda = \text{diag}\br{f''_\lambda(h_\lambda)\frac{\partial E}{\partial a_\lambda}}\]
 
-<p>Here <script type="math/tex">f'</script> is the first derivative of the transfer function and <script type="math/tex">f''</script> is the second derivative.</p>
+<p>Here \(f'\) is the first derivative of the transfer function and \(f''\) is the second derivative.</p>
 
-<p>The recursion is initialised with <script type="math/tex">{\cal{H}}_L</script> which depends on the objective <script type="math/tex">E(h_L,y)</script> and is easily calculated for the usual loss functions. For example, for the square loss <script type="math/tex">(y-h_L)^2/2</script> we have <script type="math/tex">{\cal{H}}_L=I</script>, namely the identity matrix. We use this recursion in our <a href="http://proceedings.mlr.press/v70/botev17a.html">paper</a> to build an approximate Gauss-Newton optimisation method.</p>
+<p>The recursion is initialised with \({\cal{H}}_L\) which depends on the objective \(E(h_L,y)\) and is easily calculated for the usual loss functions. For example, for the square loss \((y-h_L)^2/2\) we have \({\cal{H}}_L=I\), namely the identity matrix. We use this recursion in our <a href="http://proceedings.mlr.press/v70/botev17a.html">paper</a> to build an approximate Gauss-Newton optimisation method.</p>
 
 <h2 class="no_toc" id="consequences">Consequences</h2>
 
-<p>Piecewise linear transfer functions, such as the ReLU <script type="math/tex">f(x) = \max(x,0)</script> are currently popular due to both their speed of evaluation (compared to more traditional transfer functions such as <script type="math/tex">\tanh(x)</script>) and also the empirical observation that, under gradient based training, they tend to get trapped less often in local optima. Note that if the transfer functions are piecewise linear, this does not necessarily mean that the objective will be piecewise linear (since the loss is usually itself not piecewise linear).</p>
+<p>Piecewise linear transfer functions, such as the ReLU \(f(x) = \max(x,0)\) are currently popular due to both their speed of evaluation (compared to more traditional transfer functions such as \(\tanh(x)\)) and also the empirical observation that, under gradient based training, they tend to get trapped less often in local optima. Note that if the transfer functions are piecewise linear, this does not necessarily mean that the objective will be piecewise linear (since the loss is usually itself not piecewise linear).</p>
 
-<p>For a piecewise linear transfer function, apart from the `nodes’ where the linear sections meet, the function is differentiable and has zero second derivative, <script type="math/tex">f''(x)=0</script>. This means that the matrices <script type="math/tex">D_\lambda</script> in the above Hessian recursion will be zero (away from nodes).</p>
+<p>For a piecewise linear transfer function, apart from the `nodes’ where the linear sections meet, the function is differentiable and has zero second derivative, \(f''(x)=0\). This means that the matrices \(D_\lambda\) in the above Hessian recursion will be zero (away from nodes).</p>
 
-<p>For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian <script type="math/tex">{\cal{H}}_L</script> is Positive Semi-Definite (PSD).</p>
+<p>For many common loss functions, such as squared loss (for regression) and cross entropy loss (for classification) the Hessian \({\cal{H}}_L\) is Positive Semi-Definite (PSD).</p>
 
-<p>Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points <script type="math/tex">f'(x)=0</script> then the Hessian <script type="math/tex">H_\lambda</script> can have lower rank than <script type="math/tex">H_{\lambda+1}</script>, reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero <script type="math/tex">f'\neq 0</script>, then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.</p>
+<p>Note that, according to \eqref{eq:recursion}, for transfer functions that contain zero gradient points \(f'(x)=0\) then the Hessian \(H_\lambda\) can have lower rank than \(H_{\lambda+1}\), reducing the curvature information propagating back from layers close to the output towards layers closer to the input. This has the effect of creating flat plateaus in the surface and makes gradient based training potentially more problematic. Conversely, provided the gradient of the transfer function is never zero \(f'\neq 0\), then according to \eqref{eq:recursion} each layer pre-activation Hessian is Positive Definite, helping preserve the propagation of surface curvature back through the network.</p>
 
 <h3 class="no_toc" id="structure-within-a-layer">Structure within a layer</h3>
 
-<p>For such loss functions, it follows that the pre-activation Hessian <script type="math/tex">{\cal{H}}_\lambda</script> for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian <script type="math/tex">H_\lambda</script> for each layer <script type="math/tex">\lambda</script> is PSD.  This means that, if we fix all the parameters of the network, and vary only  the parameters in a layer <script type="math/tex">W^\lambda</script>, then the objective <script type="math/tex">E</script> can exhibit no smooth local maxima or smooth saddle points.  Note that this does not imply that the objective is convex everywhere with respect to <script type="math/tex">W_\lambda</script> as the surface will contain ridges corresponding to the non-differentiable nodes.</p>
+<p>For such loss functions, it follows that the pre-activation Hessian \({\cal{H}}_\lambda\) for all layers is PSD as well (away from nodes).  It immediately follows from \eqref{eq:H} that the Hessian \(H_\lambda\) for each layer \(\lambda\) is PSD.  This means that, if we fix all the parameters of the network, and vary only  the parameters in a layer \(W^\lambda\), then the objective \(E\) can exhibit no smooth local maxima or smooth saddle points.  Note that this does not imply that the objective is convex everywhere with respect to \(W_\lambda\) as the surface will contain ridges corresponding to the non-differentiable nodes.</p>
 
 <h3 class="no_toc" id="no-differentiable-local-maxima">No differentiable local maxima</h3>
 
-<p>The trace of the full Hessian <script type="math/tex">H</script> is the sum of the traces of each of the layerwise blocks <script type="math/tex">H_\lambda</script>. Since (as usual away from nodes) by the above argument each matrix <script type="math/tex">H_\lambda</script> is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):</p>
+<p>The trace of the full Hessian \(H\) is the sum of the traces of each of the layerwise blocks \(H_\lambda\). Since (as usual away from nodes) by the above argument each matrix \(H_\lambda\) is PSD, it follows that the trace of the full Hessian is non-negative.  This means that it is not possible for all eigenvalues of the Hessian to be simultaneously negative, with the immediate consequence that feedforward networks (with piecewise linear transfer functions) have no differentiable local maxima. The picture below illustrates the kind of situtation therefore that can happen in terms of local maxima (test):</p>
 
 <!--![blogpost_canhappen](https://davidbarber.github.io/images//blogpost_canhappen.png)-->
 <p class="text-center"><img src="http://localhost:4000/images/blogpost_canhappen.png" alt="blogpost_canhappen" /></p>
@@ -379,23 +379,23 @@ Credits: http://localhost:4000/disclosure
 
 <h3 class="no_toc" id="visualisation-for-a-simple-two-layer-net">Visualisation for a simple two layer net</h3>
 
-<p>We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices <script type="math/tex">W^1</script> and <script type="math/tex">W^2</script>.  Below we choose two fixed matrices <script type="math/tex">U</script> and <script type="math/tex">V</script> and parameterise the weight matrix <script type="math/tex">W^1</script> as a function of two scalars <script type="math/tex">u</script> and <script type="math/tex">v</script>, so that <script type="math/tex">W^1(u,v)=uU + vV</script>.  As we vary <script type="math/tex">u</script> and <script type="math/tex">v</script> we then plot the objective function <script type="math/tex">E(u,v)</script>, keeping all other parameters of the network fixed.</p>
+<p>We consider a simple network with two layers, ReLU transfer functions and square loss error. The network thus has two weight matrices \(W^1\) and \(W^2\).  Below we choose two fixed matrices \(U\) and \(V\) and parameterise the weight matrix \(W^1\) as a function of two scalars \(u\) and \(v\), so that \(W^1(u,v)=uU + vV\).  As we vary \(u\) and \(v\) we then plot the objective function \(E(u,v)\), keeping all other parameters of the network fixed.</p>
 
 <p>As we can see the surface contains no local differentiable local maxima as we vary the parameters in the layer.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/rectlinE1.png" alt="rectlinE1" title="rectlin E1" /></p>
 
-<p>Below we show an analogous plot for varying the parameters of the second layer weights <script type="math/tex">W^2(u,v)</script>, which has the same predicted property that there are no differentiable local maxima.</p>
+<p>Below we show an analogous plot for varying the parameters of the second layer weights \(W^2(u,v)\), which has the same predicted property that there are no differentiable local maxima.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/rectlinE2.png" alt="rectlinE2" title="rectlin E2" /></p>
 
-<p>Finally, below we plot <script type="math/tex">E(u,v)</script> using <script type="math/tex">W^1=uU</script> and <script type="math/tex">W^2=vV</script>, showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.</p>
+<p>Finally, below we plot \(E(u,v)\) using \(W^1=uU\) and \(W^2=vV\), showing how the objective function changes as we simultaneously change the parameters in different layers. As we can see, there are no differentiable maxima.</p>
 
 <p class="text-center"><img src="http://localhost:4000/images/rectlinE12.png" alt="rectlinE12" title="rectlin E12" /></p>
 
 <h1 class="no_toc" id="summary">Summary</h1>
 
-<p>A simple consequence of using piecewise linear transfer functions and a convex loss, is that feedforward networks cannot have any differentiable maxima (or saddle points) as parameters are varied within a layer. Furthermore, the objective cannot contain any differentiable maxima, even as we vary parameters across layers. Note that the objective <script type="math/tex">E(u,v)</script> though can (and empirically does) have smooth saddle points as one varies parameters <script type="math/tex">u</script> and <script type="math/tex">v</script> across <em>different</em> layers.</p>
+<p>A simple consequence of using piecewise linear transfer functions and a convex loss, is that feedforward networks cannot have any differentiable maxima (or saddle points) as parameters are varied within a layer. Furthermore, the objective cannot contain any differentiable maxima, even as we vary parameters across layers. Note that the objective \(E(u,v)\) though can (and empirically does) have smooth saddle points as one varies parameters \(u\) and \(v\) across <em>different</em> layers.</p>
 
 <p>It’s unclear how practically significant these modest insights are. However, they do potentially partially support the use of piecewise linear transfer functions (particularly those with no zero gradient regions) since for such transfer functions  gradient based training algorithms cannot easily dawdle on local maxima (anywhere), or idle around saddle points (within a layer) since such regions correspond to sharp slopes in the objective.</p>
 
