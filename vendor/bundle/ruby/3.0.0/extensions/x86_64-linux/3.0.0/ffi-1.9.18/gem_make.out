@@ -1,0 +1,163 @@
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/ffi-1.9.18/ext/ffi_c
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20231126-158302-j4zxs8.rb extconf.rb
+checking for ffi.h... yes
+checking for ffi_call() in -lffi... yes
+checking for ffi_prep_closure()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for shlwapi.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... yes
+creating extconf.h
+creating Makefile
+
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/ffi-1.9.18/ext/ffi_c
+make DESTDIR\= clean
+
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/ffi-1.9.18/ext/ffi_c
+make DESTDIR\=
+compiling AbstractMemory.c
+AbstractMemory.c: In function ‘memory_put_bytes’:
+AbstractMemory.c:581:9: warning: implicit declaration of function ‘rb_safe_level’ [-Wimplicit-function-declaration]
+  581 |     if (rb_safe_level() >= 1 && OBJ_TAINTED(str)) {
+      |         ^~~~~~~~~~~~~
+compiling ArrayType.c
+compiling Buffer.c
+compiling Call.c
+Call.c: In function ‘rbffi_SetupCallParams’:
+Call.c:300:25: warning: implicit declaration of function ‘rb_safe_level’ [-Wimplicit-function-declaration]
+  300 |                     if (rb_safe_level() >= 1 && OBJ_TAINTED(argv[argidx])) {
+      |                         ^~~~~~~~~~~~~
+In file included from Call.h:36,
+                 from Function.h:48,
+                 from Call.c:57:
+Call.c: In function ‘rbffi_do_blocking_call’:
+Thread.h:78:39: warning: implicit declaration of function ‘rb_thread_call_without_gvl’ [-Wimplicit-function-declaration]
+   78 | # define rbffi_thread_blocking_region rb_thread_call_without_gvl
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Call.c:355:5: note: in expansion of macro ‘rbffi_thread_blocking_region’
+  355 |     rbffi_thread_blocking_region(call_blocking_function, data, (void *) -1, NULL);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Call.c: In function ‘rbffi_CallFunction’:
+Call.c:409:20: warning: passing argument 1 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  409 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Call.c:45:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:18: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Call.c:409:56: warning: passing argument 3 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  409 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Call.c:45:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:40: note: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+compiling ClosurePool.c
+compiling DataConverter.c
+compiling DynamicLibrary.c
+compiling Function.c
+Function.c: In function ‘async_cb_event’:
+Function.c:563:9: warning: implicit declaration of function ‘rb_thread_call_without_gvl’; did you mean ‘rb_thread_call_with_gvl’? [-Wimplicit-function-declaration]
+  563 |         rb_thread_call_without_gvl(async_cb_wait, &w, async_cb_stop, &w);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         rb_thread_call_with_gvl
+Function.c: In function ‘callback_with_gvl’:
+Function.c:737:16: warning: passing argument 1 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  737 |     rb_rescue2(invoke_callback, (VALUE) data, save_callback_exception, (VALUE) data, rb_eException, (VALUE) 0);
+      |                ^~~~~~~~~~~~~~~
+      |                |
+      |                VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Function.c:49:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:18: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Function.c:737:47: warning: passing argument 3 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  737 |     rb_rescue2(invoke_callback, (VALUE) data, save_callback_exception, (VALUE) data, rb_eException, (VALUE) 0);
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Function.c:49:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:40: note: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+Function.c: In function ‘callback_prep’:
+Function.c:948:5: warning: ‘ffi_prep_closure’ is deprecated: use ffi_prep_closure_loc instead [-Wdeprecated-declarations]
+  948 |     ffiStatus = ffi_prep_closure(code, &fnInfo->ffi_cif, callback_invoke, closure);
+      |     ^~~~~~~~~
+In file included from Function.c:51:
+/usr/include/x86_64-linux-gnu/ffi.h:347:1: note: declared here
+  347 | ffi_prep_closure (ffi_closure*,
+      | ^~~~~~~~~~~~~~~~
+compiling FunctionInfo.c
+compiling LastError.c
+compiling LongDouble.c
+LongDouble.c: In function ‘rbffi_longdouble_new’:
+LongDouble.c:19:59: warning: passing argument 3 of ‘rb_rescue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |         rb_cBigDecimal = rb_rescue(bigdecimal_load, Qnil, bigdecimal_failed, rb_cObject);
+      |                                                           ^~~~~~~~~~~~~~~~~
+      |                                                           |
+      |                                                           VALUE (*)(VALUE) {aka long unsigned int (*)(long unsigned int)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from LongDouble.h:33,
+                 from LongDouble.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:50:39: note: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’}
+   50 | VALUE rb_rescue(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~
+compiling MappedType.c
+compiling MemoryPointer.c
+compiling MethodHandle.c
+compiling Platform.c
+compiling Pointer.c
+compiling Struct.c
+compiling StructByReference.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Thread.c
+compiling Type.c
+compiling Types.c
+compiling Variadic.c
+Variadic.c: In function ‘variadic_invoke’:
+Variadic.c:274:20: warning: passing argument 1 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  274 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                    |
+      |                    VALUE (*)(void *) {aka long unsigned int (*)(void *)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Variadic.c:43:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:18: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(void *)’ {aka ‘long unsigned int (*)(void *)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                  ^~~~~~~~~~~~~~~
+Variadic.c:274:56: warning: passing argument 3 of ‘rb_rescue2’ from incompatible pointer type [-Wincompatible-pointer-types]
+  274 |         rb_rescue2(rbffi_do_blocking_call, (VALUE) bc, rbffi_save_frame_exception, (VALUE) &frame, rb_eException, (VALUE) 0);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        VALUE (*)(void *, VALUE) {aka long unsigned int (*)(void *, long unsigned int)}
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from Variadic.c:43:
+/usr/include/ruby-3.0.0/ruby/internal/iterator.h:51:40: note: expected ‘VALUE (*)(VALUE,  VALUE)’ {aka ‘long unsigned int (*)(long unsigned int,  long unsigned int)’} but argument is of type ‘VALUE (*)(void *, VALUE)’ {aka ‘long unsigned int (*)(void *, long unsigned int)’}
+   51 | VALUE rb_rescue2(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE,VALUE),VALUE,...);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~
+compiling ffi.c
+linking shared-object ffi_c.so
+
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/ffi-1.9.18/ext/ffi_c
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20231126-158302-fa9lcc

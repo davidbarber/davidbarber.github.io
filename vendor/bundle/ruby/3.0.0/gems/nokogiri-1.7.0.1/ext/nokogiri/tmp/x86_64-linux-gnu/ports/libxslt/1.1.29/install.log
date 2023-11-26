@@ -1,0 +1,313 @@
+Making install in libxslt
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libxslt.la '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+libtool: install: /usr/bin/install -c .libs/libxslt.lai /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libxslt.la
+libtool: install: /usr/bin/install -c .libs/libxslt.a /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libxslt.a
+libtool: install: chmod 644 /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libxslt.a
+libtool: install: x86_64-linux-gnu-ranlib /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libxslt.a
+libtool: finish: PATH="/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin:/home/david/gems/bin:/home/david/miniconda3/condabin:/home/david/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/thinlinc/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:/sbin" ldconfig -n /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+/usr/bin/mkdir -p "/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libxslt-plugins"
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man3'
+ /usr/bin/install -c -m 644 libxslt.3 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man3'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libxslt'
+ /usr/bin/install -c -m 644 xsltconfig.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libxslt'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libxslt'
+ /usr/bin/install -c -m 644 xslt.h xsltutils.h pattern.h templates.h variables.h keys.h numbersInternals.h extensions.h extra.h functions.h namespaces.h imports.h attributes.h documents.h preproc.h transform.h security.h xsltInternals.h xsltexports.h xsltlocale.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libxslt'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+Making install in libexslt
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libexslt.la '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+libtool: install: /usr/bin/install -c .libs/libexslt.lai /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libexslt.la
+libtool: install: /usr/bin/install -c .libs/libexslt.a /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libexslt.a
+libtool: install: chmod 644 /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libexslt.a
+libtool: install: x86_64-linux-gnu-ranlib /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/libexslt.a
+libtool: finish: PATH="/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin:/home/david/gems/bin:/home/david/miniconda3/condabin:/home/david/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/thinlinc/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:/sbin" ldconfig -n /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libexslt'
+ /usr/bin/install -c -m 644 exslt.h exsltexports.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libexslt'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man3'
+ /usr/bin/install -c -m 644 libexslt.3 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man3'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libexslt'
+ /usr/bin/install -c -m 644 exsltconfig.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include/libexslt'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+Making install in xsltproc
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c xsltproc '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/bin'
+libtool: install: /usr/bin/install -c xsltproc /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/bin/xsltproc
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+Making install in doc
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html
+/usr/bin/install -c -m 0644 ./*.html /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html
+/usr/bin/install -c -m 0644 ./*.gif /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/html
+/usr/bin/install -c -m 0644 ./html/*.html /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/html
+/usr/bin/install -c -m 0644 ./html/*.png /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/html
+/usr/bin/install -c -m 0644 ./html/index.sgml /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/html
+/usr/bin/install: cannot stat './html/index.sgml': No such file or directory
+make[2]: [Makefile:885: install-data-local] Error 1 (ignored)
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/EXSLT
+/usr/bin/install -c -m 0644 ./EXSLT/*.html /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/EXSLT
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/tutorial
+/usr/bin/install -c -m 0644 ./tutorial/* /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/tutorial
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/tutorial2
+/usr/bin/install -c -m 0644 ./tutorial2/* /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/doc/libxslt-1.1.29/html/tutorial2
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man1'
+ /usr/bin/install -c -m 644 xsltproc.1 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/man/man1'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+Making install in tests
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+Making install in docs
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+Making install in REC1
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+Making install in REC2
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+Making install in REC
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+Making install in general
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+Making install in namespaces
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+Making install in keys
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+Making install in numbers
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+Making install in documents
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+Making install in extensions
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+Making install in reports
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+Making install in xmlspec
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+Making install in multiple
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+Making install in xinclude
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+Making install in XSLTMark
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+Making install in docbook
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+Making install in exslt
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+Making install in common
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+Making install in functions
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+Making install in math
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+Making install in saxon
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+Making install in sets
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+Making install in strings
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+Making install in dynamic
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+Making install in date
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+Making install in plugins
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/bin'
+ /usr/bin/install -c xslt-config '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/bin'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+ /usr/bin/install -c -m 644 xsltConf.sh '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/aclocal'
+ /usr/bin/install -c -m 644 libxslt.m4 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/share/aclocal'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libxslt.pc libexslt.pc '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib/pkgconfig'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'

@@ -1,0 +1,1099 @@
+make  all-recursive
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+Making all in include
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+Making all in libxml
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+Making all in .
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+  CC       SAX.lo
+  CC       entities.lo
+entities.c: In function ‘xmlCopyEntitiesTable’:
+entities.c:947:31: warning: cast between incompatible function types from ‘xmlEntity * (*)(xmlEntity *)’ {aka ‘struct _xmlEntity * (*)(struct _xmlEntity *)’} to ‘void * (*)(void *, xmlChar *)’ {aka ‘void * (*)(void *, unsigned char *)’} [-Wcast-function-type]
+  947 |     return(xmlHashCopy(table, (xmlHashCopier) xmlCopyEntity));
+      |                               ^
+entities.c: In function ‘xmlDumpEntitiesTable’:
+entities.c:1101:24: warning: cast between incompatible function types from ‘void (*)(xmlEntity *, xmlBuffer *)’ {aka ‘void (*)(struct _xmlEntity *, struct _xmlBuffer *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 1101 |     xmlHashScan(table, (xmlHashScanner)xmlDumpEntityDeclScan, buf);
+      |                        ^
+  CC       encoding.lo
+  CC       error.lo
+error.c: In function ‘__xmlRaiseError’:
+error.c:634:26: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  634 |     else if ((channel == (xmlGenericErrorFunc) fprintf) ||
+      |                          ^
+  CC       parserInternals.lo
+parserInternals.c: In function ‘xmlFreeParserCtxt’:
+parserInternals.c:1800:40: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 1800 |         xmlHashFree(ctxt->attsDefault, (xmlHashDeallocator) xmlFree);
+      |                                        ^
+  CC       parser.lo
+parser.c: In function ‘xmlGROW’:
+parser.c:2083:68: warning: cast between incompatible function types from ‘int (*)(void)’ to ‘int (*)(void *, char *, int)’ [-Wcast-function-type]
+ 2083 |          ((ctxt->input->buf) && (ctxt->input->buf->readcallback != (xmlInputReadCallback) xmlNop)) &&
+      |                                                                    ^
+parser.c: In function ‘xmlCtxtReset’:
+parser.c:15125:40: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+15125 |         xmlHashFree(ctxt->attsDefault, (xmlHashDeallocator) xmlFree);
+      |                                        ^
+  CC       tree.lo
+tree.c: In function ‘xmlDOMWrapRemoveNode’:
+tree.c:8243:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 8243 |                 if ((ctxt == NULL) && (node->nsDef != NULL)) {
+      |                    ^
+tree.c:8253:13: note: here
+ 8253 |             case XML_ATTRIBUTE_NODE:
+      |             ^~~~
+tree.c: In function ‘xmlDOMWrapReconcileNamespaces’:
+tree.c:8841:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 8841 |                 if (! adoptns)
+      |                    ^
+tree.c:8844:13: note: here
+ 8844 |             case XML_ATTRIBUTE_NODE:
+      |             ^~~~
+tree.c: In function ‘xmlDOMWrapAdoptBranch’:
+tree.c:9083:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 9083 |                 if ((cur->nsDef) &&
+      |                    ^
+tree.c:9125:13: note: here
+ 9125 |             case XML_ATTRIBUTE_NODE:
+      |             ^~~~
+  CC       hash.lo
+hash.c: In function ‘xmlHashScan3’:
+hash.c:916:23: warning: cast between incompatible function types from ‘xmlHashScanner’ {aka ‘void (*)(void *, void *, unsigned char *)’} to ‘void (*)(void *, void *, const xmlChar *, const xmlChar *, const xmlChar *)’ {aka ‘void (*)(void *, void *, const unsigned char *, const unsigned char *, const unsigned char *)’} [-Wcast-function-type]
+  916 |                       (xmlHashScannerFull) f, data);
+      |                       ^
+  CC       list.lo
+  CC       xmlIO.lo
+xmlIO.c: In function ‘xmlParserInputBufferCreateMem’:
+xmlIO.c:3036:29: warning: cast between incompatible function types from ‘int (*)(void)’ to ‘int (*)(void *, char *, int)’ [-Wcast-function-type]
+ 3036 |         ret->readcallback = (xmlInputReadCallback) xmlNop;
+      |                             ^
+  CC       xmlmemory.lo
+  CC       uri.lo
+  CC       valid.lo
+valid.c: In function ‘xmlFreeElementTable’:
+valid.c:1602:24: warning: cast between incompatible function types from ‘void (*)(xmlElement *)’ {aka ‘void (*)(struct _xmlElement *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 1602 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeElement);
+      |                        ^
+valid.c: In function ‘xmlCopyElementTable’:
+valid.c:1651:45: warning: cast between incompatible function types from ‘xmlElement * (*)(xmlElement *)’ {aka ‘struct _xmlElement * (*)(struct _xmlElement *)’} to ‘void * (*)(void *, xmlChar *)’ {aka ‘void * (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 1651 |                                             (xmlHashCopier) xmlCopyElement));
+      |                                             ^
+valid.c: In function ‘xmlDumpElementTable’:
+valid.c:1740:24: warning: cast between incompatible function types from ‘void (*)(xmlElement *, xmlBuffer *)’ {aka ‘void (*)(struct _xmlElement *, struct _xmlBuffer *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 1740 |     xmlHashScan(table, (xmlHashScanner) xmlDumpElementDeclScan, buf);
+      |                        ^
+valid.c: In function ‘xmlFreeAttributeTable’:
+valid.c:2148:24: warning: cast between incompatible function types from ‘void (*)(xmlAttribute *)’ {aka ‘void (*)(struct _xmlAttribute *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2148 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeAttribute);
+      |                        ^
+valid.c: In function ‘xmlCopyAttributeTable’:
+valid.c:2196:37: warning: cast between incompatible function types from ‘xmlAttribute * (*)(xmlAttribute *)’ {aka ‘struct _xmlAttribute * (*)(struct _xmlAttribute *)’} to ‘void * (*)(void *, xmlChar *)’ {aka ‘void * (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2196 |                                     (xmlHashCopier) xmlCopyAttribute));
+      |                                     ^
+valid.c: In function ‘xmlDumpAttributeTable’:
+valid.c:2306:24: warning: cast between incompatible function types from ‘void (*)(xmlAttribute *, xmlBuffer *)’ {aka ‘void (*)(struct _xmlAttribute *, struct _xmlBuffer *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 2306 |     xmlHashScan(table, (xmlHashScanner) xmlDumpAttributeDeclScan, buf);
+      |                        ^
+valid.c: In function ‘xmlFreeNotationTable’:
+valid.c:2420:24: warning: cast between incompatible function types from ‘void (*)(xmlNotation *)’ {aka ‘void (*)(struct _xmlNotation *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2420 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeNotation);
+      |                        ^
+valid.c: In function ‘xmlCopyNotationTable’:
+valid.c:2467:37: warning: cast between incompatible function types from ‘xmlNotation * (*)(xmlNotation *)’ {aka ‘struct _xmlNotation * (*)(struct _xmlNotation *)’} to ‘void * (*)(void *, xmlChar *)’ {aka ‘void * (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2467 |                                     (xmlHashCopier) xmlCopyNotation));
+      |                                     ^
+valid.c: In function ‘xmlDumpNotationTable’:
+valid.c:2522:24: warning: cast between incompatible function types from ‘void (*)(xmlNotation *, xmlBuffer *)’ {aka ‘void (*)(struct _xmlNotation *, struct _xmlBuffer *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 2522 |     xmlHashScan(table, (xmlHashScanner) xmlDumpNotationDeclScan, buf);
+      |                        ^
+valid.c: In function ‘xmlFreeIDTable’:
+valid.c:2658:24: warning: cast between incompatible function types from ‘void (*)(xmlID *)’ {aka ‘void (*)(struct _xmlID *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2658 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeID);
+      |                        ^
+valid.c: In function ‘xmlRemoveID’:
+valid.c:2758:35: warning: cast between incompatible function types from ‘void (*)(xmlID *)’ {aka ‘void (*)(struct _xmlID *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2758 |     xmlHashRemoveEntry(table, ID, (xmlHashDeallocator) xmlFreeID);
+      |                                   ^
+valid.c: In function ‘xmlFreeRefTable’:
+valid.c:2999:24: warning: cast between incompatible function types from ‘void (*)(xmlList *)’ {aka ‘void (*)(struct _xmlList *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 2999 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeRefList);
+      |                        ^
+valid.c: In function ‘xmlRemoveRef’:
+valid.c:3096:45: warning: cast between incompatible function types from ‘void (*)(xmlList *)’ {aka ‘void (*)(struct _xmlList *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 3096 |         xmlHashUpdateEntry(table, ID, NULL, (xmlHashDeallocator)
+      |                                             ^
+valid.c: In function ‘xmlSnprintfElements’:
+valid.c:5178:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 5178 |                 if (xmlIsBlankNode(cur))
+      |                    ^
+valid.c:5180:13: note: here
+ 5180 |             case XML_CDATA_SECTION_NODE:
+      |             ^~~~
+  CC       xlink.lo
+  CC       HTMLparser.lo
+HTMLparser.c: In function ‘htmlCtxtReset’:
+HTMLparser.c:6671:40: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 6671 |         xmlHashFree(ctxt->attsDefault, (xmlHashDeallocator) xmlFree);
+      |                                        ^
+  CC       HTMLtree.lo
+  CC       debugXML.lo
+debugXML.c: In function ‘xmlCtxtDumpEntities’:
+debugXML.c:1292:28: warning: cast between incompatible function types from ‘void (*)(xmlEntity *, xmlDebugCtxt *)’ {aka ‘void (*)(struct _xmlEntity *, struct _xmlDebugCtxt *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 1292 |         xmlHashScan(table, (xmlHashScanner) xmlCtxtDumpEntityCallback,
+      |                            ^
+debugXML.c:1302:28: warning: cast between incompatible function types from ‘void (*)(xmlEntity *, xmlDebugCtxt *)’ {aka ‘void (*)(struct _xmlEntity *, struct _xmlDebugCtxt *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 1302 |         xmlHashScan(table, (xmlHashScanner) xmlCtxtDumpEntityCallback,
+      |                            ^
+debugXML.c: In function ‘xmlShellRNGValidate’:
+debugXML.c:2366:13: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2366 |             (xmlRelaxNGValidityErrorFunc) fprintf,
+      |             ^
+debugXML.c:2367:13: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2367 |             (xmlRelaxNGValidityWarningFunc) fprintf,
+      |             ^
+debugXML.c:2378:13: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2378 |             (xmlRelaxNGValidityErrorFunc) fprintf,
+      |             ^
+debugXML.c:2379:13: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2379 |             (xmlRelaxNGValidityWarningFunc) fprintf,
+      |             ^
+debugXML.c: In function ‘xmlShellValidate’:
+debugXML.c:2650:19: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2650 |     vctxt.error = (xmlValidityErrorFunc) fprintf;
+      |                   ^
+debugXML.c:2651:21: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2651 |     vctxt.warning = (xmlValidityWarningFunc) fprintf;
+      |                     ^
+  CC       xpath.lo
+In file included from xpath.c:462:
+timsort.h: In function ‘libxml_domnode_tim_sort_collapse’:
+timsort.h:405:65: warning: comparison of integer expressions of different signedness: ‘int64_t’ {aka ‘long int’} and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  405 |     if ((stack_curr == 2) && (stack[0].length + stack[1].length == size)) {
+      |                                                                 ^~
+timsort.h:397:19: warning: variable ‘BD’ set but not used [-Wunused-but-set-variable]
+  397 |     int ABC, BCD, BD, CD;
+      |                   ^~
+xpath.c: In function ‘xmlXPathDistinctSorted’:
+xpath.c:4563:23: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 4563 |     xmlHashFree(hash, (xmlHashDeallocator) xmlFree);
+      |                       ^
+In file included from ./include/libxml/parser.h:18,
+                 from ./include/libxml/globals.h:18,
+                 from ./include/libxml/threads.h:35,
+                 from ./include/libxml/xmlmemory.h:218,
+                 from xpath.c:38:
+xpath.c: In function ‘xmlXPathRegisterFuncNS’:
+xpath.c:4875:73: warning: ISO C forbids passing argument 4 of ‘xmlHashAddEntry2’ between function pointer and ‘void *’ [-Wpedantic]
+ 4875 |     return(xmlHashAddEntry2(ctxt->funcHash, name, ns_uri, XML_CAST_FPTR(f)));
+      |                                                                         ^
+./include/libxml/hash.h:56:29: note: in definition of macro ‘XML_CAST_FPTR’
+   56 | #define XML_CAST_FPTR(fptr) fptr
+      |                             ^~~~
+./include/libxml/hash.h:131:48: note: expected ‘void *’ but argument is of type ‘xmlXPathFunction’ {aka ‘void (*)(struct _xmlXPathParserContext *, int)’}
+  131 |                                          void *userdata);
+      |                                          ~~~~~~^~~~~~~~
+xpath.c: In function ‘xmlXPathFunctionLookupNS’:
+xpath.c:4956:24: warning: ISO C forbids assignment between function pointer and ‘void *’ [-Wpedantic]
+ 4956 |     XML_CAST_FPTR(ret) = xmlHashLookup2(ctxt->funcHash, name, ns_uri);
+      |                        ^
+xpath.c: In function ‘xmlXPathRegisterVariableNS’:
+xpath.c:5025:36: warning: cast between incompatible function types from ‘void (*)(xmlXPathObject *)’ {aka ‘void (*)(struct _xmlXPathObject *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5025 |                                    (xmlHashDeallocator)xmlXPathFreeObject));
+      |                                    ^
+xpath.c:5028:32: warning: cast between incompatible function types from ‘void (*)(xmlXPathObject *)’ {aka ‘void (*)(struct _xmlXPathObject *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5028 |                                (xmlHashDeallocator)xmlXPathFreeObject));
+      |                                ^
+xpath.c: In function ‘xmlXPathRegisteredVariablesCleanup’:
+xpath.c:5118:32: warning: cast between incompatible function types from ‘void (*)(xmlXPathObject *)’ {aka ‘void (*)(struct _xmlXPathObject *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5118 |     xmlHashFree(ctxt->varHash, (xmlHashDeallocator)xmlXPathFreeObject);
+      |                                ^
+xpath.c: In function ‘xmlXPathRegisterNs’:
+xpath.c:5149:35: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5149 |                                   (xmlHashDeallocator)xmlFree));
+      |                                   ^
+xpath.c:5151:31: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5151 |                               (xmlHashDeallocator)xmlFree));
+      |                               ^
+xpath.c: In function ‘xmlXPathRegisteredNsCleanup’:
+xpath.c:5200:31: warning: cast between incompatible function types from ‘xmlFreeFunc’ {aka ‘void (*)(void *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 5200 |     xmlHashFree(ctxt->nsHash, (xmlHashDeallocator)xmlFree);
+      |                               ^
+xpath.c: In function ‘xmlXPathCompOpEval’:
+xpath.c:13563:41: warning: ISO C forbids assignment between function pointer and ‘void *’ [-Wpedantic]
+13563 |                     XML_CAST_FPTR(func) = op->cache;
+      |                                         ^
+xpath.c:13590:31: warning: ISO C forbids assignment between function pointer and ‘void *’ [-Wpedantic]
+13590 |                     op->cache = XML_CAST_FPTR(func);
+      |                               ^
+xpath.c: In function ‘xmlXPathEqualValuesCommon’:
+xpath.c:7012:28: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 7012 |                     arg2 = valuePop(ctxt);
+      |                            ^~~~~~~~~~~~~~
+xpath.c:7014:17: note: here
+ 7014 |                 case XPATH_NUMBER:
+      |                 ^~~~
+In file included from xpath.c:476:
+At top level:
+trionan.c:218:1: warning: ‘trio_is_negative’ defined but not used [-Wunused-function]
+  218 | trio_is_negative
+      | ^~~~~~~~~~~~~~~~
+trionan.c:194:1: warning: ‘trio_is_special_quantity’ defined but not used [-Wunused-function]
+  194 | trio_is_special_quantity
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+  CC       xpointer.lo
+  CC       xinclude.lo
+  CC       nanohttp.lo
+  CC       nanoftp.lo
+nanoftp.c: In function ‘xmlNanoFTPConnect’:
+nanoftp.c:1043:24: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 1043 |                     if (proxyPasswd == NULL)
+      |                        ^
+nanoftp.c:1045:17: note: here
+ 1045 |                 case 3:
+      |                 ^~~~
+nanoftp.c:1109:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 1109 |                 if (proxyType == 1) {
+      |                    ^
+nanoftp.c:1114:13: note: here
+ 1114 |             case 2:
+      |             ^~~~
+nanoftp.c:1162:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 1162 |                 if (proxyType == 2) {
+      |                    ^
+nanoftp.c:1167:13: note: here
+ 1167 |             case 3:
+      |             ^~~~
+nanoftp.c:1213:13: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 1213 |             __xmlIOErr(XML_FROM_FTP, XML_FTP_ACCNT,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1214 |                        "FTP server asking for ACCNT on anonymous\n");
+      |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+nanoftp.c:1215:9: note: here
+ 1215 |         case 1:
+      |         ^~~~
+  CC       catalog.lo
+catalog.c: In function ‘xmlFreeCatalog’:
+catalog.c:444:17: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *)’ {aka ‘void (*)(struct _xmlCatalogEntry *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+  444 |                 (xmlHashDeallocator) xmlFreeCatalogEntry);
+      |                 ^
+catalog.c: In function ‘xmlCatalogConvertEntry’:
+catalog.c:760:32: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *)’ {aka ‘void (*)(struct _xmlCatalogEntry *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+  760 |                                (xmlHashDeallocator) xmlFreeCatalogEntry);
+      |                                ^
+catalog.c: In function ‘xmlConvertSGMLCatalog’:
+catalog.c:801:17: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *, xmlCatalog *)’ {aka ‘void (*)(struct _xmlCatalogEntry *, struct _xmlCatalog *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+  801 |                 (xmlHashScanner) xmlCatalogConvertEntry,
+      |                 ^
+catalog.c: In function ‘xmlACatalogDump’:
+catalog.c:2940:21: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *, FILE *)’ {aka ‘void (*)(struct _xmlCatalogEntry *, FILE *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 2940 |                     (xmlHashScanner) xmlCatalogDumpEntry, out);
+      |                     ^
+catalog.c: In function ‘xmlACatalogRemove’:
+catalog.c:3005:17: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *)’ {aka ‘void (*)(struct _xmlCatalogEntry *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 3005 |                 (xmlHashDeallocator) xmlFreeCatalogEntry);
+      |                 ^
+catalog.c: In function ‘xmlCatalogCleanup’:
+catalog.c:3287:21: warning: cast between incompatible function types from ‘void (*)(xmlCatalogEntry *)’ {aka ‘void (*)(struct _xmlCatalogEntry *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 3287 |                     (xmlHashDeallocator)xmlFreeCatalogHashEntryList);
+      |                     ^
+catalog.c: In function ‘xmlParseSGMLCatalog’:
+catalog.c:2397:24: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2397 |                     if (*cur == '%')
+      |                        ^
+catalog.c:2399:17: note: here
+ 2399 |                 case SGML_CATA_PENTITY:
+      |                 ^~~~
+  CC       globals.lo
+  CC       threads.lo
+threads.c:53:12: warning: redundant redeclaration of ‘pthread_once’ [-Wredundant-decls]
+   53 | extern int pthread_once (pthread_once_t *__once_control,
+      |            ^~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:509:12: note: previous declaration of ‘pthread_once’ with type ‘int(pthread_once_t *, void (*)(void))’ {aka ‘int(int *, void (*)(void))’}
+  509 | extern int pthread_once (pthread_once_t *__once_control,
+      |            ^~~~~~~~~~~~
+threads.c:56:14: warning: redundant redeclaration of ‘pthread_getspecific’ [-Wredundant-decls]
+   56 | extern void *pthread_getspecific (pthread_key_t __key)
+      |              ^~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1305:14: note: previous declaration of ‘pthread_getspecific’ with type ‘void *(pthread_key_t)’ {aka ‘void *(unsigned int)’}
+ 1305 | extern void *pthread_getspecific (pthread_key_t __key) __THROW;
+      |              ^~~~~~~~~~~~~~~~~~~
+threads.c:58:12: warning: redundant redeclaration of ‘pthread_setspecific’ [-Wredundant-decls]
+   58 | extern int pthread_setspecific (pthread_key_t __key,
+      |            ^~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1308:12: note: previous declaration of ‘pthread_setspecific’ with type ‘int(pthread_key_t,  const void *)’ {aka ‘int(unsigned int,  const void *)’}
+ 1308 | extern int pthread_setspecific (pthread_key_t __key,
+      |            ^~~~~~~~~~~~~~~~~~~
+threads.c:61:12: warning: redundant redeclaration of ‘pthread_key_create’ [-Wredundant-decls]
+   61 | extern int pthread_key_create (pthread_key_t *__key,
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1297:12: note: previous declaration of ‘pthread_key_create’ with type ‘int(pthread_key_t *, void (*)(void *))’ {aka ‘int(unsigned int *, void (*)(void *))’}
+ 1297 | extern int pthread_key_create (pthread_key_t *__key,
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:64:12: warning: redundant redeclaration of ‘pthread_key_delete’ [-Wredundant-decls]
+   64 | extern int pthread_key_delete (pthread_key_t __key)
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1302:12: note: previous declaration of ‘pthread_key_delete’ with type ‘int(pthread_key_t)’ {aka ‘int(unsigned int)’}
+ 1302 | extern int pthread_key_delete (pthread_key_t __key) __THROW;
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:67:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   67 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:66:12: warning: redundant redeclaration of ‘pthread_mutex_init’ [-Wredundant-decls]
+   66 | extern int pthread_mutex_init ()
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:781:12: note: previous declaration of ‘pthread_mutex_init’ with type ‘int(pthread_mutex_t *, const pthread_mutexattr_t *)’
+  781 | extern int pthread_mutex_init (pthread_mutex_t *__mutex,
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:69:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   69 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:68:12: warning: redundant redeclaration of ‘pthread_mutex_destroy’ [-Wredundant-decls]
+   68 | extern int pthread_mutex_destroy ()
+      |            ^~~~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:786:12: note: previous declaration of ‘pthread_mutex_destroy’ with type ‘int(pthread_mutex_t *)’
+  786 | extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+      |            ^~~~~~~~~~~~~~~~~~~~~
+threads.c:71:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   71 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:70:12: warning: redundant redeclaration of ‘pthread_mutex_lock’ [-Wredundant-decls]
+   70 | extern int pthread_mutex_lock ()
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:794:12: note: previous declaration of ‘pthread_mutex_lock’ with type ‘int(pthread_mutex_t *)’
+  794 | extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:73:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   73 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:72:12: warning: redundant redeclaration of ‘pthread_mutex_unlock’ [-Wredundant-decls]
+   72 | extern int pthread_mutex_unlock ()
+      |            ^~~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:835:12: note: previous declaration of ‘pthread_mutex_unlock’ with type ‘int(pthread_mutex_t *)’
+  835 | extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+      |            ^~~~~~~~~~~~~~~~~~~~
+threads.c:75:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   75 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:74:12: warning: redundant redeclaration of ‘pthread_cond_init’ [-Wredundant-decls]
+   74 | extern int pthread_cond_init ()
+      |            ^~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1112:12: note: previous declaration of ‘pthread_cond_init’ with type ‘int(pthread_cond_t * restrict,  const pthread_condattr_t * restrict)’
+ 1112 | extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
+      |            ^~~~~~~~~~~~~~~~~
+threads.c:77:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   77 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:76:12: warning: redundant redeclaration of ‘pthread_cond_destroy’ [-Wredundant-decls]
+   76 | extern int pthread_cond_destroy ()
+      |            ^~~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1117:12: note: previous declaration of ‘pthread_cond_destroy’ with type ‘int(pthread_cond_t *)’
+ 1117 | extern int pthread_cond_destroy (pthread_cond_t *__cond)
+      |            ^~~~~~~~~~~~~~~~~~~~
+threads.c:79:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   79 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:78:12: warning: redundant redeclaration of ‘pthread_cond_wait’ [-Wredundant-decls]
+   78 | extern int pthread_cond_wait ()
+      |            ^~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1133:12: note: previous declaration of ‘pthread_cond_wait’ with type ‘int(pthread_cond_t * restrict,  pthread_mutex_t * restrict)’
+ 1133 | extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
+      |            ^~~~~~~~~~~~~~~~~
+threads.c:81:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   81 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:80:12: warning: redundant redeclaration of ‘pthread_equal’ [-Wredundant-decls]
+   80 | extern int pthread_equal ()
+      |            ^~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:276:12: note: previous declaration of ‘pthread_equal’ with type ‘int(pthread_t,  pthread_t)’ {aka ‘int(long unsigned int,  long unsigned int)’}
+  276 | extern int pthread_equal (pthread_t __thread1, pthread_t __thread2)
+      |            ^~~~~~~~~~~~~
+threads.c:83:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   83 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:82:18: warning: redundant redeclaration of ‘pthread_self’ [-Wredundant-decls]
+   82 | extern pthread_t pthread_self ()
+      |                  ^~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:273:18: note: previous declaration of ‘pthread_self’ with type ‘pthread_t(void)’ {aka ‘long unsigned int(void)’}
+  273 | extern pthread_t pthread_self (void) __THROW __attribute__ ((__const__));
+      |                  ^~~~~~~~~~~~
+threads.c:85:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   85 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:84:12: warning: redundant redeclaration of ‘pthread_key_create’ [-Wredundant-decls]
+   84 | extern int pthread_key_create ()
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1297:12: note: previous declaration of ‘pthread_key_create’ with type ‘int(pthread_key_t *, void (*)(void *))’ {aka ‘int(unsigned int *, void (*)(void *))’}
+ 1297 | extern int pthread_key_create (pthread_key_t *__key,
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:87:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   87 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:86:12: warning: redundant redeclaration of ‘pthread_key_delete’ [-Wredundant-decls]
+   86 | extern int pthread_key_delete ()
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1302:12: note: previous declaration of ‘pthread_key_delete’ with type ‘int(pthread_key_t)’ {aka ‘int(unsigned int)’}
+ 1302 | extern int pthread_key_delete (pthread_key_t __key) __THROW;
+      |            ^~~~~~~~~~~~~~~~~~
+threads.c:89:12: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+   89 |            __attribute((weak));
+      |            ^~~~~~~~~~~
+threads.c:88:12: warning: redundant redeclaration of ‘pthread_cond_signal’ [-Wredundant-decls]
+   88 | extern int pthread_cond_signal ()
+      |            ^~~~~~~~~~~~~~~~~~~
+In file included from threads.c:28:
+/usr/include/pthread.h:1121:12: note: previous declaration of ‘pthread_cond_signal’ with type ‘int(pthread_cond_t *)’
+ 1121 | extern int pthread_cond_signal (pthread_cond_t *__cond)
+      |            ^~~~~~~~~~~~~~~~~~~
+  CC       c14n.lo
+  CC       xmlstring.lo
+  CC       buf.lo
+  CC       xmlregexp.lo
+xmlregexp.c: In function ‘xmlRegCheckCharacterRange’:
+xmlregexp.c:2812:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2812 |             neg = !neg;
+      |             ~~~~^~~~~~
+xmlregexp.c:2813:9: note: here
+ 2813 |         case XML_REGEXP_ANYSPACE:
+      |         ^~~~
+xmlregexp.c:2818:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2818 |             neg = !neg;
+      |             ~~~~^~~~~~
+xmlregexp.c:2819:9: note: here
+ 2819 |         case XML_REGEXP_INITNAME:
+      |         ^~~~
+xmlregexp.c:2824:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2824 |             neg = !neg;
+      |             ~~~~^~~~~~
+xmlregexp.c:2825:9: note: here
+ 2825 |         case XML_REGEXP_NAMECHAR:
+      |         ^~~~
+xmlregexp.c:2832:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2832 |             neg = !neg;
+      |             ~~~~^~~~~~
+xmlregexp.c:2833:9: note: here
+ 2833 |         case XML_REGEXP_DECIMAL:
+      |         ^~~~
+xmlregexp.c:2837:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 2837 |             neg = !neg;
+      |             ~~~~^~~~~~
+xmlregexp.c:2838:9: note: here
+ 2838 |         case XML_REGEXP_NOTREALCHAR:
+      |         ^~~~
+  CC       xmlschemas.lo
+xmlschemas.c: In function ‘xmlSchemaFree’:
+xmlschemas.c:4154:21: warning: cast between incompatible function types from ‘void (*)(xmlSchemaBucket *)’ {aka ‘void (*)(struct _xmlSchemaBucket *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 4154 |                     (xmlHashDeallocator) xmlSchemaBucketFree);
+      |                     ^
+xmlschemas.c: In function ‘xmlSchemaDump’:
+xmlschemas.c:4537:35: warning: cast between incompatible function types from ‘void (*)(xmlSchemaType *, FILE *)’ {aka ‘void (*)(struct _xmlSchemaType *, FILE *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+ 4537 |     xmlHashScan(schema->typeDecl, (xmlHashScanner) xmlSchemaTypeDump,
+      |                                   ^
+xmlschemas.c: In function ‘xmlSchemaConstructionCtxtFree’:
+xmlschemas.c:9913:13: warning: cast between incompatible function types from ‘void (*)(xmlSchemaSubstGroup *)’ {aka ‘void (*)(struct _xmlSchemaSubstGroup *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+ 9913 |             (xmlHashDeallocator) xmlSchemaSubstGroupFree);
+      |             ^
+xmlschemas.c: In function ‘xmlSchemaFixupComponents’:
+xmlschemas.c:21288:13: warning: cast between incompatible function types from ‘void (*)(xmlSchemaSubstGroup *)’ {aka ‘void (*)(struct _xmlSchemaSubstGroup *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+21288 |             (xmlHashDeallocator) xmlSchemaSubstGroupFree);
+      |             ^
+xmlschemas.c: In function ‘xmlSchemaAugmentImportedIDC’:
+xmlschemas.c:22035:13: warning: cast between incompatible function types from ‘void (*)(xmlSchemaIDC *, xmlSchemaValidCtxt *)’ {aka ‘void (*)(struct _xmlSchemaIDC *, struct _xmlSchemaValidCtxt *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+22035 |             (xmlHashScanner) xmlSchemaAugmentIDC, vctxt);
+      |             ^
+xmlschemas.c: In function ‘xmlSchemaValidateElem’:
+xmlschemas.c:26879:51: warning: cast between incompatible function types from ‘void (*)(xmlSchemaImport *, xmlSchemaValidCtxt *)’ {aka ‘void (*)(struct _xmlSchemaImport *, struct _xmlSchemaValidCtxt *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+26879 |         xmlHashScan(vctxt->schema->schemasImports,(xmlHashScanner)xmlSchemaAugmentImportedIDC, vctxt);
+      |                                                   ^
+xmlschemas.c: In function ‘xmlSchemaPreRun’:
+xmlschemas.c:28101:47: warning: cast between incompatible function types from ‘void (*)(xmlSchemaImport *, xmlSchemaValidCtxt *)’ {aka ‘void (*)(struct _xmlSchemaImport *, struct _xmlSchemaValidCtxt *)’} to ‘void (*)(void *, void *, xmlChar *)’ {aka ‘void (*)(void *, void *, unsigned char *)’} [-Wcast-function-type]
+28101 |     xmlHashScan(vctxt->schema->schemasImports,(xmlHashScanner)xmlSchemaAugmentImportedIDC, vctxt);
+      |                                               ^
+xmlschemas.c: In function ‘xmlSchemaFormatItemForReport’:
+xmlschemas.c:321:31: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  321 | #define FREE_AND_NULL(str) if ((str) != NULL) { xmlFree((xmlChar *) (str)); str = NULL; }
+      |                               ^
+xmlschemas.c:1735:17: note: in expansion of macro ‘FREE_AND_NULL’
+ 1735 |                 FREE_AND_NULL(str);
+      |                 ^~~~~~~~~~~~~
+xmlschemas.c:1737:9: note: here
+ 1737 |         default:
+      |         ^~~~~~~
+  CC       xmlschemastypes.lo
+xmlschemastypes.c: In function ‘xmlSchemaCleanupTypes’:
+xmlschemastypes.c:644:37: warning: cast between incompatible function types from ‘void (*)(xmlSchemaType *)’ {aka ‘void (*)(struct _xmlSchemaType *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+  644 |     xmlHashFree(xmlSchemaTypesBank, (xmlHashDeallocator) xmlSchemaFreeType);
+      |                                     ^
+xmlschemastypes.c: In function ‘xmlSchemaValidateFacetInternal’:
+xmlschemastypes.c:5398:48: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 5398 |             if ((valType == XML_SCHEMAS_QNAME) ||
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+ 5399 |                 (valType == XML_SCHEMAS_NOTATION))
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xmlschemastypes.c:5402:9: note: here
+ 5402 |         case XML_SCHEMA_FACET_MAXLENGTH:
+      |         ^~~~
+  CC       xmlunicode.lo
+  CC       xmlreader.lo
+xmlreader.c: In function ‘xmlTextReaderFreeIDTable’:
+xmlreader.c:502:24: warning: cast between incompatible function types from ‘void (*)(xmlID *)’ {aka ‘void (*)(struct _xmlID *)’} to ‘void (*)(void *, xmlChar *)’ {aka ‘void (*)(void *, unsigned char *)’} [-Wcast-function-type]
+  502 |     xmlHashFree(table, (xmlHashDeallocator) xmlFreeID);
+      |                        ^
+  CC       relaxng.lo
+relaxng.c: In function ‘xmlRelaxNGValidateValue’:
+relaxng.c:8889:16: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 8889 |             if (ret != 0) {
+      |                ^
+relaxng.c:8893:9: note: here
+ 8893 |         case XML_RELAXNG_ZEROORMORE:{
+      |         ^~~~
+relaxng.c: In function ‘xmlRelaxNGValidateState’:
+relaxng.c:10167:16: warning: this statement may fall through [-Wimplicit-fallthrough=]
+10167 |             if (ctxt->errNr > errNr)
+      |                ^
+relaxng.c:10170:9: note: here
+10170 |         case XML_RELAXNG_ZEROORMORE:{
+      |         ^~~~
+  CC       dict.lo
+dict.c: In function ‘xmlDictComputeFastKey’:
+dict.c:455:24: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  455 |         case 10: value += name[9];
+      |                  ~~~~~~^~~~~~~~~~
+dict.c:456:9: note: here
+  456 |         case 9: value += name[8];
+      |         ^~~~
+dict.c:456:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  456 |         case 9: value += name[8];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:457:9: note: here
+  457 |         case 8: value += name[7];
+      |         ^~~~
+dict.c:457:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  457 |         case 8: value += name[7];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:458:9: note: here
+  458 |         case 7: value += name[6];
+      |         ^~~~
+dict.c:458:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  458 |         case 7: value += name[6];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:459:9: note: here
+  459 |         case 6: value += name[5];
+      |         ^~~~
+dict.c:459:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  459 |         case 6: value += name[5];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:460:9: note: here
+  460 |         case 5: value += name[4];
+      |         ^~~~
+dict.c:460:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  460 |         case 5: value += name[4];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:461:9: note: here
+  461 |         case 4: value += name[3];
+      |         ^~~~
+dict.c:461:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  461 |         case 4: value += name[3];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:462:9: note: here
+  462 |         case 3: value += name[2];
+      |         ^~~~
+dict.c:462:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  462 |         case 3: value += name[2];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:463:9: note: here
+  463 |         case 2: value += name[1];
+      |         ^~~~
+dict.c: In function ‘xmlDictComputeFastQKey’:
+dict.c:498:24: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  498 |         case 10: value += prefix[9];
+      |                  ~~~~~~^~~~~~~~~~~~
+dict.c:499:9: note: here
+  499 |         case 9: value += prefix[8];
+      |         ^~~~
+dict.c:499:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  499 |         case 9: value += prefix[8];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:500:9: note: here
+  500 |         case 8: value += prefix[7];
+      |         ^~~~
+dict.c:500:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  500 |         case 8: value += prefix[7];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:501:9: note: here
+  501 |         case 7: value += prefix[6];
+      |         ^~~~
+dict.c:501:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  501 |         case 7: value += prefix[6];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:502:9: note: here
+  502 |         case 6: value += prefix[5];
+      |         ^~~~
+dict.c:502:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  502 |         case 6: value += prefix[5];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:503:9: note: here
+  503 |         case 5: value += prefix[4];
+      |         ^~~~
+dict.c:503:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  503 |         case 5: value += prefix[4];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:504:9: note: here
+  504 |         case 4: value += prefix[3];
+      |         ^~~~
+dict.c:504:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  504 |         case 4: value += prefix[3];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:505:9: note: here
+  505 |         case 3: value += prefix[2];
+      |         ^~~~
+dict.c:505:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  505 |         case 3: value += prefix[2];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:506:9: note: here
+  506 |         case 2: value += prefix[1];
+      |         ^~~~
+dict.c:506:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  506 |         case 2: value += prefix[1];
+      |                 ~~~~~~^~~~~~~~~~~~
+dict.c:507:9: note: here
+  507 |         case 1: value += prefix[0];
+      |         ^~~~
+dict.c:516:24: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  516 |         case 10: value += name[9];
+      |                  ~~~~~~^~~~~~~~~~
+dict.c:517:9: note: here
+  517 |         case 9: value += name[8];
+      |         ^~~~
+dict.c:517:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  517 |         case 9: value += name[8];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:518:9: note: here
+  518 |         case 8: value += name[7];
+      |         ^~~~
+dict.c:518:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  518 |         case 8: value += name[7];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:519:9: note: here
+  519 |         case 7: value += name[6];
+      |         ^~~~
+dict.c:519:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  519 |         case 7: value += name[6];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:520:9: note: here
+  520 |         case 6: value += name[5];
+      |         ^~~~
+dict.c:520:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  520 |         case 6: value += name[5];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:521:9: note: here
+  521 |         case 5: value += name[4];
+      |         ^~~~
+dict.c:521:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  521 |         case 5: value += name[4];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:522:9: note: here
+  522 |         case 4: value += name[3];
+      |         ^~~~
+dict.c:522:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  522 |         case 4: value += name[3];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:523:9: note: here
+  523 |         case 3: value += name[2];
+      |         ^~~~
+dict.c:523:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  523 |         case 3: value += name[2];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:524:9: note: here
+  524 |         case 2: value += name[1];
+      |         ^~~~
+dict.c:524:23: warning: this statement may fall through [-Wimplicit-fallthrough=]
+  524 |         case 2: value += name[1];
+      |                 ~~~~~~^~~~~~~~~~
+dict.c:525:9: note: here
+  525 |         case 1: value += name[0];
+      |         ^~~~
+  CC       SAX2.lo
+  CC       xmlwriter.lo
+xmlwriter.c: In function ‘xmlTextWriterEndDTDEntity’:
+xmlwriter.c:3756:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ 3756 |             sum += count;
+      |             ~~~~^~~~~~~~
+xmlwriter.c:3757:9: note: here
+ 3757 |         case XML_TEXTWRITER_DTD_ENTY:
+      |         ^~~~
+  CC       legacy.lo
+  CC       chvalid.lo
+  CC       pattern.lo
+  CC       xmlsave.lo
+  CC       xmlmodule.lo
+  CC       schematron.lo
+  CC       xzlib.lo
+  CCLD     libxml2.la
+x86_64-linux-gnu-ar: `u' modifier ignored since `D' is the default (see `U')
+  CC       testdso.lo
+  CCLD     testdso.la
+x86_64-linux-gnu-ar: `u' modifier ignored since `D' is the default (see `U')
+  CC       xmllint.o
+xmllint.c: In function ‘testSAX’:
+xmllint.c:1671:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 1671 |                 (xmlSchemaValidityErrorFunc) fprintf,
+      |                 ^
+xmllint.c:1672:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 1672 |                 (xmlSchemaValidityWarningFunc) fprintf,
+      |                 ^
+xmllint.c: In function ‘parseAndPrintFile’:
+xmllint.c:2323:41: warning: cast between incompatible function types from ‘void (*)(FILE *)’ to ‘int (*)(void *)’ [-Wcast-function-type]
+ 2323 |                                         (xmlInputCloseCallback) myClose, f,
+      |                                         ^
+xmllint.c:2328:41: warning: cast between incompatible function types from ‘void (*)(FILE *)’ to ‘int (*)(void *)’ [-Wcast-function-type]
+ 2328 |                                         (xmlInputCloseCallback) myClose, f,
+      |                                         ^
+xmllint.c:2781:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2781 |             cvp->error    = (xmlValidityErrorFunc) fprintf;
+      |                             ^
+xmllint.c:2782:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2782 |             cvp->warning  = (xmlValidityWarningFunc) fprintf;
+      |                             ^
+xmllint.c:2817:25: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2817 |         cvp->error    = (xmlValidityErrorFunc) fprintf;
+      |                         ^
+xmllint.c:2818:25: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2818 |         cvp->warning  = (xmlValidityWarningFunc) fprintf;
+      |                         ^
+xmllint.c:2881:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2881 |                 (xmlRelaxNGValidityErrorFunc) fprintf,
+      |                 ^
+xmllint.c:2882:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2882 |                 (xmlRelaxNGValidityWarningFunc) fprintf,
+      |                 ^
+xmllint.c:2909:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2909 |                 (xmlSchemaValidityErrorFunc) fprintf,
+      |                 ^
+xmllint.c:2910:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 2910 |                 (xmlSchemaValidityWarningFunc) fprintf,
+      |                 ^
+xmllint.c: In function ‘main’:
+xmllint.c:3606:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 3606 |                 (xmlRelaxNGValidityErrorFunc) fprintf,
+      |                 ^
+xmllint.c:3607:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 3607 |                 (xmlRelaxNGValidityWarningFunc) fprintf,
+      |                 ^
+xmllint.c:3632:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 3632 |                 (xmlSchemaValidityErrorFunc) fprintf,
+      |                 ^
+xmllint.c:3633:17: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+ 3633 |                 (xmlSchemaValidityWarningFunc) fprintf,
+      |                 ^
+  CCLD     xmllint
+  CC       xmlcatalog.o
+  CCLD     xmlcatalog
+  CC       testSchemas.o
+testSchemas.c: In function ‘main’:
+testSchemas.c:100:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  100 |                             (xmlSchemaValidityErrorFunc) fprintf,
+      |                             ^
+testSchemas.c:101:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  101 |                             (xmlSchemaValidityWarningFunc) fprintf,
+      |                             ^
+testSchemas.c:111:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  111 |                             (xmlSchemaValidityErrorFunc) fprintf,
+      |                             ^
+testSchemas.c:112:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  112 |                             (xmlSchemaValidityWarningFunc) fprintf,
+      |                             ^
+testSchemas.c:138:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  138 |                             (xmlSchemaValidityErrorFunc) fprintf,
+      |                             ^
+testSchemas.c:139:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  139 |                             (xmlSchemaValidityWarningFunc) fprintf,
+      |                             ^
+  CCLD     testSchemas
+  CC       testRelax.o
+testRelax.c: In function ‘main’:
+testRelax.c:104:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  104 |                             (xmlRelaxNGValidityErrorFunc) fprintf,
+      |                             ^
+testRelax.c:105:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  105 |                             (xmlRelaxNGValidityWarningFunc) fprintf,
+      |                             ^
+testRelax.c:115:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  115 |                             (xmlRelaxNGValidityErrorFunc) fprintf,
+      |                             ^
+testRelax.c:116:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  116 |                             (xmlRelaxNGValidityWarningFunc) fprintf,
+      |                             ^
+testRelax.c:147:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  147 |                             (xmlRelaxNGValidityErrorFunc) fprintf,
+      |                             ^
+testRelax.c:148:29: warning: cast between incompatible function types from ‘int (*)(FILE * restrict,  const char * restrict, ...)’ to ‘void (*)(void *, const char *, ...)’ [-Wcast-function-type]
+  148 |                             (xmlRelaxNGValidityWarningFunc) fprintf,
+      |                             ^
+  CCLD     testRelax
+  CC       testSAX.o
+  CCLD     testSAX
+  CC       testHTML.o
+  CCLD     testHTML
+  CC       testXPath.o
+  CCLD     testXPath
+  CC       testURI.o
+  CCLD     testURI
+  CC       testThreads.o
+  CCLD     testThreads
+  CC       testC14N.o
+  CCLD     testC14N
+  CC       testAutomata.o
+  CCLD     testAutomata
+  CC       testRegexp.o
+  CCLD     testRegexp
+  CC       testReader.o
+  CCLD     testReader
+  CC       testapi.o
+testapi.c:34506:13: warning: ‘des_xmlSAXHandlerPtr_ptr’ defined but not used [-Wunused-function]
+34506 | static void des_xmlSAXHandlerPtr_ptr(int no ATTRIBUTE_UNUSED, xmlSAXHandlerPtr * val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+testapi.c:34503:27: warning: ‘gen_xmlSAXHandlerPtr_ptr’ defined but not used [-Wunused-function]
+34503 | static xmlSAXHandlerPtr * gen_xmlSAXHandlerPtr_ptr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~
+testapi.c:18561:13: warning: ‘des_const_xmlBufPtr’ defined but not used [-Wunused-function]
+18561 | static void des_const_xmlBufPtr(int no ATTRIBUTE_UNUSED, const xmlBufPtr val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |             ^~~~~~~~~~~~~~~~~~~
+testapi.c:18558:18: warning: ‘gen_const_xmlBufPtr’ defined but not used [-Wunused-function]
+18558 | static xmlBufPtr gen_const_xmlBufPtr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |                  ^~~~~~~~~~~~~~~~~~~
+testapi.c:18063:13: warning: ‘des_xmlSchematronParserCtxtPtr’ defined but not used [-Wunused-function]
+18063 | static void des_xmlSchematronParserCtxtPtr(int no ATTRIBUTE_UNUSED, xmlSchematronParserCtxtPtr val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+testapi.c:18060:35: warning: ‘gen_xmlSchematronParserCtxtPtr’ defined but not used [-Wunused-function]
+18060 | static xmlSchematronParserCtxtPtr gen_xmlSchematronParserCtxtPtr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+testapi.c:18043:13: warning: ‘des_xmlSchematronPtr’ defined but not used [-Wunused-function]
+18043 | static void des_xmlSchematronPtr(int no ATTRIBUTE_UNUSED, xmlSchematronPtr val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |             ^~~~~~~~~~~~~~~~~~~~
+testapi.c:18040:25: warning: ‘gen_xmlSchematronPtr’ defined but not used [-Wunused-function]
+18040 | static xmlSchematronPtr gen_xmlSchematronPtr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+      |                         ^~~~~~~~~~~~~~~~~~~~
+  CCLD     testapi
+  CC       testModule.o
+  CCLD     testModule
+  CC       runtest.o
+runtest.c: In function ‘streamProcessTest’:
+runtest.c:2145:65: warning: unused parameter ‘options’ [-Wunused-parameter]
+ 2145 |                   xmlTextReaderPtr reader, const char *rng, int options) {
+      |                                                             ~~~~^~~~~~~
+runtest.c: In function ‘resultFilename’:
+runtest.c:588:31: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+  588 |     snprintf(res, 499, "%s%s%s", out, base, suffixbuff);
+      |                               ^
+runtest.c:588:5: note: ‘snprintf’ output 1 or more bytes (assuming 500) into a destination of size 499
+  588 |     snprintf(res, 499, "%s%s%s", out, base, suffixbuff);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c: In function ‘schemasTest’:
+runtest.c:3072:44: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3072 |     snprintf(pattern, 499, "./test/schemas/%s_?.xml", prefix);
+      |                                            ^~         ~~~~~~
+runtest.c:3072:5: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3072 |     snprintf(pattern, 499, "./test/schemas/%s_?.xml", prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c:3091:51: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3091 |             snprintf(result, 499, "result/schemas/%s_%c",
+      |                                                   ^~
+ 3092 |                      prefix, count);
+      |                      ~~~~~~                        
+runtest.c:3091:13: note: ‘snprintf’ output between 18 and 517 bytes into a destination of size 499
+ 3091 |             snprintf(result, 499, "result/schemas/%s_%c",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3092 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c:3094:48: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3094 |             snprintf(err, 499, "result/schemas/%s_%c.err",
+      |                                                ^~
+ 3095 |                      prefix, count);
+      |                      ~~~~~~                     
+runtest.c:3094:13: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3094 |             snprintf(err, 499, "result/schemas/%s_%c.err",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3095 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c: In function ‘rngTest’:
+runtest.c:3243:44: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3243 |     snprintf(pattern, 499, "./test/relaxng/%s_?.xml", prefix);
+      |                                            ^~         ~~~~~~
+runtest.c:3243:5: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3243 |     snprintf(pattern, 499, "./test/relaxng/%s_?.xml", prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c:3256:51: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3256 |             snprintf(result, 499, "result/relaxng/%s_%c",
+      |                                                   ^~
+ 3257 |                      prefix, count);
+      |                      ~~~~~~                        
+runtest.c:3256:13: note: ‘snprintf’ output between 18 and 517 bytes into a destination of size 499
+ 3256 |             snprintf(result, 499, "result/relaxng/%s_%c",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3257 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c:3259:48: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3259 |             snprintf(err, 499, "result/relaxng/%s_%c.err",
+      |                                                ^~
+ 3260 |                      prefix, count);
+      |                      ~~~~~~                     
+runtest.c:3259:13: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3259 |             snprintf(err, 499, "result/relaxng/%s_%c.err",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3260 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c: In function ‘rngStreamTest’:
+runtest.c:3332:44: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3332 |     snprintf(pattern, 499, "./test/relaxng/%s_?.xml", prefix);
+      |                                            ^~         ~~~~~~
+runtest.c:3332:5: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3332 |     snprintf(pattern, 499, "./test/relaxng/%s_?.xml", prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c:3345:51: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3345 |             snprintf(result, 499, "result/relaxng/%s_%c",
+      |                                                   ^~
+ 3346 |                      prefix, count);
+      |                      ~~~~~~                        
+runtest.c:3345:13: note: ‘snprintf’ output between 18 and 517 bytes into a destination of size 499
+ 3345 |             snprintf(result, 499, "result/relaxng/%s_%c",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3346 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c:3348:48: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 484 [-Wformat-truncation=]
+ 3348 |             snprintf(err, 499, "result/relaxng/%s_%c.err",
+      |                                                ^~
+ 3349 |                      prefix, count);
+      |                      ~~~~~~                     
+runtest.c:3348:13: note: ‘snprintf’ output between 22 and 521 bytes into a destination of size 499
+ 3348 |             snprintf(err, 499, "result/relaxng/%s_%c.err",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3349 |                      prefix, count);
+      |                      ~~~~~~~~~~~~~~
+runtest.c: In function ‘c14nCommonTest’:
+runtest.c:3853:40: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 486 [-Wformat-truncation=]
+ 3853 |     snprintf(buf, 499, "result/c14n/%s/%s", subdir,prefix);
+      |                                        ^~          ~~~~~~
+runtest.c:3853:5: note: ‘snprintf’ output 14 or more bytes (assuming 513) into a destination of size 499
+ 3853 |     snprintf(buf, 499, "result/c14n/%s/%s", subdir,prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c:3859:38: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 488 [-Wformat-truncation=]
+ 3859 |     snprintf(buf, 499, "test/c14n/%s/%s.xpath", subdir,prefix);
+      |                                      ^~                ~~~~~~
+runtest.c:3859:5: note: ‘snprintf’ output 18 or more bytes (assuming 517) into a destination of size 499
+ 3859 |     snprintf(buf, 499, "test/c14n/%s/%s.xpath", subdir,prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+runtest.c:3863:38: warning: ‘%s’ directive output may be truncated writing up to 499 bytes into a region of size 488 [-Wformat-truncation=]
+ 3863 |     snprintf(buf, 499, "test/c14n/%s/%s.ns", subdir,prefix);
+      |                                      ^~             ~~~~~~
+runtest.c:3863:5: note: ‘snprintf’ output 15 or more bytes (assuming 514) into a destination of size 499
+ 3863 |     snprintf(buf, 499, "test/c14n/%s/%s.ns", subdir,prefix);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CCLD     runtest
+  CC       runsuite.o
+  CCLD     runsuite
+  CC       testchar.o
+  CCLD     testchar
+  CC       testdict.o
+  CCLD     testdict
+  CC       runxmlconf.o
+  CCLD     runxmlconf
+  CC       testrecurse.o
+testrecurse.c: In function ‘resultFilename’:
+testrecurse.c:635:31: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+  635 |     snprintf(res, 499, "%s%s%s", out, base, suffixbuff);
+      |                               ^
+testrecurse.c:635:5: note: ‘snprintf’ output 1 or more bytes (assuming 500) into a destination of size 499
+  635 |     snprintf(res, 499, "%s%s%s", out, base, suffixbuff);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CCLD     testrecurse
+  CC       testlimits.o
+  CCLD     testlimits
+sed -e 's?\@XML_LIBDIR\@?-L/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib?g' \
+    -e 's?\@XML_INCLUDEDIR\@?-I/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/include/libxml2?g' \
+    -e 's?\@VERSION\@?2.9.4?g' \
+    -e 's?\@XML_LIBS\@?-lxml2 -lz     -lm ?g' \
+       < ./xml2Conf.sh.in > xml2Conf.tmp \
+&& mv xml2Conf.tmp xml2Conf.sh
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+Making all in doc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making all in .
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making all in devhelp
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+Making all in examples
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+  CC       io1.o
+  CCLD     io1
+  CC       io2.o
+  CCLD     io2
+  CC       parse1.o
+  CCLD     parse1
+  CC       parse2.o
+  CCLD     parse2
+  CC       parse3.o
+  CCLD     parse3
+  CC       parse4.o
+  CCLD     parse4
+  CC       reader1.o
+  CCLD     reader1
+  CC       reader2.o
+  CCLD     reader2
+  CC       reader3.o
+  CCLD     reader3
+  CC       reader4.o
+  CCLD     reader4
+  CC       testWriter.o
+  CCLD     testWriter
+  CC       tree1.o
+  CCLD     tree1
+  CC       tree2.o
+tree2.c: In function ‘main’:
+tree2.c:30:15: warning: variable ‘dtd’ set but not used [-Wunused-but-set-variable]
+   30 |     xmlDtdPtr dtd = NULL;       /* DTD pointer */
+      |               ^~~
+  CCLD     tree2
+  CC       xpath1.o
+  CCLD     xpath1
+  CC       xpath2.o
+  CCLD     xpath2
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making all in example
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+  CC       gjobread.o
+  CCLD     gjobread
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+Making all in xstc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'

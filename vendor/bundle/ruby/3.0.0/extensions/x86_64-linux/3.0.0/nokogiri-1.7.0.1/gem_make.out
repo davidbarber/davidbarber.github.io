@@ -1,0 +1,1343 @@
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20231126-158302-742528.rb extconf.rb
+checking if the C compiler accepts ... yes
+Building nokogiri using packaged libraries.
+Using mini_portile version 2.1.0
+checking for gzdopen() in -lz... yes
+checking for iconv... yes
+************************************************************************
+IMPORTANT NOTICE:
+
+Building Nokogiri with a packaged version of libxml2-2.9.4.
+
+Team Nokogiri will keep on doing their best to provide security
+updates in a timely manner, but if this is a concern for you and want
+to use the system library instead; abort this installation process and
+reinstall nokogiri as follows:
+
+    gem install nokogiri -- --use-system-libraries
+        [--with-xml2-config=/path/to/xml2-config]
+        [--with-xslt-config=/path/to/xslt-config]
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+
+Note, however, that nokogiri is not fully compatible with arbitrary
+versions of libxml2 provided by OS/package vendors.
+************************************************************************
+Extracting libxml2-2.9.4.tar.gz into tmp/x86_64-linux-gnu/ports/libxml2/2.9.4... OK
+Running 'configure' for libxml2 2.9.4... OK
+Running 'compile' for libxml2 2.9.4... OK
+Running 'install' for libxml2 2.9.4... OK
+Activating libxml2 2.9.4 (from /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4)...
+************************************************************************
+IMPORTANT NOTICE:
+
+Building Nokogiri with a packaged version of libxslt-1.1.29.
+
+Team Nokogiri will keep on doing their best to provide security
+updates in a timely manner, but if this is a concern for you and want
+to use the system library instead; abort this installation process and
+reinstall nokogiri as follows:
+
+    gem install nokogiri -- --use-system-libraries
+        [--with-xml2-config=/path/to/xml2-config]
+        [--with-xslt-config=/path/to/xslt-config]
+
+If you are using Bundler, tell it to use the option:
+
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+************************************************************************
+Extracting libxslt-1.1.29.tar.gz into tmp/x86_64-linux-gnu/ports/libxslt/1.1.29... OK
+Running 'configure' for libxslt 1.1.29... OK
+Running 'compile' for libxslt 1.1.29... OK
+Running 'install' for libxslt 1.1.29... OK
+Activating libxslt 1.1.29 (from /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29)...
+checking for -llzma... no
+checking for xmlParseDoc() in libxml/parser.h... yes
+checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
+checking for exsltFuncRegister() in libexslt/exslt.h... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+creating Makefile
+
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri
+make DESTDIR\= clean
+
+current directory: /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri
+make DESTDIR\=
+compiling html_document.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./html_document.h:4,
+                 from html_document.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_document.h:4,
+                 from html_document.c:1:
+html_document.c: In function ‘new’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+html_document.c:16:3: note: in expansion of macro ‘rb_scan_args’
+   16 |   rb_scan_args(argc, argv, "0*", &rest);
+      |   ^~~~~~~~~~~~
+html_document.c: In function ‘type’:
+html_document.c:148:18: warning: conversion to ‘int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  148 |   return INT2NUM((long)doc->type);
+      |                  ^~~~~~~~~~~~~~~
+compiling html_element_description.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/core.h:27,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:26,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_element_description.h:4,
+                 from html_element_description.c:1:
+html_element_description.c: In function ‘get_description’:
+html_element_description.c:252:40: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  252 |   return Data_Wrap_Struct(klass, 0, 0, (void *)description);
+      |                                        ^
+/usr/include/ruby-3.0.0/ruby/internal/core/rdata.h:83:10: note: in definition of macro ‘Data_Wrap_Struct’
+   83 |         (sval),                                   \
+      |          ^~~~
+compiling html_entity_lookup.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_entity_lookup.h:4,
+                 from html_entity_lookup.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+html_entity_lookup.c: In function ‘get’:
+html_entity_lookup.c:18:21: warning: conversion to ‘int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   18 |   args[0] = INT2NUM((long)desc->value);
+      |                     ^~~~~~~~~~~~~~~~~
+compiling html_sax_parser_context.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_parser_context.h:4,
+                 from html_sax_parser_context.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+compiling html_sax_push_parser.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./html_sax_push_parser.h:4,
+                 from html_sax_push_parser.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+compiling nokogiri.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from nokogiri.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from nokogiri.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+compiling xml_attr.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attr.h:4,
+                 from xml_attr.c:1:
+xml_attr.c: In function ‘new’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_attr.c:58:3: note: in expansion of macro ‘rb_scan_args’
+   58 |   rb_scan_args(argc, argv, "2*", &document, &name, &rest);
+      |   ^~~~~~~~~~~~
+compiling xml_attribute_decl.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_attribute_decl.h:4,
+                 from xml_attribute_decl.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+xml_attribute_decl.c: In function ‘attribute_type’:
+xml_attribute_decl.c:13:18: warning: conversion to ‘int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   13 |   return INT2NUM((long)node->atype);
+      |                  ^~~~~~~~~~~~~~~~~
+compiling xml_cdata.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_cdata.h:4,
+                 from xml_cdata.c:1:
+xml_cdata.c: In function ‘new’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_cdata.c:18:3: note: in expansion of macro ‘rb_scan_args’
+   18 |   rb_scan_args(argc, argv, "2*", &doc, &content, &rest);
+      |   ^~~~~~~~~~~~
+compiling xml_comment.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_comment.h:4,
+                 from xml_comment.c:1:
+xml_comment.c: In function ‘new’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_comment.c:21:3: note: in expansion of macro ‘rb_scan_args’
+   21 |   rb_scan_args(argc, argv, "2*", &document, &content, &rest);
+      |   ^~~~~~~~~~~~
+compiling xml_document.c
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:42,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h: In function ‘RB_TEST’:
+/usr/include/ruby-3.0.0/ruby/internal/special_consts.h:121:16: warning: unsigned conversion from ‘int’ to ‘VALUE’ {aka ‘long unsigned int’} changes value from ‘-9’ to ‘18446744073709551607’ [-Wsign-conversion]
+  121 |     return obj & ~RUBY_Qnil;
+      |                ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/int.h:26,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/char.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘RB_INT2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:88:29: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   88 |     const unsigned long j = i;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:90:29: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   90 |     const long          l = k;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:92:29: warning: conversion to ‘VALUE’ {aka ‘const long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+   92 |     const VALUE         n = m;
+      |                             ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_idiv’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:123:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  123 |     const SIGNED_VALUE y = x - RUBY_FIXNUM_FLAG;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rbimpl_fix2long_by_shift’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:140:28: warning: conversion to ‘long int’ from ‘VALUE’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+  140 |     const SIGNED_VALUE y = x;
+      |                            ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_fix2ulong’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:175:12: warning: conversion to ‘long unsigned int’ from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  175 |     return rb_fix2long(x);
+      |            ^~~~~~~~~~~~~~
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h: In function ‘rb_ulong2num_inline’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/long.h:214:28: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+  214 |         return RB_LONG2FIX(v);
+      |                            ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h: In function ‘RB_ST2FIX’:
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:45:22: warning: conversion to ‘long int’ from ‘st_data_t’ {aka ‘long unsigned int’} may change the sign of the result [-Wsign-conversion]
+   45 |     SIGNED_VALUE x = i;
+      |                      ^
+/usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:56:24: warning: conversion to ‘long int’ from ‘long unsigned int’ may change the sign of the result [-Wsign-conversion]
+   56 |     return RB_LONG2FIX(y);
+      |                        ^
+In file included from /usr/include/ruby-3.0.0/ruby/internal/assume.h:29,
+                 from /usr/include/ruby-3.0.0/ruby/backward/2/assume.h:24,
+                 from /usr/include/ruby-3.0.0/ruby/defines.h:72,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:23,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h: In function ‘RARRAY_PTR’:
+/usr/include/ruby-3.0.0/ruby/internal/core/rarray.h:249:24: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  249 |     return RBIMPL_CAST((VALUE *)RARRAY_CONST_PTR(tmp));
+      |                        ^
+/usr/include/ruby-3.0.0/ruby/internal/cast.h:33:29: note: in definition of macro ‘RBIMPL_CAST’
+   33 | # define RBIMPL_CAST(expr) (expr)
+      |                             ^~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:39,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h: In function ‘rb_alloc_tmp_buffer2’:
+/usr/include/ruby-3.0.0/ruby/internal/memory.h:253:56: warning: conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+  253 |     const size_t total_size = rbimpl_size_mul_or_raise(count, elsize);
+      |                                                        ^~~~~
+In file included from ./xml_document.h:4,
+                 from xml_document.c:1:
+./nokogiri.h: At top level:
+./nokogiri.h:39: warning: "MAYBE_UNUSED" redefined
+   39 | #  define MAYBE_UNUSED(name) name __attribute__((unused))
+      | 
+In file included from /usr/include/ruby-3.0.0/ruby/internal/config.h:23,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:15,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/x86_64-linux-gnu/ruby-3.0.0/ruby/config.h:159: note: this is the location of the previous definition
+  159 | #define MAYBE_UNUSED(x) __attribute__ ((__unused__)) x
+      | 
+xml_document.c: In function ‘dealloc’:
+xml_document.c:46:25: warning: passing argument 2 of ‘rb_st_foreach’ from incompatible pointer type [-Wincompatible-pointer-types]
+   46 |   st_foreach(node_hash, dealloc_node_i, (st_data_t)doc);
+      |                         ^~~~~~~~~~~~~~
+      |                         |
+      |                         int (*)(xmlNode *, xmlNode *, xmlDoc *) {aka int (*)(struct _xmlNode *, struct _xmlNode *, struct _xmlDoc *)}
+In file included from /usr/include/ruby-3.0.0/ruby/internal/arithmetic/st_data_t.h:31,
+                 from /usr/include/ruby-3.0.0/ruby/internal/arithmetic.h:36,
+                 from /usr/include/ruby-3.0.0/ruby/ruby.h:25,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/ruby-3.0.0/ruby/st.h:141:31: note: expected ‘int (*)(st_data_t,  st_data_t,  st_data_t)’ {aka ‘int (*)(long unsigned int,  long unsigned int,  long unsigned int)’} but argument is of type ‘int (*)(xmlNode *, xmlNode *, xmlDoc *)’ {aka ‘int (*)(struct _xmlNode *, struct _xmlNode *, struct _xmlDoc *)’}
+  141 | int rb_st_foreach(st_table *, st_foreach_callback_func *, st_data_t);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+xml_document.c: In function ‘set_encoding’:
+xml_document.c:182:12: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  182 |       free((char *) doc->encoding); /* this may produce a gcc cast warning */
+      |            ^
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+xml_document.c: In function ‘duplicate_document’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_document.c:327:6: note: in expansion of macro ‘rb_scan_args’
+  327 |   if(rb_scan_args(argc, argv, "01", &level) == 0)
+      |      ^~~~~~~~~~~~
+xml_document.c: In function ‘new’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_document.c:354:3: note: in expansion of macro ‘rb_scan_args’
+  354 |   rb_scan_args(argc, argv, "0*", &rest);
+      |   ^~~~~~~~~~~~
+xml_document.c: In function ‘create_entity’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_document.c:433:3: note: in expansion of macro ‘rb_scan_args’
+  433 |   rb_scan_args(argc, argv, "14", &name, &type, &external_id, &system_id,
+      |   ^~~~~~~~~~~~
+xml_document.c: At top level:
+xml_document.c:492:14: error: conflicting types for ‘canonicalize’; have ‘VALUE(int,  VALUE *, VALUE)’ {aka ‘long unsigned int(int,  long unsigned int *, long unsigned int)’}
+  492 | static VALUE canonicalize(int argc, VALUE* argv, VALUE self)
+      |              ^~~~~~~~~~~~
+In file included from /usr/include/features.h:486,
+                 from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from ./nokogiri.h:4,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:370:1: note: previous declaration of ‘canonicalize’ with type ‘int(double *, const double *)’
+  370 | __MATHDECL_1 (int, canonicalize,, (_Mdouble_ *__cx, const _Mdouble_ *__x));
+      | ^~~~~~~~~~~~
+In file included from /usr/include/ruby-3.0.0/ruby/ruby.h:44,
+                 from /usr/include/ruby-3.0.0/ruby.h:38,
+                 from ./nokogiri.h:33,
+                 from ./xml_document.h:4,
+                 from xml_document.c:1:
+xml_document.c: In function ‘canonicalize’:
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:247:62: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  247 |                      (rb_scan_args_verify(fmt, varc), vars), (char *)fmt, varc)
+      |                                                              ^
+/usr/include/ruby-3.0.0/ruby/internal/scan_args.h:365:9: note: in expansion of macro ‘rb_scan_args0’
+  365 |         rb_scan_args0(                                        \
+      |         ^~~~~~~~~~~~~
+xml_document.c:508:3: note: in expansion of macro ‘rb_scan_args’
+  508 |   rb_scan_args(argc, argv, "03", &mode, &incl_ns, &with_comments);
+      |   ^~~~~~~~~~~~
+xml_document.c:535:15: warning: cast discards ‘const’ qualifier from pointer target type [-Wcast-qual]
+  535 |       ns[i] = (xmlChar*) ptr;
+      |               ^
+make: *** [Makefile:245: xml_document.o] Error 1
+
+make failed, exit code 2

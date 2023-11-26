@@ -1,0 +1,13 @@
+prefix=/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+modules=1
+
+Name: libXML
+Version: 2.9.4
+Description: libXML library version2.
+Requires:
+Libs: -L${libdir} -lxml2
+Libs.private:   -lz   -lm  
+Cflags: -I${includedir}/libxml2 

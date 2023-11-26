@@ -1,0 +1,132 @@
+make  install-recursive
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+Making install in include
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+Making install in libxml
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/include/libxml2/libxml'
+ /usr/bin/install -c -m 644 SAX.h entities.h encoding.h parser.h parserInternals.h xmlerror.h HTMLparser.h HTMLtree.h debugXML.h tree.h list.h hash.h xpath.h xpathInternals.h xpointer.h xinclude.h xmlIO.h xmlmemory.h nanohttp.h nanoftp.h uri.h valid.h xlink.h xmlversion.h DOCBparser.h catalog.h threads.h globals.h c14n.h xmlautomata.h xmlregexp.h xmlmodule.h xmlschemas.h schemasInternals.h xmlschemastypes.h xmlstring.h xmlunicode.h xmlreader.h relaxng.h dict.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/include/libxml2/libxml'
+ /usr/bin/install -c -m 644 SAX2.h xmlexports.h xmlwriter.h chvalid.h pattern.h xmlsave.h schematron.h '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/include/libxml2/libxml'
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include/libxml'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/include'
+Making install in .
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libxml2.la '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib'
+libtool: install: /usr/bin/install -c .libs/libxml2.lai /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/libxml2.la
+libtool: install: /usr/bin/install -c .libs/libxml2.a /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/libxml2.a
+libtool: install: chmod 644 /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/libxml2.a
+libtool: install: x86_64-linux-gnu-ranlib /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/libxml2.a
+libtool: finish: PATH="/home/david/gems/bin:/home/david/miniconda3/condabin:/home/david/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/thinlinc/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:~/julia-1.8.5-linux-x86_64/julia-1.8.5/bin:/sbin" ldconfig -n /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c xmllint xmlcatalog '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin'
+libtool: install: /usr/bin/install -c xmllint /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin/xmllint
+libtool: install: /usr/bin/install -c xmlcatalog /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin/xmlcatalog
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin'
+ /usr/bin/install -c xml2-config '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/bin'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib'
+ /usr/bin/install -c -m 644 xml2Conf.sh '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/cmake/libxml2'
+ /usr/bin/install -c -m 644 libxml2-config.cmake '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/cmake/libxml2'
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4
+/usr/bin/install -c -m 0644 ./Copyright /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/examples
+/usr/bin/install -c -m 0644 ./xmllint.c /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/examples
+/usr/bin/install -c -m 0644 ./testSAX.c /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/examples
+/usr/bin/install -c -m 0644 ./testHTML.c /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/examples
+/usr/bin/install -c -m 0644 ./testXPath.c /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/examples
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/aclocal'
+ /usr/bin/install -c -m 644 libxml.m4 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/aclocal'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man1'
+ /usr/bin/install -c -m 644 xml2-config.1 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man1'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man3'
+ /usr/bin/install -c -m 644 libxml.3 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man3'
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libxml-2.0.pc '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib/pkgconfig'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'
+Making install in doc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making install in .
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+make[4]: Nothing to be done for 'install-exec-am'.
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html
+/usr/bin/install -c -m 0644 ./xml.html ./encoding.html ./FAQ.html ./structure.gif ./DOM.gif ./smallfootonly.gif ./redhat.gif ./libxml.gif ./w3c.png ./Libxml2-Logo-180x168.gif ./Libxml2-Logo-90x34.gif /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/html
+/usr/bin/install -c -m 0644 ./html/*.html /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/html
+/usr/bin/install -c -m 0644 ./html/*.png /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/html
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial
+/usr/bin/install -c -m 0644 ./tutorial/*.* \
+	/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial/images
+/usr/bin/install -c -m 0644 ./tutorial/images/*.* \
+	/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial/images
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial/images/callouts
+/usr/bin/install -c -m 0644 ./tutorial/images/callouts/*.* \
+	/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html/tutorial/images/callouts
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man1'
+ /usr/bin/install -c -m 644 xmllint.1 xmlcatalog.1 '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/man/man1'
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making install in devhelp
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/gtk-doc/html/libxml2'
+ /usr/bin/install -c -m 644 libxml2.devhelp general.html index.html libxml2-c14n.html libxml2-catalog.html libxml2-chvalid.html libxml2-debugXML.html libxml2-dict.html libxml2-DOCBparser.html libxml2-encoding.html libxml2-entities.html libxml2-globals.html libxml2-hash.html libxml2-HTMLparser.html libxml2-HTMLtree.html libxml2-list.html libxml2-nanoftp.html libxml2-nanohttp.html libxml2-parser.html libxml2-parserInternals.html libxml2-pattern.html libxml2-relaxng.html libxml2-SAX2.html libxml2-SAX.html libxml2-schemasInternals.html libxml2-schematron.html libxml2-threads.html libxml2-tree.html libxml2-uri.html libxml2-valid.html libxml2-xinclude.html libxml2-xlink.html libxml2-xmlautomata.html libxml2-xmlerror.html libxml2-xmlexports.html libxml2-xmlIO.html libxml2-xmlmemory.html libxml2-xmlmodule.html libxml2-xmlreader.html libxml2-xmlregexp.html '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/gtk-doc/html/libxml2'
+ /usr/bin/install -c -m 644 libxml2-xmlsave.html libxml2-xmlschemas.html libxml2-xmlschemastypes.html libxml2-xmlstring.html libxml2-xmlunicode.html libxml2-xmlversion.html libxml2-xmlwriter.html libxml2-xpath.html libxml2-xpathInternals.html libxml2-xpointer.html home.png left.png right.png up.png style.css '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/gtk-doc/html/libxml2'
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/devhelp'
+Making install in examples
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+make[4]: Nothing to be done for 'install-exec-am'.
+/usr/bin/mkdir -p /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html
+/usr/bin/install -c -m 0644 ./*.html ./*.c ./*.xml ./*.xsl ./*.res /home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/share/doc/libxml2-2.9.4/html
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc/examples'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/doc'
+Making install in example
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/example'
+Making install in xstc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4/xstc'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxml2/2.9.4/libxml2-2.9.4'

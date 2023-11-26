@@ -1,0 +1,175 @@
+make  all-recursive
+make[1]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+Making all in libxslt
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+  CC       attrvt.lo
+  CC       xslt.lo
+  CC       xsltlocale.lo
+xsltlocale.c:210:1: warning: ‘xsltDefaultRegion’ defined but not used [-Wunused-function]
+  210 | xsltDefaultRegion(const xmlChar *localeName) {
+      | ^~~~~~~~~~~~~~~~~
+  CC       xsltutils.lo
+  CC       pattern.lo
+  CC       templates.lo
+  CC       variables.lo
+  CC       keys.lo
+  CC       numbers.lo
+  CC       extensions.lo
+  CC       extra.lo
+  CC       functions.lo
+  CC       namespaces.lo
+  CC       imports.lo
+  CC       attributes.lo
+  CC       documents.lo
+  CC       preproc.lo
+  CC       transform.lo
+  CC       security.lo
+  CCLD     libxslt.la
+x86_64-linux-gnu-ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libxslt'
+Making all in libexslt
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+  CC       exslt.lo
+  CC       common.lo
+  CC       crypto.lo
+  CC       math.lo
+  CC       sets.lo
+  CC       functions.lo
+  CC       strings.lo
+  CC       date.lo
+  CC       saxon.lo
+  CC       dynamic.lo
+  CCLD     libexslt.la
+x86_64-linux-gnu-ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/libexslt'
+Making all in xsltproc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+  CC       xsltproc.o
+  CCLD     xsltproc
+  CC       testThreads.o
+  CCLD     testThreads
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/xsltproc'
+Making all in doc
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/doc'
+Making all in tests
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+Making all in docs
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docs'
+Making all in REC1
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC1'
+Making all in REC2
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC2'
+Making all in REC
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/REC'
+Making all in general
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/general'
+Making all in namespaces
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/namespaces'
+Making all in keys
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/keys'
+Making all in numbers
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/numbers'
+Making all in documents
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/documents'
+Making all in extensions
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/extensions'
+Making all in reports
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/reports'
+Making all in xmlspec
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xmlspec'
+Making all in multiple
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/multiple'
+Making all in xinclude
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/xinclude'
+Making all in XSLTMark
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/XSLTMark'
+Making all in docbook
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/docbook'
+Making all in exslt
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+Making all in common
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/common'
+Making all in functions
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/functions'
+Making all in math
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/math'
+Making all in saxon
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/saxon'
+Making all in sets
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/sets'
+Making all in strings
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/strings'
+Making all in dynamic
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/dynamic'
+Making all in date
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt/date'
+make[4]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/exslt'
+Making all in plugins
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests/plugins'
+make[3]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29/tests'
+make[2]: Entering directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+sed -e 's?\@XSLT_LIBDIR\@?-L/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/lib?g' \
+    -e 's?\@XSLT_INCLUDEDIR\@?-I/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxslt/1.1.29/include?g' \
+    -e 's?\@VERSION\@?1.1.29?g' \
+    -e 's?\@XSLT_LIBS\@?-lxslt  -L/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ports/x86_64-linux-gnu/libxml2/2.9.4/lib -lxml2 -lz -lm -lm ?g' \
+       < ./xsltConf.sh.in > xsltConf.tmp \
+&& mv xsltConf.tmp xsltConf.sh
+make[2]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
+make[1]: Leaving directory '/home/david/Nextcloud/Documents/website/blog/davidbarber.github.io/davidbarber.github.io/vendor/bundle/ruby/3.0.0/gems/nokogiri-1.7.0.1/ext/nokogiri/tmp/x86_64-linux-gnu/ports/libxslt/1.1.29/libxslt-1.1.29'
